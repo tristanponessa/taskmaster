@@ -1,0 +1,400 @@
+ls -la ; exit
+ls ; cd ../..
+cd ..
+cat ..
+exit ;exit ;exit
+history
+cd .. ; cd -
+env OLDPWD
+unsetenv OLDPWD
+exit
+cd ..
+cd -
+cd ..
+unsetenv OLDPWD
+cd -
+env OLDPWD
+cd -
+cd .. ; unsetenv OLDPWD ; cd -; exit
+cd .. ; unsetenv OLDPWD ; cd -; exit
+cd .. ; unsetenv OLDPWD ; cd -; exit
+cd .. ; unsetenv OLDPWD ; cd -; exit
+cd ..
+env OLDPWD
+unsetenv OLDPWD
+env OLDPWD
+env OLDPWD
+ls
+cd shell_java
+ls
+env OLDPWD
+exit
+cd ..
+unsetenv OLDPWD
+cd -
+cd ..
+unsetenv OLDPWD
+env OLDPWD
+cd -
+cd kljlksdjf
+cd ../dsfsdfsd
+unsetenv OLDPWD
+cd -
+cd -
+cd ..
+cd -
+exit
+cd ..
+exit
+cat "this is " it im here
+cat
+cat y
+cat "ggg sfdasdfsf g" j j hkjhkj    kjhkj h  kjh 
+cat "ASDASDASD                     asdsadASD"  sasdadsfasdf asdfsdf
+exit
+cat dadasdasd adasdas
+cat "f	f 	f "                                                         f
+cat "f                             f"                    f
+cat "f    f"       f
+cat "~"
+cd "f           f"                        		f 
+cat "f                   f"           f
+cat "f                f"                f
+cat "r           r"             r
+ls
+cat main.java
+cat main.java
+cat main.java
+cat main.java
+cat "fff ffffffffff" main.java
+cat asdasdasdaas.txt "a                                    s" 
+cat maine.java 
+cat "g		g" 	g
+cat "g		g" 	g			g
+cat g        ;g          
+cat g           ;               g
+cat " g            g           g            				" ; cat "ra"
+cat "~"
+cat ~
+env HOME
+cat ~
+cat "~"
+cd ~
+cat "~"
+cat ~
+cat ~
+cat "~"
+cat "~"
+cat "~"
+cat ~
+cat "~"
+cat ~
+cat "hi ; there"
+exit
+cat "hi ; there"
+cat "hi ; there"
+cat "hi ; there"      ;  cat "cat ; cat"  
+cat "cd -"
+cat "cd -"
+cat "$PWD"
+cat "$PWD:
+cat "
+cat \"
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat "\"$PWD\"" ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat \$PWD ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat \$PWD ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat \$PWD ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat \$PWD ; exit
+
+\Documents\programming\eclipse_java\shell_java]
+cat ~ ; cat "~" ; cat $PWD ; cat \$PWD ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat \$PWD ; exit
+cat ~ ; cat "~" ; cat $PWD ; cat \$PWD ; exit
+ls
+history
+ls
+history
+ls
+history
+
+ls
+history
+
+ls
+history
+ls
+history
+
+history
+0
+history
+ls
+history
+
+cqt %hi%
+ls
+history
+
+ls
+history
+
+ls
+history
+history
+history
+history
+ls
+cat "hi"
+history
+history
+history
+cat "h"
+history
+history
+history
+cat h
+history
+cat hj
+history
+cat f
+cat f
+cat f
+history
+history
+cat f
+history f
+cat s
+xat s
+xat s
+cat s
+history
+exit
+cat s
+history
+cat f
+history
+history
+exit
+cat
+cat
+history
+cat 
+cat 
+history
+history
+
+cat d
+history ->cat d
+history ->history ->cat d
+ls
+history  ->ls
+history ->history ->history ->ls
+history ->cat d
+cat hi ; cat the
+history ->cat hi ; cat the
+history
+history
+history
+history 
+history
+ls
+history
+history
+history
+history
+history
+ls
+cat input_term.txt input_term.txt
+cat "asd"
+ls
+cd test
+ls
+cd link_to_void
+ls
+which cd
+cd ..
+ls
+cd link_to_void
+ls
+cd -P ..
+cd -llasda
+cd gfsdf
+cd asdas
+cd -asdasdasd
+cd -lll
+cd -lll
+cd -ll
+cd -lll
+ls
+cd t	
+cd test
+ls
+cd hardlink_to_void
+ls
+cd test
+ls
+cd link_to_void
+cd ..
+ls
+cd -
+cd test
+cd test
+ls
+cd hardlink
+cd hardlink_to_void
+cd -P ..
+cd -P hardlink_to_void
+cd ..
+cd test
+cd -P hardlink_to_void
+cd ..
+cd -P
+cd -P
+cd 
+cd test
+cd -P test
+ls
+ls
+cd test
+cd -P test
+cd -P hardlink_to_void
+cd test
+mv hardlink_to_void h
+ls
+cd -P h
+cd test
+cd test
+ls
+cd h
+ls
+cd test
+cd h
+cd test/h
+cat test/h
+ls
+cd test
+ls
+cd link_to_void a
+mv a s
+cd ..
+ls
+mv link_to_void s
+ls
+cd -P s
+ls
+cd test/s
+cd ..
+ls
+cd s
+cd ..
+cd -P s
+cd test
+cd -P test
+cd -P l
+cd test
+cd -P l
+cd test
+cd -P l
+cd test
+cd -P l
+cd test
+cd -P l
+cd test
+cd -P l
+cd test
+cd test
+cd -P test
+cd -P l
+cd l
+ls
+cd s
+ls
+cd ..
+cd -P s
+cd -P ..
+cd test
+cd -P s
+cd test
+cd -P s
+cd test
+cd -P s
+cd test
+cd test ; cd -P s
+history ->cd test ; cd -P s
+cd test
+cd test
+cd -P s
+cd test
+cd -P s
+cd test
+cd -P s
+echo \"cat\"
+history ->echo \"cat\"
+cat "\cat\"
+echo "\cat\"
+echo \"cat
+cat \"f
+echo \"f
+echo "f"
+history ->echo "f"
+history 353 ->history ->echo "f"
+echo "f"
+echo \"F\"f
+ls
+echo \"p\" "p"
+history ->echo \"p\" "p"
+history ->echo \"p\" "p"
+ls
+history  ->echo \"p\" "p"
+history 358 ->echo \"p\" "p"
+history 358 ->echo \"p\" "p"
+echo \n
+echo "\n"
+echo \\n
+exit
+echo "\n"
+echo \n
+echo "\n"
+echo "\\n"
+echo "j"
+echo \n "\n"
+history 375
+echo "\n" \n
+echo "\\n" \n
+ls
+echo h
+echo h
+echo g
+echo \n
+echo "\t"
+echo "\t|"
+echo "\t"
+echo "\t" "\s"
+echo "\n"
+echo \n
+echo \\n
+echo "\n"
+echo "\n"
+echo -E "\n"
+echo -e "\n"
+echo -e "\n"
+echo -e "\n"
+history ->echo -e "\n"
+echo -e "\n"
+echo "\n"
+ls

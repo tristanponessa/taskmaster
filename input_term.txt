@@ -1,0 +1,7 @@
+cat ~ ; cat "~" ; cat $PWD ; cat \$PWD ; exit
+cd .. ; unsetenv OLDPWD ; cd -; exit
+env PWD OLDPWD ; cd ../.. ; env PWD OLDPWD ; exit
+ls -la; ls -la  ;    ls   .. ; exit  
+xx;     ls 		-la ;cew; ls    ~ ; sdc     ; exit
+ls -l ;       ls -l
+ls -l -a -v arg1 arg2 ; cd -xa -f -lo ever one is here ; history thisarg g
