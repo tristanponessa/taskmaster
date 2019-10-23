@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    main.py                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: trponess <trponess@student.42.fr>          +#+  +:+       +#+         #
+#    By: user <user@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/22 00:21:18 by trponess          #+#    #+#              #
-#    Updated: 2019/10/22 06:24:16 by trponess         ###   ########.fr        #
+#    Updated: 2019/10/23 02:10:33 by user             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,30 +15,43 @@
 import time
 import sys
 from cmd import Cmd
+import keyword
 
-"""
+
 class _Wrapper:
 
+    linex = None
+    
     def __init__(self, fd):
         self.fd = fd
+        
 
     def readline(self, *args):
         try:
-            return self.fd.readline(*args)
+            line = self.fd.readline(*args)
+            print("<", line.split(" "), ">")
+            self.linex = line
+            return line
         except KeyboardInterrupt:#ctrl+C
             print("KeyboardInterrupt : ctrl+C")
             return ('\n')
-            
+         
 
 class MyPrompt(Cmd):
     prompt = 'pb> '
     intro = "Welcome! Type ? to list commands"
-    
+    FRIENDS = [ 'Alice', 'Adam', 'Barbara', 'Bob' ]
+
     def __init__(self):
-        super().__init__(stdin=_Wrapper(sys.stdin))
         self.use_rawinput = False
-        self.prompt = '$ '
-        self.FRIENDS = [ 'Alice', 'Adam', 'Barbara', 'Bob' ]
+        super().__init__(stdin=_Wrapper(sys.stdin))
+        
+        #if self.stdin == 'ls\n':
+         #   print("tab")
+        #dir(self.stdin)
+        
+        #self.prompt = '$ '
+        #self.FRIENDS = [ 'Alice', 'Adam', 'Barbara', 'Bob' ]
     
     def do_greet(self, person):
         "Greet the person"
@@ -51,6 +64,7 @@ class MyPrompt(Cmd):
         print (greeting)
     
     def complete_greet(self, text, line, begidx, endidx):
+        print("xxx")
         if not text:
             completions = self.FRIENDS[:]
         else:
@@ -59,8 +73,17 @@ class MyPrompt(Cmd):
                             if f.startswith(text)
                             ]
         return completions
-
     
+    #def defaultcomplete(self, text, line, begidx, endidx):
+
+
+    def precmd(self, line):
+        print("precmd line:", line)
+        if line == '\t':
+            print("tab")
+        
+        return super().precmd(line)
+        
     def do_exit(self, inp):
         print("Bye")
         return True
@@ -86,6 +109,9 @@ class MyPrompt(Cmd):
         
     def default(self, inp):
         print("command don't exist")
+    
+    def do_tab(self, inp):
+        print("x")
         
 
             
@@ -98,41 +124,4 @@ class MyPrompt(Cmd):
 
 if __name__ == '__main__':
     MyPrompt().cmdloop()
-"""
 
-import cmd
-
-class MyCmd(cmd.Cmd):
-
-
-    addresses = [
-'here@blubb.com',
-'foo@bar.com',
-'whatever@wherever.org']
-
-def do_send(self, line):
-    "Greet the person"
-    if line and line in self.addresses:
-        sending_to = 'Sending to, %s!' % line
-    elif line:
-        sending_to = "Send to, " + line + " ?"
-    else:
-        sending_to = 'noreply@example.com'
-    print (sending_to)
-
-def complete_send(self, text, line, begidx, endidx):
-    if text:
-        completions = [
-            address for address in self.addresses
-            if address.startswith(text)
-        ]
-    else:
-        completions = self.addresses[:]
-
-    return completions
-
-def do_EOF(self, line):
-    return True
-
-if __name__ == '__main__':
-    MyCmd().cmdloop()
