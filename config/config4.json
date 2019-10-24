@@ -1,0 +1,37 @@
+{
+	"ProgList":
+	[
+		{
+			"Name": "tOt",
+			"Command": "/usr/bin/norminette /nfs/2015/f/ftriquet/projets/42sh",
+			"NumProcs": 1,
+			"Outfile": "/tmp/norminette.out",
+			"Errfile": "/tmp/norminette.err",
+			"WorkingDir": "/tmp",
+			"StopSignal": 2,
+			"AutoStart": true,
+			"ExitCodes": [0, 130],
+			"AutoRestart": "Unexpected",
+			"StartRetries": 5,
+			"StopTime": 5
+		},
+		{
+			"Name": "Make42sh",
+			"Command": "/usr/bin/make",
+			"NumProcs": 1,
+			"WorkingDir": "/nfs/2015/f/ftriquet/projets/42sh",
+			"Outfile": "/tmp/make.out",
+			"Errfile": "/tmp/make.err",
+			"StartTime": 1
+		},
+		{
+			"Name": "MakeFclean42sh",
+			"Command": "/usr/bin/make fclean",
+			"NumProcs": 1,
+			"WorkingDir": "/nfs/2015/f/ftriquet/projets/42sh",
+			"Outfile": "/tmp/makefclean.out",
+			"Errfile": "/tmp/makefclean.err",
+			"StartTime": 1
+		}
+	]
+}
