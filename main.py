@@ -13,6 +13,9 @@ cuase by default it waits for the process to be
 temrinated before printing
 we use multiprocess so we can temrinate it at free will
 threading we cant
+
+popen for commands
+multiprocess for python processes defs
 """
 
 from threading import Thread
@@ -71,6 +74,7 @@ class Taskmaster_shell(cmd.Cmd):
         super().__init__()
         self.data = dict()
         self.stdout_file = None
+        self.ll = []
         
         self.running_proc = []
         with open("config/.conf", "r") as f:
@@ -102,13 +106,16 @@ class Taskmaster_shell(cmd.Cmd):
         
         return True#exit shell
     
+    """
+    
+    
     def do_run(self, person):
         #with open(self.data['stdout'], "w") as stdout_file, \
          #    open(self.data['stderr'], "w") as stderr_file:
         #self.run_process()
-        self.stdout_file = open(self.data['stdout'], "w")
+      
         
-        #stderr_file = open(self.data['stderr'], "w")
+            #stderr_file = open(self.data['stderr'], "w")
 
         #other option get output in list than write list in file after closing file and temrinating 
         #l = lambda : subprocess.Popen("ping 127.0.0.1", shell=True, stdout=self.stdout_file)
@@ -118,95 +125,77 @@ class Taskmaster_shell(cmd.Cmd):
         self.ll = []
         
         self.run_process()
-        """
-        p = multiprocessing.Process(target=self.run_process)
-        
-        p.start()
-        print(p)
-        import time 
-        time.sleep(4)
-        p.terminate()
-        p.join()
-        print(p)
-        """
-        print(self.ll)
-        
-        #import time
-        
-
-        #self.running_proc.append(threading.Thread(target=l, name='x', daemon=True))
-        #self.running_proc.append(threading.Thread(target=l, name='x'))
-        
+    
+        print(self.ll)    
         print("running time")
         
+    """
     
     #pain in the ass 
     #dont block readline , stocks every line from program stdout 
     #but blocks temrinal
-    def run_process(self):
+    def do_run(self, run_processes) :
+        self.run_processes()
+
+    def run_processes(self):
+
+        self.stdout_file = open(self.data['stdout'], "w")
+        self.extra_file = open("extra.txt", "w")
         
-        #self.pp = subprocess.Popen(["ls"],shell=True, stdout=subprocess.PIPE)
-        self.pp = subprocess.Popen(["python3", "time_program.py"],stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE) #BLOCKING 
+        #self.px = Popen()
+        self.p0 = multiprocessing.Process(name="PING_process", target=self.ping_process)
 
-
-        #self.pp = subprocess.Popen(["ping 127.0.0.1"],shell=True, stdout=subprocess.PIPE)
-        #self.pp = subprocess.Popen("ping 127.0.0.1",shell=True, stdout=subprocess.PIPE) #NON BLOCKING
-        #print(self.pp.stdout.read())
-
-        nbsr = NonBlockingStreamReader(self.pp.stdout)
-        #print('after')
-        #self.pp.wait()
-        #t = self.pp.communicate()
+        self.read_ping_process()
+        #p1 = multiprocessing.Process(name="PYTHONFOREVER_process", target=self.read_process)
+        #p2 = multiprocessing.Process(name="LS_process", target=self.read_process)
         
-        #you gotta put this as a separate process
-        while self.pp.poll() is None:
-            t = nbsr.readline(0.1)
-            self.ll.append(t)
-            print('+ :', t)
-            print(self.pp.poll())
-            #print(*self.ll, sep=' ')
-            
+        #self.px = subprocess.Popen(["ping", "127.0.0.1"])
 
+        #out, err = px.communicate()
+        
+        #self.p0.start()
+        #p1.run()
+        #p2.run()
 
-        #print(self.pp.poll())
+        """
+        self.running_proc.append(multiprocessing.Process(name="ping_process", target=self.read_process))
+        self.running_proc[-1].start()
+
+        while True:        
+            if self.running_proc[-1].is_alive() == False:
+                break
+        """
+        
+
+        #print("process over")
         #self.pp.kill()
-        #self.pp.wait()
-        print(self.pp.poll())
         
-        
-        #self.stdout_file = open(self.data['stdout'], "w")
-        #process1 = subprocess.Popen("locate a", shell=True, stdout=subprocess.PIPE)
-        #print(process1.stdout.read())
-        #process1 = subprocess.Popen("python3 time_program.py", shell=True, stdout=subprocess.PIPE)
-        #process1 = subprocess.Popen("locate a", shell=True, stdout=subprocess.PIPE)
-        #process1 = subprocess.Popen(["python3", "time_program.py"], stdout=stdout_file)
-        #l = lambda x: subprocess.Popen(["python3", "time_program.py"], stdout=stdout_file)
-        #self.running_proc.append(multiprocessing.Process(target=l))
-        #self.running_proc[-1].start()
-        #shell=True seemed ot block
-        #print('after')
-        #process1.communicate()
-        #print(process1.stdout.read())
-        #p = psutil.Process(process1.pid)
-        #p.suspend()
-        #p.resume()
-        
-
+    def read_ping_process(self):
+        pass
+        #if self.px.poll() is None:
+        #    out, err = self.px.communicate()
+        #    print(out)
+        #else:
+        #    print('no process')
+    
+    def ping_process(self):
+        self.px = subprocess.Popen(["ping", "127.0.0.1"])
+        print(self.px)
+      
         """
-        print(process1.stdout.read())
-        output = process1.stdout.readline()
-        process1.stdout.close()
-        process1.kill()
-        with open(self.data['stdout'], "w") as f:
-            f.write(str(output))
+        i = 0
+        while self.pp.poll() is None and i < 3:
+            t = self.pp.stdout.readline(1)
+            self.ll.append(t)
+            print('+ :', t, stdout=self.x_file, flush=True)
+            #print(self.pp.poll())
+            self.stdout_file.writeline('>>' + t)
+            i += 1
+        self.pp.kill()
         """
-        #    stdout_file = open(self.data['stdout'], "w")
-        #   stderr_file = open(self.data['stderr'], "w")
-        #  process1 = subprocess.Popen("python3 time_program.py", shell=True, stdout=stdout_file ,stderr=stderr_file)
-        #x = process1.communicate()
-        #print(x)
-
-
+    
+    def do_show(self, ll):
+        print(self.ll)
 
     def complete_greet(self, text, line, begidx, endidx):
         if not text:
@@ -226,26 +215,3 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print('\n\n  Ctrl + c -> exiting shell')
 
-
-
-"""
-from subprocess import Popen, PIPE
-from time import sleep
-from nbstreamreader import NonBlockingStreamReader as NBSR
-
-# run the shell as a subprocess:
-p = Popen(['python', 'shell.py'],
-        stdin = PIPE, stdout = PIPE, stderr = PIPE, shell = False)
-# wrap p.stdout with a NonBlockingStreamReader object:
-nbsr = NBSR(p.stdout)
-# issue command:
-p.stdin.write('command\n')
-# get the output
-while True:
-    output = nbsr.readline(0.1)
-    # 0.1 secs to let the shell output the result
-    if not output:
-        print '[No more data]'
-        break
-    print output
-"""

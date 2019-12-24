@@ -1,0 +1,84 @@
+prog:
+      -
+            name: 'ls'
+            command: '/bin/ls -R /'
+            autostart: 1
+            numproc: 1
+            success:
+                  - 0
+                  - -9
+            stdout: 'stdout_ls'
+            stderr: 'stderr_ls'
+            failed: 3
+            wait: 1
+            kill_wait: 1
+            stop_signal: 9
+            umask: 0
+
+      -
+            name: 'pwd'
+            command: '/bin/pwd'
+            stdout: 'stdout_pwd'
+            stderr: 'stderr_pwd'
+            autostart: 1
+            numproc: 1
+            success:
+                  - 0
+            failed: 3
+            wait: 1
+            kill_wait: 1
+            stop_signal: 9
+
+      -
+            name: 'env'
+            command: '/usr/bin/env'
+            stdout: 'stdout_env'
+            stderr: 'stderr_env'
+            env:
+                  PATH: '/'
+                  HOME2: '/'
+            autostart: 1
+            numproc: 1
+            success:
+                  - 0
+                  - -9
+            failed: 2
+            wait: 1
+            kill_wait: 1
+            stop_signal: 9
+            umask: 022
+
+      -
+            name: 'env2'
+            command: '/usr/bin/env'
+            stdout: 'stdout_env2'
+            stderr: 'stderr_env2'
+            autostart: 0
+            numproc: 1
+            success:
+                  - 0
+            failed: 1
+            wait: 1
+            kill_wait: 1
+            stop_signal: 9
+            umask: 022
+
+      -
+            name: 'cat'
+            command: '/bin/cat'
+            stdout: 'stdout_cat'
+            stderr: 'stderr_cat'
+            stdin: '/dev/zero'
+            autostart: 0
+            numproc: 4
+            success:
+                  - 0
+                  - -9
+            failed: 1
+            wait: 1
+            stop_signal: 9
+            umask: 022
+
+directory: './folder'
+
+logfile: 'task.log'
