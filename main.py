@@ -26,10 +26,10 @@ class Program():
         self.program['stdout'] = open(self.program['stdout'], "w+")
         self.program['stderr'] = open(self.program['stderr'], "w+")
 
-    def start(self):
+    def start(self):#prevent starting two times
         log_msg = 'start ' + self.program['name']
         self.write_file(self.program['log'], log_msg)
-        self.launch_command()
+        self.launch_cmd()
     
     def stop(self):
         log_msg = 'stop ' + self.program['name']
@@ -52,7 +52,7 @@ class Program():
         self.program['cmd_process'].wait()
         self.program['status'] = 'STOPPED'
 
-    def launch_cmd(self)
+    def launch_cmd(self):
         try:
             self.program['cmd_process'] = subprocess.Popen( self.program['command'],
                                             stdout=self.program['stdout'],
@@ -68,7 +68,7 @@ class Program():
         return True 
 
 
-    def write_file(self, file, s)
+    def write_file(self, file, s):
         with open(file, 'w+') as f:
             f.write(s)    
        # def run_cmd(self)
@@ -85,51 +85,48 @@ class Taskmaster_shell(cmd.Cmd):
     
     def __init__(self):
         super().__init__()
-        conf = configparser.ConfigParser()
-        conf.read('./config/taskmaster_conf.ini')
+        self.conf = configparser.ConfigParser()
+        self.conf.read('./config/taskmaster_conf.ini')
         self.log_file_path = './taskmaster.log'
-        #self.open_files = dict()
-        self.running_proc = []
-        """"
-        self.open_files['log_file'] = open('./taskmaster.log', "w+")
-        for k,v in conf._sections.items():
-            if k.startswith('program:'):
-                self.open_files[k + '_stdout'] = open(v['stdout'], 'w+')
-                self.open_files[k + '_stderr'] = open(v['stderr'], 'w+')
-        """"
+        self.programs = dict()
 
-        self.cmd_process = None
+        
+    def do_init(self, user_input):
+        print("running programs in conf file...")
+        for program_name,section in self.conf._sections.items():
+            clean_program_name = program_name.replace("program:", "")
+            p = Program(clean_program_name, section, self.log_file_path)
+            self.programs[clean_program_name] = p
+        pass
+
+    #def do_run_all(self, user_input):
+     #   for program in self.programs:
+      #      program.run()
     
     def do_run(self, user_input):
-        print('REP' + '<' + user_input + '>')
-        print('REP clean',  self.clean_command(self.data['command']))
-        try:
-            cmd_process = subprocess.Popen(self.clean_command(self.data['command']), 
-                                                            stdout=self.stdout_file,
-                                                            stderr=self.stderr_file)
-        except Exception:
-            print("ERROR: popen > " + self.data['command'] + " can't run")
-            return 
-
-        self.running_proc.append(cmd_process)
+        if user_input == '':
+           print('zzz')
+        elif user_input not in self.programs.keys():
+            print("program don't exist")
+        else:
+            self.programs[user_input].start()
     
-    def do_status(self, user_input):
-        for cmd_process in self.running_proc:
-            print("{}   {} {} {} {}".format(cmd_process.args, 'RUNNING','PID:', cmd_process.pid, 'uptime: 00:00:00'))
+    def do_stop(self, user_input):
+            self.programs[user_input].stop()
+    #def do_status(self, user_input):
+     #    for program in self.programs:
+      #      program.status()
        
-
+    """
+    docstring
+    
     def do_stopall(self, user_input):
         for cmd_process in self.running_proc:
             print("{} {} {} {}".format("process :", cmd_process.args, 'PID:', cmd_process.pid))
             cmd_process.kill()
             cmd_process.wait()
             self.running_proc = []
-
-    def clean_command(self, user_command):
-        x = user_command
-        x = x.replace('\n', '')
-        x = x.split(' ')
-        return x
+    """
 
     def emptyline(self):
         pass
@@ -139,8 +136,6 @@ class Taskmaster_shell(cmd.Cmd):
       
     def do_exit(self, inp):
         print("<Exiting Taskmaster>")
-        #for open_file in self.open_files.values():
-        #    open_file.close()
         return True
     
     def do_EOF(self, line):
