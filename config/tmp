@@ -1,12 +1,13 @@
-[program:random69]
-command=sh sec_counter.bash
+
+[program:random911]
+command=locate a
 autostart=true
 autorestart=true
 retry=auto
 dir=./
 nbretries=3
-stdout=./69.stdout
-stderr=./69.stderr
+stdout=./911.stdout
+stderr=./911.stderr
 env=
 exitcodes=
 succodes=
