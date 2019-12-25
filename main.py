@@ -23,8 +23,8 @@ class Program():
         self.program['cmd_process'] = None
         #replace str by obj
         self.program['command'] = self.program['command'].replace('\n', '').split(' ')
-        self.program['stdout'] = open(self.program['stdout'], "w+")
-        self.program['stderr'] = open(self.program['stderr'], "w+")
+        self.program['stdout'] = open(self.program['stdout'], "a+")
+        self.program['stderr'] = open(self.program['stderr'], "a+")
 
     def start(self):#prevent starting two times
         log_msg = 'start ' + self.program['name']
@@ -38,14 +38,19 @@ class Program():
          
 
     def status(self):
-        status_msg = "{}   {} {} {} {}".format(
+        #if self.program['cmd_process'] is not None and \
+         #  self.program['cmd_process'].poll() is None:
+        try:
+            status_msg = "{}   {} {} {} {}".format(
                                                 self.program['cmd_process'].args, 
                                                 self.program['status'],
                                                 'PID:', 
                                                 self.program['cmd_process'].pid, 
                                                 'uptime: 00:00:00'
                                               )
-        print(status)
+        except Exception:
+            status_msg = self.program['name'] + ' standby'
+        print(status_msg)
 
     def stop_cmd(self):
         self.program['cmd_process'].kill()
@@ -69,14 +74,10 @@ class Program():
 
 
     def write_file(self, file, s):
-        with open(file, 'w+') as f:
+        with open(file, 'a+') as f:
             f.write(s)    
        # def run_cmd(self)
 
-
- 
-
-      
 
 class Taskmaster_shell(cmd.Cmd):
     
@@ -90,43 +91,56 @@ class Taskmaster_shell(cmd.Cmd):
         self.log_file_path = './taskmaster.log'
         self.programs = dict()
 
-        
+    def precmd(self, user_input):
+        self.write_file(self.log_file_path, Taskmaster_shell.prompt + user_input)
+        return cmd.Cmd.precmd(self, user_input)
+
     def do_init(self, user_input):
-        print("running programs in conf file...")
+        self.print_stdout_log("loaded programs from conf file")
         for program_name,section in self.conf._sections.items():
             clean_program_name = program_name.replace("program:", "")
             p = Program(clean_program_name, section, self.log_file_path)
             self.programs[clean_program_name] = p
-        pass
+        self.print_stdout_log(self.programs.keys())
 
     #def do_run_all(self, user_input):
      #   for program in self.programs:
       #      program.run()
     
     def do_run(self, user_input):
-        if user_input == '':
-           print('zzz')
-        elif user_input not in self.programs.keys():
-            print("program don't exist")
-        else:
+        if self.check_program(user_input):
             self.programs[user_input].start()
     
     def do_stop(self, user_input):
+        if self.check_program(user_input):
             self.programs[user_input].stop()
-    #def do_status(self, user_input):
-     #    for program in self.programs:
-      #      program.status()
-       
-    """
-    docstring
     
-    def do_stopall(self, user_input):
-        for cmd_process in self.running_proc:
-            print("{} {} {} {}".format("process :", cmd_process.args, 'PID:', cmd_process.pid))
-            cmd_process.kill()
-            cmd_process.wait()
-            self.running_proc = []
-    """
+    def do_status(self, user_input):
+        if user_input == '':
+            for program in self.programs.keys():
+                self.programs[program].status()
+        else:
+            if self.check_program(user_input):
+                self.programs[user_input].status()
+
+    #def complete_
+   # def completedefault(self, a, b, c, d):
+    #    return self.programs.keys()
+
+    def check_program(self, program):
+        if program not in self.programs.keys():
+            self.print_stdout_log("program |" +  program + "| don't exist")
+            return False
+        return True
+    
+    
+    def print_stdout_log(self, s):
+        print(s)
+        self.write_file(self.log_file_path, s) 
+    
+    def write_file(self, file, s):
+        with open(file, 'a+') as f:
+            f.write(s + '\n') 
 
     def emptyline(self):
         pass
@@ -139,7 +153,7 @@ class Taskmaster_shell(cmd.Cmd):
         return True
     
     def do_EOF(self, line):
-        print("ctrl+D > shell catch")
+        print('\n\n  Ctrl + d -> exit Taskmaster')
         return True
 
 if __name__ == '__main__':
@@ -149,5 +163,4 @@ if __name__ == '__main__':
         ts.cmdloop()
     except KeyboardInterrupt:#and ctrl d
         print('\n\n  Ctrl + c -> exit Taskmaster')
-    except EOFError:#and ctrl d
-        print("n\n\  ctrl + d > exit Taskmaster")
+        #relaunch new instance of taskmaster
