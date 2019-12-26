@@ -4,6 +4,7 @@ import subprocess
 import multiprocessing
 import threading
 import configparser
+import time
 #log file ./taskmaster.log
 
 """
@@ -82,14 +83,33 @@ class Program():
 class Taskmaster_shell(cmd.Cmd):
     
     prompt = 'taskmaster> '
-    intro = "Welcome! Type ? to list commands"
-    
+    #http://patorjk.com/software/taag/#p=display&f=Bloody&t=Taskmaster
+    intro = taskmaster_ascii_art = \
+    """
+
+    ▄▄▄█████▓ ▄▄▄        ██████  ██ ▄█▀ ███▄ ▄███▓ ▄▄▄        ██████ ▄▄▄█████▓▓█████  ██▀███  
+    ▓  ██▒ ▓▒▒████▄    ▒██    ▒  ██▄█▒ ▓██▒▀█▀ ██▒▒████▄    ▒██    ▒ ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒
+    ▒ ▓██░ ▒░▒██  ▀█▄  ░ ▓██▄   ▓███▄░ ▓██    ▓██░▒██  ▀█▄  ░ ▓██▄   ▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒
+    ░ ▓██▓ ░ ░██▄▄▄▄██   ▒   ██▒▓██ █▄ ▒██    ▒██ ░██▄▄▄▄██   ▒   ██▒░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  
+    ▒██▒ ░  ▓█   ▓██▒▒██████▒▒▒██▒ █▄▒██▒   ░██▒ ▓█   ▓██▒▒██████▒▒  ▒██▒ ░ ░▒████▒░██▓ ▒██▒
+    ▒ ░░    ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░▒ ▒▒ ▓▒░ ▒░   ░  ░ ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░  ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░
+        ░      ▒   ▒▒ ░░ ░▒  ░ ░░ ░▒ ▒░░  ░      ░  ▒   ▒▒ ░░ ░▒  ░ ░    ░     ░ ░  ░  ░▒ ░ ▒░
+    ░        ░   ▒   ░  ░  ░  ░ ░░ ░ ░      ░     ░   ▒   ░  ░  ░    ░         ░     ░░   ░ 
+                ░  ░      ░  ░  ░          ░         ░  ░      ░              ░  ░   ░     
+                                                                                            
+    """
+
+
     def __init__(self):
         super().__init__()
         self.conf = configparser.ConfigParser()
         self.conf.read('./config/taskmaster_conf.ini')
         self.log_file_path = './taskmaster.log'
         self.programs = dict()
+
+        now_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
+        #intro
+        self.print_stdout_log('---taskmaster session : ' + now_time + '---')
 
     def precmd(self, user_input):
         self.write_file(self.log_file_path, Taskmaster_shell.prompt + user_input)
@@ -101,7 +121,7 @@ class Taskmaster_shell(cmd.Cmd):
             clean_program_name = program_name.replace("program:", "")
             p = Program(clean_program_name, section, self.log_file_path)
             self.programs[clean_program_name] = p
-        self.print_stdout_log(self.programs.keys())
+        self.print_stdout_log(' '.join(list(self.programs.keys())))
 
     #def do_run_all(self, user_input):
      #   for program in self.programs:
@@ -140,20 +160,20 @@ class Taskmaster_shell(cmd.Cmd):
     
     def write_file(self, file, s):
         with open(file, 'a+') as f:
-            f.write(s + '\n') 
+            f.write(s + '\n')
 
     def emptyline(self):
         pass
     
     def default(self, inp):
-        print("display help")
+        self.print_stdout_log("display help")
       
     def do_exit(self, inp):
-        print("<Exiting Taskmaster>")
+        self.print_stdout_log("<Exiting Taskmaster>\n\n")
         return True
     
     def do_EOF(self, line):
-        print('\n\n  Ctrl + d -> exit Taskmaster')
+        self.print_stdout_log('\n\n  Ctrl + d -> exit Taskmaster\n\n')
         return True
 
 if __name__ == '__main__':
@@ -162,5 +182,8 @@ if __name__ == '__main__':
     try:
         ts.cmdloop()
     except KeyboardInterrupt:#and ctrl d
-        print('\n\n  Ctrl + c -> exit Taskmaster')
+        Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
         #relaunch new instance of taskmaster
+    
+
+    

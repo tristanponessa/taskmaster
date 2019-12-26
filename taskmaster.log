@@ -4,3 +4,46 @@ taskmaster>
 taskmaster> 
 taskmaster> lk
 taskmaster> exit
+taskmaster> init
+loaded programs from conf file
+taskmaster> init
+loaded programs from conf file
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run
+program || don't exist
+taskmaster> 
+taskmaster> exit
+taskmaster> exit
+<Exiting Taskmaster>
+taskmaster> exit
+<Exiting Taskmaster>
+---taskmaster session : 2019-12-26 18:58:06---
+taskmaster> exit
+<Exiting Taskmaster>
+---taskmaster session : 2019-12-26 19:05:11---
+taskmaster> exit
+<Exiting Taskmaster>
+---taskmaster session : 2019-12-26 19:07:25---
+---taskmaster session : 2019-12-26 19:17:59---
+---taskmaster session : 2019-12-26 19:18:07---
+---taskmaster session : 2019-12-26 19:18:44---
+
+
+  Ctrl + c -> exit Taskmaster
+---taskmaster session : 2019-12-26 19:18:51---
+
+
+  Ctrl + c -> exit Taskmaster
+---taskmaster session : 2019-12-26 19:19:47---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 19:19:59---
+
+
+  Ctrl + c -> exit Taskmaster
+
+
