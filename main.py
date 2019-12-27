@@ -6,6 +6,7 @@ import threading
 import configparser
 import time
 import datetime
+import sys
 #log file ./taskmaster.log
 
 """
@@ -19,30 +20,34 @@ import datetime
 #issues : bin/bash being spawed by popen must kill() them
 #reload processes after closing taskmaster, stock pids in log than kill the pid
 #a program is 1 process like ls or count_time
-#only launch bash commands to control processes like pc kill dont pass by popen
+#only launch bash commands to control processes like ps kill dont pass by popen
+
 class Program():
 
     def __init__(self, program_name, iprogram, log_file_path):
         self.program = iprogram.copy()
         #add extra
         self.program['name'] = program_name
-        self.program['runtime'] = self.get_time_elapsed#function
-        self.program['status'] = None
-        self.program['log'] = log_file_path 
-        self.program['popen'] = None
-        #replace str by obj
         self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
         self.program['cmd'] = self.program['command'].replace('\n', '')
+        self.program['etime'] = lambda : self.get_ps_info(self.program['cmd'], 'etime')#function
+        self.program['pid'] = lambda : self.get_ps_info(self.program['cmd'], 'pid')
+        self.program['status'] = lambda : self.get_ps_info(self.program['cmd'], 'status')#function
+        self.program['log'] = log_file_path 
+        self.program['popen'] = None
         self.program['stdout'] = open(self.program['stdout'], "a+")
         self.program['stderr'] = open(self.program['stderr'], "a+")
 
     def start(self):#prevent starting two times
-        if self.launch_cmd() == True:
-            log_msg = 'start ' + self.program['name']
-            self.program['status'] = 'RUNNING'
+        names = self.program['name'] + ' : ' + self.program['cmd']
+        x = self.launch_cmd()
+        if x == 'reloaded':
+            log_msg = "reloaded {} : {}".format(self.program['name'], self.program['cmd'])
+        elif x == True:
+            log_msg = "start {} : {}".format(self.program['name'], self.program['cmd'])
         else:
-            log_msg = "ERROR: popen : " + self.data['command'] + " can't run"
-            self.program['status'] = 'FAILED'
+            log_msg = "ERROR {} : {} can't run".format(self.program['name'], self.program['cmd'])
+            #self.program['status'] = 'FAILED'
         self.print_stdout_log(log_msg)
             
     
@@ -50,7 +55,7 @@ class Program():
         log_msg = 'stop ' + self.program['name']
         self.print_stdout_log(log_msg)
         self.stop_cmd()
-        self.program['status'] = 'STOPPED'
+        #self.program['status'] = 'STOPPED'
          
     #if already launched no popen object
     def status(self):
@@ -59,10 +64,10 @@ class Program():
         try:
             stuff = [
                         self.program['name'],
-                        self.program['command'], 
+                        self.program['cmd'], 
                         self.program['status'],
-                        self.get_pc_info(self.program['command'], 'pid'), #catch by info 
-                        self.get_pc_info(self.program['command'], 'etime')
+                        self.program['pid'], #catch by info 
+                        self.program['etime']
                         #self.get_time_diff(self.get_now_time(), self.program['start_time'])
                     ]
 
@@ -71,31 +76,22 @@ class Program():
                                               
         except Exception as e:
             print(e)
-            status_msg = self.program['name'] + ' LOADED'
+            status_msg = self.program['name'] + ' not running'
         self.print_stdout_log(status_msg)
 
     def stop_cmd(self):
-
-        """
-        self.program['cmd_process'].kill()
-        self.program['cmd_process'].wait()
-        """
+        cmd =  "kill -9 {pid}".format(pid=self.program['pid'])#SIGKILL
+        self.run_cmd(cmd)
         
 
     def launch_cmd(self):
-        cmd = ' '.join(self.program['command'])
-        os_pc = self.get_pc_info(cmd, 'list')
-        if cmd in os_pc:
-            return True
+        cmd = ''.join(self.program['cmd'])
+        os_ps = self.get_ps_info('', 'list')
+        if any(cmd in ps for ps in os_ps):
+            return 'reloaded'
         try:
-            self.program['cmd_process'] = self.popen_cmd(self.program['command'], self.program['stdout'], self.program['stderr'])
-            """
-            subprocess.Popen( self.program['command'],
-                                            shell=False,
-                                            stdout=self.program['stdout'],
-                                            stderr=self.program['stderr'])
-            """
-        except Exception:
+            self.program['cmd_process'] = self.run_cmd(self.program['cmdp'], self.program['stdout'], self.program['stderr'])
+        except Exception as e:
             return False
         return True 
 
@@ -131,27 +127,31 @@ class Program():
     """
     
     #search for nothing '' get all 
-    def get_pc_info(self, cmd, info):
-        cmd = 'ps -o cmd,pid,etime | grep "{cmd}"'.format(cmd=cmd)
-        p = self.popen_cmd(cmd, subprocess.PIPE, subprocess.PIPE)
+    def get_ps_info(self, cmd, info):
+        cmd = 'ps -o cmd,pid,state,etime | grep "{cmd}"'.format(cmd=cmd)
+        p = self.run_cmd(cmd, subprocess.PIPE, subprocess.PIPE, True)
         p.wait()
 
         cmd_output = p.stdout.read()
         ps_info = cmd_output.decode('ascii').split('\n')
-        if  info == 'list':
+        if info == 'list':
             return ps_info
-        ps_info = p.stdout.read().decode('ascii').replace('\n', '').split(' ')
+        if cmd_output == '':
+            return None
+        ps_info = cmd_output.decode('ascii').replace('\n', '').split(' ')
         if info == 'pid':
             return ps_info[1]
-        if info == 'etime':
+        if info == 'status':
             return ps_info[2]
+        if info == 'etime':
+            return ps_info[3]
 
         p.kill()
         p.wait()
 
-    def popen_cmd(self, cmd, istdout, istderr):
+    def run_cmd(self, cmd, istdout=sys.stdout, istderr=sys.stderr, ishell=False):
         p = subprocess.Popen(cmd,
-                            shell=True,
+                            shell=ishell,
                             stdout=istdout,
                             stderr=istderr)
         return p
@@ -219,7 +219,7 @@ class Taskmaster_shell(cmd.Cmd):
      #   for program in self.programs:
       #      program.run()
     
-    def do_run(self, user_input):
+    def do_start(self, user_input):
         if self.check_program(user_input):
             self.programs[user_input].start()
     
@@ -271,13 +271,13 @@ class Taskmaster_shell(cmd.Cmd):
     def do_help(self, user_input):
         print('srcew you!')
     
-    def do_pc(self, inp):
+    def do_ps(self, inp):
         p = subprocess.Popen(["ps", "-o", "cmd,pid,start,etime"])
         time.sleep(1)
         p.kill()
         p.wait()
     
-    def do_pcx(self, inp):
+    def do_psx(self, inp):
         time_elapsed = None
         p = subprocess.Popen(["ps", "-o", "cmd,etime"],
                                         stdout=subprocess.PIPE,
@@ -286,9 +286,9 @@ class Taskmaster_shell(cmd.Cmd):
         #print(p.stdout.read())
         output = p.stdout.readlines()
         """
-        for pc in output:
-            pc = pc.decode('ascii')
-            s = pc.split(' ')
+        for ps in output:
+            ps = ps.decode('ascii')
+            s = ps.split(' ')
             if self.program['random69']['command'] == s[0].split(' '):
                 time_elapsed = s[1]
         """

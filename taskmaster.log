@@ -546,3 +546,253 @@ taskmaster> exit
 <Exiting Taskmaster>
 
 
+---taskmaster session : 2019-12-27 18:18:16---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+display help
+taskmaster> start random69
+---taskmaster session : 2019-12-27 18:18:54---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69
+taskmaster> status
+random69 LOADED
+taskmaster> stop
+program || don't exist
+taskmaster> stop program69
+program |program69| don't exist
+taskmaster> stop random69
+stop random69
+---taskmaster session : 2019-12-27 18:23:55---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69
+taskmaster> status
+random69 LOADED
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 18:29:28---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 18:30:12---
+taskmaster> init
+loaded programs from conf file
+---taskmaster session : 2019-12-27 18:33:30---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 18:35:07---
+---taskmaster session : 2019-12-27 18:35:18---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 18:36:20---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 18:36:53---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 21:08:14---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+display help
+taskmaster> start random69
+---taskmaster session : 2019-12-27 21:09:05---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 21:09:26---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start radnom69
+program |radnom69| don't exist
+taskmaster> start random69
+---taskmaster session : 2019-12-27 21:10:17---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+ERROR: popen : sh sec_counter.bash can't run
+---taskmaster session : 2019-12-27 21:22:13---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start rabdom69
+program |rabdom69| don't exist
+taskmaster> start random69
+ERROR: popen : sh sec_counter.bash can't run
+taskmaster> start random69
+---taskmaster session : 2019-12-27 21:24:33---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 21:28:16---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+display help
+taskmaster> start random69
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 21:38:59---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+ERROR: popen : sh sec_counter.bash can't run
+---taskmaster session : 2019-12-27 21:39:30---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 21:41:24---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 21:43:17---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69
+taskmaster> status
+random69 LOADED
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 21:44:28---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69
+---taskmaster session : 2019-12-27 21:44:54---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start radnom69
+program |radnom69| don't exist
+taskmaster> start random69
+start random69
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2019-12-27 21:49:02---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2019-12-27 22:03:42---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+reloaded random69:sh sec_counter.bash
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2019-12-27 22:10:06---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+reloaded random69 : sh sec_counter.bash
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2019-12-27 22:11:51---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69 : sh sec_counter.bash
+taskmaster> status
+random69 LOADED
+---taskmaster session : 2019-12-27 22:13:03---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-27 22:13:47---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69 : sh sec_counter.bash
+taskmaster> 
+taskmaster> status
+---taskmaster session : 2019-12-27 22:16:29---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+reloaded random69 : sh sec_counter.bash
+taskmaster> status
+random69 : sh sec_counter.bash       <function Program.__init__.<locals>.<lambda> at 0x7fb461d060d0>      PID:<function Program.__init__.<locals>.<lambda> at 0x7fb461d06040> runtime:<function Program.__init__.<locals>.<lambda> at 0x7fb462d29c10>
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 22:42:22---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69 : sh sec_counter.bash
+taskmaster> status
+random69 : sh sec_counter.bash             PID:<function Program.__init__.<locals>.<lambda> at 0x7fd63e629f28> runtime:<function Program.__init__.<locals>.<lambda> at 0x7fd63e629ea0>
+taskmaster> status
+random69 : sh sec_counter.bash             PID:<function Program.__init__.<locals>.<lambda> at 0x7fd63e629f28> runtime:<function Program.__init__.<locals>.<lambda> at 0x7fd63e629ea0>
+taskmaster> status
+random69 : sh sec_counter.bash             PID:<function Program.__init__.<locals>.<lambda> at 0x7fd63e629f28> runtime:<function Program.__init__.<locals>.<lambda> at 0x7fd63e629ea0>
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69 : sh sec_counter.bash
+taskmaster> status
+random69 : sh sec_counter.bash       <function Program.__init__.<locals>.<lambda> at 0x7fb461d06d30>      PID:<function Program.__init__.<locals>.<lambda> at 0x7fb461d06c10> runtime:<function Program.__init__.<locals>.<lambda> at 0x7fb461d06ca0>
+taskmaster> status
+taskmaster> exit
+<Exiting Taskmaster>
+
+
