@@ -5,20 +5,27 @@ import multiprocessing
 import threading
 import configparser
 import time
+import datetime
 #log file ./taskmaster.log
 
 """
     TASKMASTER WILL LAUNCH PROGRAMS FROM 1 OR MULTIPLE CONF FILES
     YOU CAN PRECISE EACH PROGRAM
     SUPERVISOR SEEMED TO DO THINGS BY CONFIG FILE
+
+    timer is calc by epoch time differences from start  - end
 """
+
+#issues : bin/bash being spawed by popen must kill() them
+#reload processes after closing taskmaster, stock pids in log than kill the pid
+
 class Program():
 
     def __init__(self, program_name, iprogram, log_file_path):
         self.program = iprogram.copy()
         #add extra
         self.program['name'] = program_name
-        self.program['run_time'] = None
+        self.program['runtime'] = self.get_time_elapsed#function
         self.program['status'] = None
         self.program['log'] = log_file_path 
         self.program['cmd_process'] = None
@@ -28,55 +35,92 @@ class Program():
         self.program['stderr'] = open(self.program['stderr'], "a+")
 
     def start(self):#prevent starting two times
-        log_msg = 'start ' + self.program['name']
-        self.write_file(self.program['log'], log_msg)
-        self.launch_cmd()
+        if self.launch_cmd() == True:
+            log_msg = 'start ' + self.program['name']
+            self.program['status'] = 'RUNNING'
+        else:
+            log_msg = "ERROR: popen : " + self.data['command'] + " can't run"
+            self.program['status'] = 'FAILED'
+        self.print_stdout_log(log_msg)
+            
     
     def stop(self):
         log_msg = 'stop ' + self.program['name']
-        self.write_file(self.program['log'], log_msg)
+        self.print_stdout_log(log_msg)
         self.stop_cmd()
+        self.program['status'] = 'STOPPED'
          
 
     def status(self):
         #if self.program['cmd_process'] is not None and \
          #  self.program['cmd_process'].poll() is None:
         try:
-            status_msg = "{}   {} {} {} {}".format(
-                                                self.program['cmd_process'].args, 
-                                                self.program['status'],
-                                                'PID:', 
-                                                self.program['cmd_process'].pid, 
-                                                'uptime: 00:00:00'
-                                              )
-        except Exception:
-            status_msg = self.program['name'] + ' standby'
-        print(status_msg)
+            stuff = [
+                        self.program['name'],
+                        self.program['cmd_process'].args, 
+                        self.program['status'],
+                        self.program['cmd_process'].pid, 
+                        self.program['runtime']()
+                        #self.get_time_diff(self.get_now_time(), self.program['start_time'])
+                    ]
+
+            status_msg = "{} : {}       {}      PID:{} runtime:{}".format(*stuff)
+                                               
+                                              
+        except Exception as e:
+            print(e)
+            status_msg = self.program['name'] + ' LOADED'
+        self.print_stdout_log(status_msg)
 
     def stop_cmd(self):
         self.program['cmd_process'].kill()
         self.program['cmd_process'].wait()
-        self.program['status'] = 'STOPPED'
+        
 
     def launch_cmd(self):
         try:
             self.program['cmd_process'] = subprocess.Popen( self.program['command'],
+                                            shell=False,
                                             stdout=self.program['stdout'],
                                             stderr=self.program['stderr'])
-            self.program['status'] = 'RUNNING'
         except Exception:
-            err_msg = "ERROR: popen > " + self.data['command'] + " can't run"
-            self.write_file(self.program['log'], err_msg)
-            print(err_msg)
-            self.program['status'] = 'FAILED'
             return False
-
         return True 
 
+    def get_now_time(self):
+        return time.strftime("%H:%M:%S", time.localtime(time.time()))
+
+    def get_time_diff(self, t1:str, t2:str) -> str:
+        x = '%H:%M:%S'
+        tdiff = datetime.datetime.strptime(t1, x) - datetime.datetime.strptime(t2, x)
+        return tdiff
+
+    def get_time_elapsed(self):
+        time_elapsed = '?'
+        cmd_ref = ' '.join(self.program['command'])
+        cmd = 'ps -o cmd,etime | grep "{}"'.format(cmd_ref)
+
+        p = subprocess.Popen(cmd,
+                                        shell=True,
+                                        stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE)
+        time.sleep(1)
+        time_elapsed = p.stdout.read().decode('ascii').replace('\n', '').split(' ')[-1]
+        
+        #print(p.stdout.read())
+        p.kill()
+        p.wait()
+        return time_elapsed
+
+    def print_stdout_log(self, s):
+        print(s)
+        self.write_file(self.program['log'], s) 
 
     def write_file(self, file, s):
         with open(file, 'a+') as f:
-            f.write(s)    
+            f.write(s + '\n')    
+    
+
        # def run_cmd(self)
 
 
@@ -108,8 +152,11 @@ class Taskmaster_shell(cmd.Cmd):
         self.programs = dict()
 
         now_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
-        #intro
+        #dipslay help
         self.print_stdout_log('---taskmaster session : ' + now_time + '---')
+
+        #load your running process on computer
+
 
     def precmd(self, user_input):
         self.write_file(self.log_file_path, Taskmaster_shell.prompt + user_input)
@@ -122,6 +169,7 @@ class Taskmaster_shell(cmd.Cmd):
             p = Program(clean_program_name, section, self.log_file_path)
             self.programs[clean_program_name] = p
         self.print_stdout_log(' '.join(list(self.programs.keys())))
+
 
     #def do_run_all(self, user_input):
      #   for program in self.programs:
@@ -176,6 +224,35 @@ class Taskmaster_shell(cmd.Cmd):
         self.print_stdout_log('\n\n  Ctrl + d -> exit Taskmaster\n\n')
         return True
 
+    def do_help(self, user_input):
+        print('srcew you!')
+    
+    def do_pc(self, inp):
+        p = subprocess.Popen(["ps", "-o", "cmd,pid,start,etime"])
+        time.sleep(1)
+        p.kill()
+        p.wait()
+    
+    def do_pcx(self, inp):
+        time_elapsed = None
+        p = subprocess.Popen(["ps", "-o", "cmd,etime"],
+                                        stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE)
+        time.sleep(1)
+        #print(p.stdout.read())
+        output = p.stdout.readlines()
+        """
+        for pc in output:
+            pc = pc.decode('ascii')
+            s = pc.split(' ')
+            if self.program['random69']['command'] == s[0].split(' '):
+                time_elapsed = s[1]
+        """
+        print(*output, sep='\n')
+        p.kill()
+        p.wait()
+        print(time_elapsed)
+
 if __name__ == '__main__':
 
     ts = Taskmaster_shell()
@@ -184,6 +261,3 @@ if __name__ == '__main__':
     except KeyboardInterrupt:#and ctrl d
         Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
         #relaunch new instance of taskmaster
-    
-
-    

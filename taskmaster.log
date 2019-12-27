@@ -47,3 +47,394 @@ taskmaster> exit
   Ctrl + c -> exit Taskmaster
 
 
+---taskmaster session : 2019-12-26 19:38:26---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run
+program || don't exist
+taskmaster> run random69
+start random69taskmaster> status
+['sh', 'sec_counter.bash']   RUNNING PID: 20793 uptime: 00:00:00taskmaster> status
+['sh', 'sec_counter.bash']   RUNNING PID: 20793 uptime: 00:00:00taskmaster> stop
+program || don't exist
+taskmaster> stop random69
+stop random69taskmaster> status
+['sh', 'sec_counter.bash']   STOPPED PID: 20793 uptime: 00:00:00taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 19:52:47---
+taskmaster> 
+taskmaster> k
+display help
+taskmaster> 
+taskmaster> run dsaas
+program |dsaas| don't exist
+taskmaster> 
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run s
+program |s| don't exist
+taskmaster> run random69
+start random69taskmaster> status]\
+program |]\| don't exist
+taskmaster> status
+random69 > ['sh', 'sec_counter.bash']       RUNNING PID: 21151 uptime: 00:00:00taskmaster> stop random69
+stop random69taskmaster> status
+random69 > ['sh', 'sec_counter.bash']       STOPPED PID: 21151 uptime: 00:00:00taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 20:02:11---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> help
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 > ['sh', 'sec_counter.bash']       RUNNING      PID: 21419 uptime: 00:00:00
+taskmaster> status
+random69 > ['sh', 'sec_counter.bash']       RUNNING      PID: 21419 uptime: 00:00:00
+taskmaster> stop
+program || don't exist
+taskmaster> stop ran
+program |ran| don't exist
+taskmaster> stop random69
+stop random69
+taskmaster> status
+random69 > ['sh', 'sec_counter.bash']       STOPPED      PID: 21419 uptime: 00:00:00
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2019-12-26 20:07:41---
+taskmaster> help
+---taskmaster session : 2019-12-26 20:08:02---
+taskmaster> help
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2019-12-26 21:30:22---
+taskmaster> status
+taskmaster> help
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 24220 uptime:01:00:02
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 24220 uptime:01:00:12
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 24220 uptime:01:00:14
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 24220 uptime:01:00:15
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 24220 uptime:01:00:16
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 24220 uptime:01:00:16
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 24220 uptime:01:00:17
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 24220 uptime:01:01:37
+taskmaster> stop random69
+stop random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       STOPPED      PID: 24220 uptime:01:01:50
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       STOPPED      PID: 24220 uptime:01:02:08
+---taskmaster session : 2019-12-26 21:41:48---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       STOPPED      PID: 24220 uptime:01:55:32
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 23:11:28---
+taskmaster> EXIT
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 23:11:51---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run program69
+program |program69| don't exist
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID: 31119 nowtime
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 23:15:14---
+taskmaster> status
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+random69 LOADED
+taskmaster> status
+random69 LOADED
+taskmaster> stop random69
+stop random69
+---taskmaster session : 2019-12-26 23:16:27---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+random69 LOADED
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 LOADED
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 23:19:17---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 LOADED
+taskmaster> stop random69
+stop random69
+taskmaster> status
+random69 LOADED
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 23:21:24---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+---taskmaster session : 2019-12-26 23:27:07---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 LOADED
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-26 23:36:21---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 01:16:08---
+taskmaster> pc
+---taskmaster session : 2019-12-27 01:16:49---
+taskmaster> pc
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2019-12-27 01:19:22---
+taskmaster> pc
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 01:22:00---
+taskmaster> pc
+taskmaster> pc
+taskmaster> pc
+taskmaster> pc
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 12:36:58---
+taskmaster> pcx
+---taskmaster session : 2019-12-27 12:37:34---
+taskmaster> pcx
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 12:38:18---
+taskmaster> pcx
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 13:25:13---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+random69 LOADED
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID:28174 runtime:None
+taskmaster> stop random69
+stop random69
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID:28224 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 13:31:02---
+---taskmaster session : 2019-12-27 13:31:18---
+---taskmaster session : 2019-12-27 13:31:41---
+taskmaster> pcx
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 13:33:42---
+taskmaster> pcx
+---taskmaster session : 2019-12-27 13:34:37---
+taskmaster> pc
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 13:35:14---
+taskmaster> pcx
+---taskmaster session : 2019-12-27 13:35:51---
+taskmaster> pcx
+---taskmaster session : 2019-12-27 13:36:01---
+taskmaster> pcx
+---taskmaster session : 2019-12-27 13:36:34---
+taskmaster> pc
+---taskmaster session : 2019-12-27 13:38:05---
+taskmaster> pc
+taskmaster> psx
+display help
+taskmaster> pcx
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 13:38:37---
+taskmaster> pc
+taskmaster> pcx
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 13:39:36---
+taskmaster> pcx
+taskmaster> pcx
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2019-12-27 13:40:10---
+taskmaster> pcx
+---taskmaster session : 2019-12-27 13:40:47---
+taskmaster> pcx
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 14:06:00---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run rnadom69
+program |rnadom69| don't exist
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID:5661 runtime:b'#!/bin/bash\n'
+---taskmaster session : 2019-12-27 14:06:33---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run rnadom69
+program |rnadom69| don't exist
+taskmaster> run random69
+start random69
+taskmaster> status
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 14:10:06---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+---taskmaster session : 2019-12-27 14:22:52---
+---taskmaster session : 2019-12-27 14:23:33---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+---taskmaster session : 2019-12-27 14:24:49---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID:11231 runtime:58:23
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 14:25:19---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID:11508 runtime:58:49
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-27 14:25:53---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+start random69
+taskmaster> status
+random69 : ['sh', 'sec_counter.bash']       RUNNING      PID:11830 runtime:59:18
+taskmaster> exit
+<Exiting Taskmaster>
+
+
