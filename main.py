@@ -18,7 +18,8 @@ import datetime
 
 #issues : bin/bash being spawed by popen must kill() them
 #reload processes after closing taskmaster, stock pids in log than kill the pid
-
+#a program is 1 process like ls or count_time
+#only launch bash commands to control processes like pc kill dont pass by popen
 class Program():
 
     def __init__(self, program_name, iprogram, log_file_path):
@@ -28,9 +29,10 @@ class Program():
         self.program['runtime'] = self.get_time_elapsed#function
         self.program['status'] = None
         self.program['log'] = log_file_path 
-        self.program['cmd_process'] = None
+        self.program['popen'] = None
         #replace str by obj
-        self.program['command'] = self.program['command'].replace('\n', '').split(' ')
+        self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
+        self.program['cmd'] = self.program['command'].replace('\n', '')
         self.program['stdout'] = open(self.program['stdout'], "a+")
         self.program['stderr'] = open(self.program['stderr'], "a+")
 
@@ -50,17 +52,17 @@ class Program():
         self.stop_cmd()
         self.program['status'] = 'STOPPED'
          
-
+    #if already launched no popen object
     def status(self):
         #if self.program['cmd_process'] is not None and \
          #  self.program['cmd_process'].poll() is None:
         try:
             stuff = [
                         self.program['name'],
-                        self.program['cmd_process'].args, 
+                        self.program['command'], 
                         self.program['status'],
-                        self.program['cmd_process'].pid, 
-                        self.program['runtime']()
+                        self.get_pc_info(self.program['command'], 'pid'), #catch by info 
+                        self.get_pc_info(self.program['command'], 'etime')
                         #self.get_time_diff(self.get_now_time(), self.program['start_time'])
                     ]
 
@@ -73,28 +75,31 @@ class Program():
         self.print_stdout_log(status_msg)
 
     def stop_cmd(self):
+
+        """
         self.program['cmd_process'].kill()
         self.program['cmd_process'].wait()
+        """
         
 
     def launch_cmd(self):
+        cmd = ' '.join(self.program['command'])
+        os_pc = self.get_pc_info(cmd, 'list')
+        if cmd in os_pc:
+            return True
         try:
-            self.program['cmd_process'] = subprocess.Popen( self.program['command'],
+            self.program['cmd_process'] = self.popen_cmd(self.program['command'], self.program['stdout'], self.program['stderr'])
+            """
+            subprocess.Popen( self.program['command'],
                                             shell=False,
                                             stdout=self.program['stdout'],
                                             stderr=self.program['stderr'])
+            """
         except Exception:
             return False
         return True 
 
-    def get_now_time(self):
-        return time.strftime("%H:%M:%S", time.localtime(time.time()))
-
-    def get_time_diff(self, t1:str, t2:str) -> str:
-        x = '%H:%M:%S'
-        tdiff = datetime.datetime.strptime(t1, x) - datetime.datetime.strptime(t2, x)
-        return tdiff
-
+    """
     def get_time_elapsed(self):
         time_elapsed = '?'
         cmd_ref = ' '.join(self.program['command'])
@@ -104,13 +109,52 @@ class Program():
                                         shell=True,
                                         stdout=subprocess.PIPE,
                                         stderr=subprocess.PIPE)
-        time.sleep(1)
+        p.wait()
+        #time.sleep(1)
         time_elapsed = p.stdout.read().decode('ascii').replace('\n', '').split(' ')[-1]
-        
-        #print(p.stdout.read())
         p.kill()
         p.wait()
         return time_elapsed
+    
+    def get_os_pros(self):
+        cmd = 'ps -o cmd'
+        p = subprocess.Popen(cmd,
+                                        shell=True,
+                                        stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE)
+        p.wait()
+        #time.sleep(1)
+        os_proc = p.stdout.read().decode('ascii').split('\n')
+        p.kill()
+        p.wait()
+        return os_proc
+    """
+    
+    #search for nothing '' get all 
+    def get_pc_info(self, cmd, info):
+        cmd = 'ps -o cmd,pid,etime | grep "{cmd}"'.format(cmd=cmd)
+        p = self.popen_cmd(cmd, subprocess.PIPE, subprocess.PIPE)
+        p.wait()
+
+        cmd_output = p.stdout.read()
+        ps_info = cmd_output.decode('ascii').split('\n')
+        if  info == 'list':
+            return ps_info
+        ps_info = p.stdout.read().decode('ascii').replace('\n', '').split(' ')
+        if info == 'pid':
+            return ps_info[1]
+        if info == 'etime':
+            return ps_info[2]
+
+        p.kill()
+        p.wait()
+
+    def popen_cmd(self, cmd, istdout, istderr):
+        p = subprocess.Popen(cmd,
+                            shell=True,
+                            stdout=istdout,
+                            stderr=istderr)
+        return p
 
     def print_stdout_log(self, s):
         print(s)
