@@ -796,3 +796,63 @@ taskmaster> exit
 <Exiting Taskmaster>
 
 
+---taskmaster session : 2019-12-28 13:56:18---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2019-12-28 14:19:33---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69 : sh sec_counter.bash
+taskmaster> status
+random69 : sh sec_counter.bash       sec_counter.bash      PID: runtime:None
+---taskmaster session : 2019-12-28 14:21:19---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+start random69 : sh sec_counter.bash
+taskmaster> status
+---taskmaster session : 2019-12-28 14:23:44---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+reloaded random69 : sh sec_counter.bash
+taskmaster> status
+---taskmaster session : 2019-12-28 14:25:48---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+reloaded random69 : sh sec_counter.bash
+taskmaster> status
+---taskmaster session : 2019-12-28 14:40:14---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-28 14:41:46---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+---taskmaster session : 2019-12-28 14:45:06---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> run random69
+display help
+taskmaster> start random69
+---taskmaster session : 2019-12-28 14:48:00---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+taskmaster> exit
+<Exiting Taskmaster>
+
+

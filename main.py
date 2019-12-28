@@ -7,6 +7,7 @@ import configparser
 import time
 import datetime
 import sys
+import re
 #log file ./taskmaster.log
 
 """
@@ -30,9 +31,11 @@ class Program():
         self.program['name'] = program_name
         self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
         self.program['cmd'] = self.program['command'].replace('\n', '')
+        """
         self.program['etime'] = lambda : self.get_ps_info(self.program['cmd'], 'etime')#function
         self.program['pid'] = lambda : self.get_ps_info(self.program['cmd'], 'pid')
         self.program['status'] = lambda : self.get_ps_info(self.program['cmd'], 'status')#function
+        """
         self.program['log'] = log_file_path 
         self.program['popen'] = None
         self.program['stdout'] = open(self.program['stdout'], "a+")
@@ -65,9 +68,9 @@ class Program():
             stuff = [
                         self.program['name'],
                         self.program['cmd'], 
-                        self.program['status'],
-                        self.program['pid'], #catch by info 
-                        self.program['etime']
+                        self.get_ps_info(self.program['cmd'], 'pid'),
+                        self.get_ps_info(self.program['cmd'], 'etime'),
+                        self.get_ps_info(self.program['cmd'], 'state')
                         #self.get_time_diff(self.get_now_time(), self.program['start_time'])
                     ]
 
@@ -80,7 +83,7 @@ class Program():
         self.print_stdout_log(status_msg)
 
     def stop_cmd(self):
-        cmd =  "kill -9 {pid}".format(pid=self.program['pid'])#SIGKILL
+        cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
         self.run_cmd(cmd)
         
 
@@ -94,58 +97,48 @@ class Program():
         except Exception as e:
             return False
         return True 
-
-    """
-    def get_time_elapsed(self):
-        time_elapsed = '?'
-        cmd_ref = ' '.join(self.program['command'])
-        cmd = 'ps -o cmd,etime | grep "{}"'.format(cmd_ref)
-
-        p = subprocess.Popen(cmd,
-                                        shell=True,
-                                        stdout=subprocess.PIPE,
-                                        stderr=subprocess.PIPE)
-        p.wait()
-        #time.sleep(1)
-        time_elapsed = p.stdout.read().decode('ascii').replace('\n', '').split(' ')[-1]
-        p.kill()
-        p.wait()
-        return time_elapsed
-    
-    def get_os_pros(self):
-        cmd = 'ps -o cmd'
-        p = subprocess.Popen(cmd,
-                                        shell=True,
-                                        stdout=subprocess.PIPE,
-                                        stderr=subprocess.PIPE)
-        p.wait()
-        #time.sleep(1)
-        os_proc = p.stdout.read().decode('ascii').split('\n')
-        p.kill()
-        p.wait()
-        return os_proc
-    """
     
     #search for nothing '' get all 
     def get_ps_info(self, cmd, info):
         cmd = 'ps -o cmd,pid,state,etime | grep "{cmd}"'.format(cmd=cmd)
         p = self.run_cmd(cmd, subprocess.PIPE, subprocess.PIPE, True)
+        #put shell to false t oavoid bin/bash process to be launched
+        #may have to devide the popen into two
         p.wait()
 
         cmd_output = p.stdout.read()
+        os_pc = dict()
+        pc_str_lst = cmd_output.decode('ascii').split('\n')
+        #pc_str_lst = [pc_bstr.decode('ascii') for pc_bstr in pc_bstr_lst]
+        for pc_str in pc_str_lst:
+            pc_str_div = pc_str.split( )
+            #have to fetch manually 'cmdsh x pidNNNNN is a command
+            pc_name = pc_str[]
+
+            pc_name = pc_str_div[0]
+            os_pc[pc_name] = dict()
+            os_pc[pc_name]['pid'] = pc_str_div[1]
+            os_pc[pc_name]['state'] = pc_str_div[2]
+            os_pc[pc_name]['etime'] = pc_str_div[3]
+            
+
+
+
+        """
         ps_info = cmd_output.decode('ascii').split('\n')
         if info == 'list':
             return ps_info
         if cmd_output == '':
             return None
-        ps_info = cmd_output.decode('ascii').replace('\n', '').split(' ')
+        #i consider theres only one string when here
+        ps_info = cmd_output.decode('ascii').replace('\n', ' ').split(' ')
         if info == 'pid':
             return ps_info[1]
         if info == 'status':
             return ps_info[2]
         if info == 'etime':
             return ps_info[3]
-
+        """
         p.kill()
         p.wait()
 
