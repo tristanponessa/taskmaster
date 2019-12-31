@@ -9,6 +9,8 @@ import datetime
 import sys
 import re
 import itertools
+import psutil
+import os
 
 
 """
@@ -59,11 +61,11 @@ class Program():
         self.program['name'] = program_name
         self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
         self.program['cmd'] = self.program['command'].replace('\n', '')
-        """
+        
         self.program['etime'] = lambda : self.get_ps_info(self.program['cmd'], 'etime')#function
         self.program['pid'] = lambda : self.get_ps_info(self.program['cmd'], 'pid')
         self.program['status'] = lambda : self.get_ps_info(self.program['cmd'], 'status')#function
-        """
+        
         self.program['log'] = log_file_path 
         self.program['popen'] = None
         self.program['stdout'] = open(self.program['stdout'], "a+")
@@ -84,18 +86,33 @@ class Program():
                     self.get_ps_info(self.program['cmd'], 'etime'),
                     self.get_ps_info(self.program['cmd'], 'state')
                 ]
+        print('test:' + self.get_ps_info(self.program['cmd'], 'etime'))
 
         status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*stuff)
         return status_msg
  
     def get_ps_info(self, ps_name, info):
+        """
+        cmd = 'ps -o {info} | grep "{ps_name}"'.format(info=info, ps_name=ps_name)
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+        val = p.stdout.read().decode('ascii').replace('\n', '')
+        return val
+        #p.wait()
+        """
+        
+
         cmd_ps = 'ps -o {info} --no-headers'.format(info=info)
         cmd_grep = 'grep "{ps_name}"'.format(ps_name=ps_name)
-        p1 = subprocess.Popen(cmd_ps, stdout=subprocess.PIPE)
-        p2 = subprocess.Popen(cmd_grep, stdin=p1, stdout=subprocess.PIPE)
+        p1 = subprocess.Popen(cmd_ps, stdout=subprocess.PIPE, shell=True)
+        p2 = subprocess.Popen(cmd_grep, stdin=p1.stdout, stdout=subprocess.PIPE, shell=True)
         val = p2.stdout.read().decode('ascii').replace('\n', '')
+        p1.wait()
+        p2.wait()
+
+
         #p kill perhaps
         return val
+        
     
     def print_stdout_log(self, s):
         print(s)
@@ -172,7 +189,7 @@ class Taskmaster_shell(cmd.Cmd):
     def do_start(self, user_input):
         try:
             self.programs[user_input].start_ps()
-            self.print_stdout_log("starting process |" + user_input + "| can't run")
+            self.print_stdout_log("starting process |" + user_input + "| running")
         except KeyError:
             self.print_stdout_log("process |" + user_input + "| don't exist")
 
@@ -226,6 +243,28 @@ class Taskmaster_shell(cmd.Cmd):
         p1 = subprocess.Popen(cmd_ps, stdout=subprocess.PIPE)
         val = p1.stdout.read().decode('ascii').split('\n')
         return val
+    
+    def do_psx(self, i):
+        
+        proc_iter = psutil.process_iter(attrs=["pid", "name", "cmdline"])
+        for proc in proc_iter:
+            if proc.info['pid'] == 18408:
+                print(proc.info['pid'], ' ', proc.info['name'], ' ', proc.info['cmdline'])
+
+        for proc in psutil.process_iter():
+            try:
+                # Get process name & pid from process object.
+                processName = proc.name()
+                processID = proc.pid
+                
+                #print(processName , ' ::: ', proc.exe() , ':', processID)
+                #if  '.sh' in proc.exe():
+                print(proc.exe(), '>>', processName , ' :::', processID)
+            except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+                pass
+    
+    def do_reboot(self, i):
+        os.execl(sys.executable, sys.executable, *sys.argv)
 
 if __name__ == '__main__':
 
