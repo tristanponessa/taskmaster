@@ -73,11 +73,15 @@ class Program():
         os.kill(self.program['pid'](), signal.SIGKILL)
         #cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
         #subprocess.Popen(cmd)
-        
+    
+    #launch one instance of a process
     def start_ps(self):
-        with open(self.program['stdout'],'a+') as out, \
-             open(self.program['stderr'],'a+') as err:
-            psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
+        if get_ps_info(self, 'cmdline') == "":
+            with open(self.program['stdout'],'a+') as out, \
+                 open(self.program['stderr'],'a+') as err:
+                    psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
+                    return True
+            return False
     
     def status_ps(self):
 
@@ -100,7 +104,7 @@ class Program():
             #print(p)
             if p['cmdline'] == self.program['cmdp']:
                 if info == 'create_time':
-                    val = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(p[info]))
+                    val = time.strftime("%H:%M:%S", time.localtime(p[info]))
                 else:
                     val = p[info]
                 break
@@ -127,6 +131,7 @@ class Taskmaster_shell(cmd.Cmd):
             -stocks programs in list from file
             -stocks actions in log file
             -preform actions from program objects from program list
+            -launch one process instance 
     """
     
     prompt = 'taskmaster> '
@@ -180,8 +185,11 @@ class Taskmaster_shell(cmd.Cmd):
     
     def do_start(self, user_input):
         try:
-            self.programs[user_input].start_ps()
-            self.print_stdout_log("starting process |" + user_input + "| running")
+            v = self.programs[user_input].start_ps()
+            if not v:
+                self.print_stdout_log("process |" + user_input + "| ALREADY running")
+            else:    
+                self.print_stdout_log("starting process |" + user_input + "| running")
         except KeyError:
             self.print_stdout_log("process |" + user_input + "| don't exist")
 
