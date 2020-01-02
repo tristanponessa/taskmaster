@@ -1102,3 +1102,189 @@ taskmaster> reboot
 taskmaster> psx
 taskmaster> git add *
 display help
+---taskmaster session : 2019-12-31 19:15:13---
+taskmaster> psx
+taskmaster> reboot
+---taskmaster session : 2019-12-31 19:16:27---
+taskmaster> psx
+---taskmaster session : 2019-12-31 19:19:29---
+taskmaster> psx
+---taskmaster session : 2019-12-31 19:22:16---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> reboot
+---taskmaster session : 2019-12-31 19:35:51---
+taskmaster> psx
+---taskmaster session : 2019-12-31 19:36:17---
+taskmaster> psx
+---taskmaster session : 2019-12-31 20:39:20---
+taskmaster> psx
+---taskmaster session : 2019-12-31 22:30:45---
+taskmaster> psx
+---taskmaster session : 2019-12-31 22:49:27---
+taskmaster> psx
+taskmaster> psx
+taskmaster> psx
+taskmaster> reboot
+---taskmaster session : 2019-12-31 23:05:39---
+taskmaster> psx
+---taskmaster session : 2019-12-31 23:06:23---
+taskmaster> psx
+---taskmaster session : 2019-12-31 23:07:14---
+taskmaster> psx
+taskmaster> clear
+display help
+---taskmaster session : 2020-01-01 02:55:51---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> status
+---taskmaster session : 2020-01-01 17:59:56---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> status
+---taskmaster session : 2020-01-01 18:01:48---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> status
+---taskmaster session : 2020-01-01 18:03:15---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> status
+random69 : sh sec_counter.bash       state:       PID: runtime:
+taskmaster> reboot
+---taskmaster session : 2020-01-01 19:17:38---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-01-01 19:27:47---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> status
+random69 : sh sec_counter.bash       state:       PID: runtime:
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-01-01 19:30:00---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random9
+process |random9| don't exist
+taskmaster> start random69
+starting process |random69| running
+taskmaster> status
+random69 : sh sec_counter.bash       state:       PID: runtime:
+taskmaster> reboot
+---taskmaster session : 2020-01-01 19:34:53---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+random69 : sh sec_counter.bash       state:       PID: runtime:
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-01-01 21:35:06---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> reboot
+---taskmaster session : 2020-01-01 21:41:30---
+taskmaster> psx
+---taskmaster session : 2020-01-01 21:43:49---
+taskmaster> psx
+taskmaster> reboot
+---taskmaster session : 2020-01-01 22:02:32---
+taskmaster> psx
+taskmaster> reboot
+---taskmaster session : 2020-01-01 22:14:48---
+taskmaster> start random69
+process |random69| don't exist
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+random69 : sh sec_counter.bash       state: 1577910912.22      PID:29175 runtime:sleeping
+taskmaster> reb
+display help
+---taskmaster session : 2020-01-01 22:53:28---
+taskmaster> status
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+random69 : sh sec_counter.bash       state: 29175      PID:1577910912.22 runtime:sleeping
+taskmaster> reboot
+---taskmaster session : 2020-01-01 23:01:15---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+random69 : sh sec_counter.bash       state: sleeping      PID:29175 runtime:1577910912.22
+taskmaster> reboot
+---taskmaster session : 2020-01-01 23:54:35---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+---taskmaster session : 2020-01-01 23:54:42---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> start random69
+starting process |random69| running
+taskmaster> status
+---taskmaster session : 2020-01-02 00:14:35---
+taskmaster> reboot
+---taskmaster session : 2020-01-02 00:14:47---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+---taskmaster session : 2020-01-02 00:14:51---
+taskmaster> reboot
+---taskmaster session : 2020-01-02 00:33:41---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+---taskmaster session : 2020-01-02 00:40:02---
+taskmaster> reboot
+---taskmaster session : 2020-01-02 00:40:17---
+taskmaster> init
+loaded programs from conf file
+random69
+taskmaster> status
+random69 : sh sec_counter.bash       state: sleeping      PID:29175 runtime:2020-01-01 21:35:12
+taskmaster> exit
+<Exiting Taskmaster>
+
+

@@ -11,6 +11,7 @@ import re
 import itertools
 import psutil
 import os
+import signal
 
 
 """
@@ -61,59 +62,50 @@ class Program():
         self.program['name'] = program_name
         self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
         self.program['cmd'] = self.program['command'].replace('\n', '')
-        
-        self.program['etime'] = lambda : self.get_ps_info(self.program['cmd'], 'etime')#function
-        self.program['pid'] = lambda : self.get_ps_info(self.program['cmd'], 'pid')
-        self.program['status'] = lambda : self.get_ps_info(self.program['cmd'], 'status')#function
+        #has to be updatable so lamdba
+        self.program['create_time'] =  lambda : self.get_ps_info('create_time')#function
+        self.program['pid'] =          lambda : self.get_ps_info('pid')
+        self.program['status'] =       lambda : self.get_ps_info('status')#function
         
         self.program['log'] = log_file_path 
-        self.program['popen'] = None
-        self.program['stdout'] = open(self.program['stdout'], "a+")
-        self.program['stderr'] = open(self.program['stderr'], "a+")
 
     def stop_ps(self):
-        cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
-        subprocess.Popen(cmd)
+        os.kill(self.program['pid'](), signal.SIGKILL)
+        #cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
+        #subprocess.Popen(cmd)
         
     def start_ps(self):
-        subprocess.Popen(self.program['cmdp'], stdout=self.program['stdout'], stderr=self.program['stderr'])
+        with open(self.program['stdout'],'a+') as out, \
+             open(self.program['stderr'],'a+') as err:
+            psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
     
     def status_ps(self):
-        stuff = [
-                    self.program['name'],
-                    self.program['cmd'], 
-                    self.get_ps_info(self.program['cmd'], 'pid'),
-                    self.get_ps_info(self.program['cmd'], 'etime'),
-                    self.get_ps_info(self.program['cmd'], 'state')
-                ]
-        print('test:' + self.get_ps_info(self.program['cmd'], 'etime'))
 
-        status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*stuff)
+        lst = [
+                self.program['name'],    
+                self.program['cmd'],
+                self.program['status'](),
+                self.program['pid'](),
+                self.program['create_time']()
+              ]
+        
+        status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*lst)
         return status_msg
- 
-    def get_ps_info(self, ps_name, info):
-        """
-        cmd = 'ps -o {info} | grep "{ps_name}"'.format(info=info, ps_name=ps_name)
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
-        val = p.stdout.read().decode('ascii').replace('\n', '')
-        return val
-        #p.wait()
-        """
-        
-
-        cmd_ps = 'ps -o {info} --no-headers'.format(info=info)
-        cmd_grep = 'grep "{ps_name}"'.format(ps_name=ps_name)
-        p1 = subprocess.Popen(cmd_ps, stdout=subprocess.PIPE, shell=True)
-        p2 = subprocess.Popen(cmd_grep, stdin=p1.stdout, stdout=subprocess.PIPE, shell=True)
-        val = p2.stdout.read().decode('ascii').replace('\n', '')
-        p1.wait()
-        p2.wait()
-
-
-        #p kill perhaps
-        return val
-        
     
+    def get_ps_info(self, info):   
+        val = ""
+        proc_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
+        for proc in proc_iter:
+            p = proc.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
+            #print(p)
+            if p['cmdline'] == self.program['cmdp']:
+                if info == 'create_time':
+                    val = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(p[info]))
+                else:
+                    val = p[info]
+                break
+        return val
+        
     def print_stdout_log(self, s):
         print(s)
         self.write_file(self.program['log'], s) 
@@ -126,7 +118,7 @@ class Program():
        # def run_cmd(self)
 
 
-
+#has auto complete but not for args for do commands
 class Taskmaster_shell(cmd.Cmd):
 
     """
@@ -239,29 +231,35 @@ class Taskmaster_shell(cmd.Cmd):
         print('srcew you!')
     
     def get_os_ps_lst(self):
-        cmd_ps = 'ps -o cmd --no-headers'
-        p1 = subprocess.Popen(cmd_ps, stdout=subprocess.PIPE)
-        val = p1.stdout.read().decode('ascii').split('\n')
+        val = '0'
         return val
     
     def do_psx(self, i):
         
-        proc_iter = psutil.process_iter(attrs=["pid", "name", "cmdline"])
-        for proc in proc_iter:
-            if proc.info['pid'] == 18408:
-                print(proc.info['pid'], ' ', proc.info['name'], ' ', proc.info['cmdline'])
+        #proc_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
+            #for proc in proc_iter:
+            #p = proc.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
+            #print(*p)
+            #print(p)
+            #print(proc)
 
-        for proc in psutil.process_iter():
-            try:
-                # Get process name & pid from process object.
-                processName = proc.name()
-                processID = proc.pid
+            proc_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
+            for proc in proc_iter:
+                p = proc.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
+                #print(p)
                 
-                #print(processName , ' ::: ', proc.exe() , ':', processID)
-                #if  '.sh' in proc.exe():
-                print(proc.exe(), '>>', processName , ' :::', processID)
-            except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-                pass
+                if p['cmdline'] == self.program['cmdp']:
+                    print(p)
+                #p = ''.join(p['cmdline'])
+                #if p['pid'] == 29175:
+                 #   print(p, '=', self.program['cmd'], '>', p['pid'])
+                
+        
+            
+            
+
+       
+       
     
     def do_reboot(self, i):
         os.execl(sys.executable, sys.executable, *sys.argv)
@@ -273,4 +271,9 @@ if __name__ == '__main__':
         ts.cmdloop()
     except KeyboardInterrupt:#and ctrl d
         Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
+    except Exception as e:
+        print(str(e))
+        print('::::CRASH REBOOTING.....::::')
+        os.execl(sys.executable, sys.executable, *sys.argv)
+
         #relaunch new instance of taskmaster
