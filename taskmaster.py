@@ -12,6 +12,7 @@ import itertools
 import psutil
 import os
 import signal
+import traceback
 
 
 """
@@ -70,18 +71,21 @@ class Program():
         self.program['log'] = log_file_path 
 
     def stop_ps(self):
-        os.kill(self.program['pid'](), signal.SIGKILL)
+        if self.get_ps_info('cmdline') != "":
+            os.kill(self.program['pid'](), signal.SIGKILL)
+            return True
+        return False
         #cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
         #subprocess.Popen(cmd)
     
     #launch one instance of a process
     def start_ps(self):
-        if get_ps_info(self, 'cmdline') == "":
+        if self.get_ps_info('cmdline') == "":
             with open(self.program['stdout'],'a+') as out, \
                  open(self.program['stderr'],'a+') as err:
                     psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
-                    return True
-            return False
+            return True
+        return False
     
     def status_ps(self):
 
@@ -105,6 +109,8 @@ class Program():
             if p['cmdline'] == self.program['cmdp']:
                 if info == 'create_time':
                     val = time.strftime("%H:%M:%S", time.localtime(p[info]))
+                elif info == 'pid':
+                    val = int(p[info])
                 else:
                     val = p[info]
                 break
@@ -195,8 +201,11 @@ class Taskmaster_shell(cmd.Cmd):
 
     def do_stop(self, user_input):
         try:
-            self.programs[user_input].stop_ps()
-            self.print_stdout_log("stopping process |" + user_input + "| can't run")
+            v = self.programs[user_input].stop_ps()
+            if not v:
+                self.print_stdout_log("stop process ALREADY" + user_input)
+            else:
+                self.print_stdout_log("processes stopped " + user_input)
         except KeyError:
             self.print_stdout_log("process |" + user_input + "| don't exist")
     
@@ -235,13 +244,9 @@ class Taskmaster_shell(cmd.Cmd):
         self.print_stdout_log('\n\n  Ctrl + d -> exit Taskmaster\n\n')
         return True
 
-    def do_help(self, user_input):
+    def do_help(self, user_input=''):
         print('srcew you!')
-    
-    def get_os_ps_lst(self):
-        val = '0'
-        return val
-    
+
     def do_psx(self, i):
         
         #proc_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
@@ -276,11 +281,12 @@ if __name__ == '__main__':
 
     ts = Taskmaster_shell()
     try:
+        
         ts.cmdloop()
     except KeyboardInterrupt:#and ctrl d
         Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
     except Exception as e:
-        print(str(e))
+        print(traceback.print_exc())
         print('::::CRASH REBOOTING.....::::')
         os.execl(sys.executable, sys.executable, *sys.argv)
 
