@@ -184,6 +184,10 @@ class Taskmaster_shell(cmd.Cmd):
             self.programs[clean_program_name] = p
         self.print_stdout_log(' '.join(list(self.programs.keys())))
 
+        #if self.programs[user_input]['autostart'] == True:
+        #    #self.do_start(self.programs[user_input]['name'])
+        #    print(self.programs[user_input]['name'])
+
 
     #def do_run_all(self, user_input):
      #   for program in self.programs:
@@ -246,33 +250,6 @@ class Taskmaster_shell(cmd.Cmd):
 
     def do_help(self, user_input=''):
         print('srcew you!')
-
-    def do_psx(self, i):
-        
-        #proc_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
-            #for proc in proc_iter:
-            #p = proc.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
-            #print(*p)
-            #print(p)
-            #print(proc)
-
-            proc_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
-            for proc in proc_iter:
-                p = proc.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
-                #print(p)
-                
-                if p['cmdline'] == self.program['cmdp']:
-                    print(p)
-                #p = ''.join(p['cmdline'])
-                #if p['pid'] == 29175:
-                 #   print(p, '=', self.program['cmd'], '>', p['pid'])
-                
-        
-            
-            
-
-       
-       
     
     def do_reboot(self, i):
         os.execl(sys.executable, sys.executable, *sys.argv)
@@ -285,9 +262,10 @@ if __name__ == '__main__':
         ts.cmdloop()
     except KeyboardInterrupt:#and ctrl d
         Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
+    """
     except Exception as e:
         print(traceback.print_exc())
         print('::::CRASH REBOOTING.....::::')
         os.execl(sys.executable, sys.executable, *sys.argv)
-
+    """
         #relaunch new instance of taskmaster
