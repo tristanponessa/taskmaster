@@ -72,6 +72,9 @@ class Program():
 
     def stop_ps(self):
         if self.get_ps_info('cmdline') != "":
+            #if self.program['stoptime'] != '':
+                #thread clocck n sec 
+
             os.kill(self.program['pid'](), signal.SIGKILL)
             return True
         return False
@@ -184,6 +187,14 @@ class Taskmaster_shell(cmd.Cmd):
             self.programs[clean_program_name] = p
         self.print_stdout_log(' '.join(list(self.programs.keys())))
 
+        print(self.programs['random69'].program['autostart'])
+        if self.programs['random69'].program['autostart']:
+            self.programs['random69'].start_ps()
+            self.print_stdout_log("starting process |" + None + "| running")
+            
+            
+         
+        
         #if self.programs[user_input]['autostart'] == True:
         #    #self.do_start(self.programs[user_input]['name'])
         #    print(self.programs[user_input]['name'])
