@@ -70,12 +70,19 @@ class Program():
         
         self.program['log'] = log_file_path 
 
+    def msh(self):
+        print(self.program['stoptime'])
+        time.sleep(5)
+        os.kill(self.program['pid'](), signal.SIGKILL)
+
     def stop_ps(self):
         if self.get_ps_info('cmdline') != "":
             #if self.program['stoptime'] != '':
                 #thread clocck n sec 
+            p = multiprocessing.Process(target=self.msh)
+            p.start()
 
-            os.kill(self.program['pid'](), signal.SIGKILL)
+            #os.kill(self.program['pid'](), signal.SIGKILL)
             return True
         return False
         #cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
@@ -190,7 +197,7 @@ class Taskmaster_shell(cmd.Cmd):
         print(self.programs['random69'].program['autostart'])
         if self.programs['random69'].program['autostart']:
             self.programs['random69'].start_ps()
-            self.print_stdout_log("starting process |" + None + "| running")
+            self.print_stdout_log("starting process |" + "" + "| running")
             
             
          
