@@ -2042,3 +2042,47 @@ random69 : sh sec_counter.bash       state:       PID: runtime:
   Ctrl + c -> exit Taskmaster
 
 
+---taskmaster session : 2020-02-28 15:28:47---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-02-28 15:29:40---
+---taskmaster session : 2020-02-28 17:40:40---
+taskmaster> init
+loaded programs from conf file
+random69
+starting process || running
+---taskmaster session : 2020-02-28 17:47:05---
+taskmaster> init
+loaded programs from conf file
+random69
+starting process || running
+---taskmaster session : 2020-02-28 17:52:12---
+taskmaster> init
+loaded programs from conf file
+random69
+---taskmaster session : 2020-02-28 19:02:53---
+taskmaster> init
+loaded programs from conf file
+random101
+---taskmaster session : 2020-02-28 19:03:52---
+taskmaster> init
+loaded programs from conf file
+random101
+---taskmaster session : 2020-02-28 19:08:12---
+taskmaster> init
+loaded programs from conf file
+random101
+starting process || running
+taskmaster> status
+random101 : sh sec_counter.bash       state: 0      PID:0 runtime:0
+taskmaster> run random101
+display help
+taskmaster> start random101
+process |random101| ALREADY running
+taskmaster> status
+random101 : sh sec_counter.bash       state: 0      PID:0 runtime:0
+taskmaster> stop random101
+processes stopped random101
+taskmaster> 

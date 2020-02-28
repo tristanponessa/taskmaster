@@ -58,6 +58,11 @@ class Program():
     
 
     def __init__(self, program_name, iprogram, log_file_path):
+        """
+            cmdline 
+            a ps contains the cmdline that launches it 
+            i also stock it in self.program[cmd/cmdp]
+        """
         self.program = iprogram.copy()
         #add extra
         self.program['name'] = program_name
@@ -67,16 +72,18 @@ class Program():
         self.program['create_time'] =  lambda : self.get_ps_info('create_time')#function
         self.program['pid'] =          lambda : self.get_ps_info('pid')
         self.program['status'] =       lambda : self.get_ps_info('status')#function
+        #elf.program['isalive'] =      lambda : self.get_ps_info('isalive')#status has weird names and unexpected states
         
         self.program['log'] = log_file_path 
 
     def msh(self):
         print(self.program['stoptime'])
-        time.sleep(5)
+        time.sleep(self.program['stoptime'])
         os.kill(self.program['pid'](), signal.SIGKILL)
 
     def stop_ps(self):
-        if self.get_ps_info('cmdline') != "":
+        #if self.get_ps_info('cmdline') != "":
+        if psutil.pid_exists(self.program['pid']()):
             #if self.program['stoptime'] != '':
                 #thread clocck n sec 
             p = multiprocessing.Process(target=self.msh)
@@ -90,7 +97,11 @@ class Program():
     
     #launch one instance of a process
     def start_ps(self):
-        if self.get_ps_info('cmdline') == "":
+        """
+            cmdline 
+        """
+        #if self.get_ps_info('cmdline') == "":
+        if not psutil.pid_exists(self.program['pid']()):
             with open(self.program['stdout'],'a+') as out, \
                  open(self.program['stderr'],'a+') as err:
                     psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
@@ -110,12 +121,16 @@ class Program():
         status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*lst)
         return status_msg
     
-    def get_ps_info(self, info):   
-        val = ""
+    def get_ps_info(self, info):
+        """
+            proc_iter contains all the info of a ps given by the os
+        """
+        val = 0
         proc_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
         for proc in proc_iter:
             p = proc.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
-            #print(p)
+
+            #default values
             if p['cmdline'] == self.program['cmdp']:
                 if info == 'create_time':
                     val = time.strftime("%H:%M:%S", time.localtime(p[info]))
@@ -134,6 +149,16 @@ class Program():
         with open(file, 'a+') as f:
             f.write(s + '\n')    
     
+#    
+#    def ps_isalive(self):
+#        """
+#            multiple techniks 
+#            check state
+#            check if has cmdline
+#        """
+#        if self.get_ps_info('cmdline') == "":
+#            return True
+#        return False
 
        # def run_cmd(self)
 
@@ -194,9 +219,9 @@ class Taskmaster_shell(cmd.Cmd):
             self.programs[clean_program_name] = p
         self.print_stdout_log(' '.join(list(self.programs.keys())))
 
-        print(self.programs['random69'].program['autostart'])
-        if self.programs['random69'].program['autostart']:
-            self.programs['random69'].start_ps()
+        print(self.programs['random101'].program['autostart'])
+        if self.programs['random101'].program['autostart']:
+            self.programs['random101'].start_ps()
             self.print_stdout_log("starting process |" + "" + "| running")
             
             
