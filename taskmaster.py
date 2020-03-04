@@ -140,6 +140,15 @@ class Program():
                     val = p[info]
                 break
         return val
+    
+    """
+    def ps_time_elapsed(self):
+        if not psutil.pid_exists(self.program['pid']()):
+            p = multiprocessing.Process(target=self.msh)
+            start_time = time.time()
+            main()
+            print("--- %s seconds ---" % (time.time() - start_time))
+    """
         
     def print_stdout_log(self, s):
         print(s)
@@ -218,7 +227,8 @@ class Taskmaster_shell(cmd.Cmd):
             p = Program(clean_program_name, section, self.log_file_path)
             self.programs[clean_program_name] = p
         self.print_stdout_log(' '.join(list(self.programs.keys())))
-
+        
+        #autostart
         print(self.programs['random101'].program['autostart'])
         if self.programs['random101'].program['autostart']:
             self.programs['random101'].start_ps()
