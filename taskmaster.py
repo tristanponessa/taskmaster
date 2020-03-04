@@ -111,7 +111,7 @@ class Program():
     def status_ps(self):
 
         lst = [
-                self.program['name'],    
+                self.program['name'],
                 self.program['cmd'],
                 self.program['status'](),
                 self.program['pid'](),
@@ -222,7 +222,7 @@ class Taskmaster_shell(cmd.Cmd):
         print(self.programs['random101'].program['autostart'])
         if self.programs['random101'].program['autostart']:
             self.programs['random101'].start_ps()
-            self.print_stdout_log("starting process |" + "" + "| running")
+            self.print_stdout_log("AUTOSTART tarting process |" + "" + "| running")
             
             
          

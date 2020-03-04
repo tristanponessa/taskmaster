@@ -2086,3 +2086,18 @@ random101 : sh sec_counter.bash       state: 0      PID:0 runtime:0
 taskmaster> stop random101
 processes stopped random101
 taskmaster> 
+---taskmaster session : 2020-02-29 19:59:45---
+taskmaster> init
+loaded programs from conf file
+random101
+starting process || running
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:32224 runtime:19:59:59
+taskmaster> stop random101
+processes stopped random101
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
