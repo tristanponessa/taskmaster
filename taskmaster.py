@@ -69,8 +69,8 @@ class Program():
         self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
         self.program['cmd'] = self.program['command'].replace('\n', '')
         #has to be updatable so lamdba
-        self.program['create_time'] =  lambda : self.get_ps_info('create_time')#function
-        self.program['pid'] =          lambda : self.get_ps_info('pid')
+        self.program['create_time'] =  self.get_ps_info('create_time')#function
+        self.program['pid'] =          self.get_ps_info('pid')
         self.program['status'] =       lambda : self.get_ps_info('status')#function
         #elf.program['isalive'] =      lambda : self.get_ps_info('isalive')#status has weird names and unexpected states
         
@@ -79,17 +79,17 @@ class Program():
     def msh(self):
         print(self.program['stoptime'])
         time.sleep(self.program['stoptime'])
-        os.kill(self.program['pid'](), signal.SIGKILL)
+        os.kill(self.program['pid'], signal.SIGKILL)
 
     def stop_ps(self):
         #if self.get_ps_info('cmdline') != "":
-        if psutil.pid_exists(self.program['pid']()):
+        if psutil.pid_exists(self.program['pid']):
             #if self.program['stoptime'] != '':
                 #thread clocck n sec 
             p = multiprocessing.Process(target=self.msh)
             p.start()
 
-            #os.kill(self.program['pid'](), signal.SIGKILL)
+            #os.kill(self.program['pid'], signal.SIGKILL)
             return True
         return False
         #cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
@@ -101,7 +101,7 @@ class Program():
             cmdline 
         """
         #if self.get_ps_info('cmdline') == "":
-        if not psutil.pid_exists(self.program['pid']()):
+        if not psutil.pid_exists(self.program['pid']):
             with open(self.program['stdout'],'a+') as out, \
                  open(self.program['stderr'],'a+') as err:
                     psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
@@ -114,8 +114,8 @@ class Program():
                 self.program['name'],
                 self.program['cmd'],
                 self.program['status'](),
-                self.program['pid'](),
-                self.program['create_time']()
+                self.program['pid'],
+                self.program['create_time']
               ]
         
         status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*lst)
@@ -143,7 +143,7 @@ class Program():
     
     """
     def ps_time_elapsed(self):
-        if not psutil.pid_exists(self.program['pid']()):
+        if not psutil.pid_exists(self.program['pid']):
             p = multiprocessing.Process(target=self.msh)
             start_time = time.time()
             main()
@@ -232,7 +232,7 @@ class Taskmaster_shell(cmd.Cmd):
         print(self.programs['random101'].program['autostart'])
         if self.programs['random101'].program['autostart']:
             self.programs['random101'].start_ps()
-            self.print_stdout_log("AUTOSTART tarting process |" + "" + "| running")
+            self.print_stdout_log("AUTOSTART starting process |" + "" + "| running")
             
             
          
