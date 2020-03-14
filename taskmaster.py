@@ -27,25 +27,37 @@ NOTES:
     bunch of functions use copy code , reduce to uniuversal functions
 """
 
-"""
-class Print():
+#GENERAL FUNS for all classes
+###################################################################################################################
 
-    docstring
-        Print class:
-            -static methods for any class to proform special prints
+class Global:
+    
+    log_file = 'taskmaster.log'
+    
+    """
+    def printx(msg):
+        print(msg, end='')
+        if ifile is not None:
+            with open(ifile, 'a+') as f:
+                print(msg, file=f)
+    """
     
     @staticmethod
-    give print funs and launch them with this
-    def printX(**print_funs):
-        for every print fun print 
-
+    def printx(s):
+        """ stdout and file """
+        print(s)
+        with open(Global.log_file, 'a+') as f:
+            print(s, file=f)
+    
     @staticmethod
-    def write_file(file, mode, s):
-        with open(file, mode) as f:
-            f.write(s)   
-"""
+    def print_file(s, ifile, mode):
+        with open(ifile, mode) as f:
+            print(s, file=f)
+    
 
-class Program():
+###################################################################################################################
+
+class Program:
 
     """
         Program class:
@@ -63,33 +75,59 @@ class Program():
             a ps contains the cmdline that launches it 
             i also stock it in self.program[cmd/cmdp]
         """
+        
+        ####################################################################################################################
+        
         self.program = iprogram.copy()
+        #change types
+        self.program['stoptime'] = int(self.program['stoptime'])
         #add extra
         self.program['name'] = program_name
         self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
         self.program['cmd'] = self.program['command'].replace('\n', '')
         #has to be updatable so lamdba
-        self.program['create_time'] =  self.get_ps_info('create_time')#function
-        self.program['pid'] =          self.get_ps_info('pid')
+        #lamda when you do status before start it will be 0 after a new pid and after a stop a new pid
+        self.program['create_time'] =  lambda : self.get_ps_info('create_time')#function
+        self.program['pid'] =          lambda : self.get_ps_info('pid')
         self.program['status'] =       lambda : self.get_ps_info('status')#function
         #elf.program['isalive'] =      lambda : self.get_ps_info('isalive')#status has weird names and unexpected states
         
-        self.program['log'] = log_file_path 
-
-    def msh(self):
-        print(self.program['stoptime'])
-        time.sleep(self.program['stoptime'])
-        os.kill(self.program['pid'], signal.SIGKILL)
+        
+        self.program['log'] = log_file_path
+        
+        #################################################################################################################### 
+        
+        if self.program['autostart']:
+            self.auto_start()
+    
+    def ps_exists(self):
+        if self.program['pid']() == -1:
+            return False
+        return True
+        
+    def thread_fun(self, fun):
+        p = multiprocessing.Process(target=fun)
+        p.start()
 
     def stop_ps(self):
         #if self.get_ps_info('cmdline') != "":
-        if psutil.pid_exists(self.program['pid']):
+        if self.ps_exists():
+            """
+            def x():
+                print(self.program['stoptime'])
+                time.sleep(self.program['stoptime'])
+                os.kill(self.program['pid'](), signal.SIGKILL)
+            
+            self.thread_fun(x)
+            """
+            
+            os.kill(self.program['pid'](), signal.SIGKILL)
             #if self.program['stoptime'] != '':
                 #thread clocck n sec 
-            p = multiprocessing.Process(target=self.msh)
-            p.start()
+            #p = multiprocessing.Process(target=self.msh)
+            #p.start()
 
-            #os.kill(self.program['pid'], signal.SIGKILL)
+            #os.kill(self.program['pid'](), signal.SIGKILL)
             return True
         return False
         #cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
@@ -101,7 +139,8 @@ class Program():
             cmdline 
         """
         #if self.get_ps_info('cmdline') == "":
-        if not psutil.pid_exists(self.program['pid']):
+        
+        if not psutil.pid_exists(self.program['pid']()):
             with open(self.program['stdout'],'a+') as out, \
                  open(self.program['stderr'],'a+') as err:
                     psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
@@ -114,8 +153,8 @@ class Program():
                 self.program['name'],
                 self.program['cmd'],
                 self.program['status'](),
-                self.program['pid'],
-                self.program['create_time']
+                self.program['pid'](),
+                self.program['create_time']()
               ]
         
         status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*lst)
@@ -123,40 +162,46 @@ class Program():
     
     def get_ps_info(self, info):
         """
-            proc_iter contains all the info of a ps given by the os
+            ps_iter contains all the info of a ps given by the os
         """
-        val = 0
-        proc_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
-        for proc in proc_iter:
-            p = proc.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
+        
+        ps_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
+        #ps_iter goes threw all psesses in comp
+        for cur_ps in ps_iter:
+            cur_ps = cur_ps.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
 
-            #default values
-            if p['cmdline'] == self.program['cmdp']:
-                if info == 'create_time':
-                    val = time.strftime("%H:%M:%S", time.localtime(p[info]))
+            #if this ps is ours
+            if cur_ps['cmdline'] == self.program['cmdp']:
+                if   info == 'create_time':
+                    return time.strftime("%H:%M:%S", time.localtime(cur_ps[info]))
                 elif info == 'pid':
-                    val = int(p[info])
+                    return int(cur_ps[info])
                 else:
-                    val = p[info]
-                break
-        return val
+                    return cur_ps[info]
+                
+        #if dont find default vals
+        if info == 'pid':
+            return -1
+        else:
+            return None
+                
     
+     #autostart
+    def auto_start(self):
+        #print(self.programs['random101'].program['autostart'])
+        self.start_ps()
+        Global.printx("AUTOSTART starting process |" + self.program['name'] + "| running")
+            
     """
     def ps_time_elapsed(self):
-        if not psutil.pid_exists(self.program['pid']):
+        if not psutil.pid_exists(self.program['pid']()):
             p = multiprocessing.Process(target=self.msh)
             start_time = time.time()
             main()
             print("--- %s seconds ---" % (time.time() - start_time))
     """
         
-    def print_stdout_log(self, s):
-        print(s)
-        self.write_file(self.program['log'], s) 
 
-    def write_file(self, file, s):
-        with open(file, 'a+') as f:
-            f.write(s + '\n')    
     
 #    
 #    def ps_isalive(self):
@@ -203,6 +248,9 @@ class Taskmaster_shell(cmd.Cmd):
 
 
     def __init__(self):
+        
+        Global.printx("testx")
+        
         super().__init__()
         self.conf = configparser.ConfigParser()
         self.conf.read('./config/taskmaster_conf.ini')
@@ -211,28 +259,36 @@ class Taskmaster_shell(cmd.Cmd):
 
         now_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
         #dipslay help
-        self.print_stdout_log('---taskmaster session : ' + now_time + '---')
+        Global.printx('---taskmaster session : ' + now_time + '---')
 
         #load your running process on computer
+        
+        #auto to avoid taping everything everytime
+        self.do_init("")
+        self.do_start("random101")
+        self.do_status("")
+        #self.do_stop("random101")
+        #self.do_status("")
+        #self.do_stop("random101")
+        #self.do_status("")
 
 
     def precmd(self, user_input):
-        self.write_file(self.log_file_path, Taskmaster_shell.prompt + user_input)
+        
+        Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
         return cmd.Cmd.precmd(self, user_input)
 
+    
+
     def do_init(self, user_input):
-        self.print_stdout_log("loaded programs from conf file")
+        Global.printx("loaded programs from conf file")
         for program_name,section in self.conf._sections.items():
             clean_program_name = program_name.replace("program:", "")
             p = Program(clean_program_name, section, self.log_file_path)
             self.programs[clean_program_name] = p
-        self.print_stdout_log(' '.join(list(self.programs.keys())))
+        Global.printx(' '.join(list(self.programs.keys())))
         
-        #autostart
-        print(self.programs['random101'].program['autostart'])
-        if self.programs['random101'].program['autostart']:
-            self.programs['random101'].start_ps()
-            self.print_stdout_log("AUTOSTART starting process |" + "" + "| running")
+       
             
             
          
@@ -250,55 +306,48 @@ class Taskmaster_shell(cmd.Cmd):
         try:
             v = self.programs[user_input].start_ps()
             if not v:
-                self.print_stdout_log("process |" + user_input + "| ALREADY running")
+                Global.printx("process |" + user_input + "| ALREADY running")
             else:    
-                self.print_stdout_log("starting process |" + user_input + "| running")
+                Global.printx("starting process |" + user_input + "| running")
         except KeyError:
-            self.print_stdout_log("process |" + user_input + "| don't exist")
+            Global.printx("process |" + user_input + "| don't exist")
 
     def do_stop(self, user_input):
         try:
             v = self.programs[user_input].stop_ps()
             if not v:
-                self.print_stdout_log("stop process ALREADY" + user_input)
+                Global.printx("stop process ALREADY" + user_input)
             else:
-                self.print_stdout_log("processes stopped " + user_input)
+                Global.printx("processes stopped " + user_input)
         except KeyError:
-            self.print_stdout_log("process |" + user_input + "| don't exist")
+            Global.printx("process |" + user_input + "| don't exist")
     
     def do_status(self, user_input):
         if user_input == '':
             for program in self.programs.keys():
                 status_msg = self.programs[program].status_ps()
-                self.print_stdout_log(status_msg)
+                Global.printx(status_msg)
         else:
             try:
                 status_msg = self.programs[user_input].status_ps()
-                self.print_stdout_log(status_msg)
+                Global.printx(status_msg)
             except KeyError:
-                self.print_stdout_log("process |" + user_input + "| don't exist")
-    
-    def print_stdout_log(self, s):
-        print(s)
-        self.write_file(self.log_file_path, s) 
-    
-    def write_file(self, file, s):
-        with open(file, 'a+') as f:
-            f.write(s + '\n')
+                Global.printx("process |" + user_input + "| don't exist")
+
 
     def emptyline(self):
         pass
     
     def default(self, inp):
-        self.print_stdout_log("display help")
+        Global.printx("display help")
         self.do_help()
       
     def do_exit(self, inp):
-        self.print_stdout_log("<Exiting Taskmaster>\n\n")
+        Global.printx("<Exiting Taskmaster>\n\n")
         return True
     
     def do_EOF(self, line):
-        self.print_stdout_log('\n\n  Ctrl + d -> exit Taskmaster\n\n')
+        Global.printx('\n\n  Ctrl + d -> exit Taskmaster\n\n')
         return True
 
     def do_help(self, user_input=''):
@@ -306,15 +355,22 @@ class Taskmaster_shell(cmd.Cmd):
     
     def do_reboot(self, i):
         os.execl(sys.executable, sys.executable, *sys.argv)
+    
+    
+        
+        
+        
 
 if __name__ == '__main__':
-
+    
+    
     ts = Taskmaster_shell()
     try:
         
         ts.cmdloop()
     except KeyboardInterrupt:#and ctrl d
-        Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
+        #Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
+        Global.printx('\n\n  Ctrl + c -> exit Taskmaster\n\n')
     """
     except Exception as e:
         print(traceback.print_exc())

@@ -2101,3 +2101,225 @@ taskmaster> EOF
   Ctrl + d -> exit Taskmaster
 
 
+---taskmaster session : 2020-03-11 21:45:52---
+taskmaster> init
+loaded programs from conf file
+random101
+AUTOSTART starting process || running
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:0 runtime:0
+taskmaster> stop
+process || don't exist
+taskmaster> stop random101
+stop process ALREADYrandom101
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:0 runtime:0
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-03-11 22:24:44---
+taskmaster> start
+process || don't exist
+taskmaster> status
+taskmaster> init
+loaded programs from conf file
+random101
+AUTOSTART starting process || running
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:0 runtime:0
+---taskmaster session : 2020-03-13 22:58:15---
+taskmaster> init
+loaded programs from conf file
+---taskmaster session : 2020-03-13 23:45:24---
+taskmaster> EXIT
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-03-13 23:52:20---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-03-14 00:13:26---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+test test
+testx
+---taskmaster session : 2020-03-14 00:24:41---
+testx
+---taskmaster session : 2020-03-14 00:30:05---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+testx
+---taskmaster session : 2020-03-14 00:33:05---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+testx
+---taskmaster session : 2020-03-14 00:33:29---
+taskmaster> init
+loaded programs from conf file
+testx
+---taskmaster session : 2020-03-14 00:33:56---
+taskmaster> init
+loaded programs from conf file
+testx
+---taskmaster session : 2020-03-14 00:36:14---
+testx
+---taskmaster session : 2020-03-14 12:47:28---
+taskmaster> init
+loaded programs from conf file
+testx
+---taskmaster session : 2020-03-14 12:48:04---
+taskmaster> init
+loaded programs from conf file
+testx
+---taskmaster session : 2020-03-14 12:49:02---
+taskmaster> init
+loaded programs from conf file
+testx
+---taskmaster session : 2020-03-14 13:07:28---
+taskmaster> init
+loaded programs from conf file
+testx
+---taskmaster session : 2020-03-14 13:16:58---
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+testx
+---taskmaster session : 2020-03-14 13:17:22---
+taskmaster> init
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:0 runtime:None
+taskmaster> stop random10
+process |random10| don't exist
+taskmaster> stop random101
+stop process ALREADYrandom101
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:0 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+testx
+---taskmaster session : 2020-03-14 13:40:14---
+taskmaster> init
+loaded programs from conf file
+testx
+---taskmaster session : 2020-03-14 13:47:57---
+taskmaster> init
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:18712 runtime:13:48:05
+taskmaster> stop random101
+testx
+---taskmaster session : 2020-03-14 14:57:12---
+taskmaster> init
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+taskmaster> stop random101
+processes stopped random101
+testx
+---taskmaster session : 2020-03-14 14:58:45---
+taskmaster> init
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:29072 runtime:14:58:48
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:29072 runtime:14:58:48
+taskmaster> stop random101
+testx
+---taskmaster session : 2020-03-14 15:30:48---
+taskmaster> init
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:790 runtime:15:30:51
+taskmaster> stop
+process || don't exist
+taskmaster> stop random101
+processes stopped random101
+testx
+---taskmaster session : 2020-03-14 15:40:47---
+taskmaster> init
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+testx
+---taskmaster session : 2020-03-14 15:41:47---
+taskmaster> init
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+taskmaster> stop random101
+processes stopped random101
+testx
+---taskmaster session : 2020-03-14 17:00:53---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+random101 : sh sec_counter.bash       state: sleeping      PID:790 runtime:15:30:51
+processes stopped random101
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+testx
+---taskmaster session : 2020-03-14 17:02:22---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+random101 : sh sec_counter.bash       state: sleeping      PID:14471 runtime:17:02:21
+processes stopped random101
+random101 : sh sec_counter.bash       state: sleeping      PID:14471 runtime:17:02:21
+processes stopped random101
+random101 : sh sec_counter.bash       state: sleeping      PID:14471 runtime:17:02:21
+testx
+---taskmaster session : 2020-03-14 17:09:33---
+taskmaster> init
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:2546 runtime:17:09:35
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:2546 runtime:17:09:35
+taskmaster> stop random101
+processes stopped random101
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:2546 runtime:17:09:35
+taskmaster> stop random101
+processes stopped random101
+taskmaster> sttaus
+display help
