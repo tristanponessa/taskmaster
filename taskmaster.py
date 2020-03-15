@@ -5,7 +5,7 @@ import multiprocessing
 import threading
 import configparser
 import time
-import datetime
+from datetime import datetime, timedelta 
 import sys
 import re
 import itertools
@@ -92,13 +92,25 @@ class Program:
         self.program['status'] =       lambda : self.get_ps_info('status')#function
         #elf.program['isalive'] =      lambda : self.get_ps_info('isalive')#status has weird names and unexpected states
         
+        self.program['stop_call'] = False
+        self.program['start_time'] = None
+        self.program['run_time'] = lambda : self.get_ps_info('run_time')
         
-        self.program['log'] = log_file_path
+        #self.program['log'] = log_file_path
         
         #################################################################################################################### 
         
         if self.program['autostart']:
             self.auto_start()
+    
+     
+        """          
+        t0 = time.time()
+        print (time.strftime("%H:%M:%S",time.localtime(t0)))
+        t1 = t0 + 3600 * 2
+        print (time.strftime("%H:%M:%S",time.localtime(t1)))
+        datetime.now() - self.program['run_time']
+        """
     
     def ps_exists(self):
         if self.program['pid']() == -1:
@@ -111,27 +123,20 @@ class Program:
 
     def stop_ps(self):
         #if self.get_ps_info('cmdline') != "":
-        if self.ps_exists():
-            """
+        print (">>>>" , self.program['stop_call'])
+        if self.ps_exists() and self.program['stop_call'] == False:
+            self.program['stop_call'] = True
             def x():
-                print(self.program['stoptime'])
                 time.sleep(self.program['stoptime'])
-                os.kill(self.program['pid'](), signal.SIGKILL)
+                if self.program['pid']() > 0:#not necessary
+                    os.kill(self.program['pid'](), signal.SIGKILL)
+                self.program['start_time'] = None
+                self.program['stop_call'] = False
             
             self.thread_fun(x)
-            """
             
-            os.kill(self.program['pid'](), signal.SIGKILL)
-            #if self.program['stoptime'] != '':
-                #thread clocck n sec 
-            #p = multiprocessing.Process(target=self.msh)
-            #p.start()
-
-            #os.kill(self.program['pid'](), signal.SIGKILL)
             return True
         return False
-        #cmd =  "kill -9 {pid}".format(pid=self.get_ps_info(self.program['cmd'], 'pid'))#SIGKILL
-        #subprocess.Popen(cmd)
     
     #launch one instance of a process
     def start_ps(self):
@@ -140,7 +145,8 @@ class Program:
         """
         #if self.get_ps_info('cmdline') == "":
         
-        if not psutil.pid_exists(self.program['pid']()):
+        if not self.ps_exists():
+            self.program['start_time'] = time.time()
             with open(self.program['stdout'],'a+') as out, \
                  open(self.program['stderr'],'a+') as err:
                     psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
@@ -154,7 +160,7 @@ class Program:
                 self.program['cmd'],
                 self.program['status'](),
                 self.program['pid'](),
-                self.program['create_time']()
+                self.program['run_time']()
               ]
         
         status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*lst)
@@ -173,7 +179,10 @@ class Program:
             #if this ps is ours
             if cur_ps['cmdline'] == self.program['cmdp']:
                 if   info == 'create_time':
-                    return time.strftime("%H:%M:%S", time.localtime(cur_ps[info]))
+                    #return time.strftime("%H:%M:%S", time.localtime(cur_ps[info]))
+                    return cur_ps[info]
+                elif  info == 'run_time':
+                    return self.get_runtime()
                 elif info == 'pid':
                     return int(cur_ps[info])
                 else:
@@ -184,7 +193,16 @@ class Program:
             return -1
         else:
             return None
-                
+    
+    def get_runtime(self):
+        #if self.program['start_time'] is not None:
+        y = self.program['create_time']()
+        str_time_elapse = time.strftime("%H:%M:%S",time.localtime(y))
+        x = time.strptime("00:01:00", "%H:%M:%S")
+        now = time.mktime(x)
+        time_elapse =  time.time()
+        str_time_elapse = time.strftime("%H:%M:%S",time.localtime(time_elapse))
+        return str_time_elapse
     
      #autostart
     def auto_start(self):
@@ -202,19 +220,7 @@ class Program:
     """
         
 
-    
-#    
-#    def ps_isalive(self):
-#        """
-#            multiple techniks 
-#            check state
-#            check if has cmdline
-#        """
-#        if self.get_ps_info('cmdline') == "":
-#            return True
-#        return False
 
-       # def run_cmd(self)
 
 
 #has auto complete but not for args for do commands
@@ -249,8 +255,6 @@ class Taskmaster_shell(cmd.Cmd):
 
     def __init__(self):
         
-        Global.printx("testx")
-        
         super().__init__()
         self.conf = configparser.ConfigParser()
         self.conf.read('./config/taskmaster_conf.ini')
@@ -270,7 +274,10 @@ class Taskmaster_shell(cmd.Cmd):
         #self.do_stop("random101")
         #self.do_status("")
         #self.do_stop("random101")
+        #self.do_stop("random101")
         #self.do_status("")
+        
+        
 
 
     def precmd(self, user_input):
@@ -287,16 +294,6 @@ class Taskmaster_shell(cmd.Cmd):
             p = Program(clean_program_name, section, self.log_file_path)
             self.programs[clean_program_name] = p
         Global.printx(' '.join(list(self.programs.keys())))
-        
-       
-            
-            
-         
-        
-        #if self.programs[user_input]['autostart'] == True:
-        #    #self.do_start(self.programs[user_input]['name'])
-        #    print(self.programs[user_input]['name'])
-
 
     #def do_run_all(self, user_input):
      #   for program in self.programs:
