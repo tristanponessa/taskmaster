@@ -2709,3 +2709,141 @@ loaded programs from conf file
 AUTOSTART starting process |random101| running
 random101
 process |random101| ALREADY running
+taskmaster> EOF
+---taskmaster session : 2020-03-17 00:15:17---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 01:48:26---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 02:05:05---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 02:20:02---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 02:22:43---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 10:46:23---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 10:53:52---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 11:17:35---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 11:18:01---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 11:22:03---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 11:22:53---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 11:23:15---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 15:32:26---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 15:46:40---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 15:46:52---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 15:47:42---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 15:49:33---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 15:57:32---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 15:58:28---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 16:30:00---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 17:41:26---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 17:42:35---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 17:47:32---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 17:47:47---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 17:49:14---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+---taskmaster session : 2020-03-17 17:50:10---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process |random101| ALREADY running
+random101 : sh sec_counter.bash       state: sleeping      PID:30559 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:30559 runtime:0:15:59
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:30559 runtime:0:16:03
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:30559 runtime:0:16:06

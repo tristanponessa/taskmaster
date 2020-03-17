@@ -195,14 +195,15 @@ class Program:
             return None
     
     def get_runtime(self):
-        #if self.program['start_time'] is not None:
-        y = self.program['create_time']()
-        str_time_elapse = time.strftime("%H:%M:%S",time.localtime(y))
-        x = time.strptime("00:01:00", "%H:%M:%S")
-        now = time.mktime(x)
-        time_elapse =  time.time()
-        str_time_elapse = time.strftime("%H:%M:%S",time.localtime(time_elapse))
-        return str_time_elapse
+        
+        epoch_ct = int(self.program['create_time']())
+        epoch_now = int(time.time())
+        
+        datetime_ct = datetime.fromtimestamp(epoch_ct)
+        datetime_now = datetime.fromtimestamp(epoch_now)
+        
+        run_time = str(datetime_now - datetime_ct)
+        return run_time
     
      #autostart
     def auto_start(self):
