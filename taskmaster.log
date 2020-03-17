@@ -2847,3 +2847,117 @@ taskmaster> status
 random101 : sh sec_counter.bash       state: sleeping      PID:30559 runtime:0:16:03
 taskmaster> status
 random101 : sh sec_counter.bash       state: sleeping      PID:30559 runtime:0:16:06
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-03-17 19:51:45---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process start already launched
+random101 : sh sec_counter.bash       state: sleeping      PID:4662 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:4662 runtime:0:01:35
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:4662 runtime:0:01:45
+taskmaster> stop random101
+process stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:4662 runtime:0:05:06
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+process stop already launched
+taskmaster> stop random101
+process stop already launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-03-17 20:08:51---
+loaded programs from conf file
+AUTOSTART starting process |random101| running
+random101
+process start already launched
+random101 : sh sec_counter.bash       state: sleeping      PID:5473 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:5473 runtime:0:00:04
+taskmaster> start random101
+process start already launched
+taskmaster> start random101
+process start already launched
+taskmaster> stop random101
+process stop launched
+taskmaster> stop random101
+process stop already launched
+taskmaster> stop random101
+process stop already launched
+taskmaster> stop random101
+process stop already launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-03-17 23:29:49---
+loaded programs from conf file
+umask set to :773
+AUTOSTART starting process |random101| running
+random101
+process start already launched
+random101 : sh sec_counter.bash       state: sleeping      PID:12084 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:12084 runtime:0:00:28
+taskmaster> stop random101
+process stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+---taskmaster session : 2020-03-17 23:32:02---
+loaded programs from conf file
+umask set to :773
+AUTOSTART starting process |random101| running
+random101
+process start already launched
+random101 : sh sec_counter.bash       state: sleeping      PID:12249 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:12249 runtime:0:00:08
+taskmaster> stop random101
+process stop launched
+---taskmaster session : 2020-03-17 23:38:31---
+loaded programs from conf file
+umask set to :773
+---taskmaster session : 2020-03-17 23:48:36---
+loaded programs from conf file
+---taskmaster session : 2020-03-17 23:52:40---
+loaded programs from conf file
+umask set to :773
+AUTOSTART starting process |random101| running
+random101
+process start already launched
+random101 : sh sec_counter.bash       state: sleeping      PID:12847 runtime:0:00:01
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2020-03-17 23:55:00---
+loaded programs from conf file
+umask set to :773
+random101
+process start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:13178 runtime:0:00:01
