@@ -39,6 +39,7 @@ NOTES:
 class Global:
     
     log_file = 'taskmaster.log'
+    conf_file = './config/taskmaster_conf.ini'
     
     """
     def printx(msg):
@@ -59,14 +60,6 @@ class Global:
     def print_file(s, ifile, mode):
         with open(ifile, mode) as f:
             print(s, file=f)
-    
-    @staticmethod
-    def str_to_int(istr, which=None):
-        if istr == "" :
-            if which == "umask": return -1
-            else               : return 0
-        else:
-            return int(istr)
 
 ###################################################################################################################
 
@@ -96,7 +89,7 @@ class Program:
     
     
 
-    def __init__(self, program_name, iprogram, log_file_path):
+    def __init__(self, program_name, aprogram):
         """
             cmdline 
             a ps contains the cmdline that launches it 
@@ -104,13 +97,26 @@ class Program:
         """
         
         ####################################################################################################################
+        self.program = aprogram
+        self.default_vals(program_name, self.program)
+        self.convert_types(self.program)
         
-        self.program = iprogram.copy()
-        #change types
-        #to change ! inni fields should never be empty try to use int as much as possible
-        self.program['stoptime'] = Global.str_to_int(self.program['stoptime'])
-        self.program['umask'] =    Global.str_to_int(self.program['umask'], 'umask')
-        self.program['autostart'] =  int(self.program['autostart'])
+        """
+        dft['command'] =     'sh sec_counter.bash'
+        dft['nbps'] =        '1'
+        dft['timetillsuc'] = '0' 
+        dft['autostart'] =   'no'
+        dft['autorestart'] = 'no'
+        dft['stoptime'] =    '0' 
+        dft['dir'] =         './'
+        dft['env'] =         ""
+        dft['stdout'] =      f'./{program_name}.stdout'
+        dft['stderr'] =      f'./{program_name}.stderr'
+        dft['nbretries'] =   '0'#if crashes, restarts
+        dft['exitsignal'] =  '15'#SIGTERM
+        dft['suc_signal'] =  '15'#SIGTERM
+        dft['umask'] =       '022'
+        """
         #add extra
         self.program['name'] = program_name
         self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
@@ -124,15 +130,41 @@ class Program:
         
         self.program['stop_call'] = False
         #################################################################################################################### 
-        if self.program['umask'] != -1:
-            self.set_umask()
-        
-        if self.program['autostart'] == 1:
-            self.auto_start()
+        #if self.program['umask'] != -1:        self.set_umask()
+        if self.program['autostart'] == "yes": self.auto_start()
         
         
-
+        
+        
+    def default_vals(self, program_name, program):
+        
+        dft = dict()
+        dft['command'] =     'sh sec_counter.bash'
+        dft['nbps'] =        '1'
+        dft['timetillsuc'] = '0' 
+        dft['autostart'] =   'no'
+        dft['autorestart'] = 'no'
+        dft['stoptime'] =    '0' 
+        dft['dir'] =         './'
+        dft['env'] =         ""
+        dft['stdout'] =      f'./{program_name}.stdout'
+        dft['stderr'] =      f'./{program_name}.stderr'
+        dft['nbretries'] =   '0'#if crashes, restarts
+        dft['exitsignal'] =  '15'#SIGTERM
+        dft['suc_signal'] =  '15'#SIGTERM
+        dft['umask'] =       '022'
+        
+        for key,val in program.items():
+            if val == "":
+                program[key] = dft[key]
+        
+        #check types and false entries
     
+    def convert_types(self, program):
+        for key,val in program.items():
+            if val.isnumeric():
+                program[key] = int(program[key])
+
     def ps_exists(self):
         if self.program['pid']() == -1:
             return False
@@ -165,9 +197,10 @@ class Program:
         #if self.get_ps_info('cmdline') == "":
         
         if not self.ps_exists():
-            self.program['start_time'] = time.time()
             with open(self.program['stdout'],'a+') as out, \
                  open(self.program['stderr'],'a+') as err:
+                #if self.program['umask'] != -1:
+                    
                     psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
             return True
         return False
@@ -185,33 +218,43 @@ class Program:
         status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*lst)
         return status_msg
     
+    def get_ps_infos(self):
+        """
+            ps_iter contains all the info of a ps given by the os
+        """
+        fields = ["cmdline", "pid", "create_time", "status"]
+        for cur_ps in psutil.process_iter(attrs=fields):
+            cur_ps = cur_ps.as_dict(attrs=fields)
+            if cur_ps['cmdline'] == self.program['cmdp']:
+                return cur_ps
+        return None
+    
     def get_ps_info(self, info):
         """
             ps_iter contains all the info of a ps given by the os
         """
+        cur_ps = self.get_ps_infos()
         
-        ps_iter = psutil.process_iter(attrs=["cmdline", "pid", "create_time", "status"])
-        #ps_iter goes threw all psesses in comp
-        for cur_ps in ps_iter:
-            cur_ps = cur_ps.as_dict(attrs=["cmdline", "pid", "create_time", "status"])
-
-            #if this ps is ours
-            if cur_ps['cmdline'] == self.program['cmdp']:
-                if   info == 'create_time':
-                    #return time.strftime("%H:%M:%S", time.localtime(cur_ps[info]))
-                    return cur_ps[info]
-                elif  info == 'run_time':
-                    return self.get_runtime()
-                elif info == 'pid':
-                    return int(cur_ps[info])
-                else:
-                    return cur_ps[info]
-                
-        #if dont find default vals
-        if info == 'pid':
-            return -1
-        else:
-            return None
+        if cur_ps is None:
+            if info == 'pid': return -1
+            else:             return None
+        
+        if  info == 'run_time':    return self.get_runtime()
+        elif info == 'pid':        return int(cur_ps[info])
+        else:                      return cur_ps[info]
+        
+        """ 
+        show to yohan which is better   
+        ret = dict()
+        ret['run_time'] = self.get_runtime()
+        ret['pid'] = int(cur_ps[info])
+        ret['default'] = cur_ps[info]
+        
+        if cur_ps['cmdline'] == self.program['cmdp']:
+            if info in ret.keys():
+                return ret[info]
+            return cur_ps[info]
+        """
     
     def get_runtime(self):
         
@@ -226,11 +269,12 @@ class Program:
     
     def auto_start(self):
         self.start_ps()
-        Global.printx("AUTOSTART starting process |" + self.program['name'] + "| running")
+        Global.printx(f"AUTOSTART <{self.program['name']}>")
     
     def set_umask(self):
-        Global.printx(f"umask set to :{self.program['umask']}")
         os.umask(self.program['umask'])
+        Global.printx(f"umask set to :{self.program['umask']}")
+        
 
 
 
@@ -269,8 +313,8 @@ class Taskmaster_shell(cmd.Cmd):
         
         super().__init__()
         self.conf = configparser.ConfigParser()
-        self.conf.read('./config/taskmaster_conf.ini')
-        self.log_file_path = './taskmaster.log'
+        self.conf.read(Global.conf_file)
+        self.log_file_path = Global.log_file
         self.programs = dict()
 
         now_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
@@ -281,7 +325,7 @@ class Taskmaster_shell(cmd.Cmd):
         
         #auto to avoid taping everything everytime
         self.do_init("")
-        self.do_start("random101")
+        #self.do_start("random101")
         self.do_status("")
         #self.do_stop("random101")
         #self.do_status("")
@@ -302,9 +346,7 @@ class Taskmaster_shell(cmd.Cmd):
     def do_init(self, user_input):
         Global.printx("loaded programs from conf file")
         for program_name,section in self.conf._sections.items():
-            clean_program_name = program_name.replace("program:", "")
-            p = Program(clean_program_name, section, self.log_file_path)
-            self.programs[clean_program_name] = p
+            self.programs[program_name] = Program(program_name, section)
         Global.printx(' '.join(list(self.programs.keys())))
 
     #def do_run_all(self, user_input):
@@ -317,23 +359,23 @@ class Taskmaster_shell(cmd.Cmd):
     def do_stop(self, user_input):
         self.toggle_ps(user_input, 'stop')
     
+    def do_reload(self, suer_input):
+        self.toggle_ps(user_input, 'stop')
+        self.toggle_ps(user_input, 'start')
+    
     def toggle_ps(self, ps, action):
         if ps not in self.programs.keys():
-            Global.printx("process <" + user_input + "> don't exist")
+            Global.printx("process <" + ps + "> don't exist")
             return
-        if action == 'stop':
-            res = self.programs[ps].stop_ps()
-        if action == 'start':
-            res = self.programs[ps].start_ps()
-        if res == False:
-            Global.printx("process " + action + " already launched")
-        else:
-            Global.printx("process " + action + " launched")
-                
-            
+        if action == 'stop':  res = self.programs[ps].stop_ps()
+        if action == 'start': res = self.programs[ps].start_ps()
         
-        
+        if res == False: Global.printx("process " + action + " already launched")
+        else:            Global.printx("process " + action + " launched")
     
+    
+        
+                
     def do_status(self, user_input):
         if user_input == '':
             for program in self.programs.keys():
