@@ -242,19 +242,6 @@ class Program:
         if  info == 'run_time':    return self.get_runtime()
         elif info == 'pid':        return int(cur_ps[info])
         else:                      return cur_ps[info]
-        
-        """ 
-        show to yohan which is better   
-        ret = dict()
-        ret['run_time'] = self.get_runtime()
-        ret['pid'] = int(cur_ps[info])
-        ret['default'] = cur_ps[info]
-        
-        if cur_ps['cmdline'] == self.program['cmdp']:
-            if info in ret.keys():
-                return ret[info]
-            return cur_ps[info]
-        """
     
     def get_runtime(self):
         
@@ -365,13 +352,13 @@ class Taskmaster_shell(cmd.Cmd):
     
     def toggle_ps(self, ps, action):
         if ps not in self.programs.keys():
-            Global.printx("process <" + ps + "> don't exist")
+            Global.printx("program <" + ps + "> don't exist")
             return
         if action == 'stop':  res = self.programs[ps].stop_ps()
         if action == 'start': res = self.programs[ps].start_ps()
         
-        if res == False: Global.printx("process " + action + " already launched")
-        else:            Global.printx("process " + action + " launched")
+        if res == False: Global.printx("action " + action + " already launched")
+        else:            Global.printx("action " + action + " launched")
     
     
         

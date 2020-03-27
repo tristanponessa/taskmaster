@@ -24,3 +24,362 @@ loaded programs from conf file
 loaded programs from conf file
 ---taskmaster session : 2020-03-20 21:11:49---
 loaded programs from conf file
+AUTOSTART <random101>
+random101
+random101 : sh sec_counter.bash       state: sleeping      PID:7577 runtime:0:00:04
+---taskmaster session : 2020-03-21 16:08:56---
+loaded programs from conf file
+AUTOSTART <random101>
+random101
+random101 : sh sec_counter.bash       state: sleeping      PID:13016 runtime:0:00:01
+taskmaster> EOF
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2020-03-22 13:51:37---
+loaded programs from conf file
+---taskmaster session : 2020-03-22 13:55:26---
+loaded programs from conf file
+---taskmaster session : 2020-03-22 14:57:02---
+loaded programs from conf file
+---taskmaster session : 2020-03-22 15:02:07---
+loaded programs from conf file
+AUTOSTART <random101>
+---taskmaster session : 2020-03-22 15:06:51---
+loaded programs from conf file
+AUTOSTART <random101>
+---taskmaster session : 2020-03-22 15:08:04---
+loaded programs from conf file
+AUTOSTART <random101>
+---taskmaster session : 2020-03-22 15:09:03---
+loaded programs from conf file
+AUTOSTART <random101>
+---taskmaster session : 2020-03-22 15:10:27---
+loaded programs from conf file
+AUTOSTART <random101>
+---taskmaster session : 2020-03-22 15:12:18---
+loaded programs from conf file
+---taskmaster session : 2020-03-22 15:14:06---
+loaded programs from conf file
+AUTOSTART <random101>
+---taskmaster session : 2020-03-22 15:14:31---
+loaded programs from conf file
+---taskmaster session : 2020-03-22 15:31:34---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+---taskmaster session : 2020-03-22 15:58:29---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+---taskmaster session : 2020-03-22 15:59:11---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+---taskmaster session : 2020-03-22 15:59:40---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+---taskmaster session : 2020-03-22 16:01:07---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+random101
+random101
+---taskmaster session : 2020-03-22 16:02:52---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101
+instance 1 random101
+---taskmaster session : 2020-03-22 16:06:22---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101
+instance 1 random101
+random101 : sh sec_counter.bash       state: sleeping      PID:27746 runtime:0:52:17
+random101 : sh sec_counter.bash       state: sleeping      PID:27746 runtime:0:52:17
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-03-22 16:12:50---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101
+instance 1 random101
+random101 : sh sec_counter.bash       state: sleeping      PID:4835 runtime:0:00:00
+random101 : sh sec_counter.bash       state: sleeping      PID:4835 runtime:0:00:00
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:4835 runtime:0:00:16
+random101 : sh sec_counter.bash       state: sleeping      PID:4835 runtime:0:00:16
+---taskmaster session : 2020-03-22 16:13:41---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101
+instance 1 random101
+random101 : sh sec_counter.bash       state: sleeping      PID:4946 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:4946 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-03-22 17:37:16---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101
+instance 1 random101
+random101 : sh sec_counter.bash       state: disk-sleep      PID:6208 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:00:09
+random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:00:09
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:01:00
+random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:01:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:01:07
+random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:01:07
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2020-03-22 17:43:20---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7f134ec83da0>
+instance 1 random101 adr <__main__.Program object at 0x7f1350f0c0b8>
+random101 : sh sec_counter.bash       state: sleeping      PID:7385 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:7385 runtime:0:00:01
+---taskmaster session : 2020-03-22 17:48:19---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+---taskmaster session : 2020-03-22 18:11:15---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+---taskmaster session : 2020-03-22 18:23:59---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+---taskmaster session : 2020-03-22 18:33:44---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7fe9e6c9be10>
+instance 1 random101 adr <__main__.Program object at 0x7fe9e8f300b8>
+x7000 : sh sec_counter.bash       state: sleeping      PID:14328 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:14328 runtime:0:00:01
+---taskmaster session : 2020-03-22 18:35:08---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7f218ca3be48>
+instance 1 random101 adr <__main__.Program object at 0x7f218ecb60b8>
+x7000 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:00:01
+---taskmaster session : 2020-03-22 18:36:20---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+---taskmaster session : 2020-03-22 18:43:15---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7fe352142e10>
+instance 1 random101 adr <__main__.Program object at 0x7fe3529d7f60>
+x7000 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:08:08
+random101 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:08:08
+---taskmaster session : 2020-03-22 18:43:34---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7feb4602deb8>
+instance 1 random101 adr <__main__.Program object at 0x7feb482c30b8>
+x7000 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:08:27
+random101 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:08:27
+---taskmaster session : 2020-03-22 18:46:01---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+---taskmaster session : 2020-03-22 18:55:17---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7f08ea73af60>
+instance 1 random101 adr <__main__.Program object at 0x7f08ea759d68>
+x7000 : sh sec_counter.bash       state: sleeping      PID:17137 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:17137 runtime:0:00:01
+---taskmaster session : 2020-03-22 18:56:53---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7f3cf6d70eb8>
+instance 1 random101 adr <__main__.Program object at 0x7f3cf90070b8>
+x7000 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:00:01
+---taskmaster session : 2020-03-22 18:59:41---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7fcea83fdf28>
+instance 1 random101 adr <__main__.Program object at 0x7fceaa6810b8>
+x7000 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:02:49
+random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:02:49
+---taskmaster session : 2020-03-22 19:02:06---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101 adr <__main__.Program object at 0x7fd9bd2e4f60>
+instance 1 random101 adr <__main__.Program object at 0x7fd9bd304d68>
+x7000 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:05:14
+random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:05:14
+---taskmaster session : 2020-03-22 19:18:17---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101
+instance 1 random101
+random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:21:25
+random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:21:25
+---taskmaster session : 2020-03-22 21:31:03---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101
+instance 1 random101
+random101 : sh sec_counter.bash       state: sleeping      PID:28118 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:28118 runtime:0:00:01
+---taskmaster session : 2020-03-22 21:49:32---
+loaded programs from conf file
+AUTOSTART <random101>
+AUTOSTART <random101>
+programs init:
+instance 0 random101
+instance 1 random101
+random101 : sh sec_counter.bash       state: sleeping      PID:31669 runtime:0:00:01
+random101 : sh sec_counter.bash       state: sleeping      PID:31669 runtime:0:00:01
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2020-03-27 14:10:11---
+loaded programs from conf file
+AUTOSTART <random101>
+random101
+random101 : sh sec_counter.bash       state: sleeping      PID:13854 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:13854 runtime:0:00:04
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:13854 runtime:0:00:07
+taskmaster> stop 
+process <> don't exist
+taskmaster> stop random101
+process stop launched
+taskmaster> statusa
+display help
+taskmaster> sttaus
+display help
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
