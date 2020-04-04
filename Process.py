@@ -128,4 +128,12 @@ def auto_start(self):
 def set_umask(self):
     os.umask(self.program['umask'])
     Global.printx(f"umask set to :{self.program['umask']}")
+
+
+if __name__ == '__main__':
+    
+    pr = dict()
+    pr['nbpr'] = 8
+    pr['cmdp'] = ["sleep", "10"]
+    
     
