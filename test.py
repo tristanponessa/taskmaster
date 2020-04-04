@@ -1,66 +1,99 @@
-import cmd
-import subprocess
 import multiprocessing
-import threading
-import configparser
-import time
-from datetime import datetime, timedelta 
-import sys
-import re
-import itertools
 import psutil
-import os
-import signal
-import traceback
-import copy
+import time
+
+"""
+def prg_cmd(ch_conn):
+    p = psutil.Popen(["sleep", "3"])
+    fields = ["cmdline", "name",  "pid", "create_time", "status"]
+    for cur_ps in psutil.process_iter():
+        cur_ps = cur_ps.as_dict(attrs=fields)
+        
+        if cur_ps['pid'] == p.pid:
+            print('this')
+            ch_conn.send(cur_ps)
+"""
+
+"""
+pr = dict()
+pr['nbpr'] = 8
+pr['cmdp'] = ["sleep", "10"]
 
 
-
-#with open("random101.stdout",'a+') as out:
-p = psutil.Popen("sleep 1", shell=True)
-
-
-#while psutil.pid_exists(p.pid):
-while p.is_running():
-    print(p.pid, 'exists')
-    print('p', p)
-    print('status', p.status())
-    x = p.poll()
-    print("->", x)
+class Process:
     
-    p.terminate()
-    p.wait()
-    
-    
-    
+    def __init__(self):
+        
+        self.
+        
+        #multiple popen
+        
+        
 
+def start_ps(pr, ps):
+    
+    if not ps_exists(ps):
+        with open(pr['stdout'],'a+') as out, \
+             open(pr['stderr'],'a+') as err:
+            #if self.program['umask'] != -1:
+                ps = psutil.Popen(pr['cmdp'], stdout=out, stderr=err)
+    return ps
+    
+def stop_ps(self):
+    #if self.get_ps_info('cmdline') != "":
+    if self.ps_exists() and self.program['stop_call'] == False:
+        self.program['stop_call'] = True
+        def x():
+            time.sleep(self.program['stoptime'])
+            if self.program['pid']() > 0:#not necessary if -1 kills session
+                os.kill(self.program['pid'](), signal.SIGKILL)
+            self.program['stop_call'] = False
+        
+        self.thread_fun(x)
+        
+        return True
+    return False
+
+def prg_ps():
+    par_conn, ch_conn = multiprocessing.Pipe()
+    p = psutil.Popen(pr['cmdp'], stdout=out, stderr=err)
+
+
+pss_lst = gen_ps_lst(pr)
+
+def gen_pss_lst(pr):
+    par_conn, ch_conn = multiprocessing.Pipe()
+    p = lambda : psutil.Popen(pr['cmdp'], stdout=pr['stdout'], stderr=pr['stderr'])
+    x = multiprocessing.Process(target=p, args=(ch_conn,)) 
+    return [x] * pr['nbpr']
+
+def get_infos(ps):
+    
+    
+def stop_ps(pr, ps):
+    
+    
+    
+pss = 
+"""
+
+
+
+#print("popen pid >  ", p)
+par_conn, ch_conn = multiprocessing.Pipe()
+
+x = multiprocessing.Process(target=fun, args=(ch_conn,))
+
+#par_conn.close()
+x.start()
+print(">>", par_conn.recv())
+x.join()
+
+print("multips pid >", x.pid)
+
+while x.is_alive():
+    print("alive ", x.pid)
+    time.sleep(1)
+    
+    #print("alive ", x.status())
 print('finish')
-#try:
-print('isrunning', p.is_running())
-p.start()
-print('isrunning', p.is_running())
-#print(p.pid, 'exists')
-#print('p', p)
-#print('status', p.status())
-#except:
-print('fire')
-    
-#x = p.poll()
-#print("->", x)
-    
-"""
-print(p.status())
-print(p.status())
-print(p.status())
-print(p.poll())
-#p.kill()
-#print(p.poll())
-print(p.status())
-"""
-
-
-
-
-
-
-

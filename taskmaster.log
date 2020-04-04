@@ -383,3 +383,7 @@ taskmaster> sttaus
 display help
 taskmaster> status
 random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+

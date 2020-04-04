@@ -1,15 +1,16 @@
-
-[program:random911]
-command=locate a
-autostart=true
-autorestart=true
-retry=auto
-dir=./
-nbretries=3
-stdout=./911.stdout
-stderr=./911.stderr
-env=
-exitcodes=
-succodes=
-stoptime=
-umask=
+ def do_init(self, user_input):
+        Global.printx("loaded programs from conf file")
+        for program_name,section in self.conf._sections.items():
+            #have to duplicate code dft system in program class
+            if section['nbps'] == "" : section['nbps'] = "1"
+            for i in range(int(section['nbps'])):
+                section_copy = copy.deepcopy(section)
+                program_name_copy = copy.deepcopy(program_name)
+                #section_copy = section
+                
+                
+                self.programs.append(Program(program_name_copy, section_copy))
+        #Global.printx(' '.join(list(self.programs.keys())))
+        Global.printx("programs init:")
+        for i,p in enumerate(self.programs):
+            Global.printx(f"instance {i} {p.program['name']}")
