@@ -1,4 +1,3 @@
-
 import cmd
 import subprocess
 import multiprocessing
@@ -14,18 +13,14 @@ import os
 import signal
 import traceback
 
-#files
-import Process
 
 """
 NOTES:
     TASKMASTER WILL LAUNCH PROGRAMS FROM 1 OR MULTIPLE CONF FILES
     YOU CAN PRECISE EACH PROGRAM
     SUPERVISOR SEEMED TO DO THINGS BY CONFIG FILE
-
     #issues : bin/bash being spawed by popen must kill() them
     #a program is 1 process like ls or count_time
-
     bunch of functions use copy code , reduce to uniuversal functions
     
     check aname of programs regex no <>...
@@ -33,12 +28,6 @@ NOTES:
     launch everythoin gas multiprocess so umask can ably all the time for a process
     dont launch program without config file good
     universal vaklue system umasl not set ? how to check?
-    
-    
-    psutil process contains much more infos than subprocess 
-    i could make a simpler version with popen alone and use p.pid / p.status and two more others
-    psutil offers so much more and to make it flexible i created this complicated system where
-    you have to simply call self.program[info]() 
 """
 
 #GENERAL FUNS for all classes
@@ -85,28 +74,6 @@ class Txt:
     #msg_autorun = "{FAIL}autorun{ENDC}"
     #msg_x =       "{var}x"
 
-class Process:
-    """
-        __next__  , __cmp__ depending of ps priority another for pids
-    """
-    def __init__(self):
-        
-        self.program['name'] = program_name
-        self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
-        self.program['cmd'] = self.program['command'].replace('\n', '')
-        #has to be updatable so lamdba
-        #lamda when you do status before start it will be 0 after a new pid and after a stop a new pid
-        self.program['create_time'] =  lambda : self.get_ps_info('create_time')#function
-        self.program['run_time'] =     lambda : self.get_ps_info('run_time')
-        self.program['pid'] =          lambda : self.get_ps_info('pid')
-        self.program['status'] =       lambda : self.get_ps_info('status')#function
-        
-        self.program['stop_call'] = False
-    
-   
-    
-    
-
 class Program:
 
     """
@@ -131,30 +98,58 @@ class Program:
         self.default_vals(program_name, self.program)
         self.convert_types(self.program)
         
-        self.pss = [None] * self.program['nbps']
+        """
+        dft['command'] =     'sh sec_counter.bash'
+        dft['nbps'] =        '1'
+        dft['timetillsuc'] = '0' 
+        dft['autostart'] =   'no'
+        dft['autorestart'] = 'no'
+        dft['stoptime'] =    '0' 
+        dft['dir'] =         './'
+        dft['env'] =         ""
+        dft['stdout'] =      f'./{program_name}.stdout'
+        dft['stderr'] =      f'./{program_name}.stderr'
+        dft['nbretries'] =   '0'#if crashes, restarts
+        dft['exitsignal'] =  '15'#SIGTERM
+        dft['suc_signal'] =  '15'#SIGTERM
+        dft['umask'] =       '022'
+        """
+        #add extra
+        self.program['name'] = program_name
+        self.program['cmdp'] = self.program['command'].replace('\n', '').split(' ')
+        self.program['cmd'] = self.program['command'].replace('\n', '')
+        #has to be updatable so lamdba
+        #lamda when you do status before start it will be 0 after a new pid and after a stop a new pid
+        self.program['create_time'] =  lambda : self.get_ps_info('create_time')#function
+        self.program['run_time'] =     lambda : self.get_ps_info('run_time')
+        self.program['pid'] =          lambda : self.get_ps_info('pid')
+        self.program['status'] =       lambda : self.get_ps_info('status')#function
+        
+        self.program['stop_call'] = False
         #################################################################################################################### 
         #if self.program['umask'] != -1:        self.set_umask()
+        if self.program['autostart'] == "yes": self.auto_start()
         
-        if self.program['autostart'] == "yes": self.pss_start()
         
-    
+        
+        
     def default_vals(self, program_name, program):
         
         dft = dict()
-        dft['command'] =      'sh sec_counter.bash'
-        dft['nbps'] =         '1'
-        dft['timetillsuc'] =  '0' 
-        dft['autostart'] =    'no'
-        dft['autorestart'] =  'no'
-        dft['stoptime'] =     '0' 
-        dft['dir'] =          './'
-        dft['env'] =          ""
-        dft['stdout'] =       f'./{program_name}.stdout'
-        dft['stderr'] =       f'./{program_name}.stderr'
-        dft['nbretries'] =    '0'#if crashes, restarts
-        dft['exitsignal'] =   '15'#SIGTERM
-        dft['suc_signal'] =   '15'#SIGTERM
-        dft['umask'] =        '022'
+        dft['command'] =     'sh sec_counter.bash'
+        dft['nbps'] =        '1'
+        dft['timetillsuc'] = '0' 
+        dft['autostart'] =   'no'
+        dft['autorestart'] = 'no'
+        dft['stoptime'] =    '0' 
+        dft['dir'] =         './'
+        dft['env'] =         ""
+        dft['stdout'] =      f'./{program_name}.stdout'
+        dft['stderr'] =      f'./{program_name}.stderr'
+        dft['nbretries'] =   '0'#if crashes, restarts
+        dft['exitsignal'] =  '15'#SIGTERM
+        dft['suc_signal'] =  '15'#SIGTERM
+        dft['umask'] =       '022'
         
         for key,val in program.items():
             if val == "":
@@ -166,12 +161,105 @@ class Program:
         for key,val in program.items():
             if val.isnumeric():
                 program[key] = int(program[key])
+
+    def ps_exists(self):
+        if self.program['pid']() == -1:
+            return False
+        return True
+        
+    def thread_fun(self, fun):
+        p = multiprocessing.Process(target=fun)
+        p.start()
+
+    def stop_ps(self):
+        #if self.get_ps_info('cmdline') != "":
+        if self.ps_exists() and self.program['stop_call'] == False:
+            self.program['stop_call'] = True
+            def x():
+                time.sleep(self.program['stoptime'])
+                if self.program['pid']() > 0:#not necessary if -1 kills session
+                    os.kill(self.program['pid'](), signal.SIGKILL)
+                self.program['stop_call'] = False
+            
+            self.thread_fun(x)
+            
+            return True
+        return False
     
-    def pss_start(self):
-       self.pss = map(Process.start_ps, self.program, self.pss) #[Process.start_ps(self.program, ps) for ps in pss]
+    #launch one instance of a process
+    def start_ps(self):
+        """
+            cmdline 
+        """
+        #if self.get_ps_info('cmdline') == "":
+        
+        if not self.ps_exists():
+            with open(self.program['stdout'],'a+') as out, \
+                 open(self.program['stderr'],'a+') as err:
+                #if self.program['umask'] != -1:
+                    
+                    psutil.Popen(self.program['cmdp'], stdout=out, stderr=err)
+            return True
+        return False
     
-    def pss_stop(self):
-        self.pss = map(Process.stop_ps, self.program, self.pss) #[Process.start_ps(self.program, ps) for ps in pss]
+    def status_ps(self):
+
+        lst = [
+                self.program['name'],
+                self.program['cmd'],
+                self.program['status'](),
+                self.program['pid'](),
+                self.program['run_time']()
+              ]
+        
+        status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*lst)
+        return status_msg
+    
+    def get_ps_infos(self):
+        """
+            ps_iter contains all the info of a ps given by the os
+        """
+        fields = ["cmdline", "pid", "create_time", "status"]
+        for cur_ps in psutil.process_iter(attrs=fields):
+            cur_ps = cur_ps.as_dict(attrs=fields)
+            if cur_ps['cmdline'] == self.program['cmdp']:
+                return cur_ps
+        return None
+    
+    def get_ps_info(self, info):
+        """
+            ps_iter contains all the info of a ps given by the os
+        """
+        cur_ps = self.get_ps_infos()
+        
+        if cur_ps is None:
+            if info == 'pid': return -1
+            else:             return None
+        
+        if  info == 'run_time':    return self.get_runtime()
+        elif info == 'pid':        return int(cur_ps[info])
+        else:                      return cur_ps[info]
+    
+    def get_runtime(self):
+        
+        epoch_ct = int(self.program['create_time']())
+        epoch_now = int(time.time())
+        
+        datetime_ct = datetime.fromtimestamp(epoch_ct)
+        datetime_now = datetime.fromtimestamp(epoch_now)
+        
+        run_time = str(datetime_now - datetime_ct)
+        return run_time
+    
+    def auto_start(self):
+        self.start_ps()
+        Global.printx(f"AUTOSTART <{self.program['name']}>")
+    
+    def set_umask(self):
+        os.umask(self.program['umask'])
+        Global.printx(f"umask set to :{self.program['umask']}")
+        
+
 
 
 
@@ -191,7 +279,6 @@ class Taskmaster_shell(cmd.Cmd):
     #http://patorjk.com/software/taag/#p=display&f=Bloody&t=Taskmaster
     intro = taskmaster_ascii_art = \
     """
-
     ▄▄▄█████▓ ▄▄▄        ██████  ██ ▄█▀ ███▄ ▄███▓ ▄▄▄        ██████ ▄▄▄█████▓▓█████  ██▀███  
     ▓  ██▒ ▓▒▒████▄    ▒██    ▒  ██▄█▒ ▓██▒▀█▀ ██▒▒████▄    ▒██    ▒ ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒
     ▒ ▓██░ ▒░▒██  ▀█▄  ░ ▓██▄   ▓███▄░ ▓██    ▓██░▒██  ▀█▄  ░ ▓██▄   ▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒
@@ -250,21 +337,21 @@ class Taskmaster_shell(cmd.Cmd):
       #      program.run()
     
     def do_start(self, user_input):
-        self.toggle_program(user_input, 'start')
+        self.toggle_ps(user_input, 'start')
 
     def do_stop(self, user_input):
-        self.toggle_program(user_input, 'stop')
+        self.toggle_ps(user_input, 'stop')
     
     def do_reload(self, suer_input):
-        self.toggle_program(user_input, 'stop')
-        self.toggle_program(user_input, 'start')
+        self.toggle_ps(user_input, 'stop')
+        self.toggle_ps(user_input, 'start')
     
-    def toggle_program(self, ps, action):
+    def toggle_ps(self, ps, action):
         if ps not in self.programs.keys():
             Global.printx("program <" + ps + "> don't exist")
             return
-        if action == 'stop':  res = self.programs[ps].stop_program()
-        if action == 'start': res = self.programs[ps].start_program()
+        if action == 'stop':  res = self.programs[ps].stop_ps()
+        if action == 'start': res = self.programs[ps].start_ps()
         
         if res == False: Global.printx("action " + action + " already launched")
         else:            Global.printx("action " + action + " launched")

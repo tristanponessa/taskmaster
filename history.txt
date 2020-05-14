@@ -1,0 +1,157 @@
+exit
+init ./config/taskmaster_cong.json
+init ./config/taskmaster_conf.json
+conf
+config
+ps
+echo config
+echo ps
+start 
+start 
+echo config
+echo ps
+init ./config/taskmaster_conf.json
+start
+start random101
+init ./config/taskmaster_conf.json
+start random101
+status
+exit
+history 1
+exit
+history 1
+reboot
+history 1
+history 2
+exit
+stop
+stop all
+stop sleep23
+
+reboot
+status
+stop random101
+status
+status
+status
+init ./config/taskmaster_conf.json
+echo config
+status
+exit
+stop random1-1
+stop random101
+status
+exit
+status
+status
+
+status
+status
+status
+stop random101
+status
+status
+stop random101
+status
+status
+status
+status
+status
+exit
+status
+status
+exit
+exit
+status
+status
+reboot
+status
+exit
+exit
+exit
+exit
+stop random101
+status
+exit
+stop random101
+exit
+stop random101
+status
+exit
+stop random101
+exit
+stop random101
+status
+exit
+stop random101
+exit
+stop random101
+exit
+stop random101
+status
+stop random101
+status
+exit
+exit
+stop random101
+exit
+exit
+exit
+stop random101
+exit
+exit
+stop random101
+exit
+exit
+exit
+status
+exit
+status
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+stop random101
+status
+exit
+status
+status
+status
+stop random101
+status
+exit
+exit
+exit
+exit
+exit
+start random101
+start random101
+status
+stop random101
+status
+stop random101
+status
+start random101
+status
+status
+status
+status
+exit
+status
+stop random101
+status
+start random101
+start random101
+start random101
+start random101
+status
+exit
+stop random101
+start random101
+exit
+exit

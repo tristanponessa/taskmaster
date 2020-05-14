@@ -1,99 +1,79 @@
-import multiprocessing
-import psutil
 import time
-
-"""
-def prg_cmd(ch_conn):
-    p = psutil.Popen(["sleep", "3"])
-    fields = ["cmdline", "name",  "pid", "create_time", "status"]
-    for cur_ps in psutil.process_iter():
-        cur_ps = cur_ps.as_dict(attrs=fields)
-        
-        if cur_ps['pid'] == p.pid:
-            print('this')
-            ch_conn.send(cur_ps)
-"""
-
-"""
-pr = dict()
-pr['nbpr'] = 8
-pr['cmdp'] = ["sleep", "10"]
+import sys
+from cmd import Cmd
+import keyword
 
 
-class Process:
+class _Wrapper:
+
+    def __init__(self, fd):
+        self.fd = fd
     
+    #is called on enter
+    def readline(self, *args):
+        try:
+            line = self.fd.readline(*args)
+            print("<", line.split(" "), ">")
+            return line
+        except KeyboardInterrupt:#ctrl+C
+            print("\nKeyboardInterrupt : ctrl+C")
+            return ('\n')
+         
+
+class MyPrompt(Cmd):
+    prompt = '$> '
+    intro = "Welcome! Type ? to list commands"
+
     def __init__(self):
-        
-        self.
-        
-        #multiple popen
+        self.use_rawinput = False
+        super().__init__(stdin=_Wrapper(sys.stdin))
         
         
+    
+    def preloop(self):
+        print(sys.stdin.readline())
+        Cmd.preloop(self)
 
-def start_ps(pr, ps):
-    
-    if not ps_exists(ps):
-        with open(pr['stdout'],'a+') as out, \
-             open(pr['stderr'],'a+') as err:
-            #if self.program['umask'] != -1:
-                ps = psutil.Popen(pr['cmdp'], stdout=out, stderr=err)
-    return ps
-    
-def stop_ps(self):
-    #if self.get_ps_info('cmdline') != "":
-    if self.ps_exists() and self.program['stop_call'] == False:
-        self.program['stop_call'] = True
-        def x():
-            time.sleep(self.program['stoptime'])
-            if self.program['pid']() > 0:#not necessary if -1 kills session
-                os.kill(self.program['pid'](), signal.SIGKILL)
-            self.program['stop_call'] = False
-        
-        self.thread_fun(x)
-        
+    def emptyline(self):
+        pass
+      
+    def do_exit(self, inp):
+        print("Bye")
         return True
-    return False
+    
+    def do_add(self, inp):
+        print("adding '{}'".format(inp))
 
-def prg_ps():
-    par_conn, ch_conn = multiprocessing.Pipe()
-    p = psutil.Popen(pr['cmdp'], stdout=out, stderr=err)
+    def help_add(self):
+        print("Add a new entry to the system.")
+
+    def help_exit(self):
+        print('exit the application. Shorthand: x q Ctrl-D.')
+
+    
+    def do_EOF(self, inp):
+        print("EOF : ctrl+D")
+        return self.do_exit(inp)
+        
+    def default(self, inp):
+        print("command don't exist")
+            
+
+ 
+#    do_EOF = do_exit
+ #   help_EOF = help_exit
+from curtsies import Input
+
+def main():
+    with Input(keynames='curses') as input_generator:
+        for e in input_generator:
+            print(repr(e))
+
+#if __name__ == '__main__':
+#    main()
 
 
-pss_lst = gen_ps_lst(pr)
-
-def gen_pss_lst(pr):
-    par_conn, ch_conn = multiprocessing.Pipe()
-    p = lambda : psutil.Popen(pr['cmdp'], stdout=pr['stdout'], stderr=pr['stderr'])
-    x = multiprocessing.Process(target=p, args=(ch_conn,)) 
-    return [x] * pr['nbpr']
-
-def get_infos(ps):
+if __name__ == '__main__':
     
     
-def stop_ps(pr, ps):
-    
-    
-    
-pss = 
-"""
-
-
-
-#print("popen pid >  ", p)
-par_conn, ch_conn = multiprocessing.Pipe()
-
-x = multiprocessing.Process(target=fun, args=(ch_conn,))
-
-#par_conn.close()
-x.start()
-print(">>", par_conn.recv())
-x.join()
-
-print("multips pid >", x.pid)
-
-while x.is_alive():
-    print("alive ", x.pid)
-    time.sleep(1)
-    
-    #print("alive ", x.status())
-print('finish')
+    MyPrompt().cmdloop()

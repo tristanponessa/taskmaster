@@ -1,0 +1,10 @@
+{
+	"random101":{
+        "autostart":"yes",
+        "exitsignal":["15","10"]
+    },
+    "sleep23":{
+        "autostart":"yes",
+        "exitsignal":["15","10"]
+    }
+}

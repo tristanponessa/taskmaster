@@ -1,307 +1,3 @@
-umask test
----taskmaster session : 2020-03-20 20:49:38---
-loaded programs from conf file
-umask set to :22
-AUTOSTART <random101>
-random101
-process start already launched
-random101 : sh sec_counter.bash       state: sleeping      PID:8467 runtime:4:30:24
-
-
-  Ctrl + c -> exit Taskmaster
-
-
----taskmaster session : 2020-03-20 21:06:11---
-loaded programs from conf file
-AUTOSTART <random101>
-random101
-process start already launched
-random101 : sh sec_counter.bash       state: sleeping      PID:20279 runtime:0:00:01
-taskmaster> EOF
----taskmaster session : 2020-03-20 21:08:30---
-loaded programs from conf file
----taskmaster session : 2020-03-20 21:10:40---
-loaded programs from conf file
----taskmaster session : 2020-03-20 21:11:49---
-loaded programs from conf file
-AUTOSTART <random101>
-random101
-random101 : sh sec_counter.bash       state: sleeping      PID:7577 runtime:0:00:04
----taskmaster session : 2020-03-21 16:08:56---
-loaded programs from conf file
-AUTOSTART <random101>
-random101
-random101 : sh sec_counter.bash       state: sleeping      PID:13016 runtime:0:00:01
-taskmaster> EOF
-taskmaster> EOF
-
-
-  Ctrl + d -> exit Taskmaster
-
-
----taskmaster session : 2020-03-22 13:51:37---
-loaded programs from conf file
----taskmaster session : 2020-03-22 13:55:26---
-loaded programs from conf file
----taskmaster session : 2020-03-22 14:57:02---
-loaded programs from conf file
----taskmaster session : 2020-03-22 15:02:07---
-loaded programs from conf file
-AUTOSTART <random101>
----taskmaster session : 2020-03-22 15:06:51---
-loaded programs from conf file
-AUTOSTART <random101>
----taskmaster session : 2020-03-22 15:08:04---
-loaded programs from conf file
-AUTOSTART <random101>
----taskmaster session : 2020-03-22 15:09:03---
-loaded programs from conf file
-AUTOSTART <random101>
----taskmaster session : 2020-03-22 15:10:27---
-loaded programs from conf file
-AUTOSTART <random101>
----taskmaster session : 2020-03-22 15:12:18---
-loaded programs from conf file
----taskmaster session : 2020-03-22 15:14:06---
-loaded programs from conf file
-AUTOSTART <random101>
----taskmaster session : 2020-03-22 15:14:31---
-loaded programs from conf file
----taskmaster session : 2020-03-22 15:31:34---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
----taskmaster session : 2020-03-22 15:58:29---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
----taskmaster session : 2020-03-22 15:59:11---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
----taskmaster session : 2020-03-22 15:59:40---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
----taskmaster session : 2020-03-22 16:01:07---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-random101
-random101
----taskmaster session : 2020-03-22 16:02:52---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101
-instance 1 random101
----taskmaster session : 2020-03-22 16:06:22---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101
-instance 1 random101
-random101 : sh sec_counter.bash       state: sleeping      PID:27746 runtime:0:52:17
-random101 : sh sec_counter.bash       state: sleeping      PID:27746 runtime:0:52:17
-taskmaster> exit
-<Exiting Taskmaster>
-
-
----taskmaster session : 2020-03-22 16:12:50---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101
-instance 1 random101
-random101 : sh sec_counter.bash       state: sleeping      PID:4835 runtime:0:00:00
-random101 : sh sec_counter.bash       state: sleeping      PID:4835 runtime:0:00:00
-taskmaster> status
-random101 : sh sec_counter.bash       state: sleeping      PID:4835 runtime:0:00:16
-random101 : sh sec_counter.bash       state: sleeping      PID:4835 runtime:0:00:16
----taskmaster session : 2020-03-22 16:13:41---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101
-instance 1 random101
-random101 : sh sec_counter.bash       state: sleeping      PID:4946 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:4946 runtime:0:00:01
-taskmaster> exit
-<Exiting Taskmaster>
-
-
----taskmaster session : 2020-03-22 17:37:16---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101
-instance 1 random101
-random101 : sh sec_counter.bash       state: disk-sleep      PID:6208 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:00:01
-taskmaster> status
-random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:00:09
-random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:00:09
-taskmaster> status
-random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:01:00
-random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:01:01
-taskmaster> status
-random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:01:07
-random101 : sh sec_counter.bash       state: sleeping      PID:6208 runtime:0:01:07
-taskmaster> status
-random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
-random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
-taskmaster> EOF
-
-
-  Ctrl + d -> exit Taskmaster
-
-
----taskmaster session : 2020-03-22 17:43:20---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7f134ec83da0>
-instance 1 random101 adr <__main__.Program object at 0x7f1350f0c0b8>
-random101 : sh sec_counter.bash       state: sleeping      PID:7385 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:7385 runtime:0:00:01
----taskmaster session : 2020-03-22 17:48:19---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
----taskmaster session : 2020-03-22 18:11:15---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
----taskmaster session : 2020-03-22 18:23:59---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
----taskmaster session : 2020-03-22 18:33:44---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7fe9e6c9be10>
-instance 1 random101 adr <__main__.Program object at 0x7fe9e8f300b8>
-x7000 : sh sec_counter.bash       state: sleeping      PID:14328 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:14328 runtime:0:00:01
----taskmaster session : 2020-03-22 18:35:08---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7f218ca3be48>
-instance 1 random101 adr <__main__.Program object at 0x7f218ecb60b8>
-x7000 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:00:01
----taskmaster session : 2020-03-22 18:36:20---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
----taskmaster session : 2020-03-22 18:43:15---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7fe352142e10>
-instance 1 random101 adr <__main__.Program object at 0x7fe3529d7f60>
-x7000 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:08:08
-random101 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:08:08
----taskmaster session : 2020-03-22 18:43:34---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7feb4602deb8>
-instance 1 random101 adr <__main__.Program object at 0x7feb482c30b8>
-x7000 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:08:27
-random101 : sh sec_counter.bash       state: sleeping      PID:14529 runtime:0:08:27
----taskmaster session : 2020-03-22 18:46:01---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
----taskmaster session : 2020-03-22 18:55:17---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7f08ea73af60>
-instance 1 random101 adr <__main__.Program object at 0x7f08ea759d68>
-x7000 : sh sec_counter.bash       state: sleeping      PID:17137 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:17137 runtime:0:00:01
----taskmaster session : 2020-03-22 18:56:53---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7f3cf6d70eb8>
-instance 1 random101 adr <__main__.Program object at 0x7f3cf90070b8>
-x7000 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:00:01
----taskmaster session : 2020-03-22 18:59:41---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7fcea83fdf28>
-instance 1 random101 adr <__main__.Program object at 0x7fceaa6810b8>
-x7000 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:02:49
-random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:02:49
----taskmaster session : 2020-03-22 19:02:06---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101 adr <__main__.Program object at 0x7fd9bd2e4f60>
-instance 1 random101 adr <__main__.Program object at 0x7fd9bd304d68>
-x7000 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:05:14
-random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:05:14
----taskmaster session : 2020-03-22 19:18:17---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101
-instance 1 random101
-random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:21:25
-random101 : sh sec_counter.bash       state: sleeping      PID:17364 runtime:0:21:25
----taskmaster session : 2020-03-22 21:31:03---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101
-instance 1 random101
-random101 : sh sec_counter.bash       state: sleeping      PID:28118 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:28118 runtime:0:00:01
----taskmaster session : 2020-03-22 21:49:32---
-loaded programs from conf file
-AUTOSTART <random101>
-AUTOSTART <random101>
-programs init:
-instance 0 random101
-instance 1 random101
-random101 : sh sec_counter.bash       state: sleeping      PID:31669 runtime:0:00:01
-random101 : sh sec_counter.bash       state: sleeping      PID:31669 runtime:0:00:01
-taskmaster> EOF
-
-
-  Ctrl + d -> exit Taskmaster
 
 
 taskmaster> EOF
@@ -387,3 +83,1582 @@ taskmaster> exit
 <Exiting Taskmaster>
 
 
+---taskmaster session : 2020-05-12 17:09:41---
+loaded programs from conf file
+---taskmaster session : 2020-05-12 17:32:10---
+loaded programs from conf file
+---taskmaster session : 2020-05-12 19:02:47---
+loaded programs from conf file
+---taskmaster session : 2020-05-12 19:06:47---
+loaded programs from conf file
+---taskmaster session : 2020-05-12 23:01:48---
+taskmaster> j
+---taskmaster session : 2020-05-12 23:03:26---
+taskmaster> j
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-12 23:16:20---
+taskmaster> j
+---taskmaster session : 2020-05-13 01:27:12---
+taskmaster> init
+---taskmaster session : 2020-05-13 01:27:49---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 01:28:31---
+taskmaster> init
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 01:29:55---
+taskmaster> init
+---taskmaster session : 2020-05-13 01:30:25---
+taskmaster> init
+---taskmaster session : 2020-05-13 01:30:51---
+taskmaster> init
+---taskmaster session : 2020-05-13 01:31:11---
+taskmaster> init
+---taskmaster session : 2020-05-13 01:31:23---
+taskmaster> init
+---taskmaster session : 2020-05-13 01:31:33---
+taskmaster> init
+---taskmaster session : 2020-05-13 01:33:39---
+taskmaster> init
+error : config file  don't exist
+error : config file  don't end with json
+---taskmaster session : 2020-05-13 01:34:11---
+taskmaster> init
+error : config file <> don't exist
+error : config file <> don't end with json
+taskmaster> init taskmaster_conf.json
+error : config file <taskmaster_conf.json> don't exist
+taskmaster> init config/tasmaster_conf.json
+error : config file <config/tasmaster_conf.json> don't exist
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 01:37:17---
+taskmaster> init
+error : config file <> don't exist
+error : config file <> don't end with json
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2020-05-13 01:40:12---
+taskmaster> ls
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2020-05-13 01:41:41---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 01:42:01---
+taskmaster> ls
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 01:42:32---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 01:42:39---
+taskmaster> pwd
+taskmaster> pwd d
+taskmaster> init conf
+error : config file <conf> don't exist
+error : config file <conf> don't end with json
+taskmaster> init ./conf
+error : config file <./conf> don't exist
+error : config file <./conf> don't end with json
+taskmaster> init ./config
+error : config file <./config> don't end with json
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+---taskmaster session : 2020-05-13 01:46:48---
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-13 01:49:59---
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> uninit ./config/taskmaster_conf.json
+uninit conf file
+{}
+taskmaster> uninit ./config/taskmaster_conf.json
+uninit conf file
+{}
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-13 01:54:05---
+taskmaster> uninit
+uninit conf file
+{}
+taskmaster> uninit x
+no args display help for uninit
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 13:54:15---
+taskmaster> init ./conf/taskmaster.json
+error : config file <./conf/taskmaster.json> don't exist
+taskmaster> init ./conf/taskmaster_conf.json
+error : config file <./conf/taskmaster_conf.json> don't exist
+taskmaster> pwd
+taskmaster> init ./config/taskmaster.json
+error : config file <./config/taskmaster.json> don't exist
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-13 14:01:34---
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-13 14:05:19---
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-13 14:06:07---
+taskmaster> self.ps['cmdp'] = self.ps['command'].replace('\n', '').split(' ')
+display help
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> init ./config/taskmaster_conf.json
+loaded conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-13 14:09:30---
+taskmaster>  init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-13 14:10:12---
+taskmaster>  init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 14:12:53---
+taskmaster> st = []
+display help
+taskmaster>         for k,v in self.__dict__.items():
+display help
+taskmaster>             lst.append(f'{k} -> {v}')
+display help
+taskmaster>         x = '\n'.join(lst)
+display help
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-13 14:16:48---
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-13 14:18:05---
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-13 14:20:28---
+taskmaster> lst.append(f"\nPS {self.ps['name']}".center(50, '*'))
+display help
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-13 14:22:45---
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-13 14:28:11---
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-13 14:33:18---
+taskmaster> echo config
+---taskmaster session : 2020-05-13 14:34:26---
+taskmaster>  init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> echo config
+---taskmaster session : 2020-05-13 14:52:26---
+taskmaster> echo config
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 15:28:01---
+taskmaster> echo conf
+taskmaster> echo config
+taskmaster> echo pss
+taskmaster> reboot
+---taskmaster session : 2020-05-13 17:05:40---
+taskmaster> 
+taskmaster> 
+taskmaster> l
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 19:33:52---
+taskmaster> l
+display help
+taskmaster> x
+display help
+taskmaster> x x
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 19:39:28---
+taskmaster> l
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 21:50:16---
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2020-05-13 21:57:42---
+---taskmaster session : 2020-05-13 22:04:23---
+taskmaster> f
+---taskmaster session : 2020-05-13 22:08:59---
+taskmaster> l
+display help
+taskmaster> reboot
+---taskmaster session : 2020-05-13 22:12:05---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 22:12:20---
+taskmaster> reboot
+---taskmaster session : 2020-05-13 22:18:38---
+taskmaster> l
+display help
+taskmaster> reboot
+---taskmaster session : 2020-05-13 22:40:24---
+taskmaster> history
+taskmaster> reboot
+---taskmaster session : 2020-05-13 22:42:37---
+taskmaster> history
+taskmaster> history 5
+---taskmaster session : 2020-05-13 22:43:46---
+taskmaster> history 5
+taskmaster> reboot
+---taskmaster session : 2020-05-13 22:44:25---
+taskmaster> a
+display help
+taskmaster> b
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 22:45:47---
+taskmaster> a
+display help
+taskmaster> b
+display help
+taskmaster> history
+---taskmaster session : 2020-05-13 22:46:07---
+taskmaster> a
+display help
+taskmaster> b
+display help
+taskmaster> history
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 22:46:48---
+taskmaster> a
+display help
+taskmaster> b
+display help
+taskmaster> history
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+---taskmaster session : 2020-05-13 23:10:49---
+taskmaster> import sys; print('%s %s' % (sys.executable or sys.platform, sys.version))
+---taskmaster session : 2020-05-13 23:15:16---
+---taskmaster session : 2020-05-13 23:15:59---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 23:20:53---
+taskmaster> a
+display help
+taskmaster> b
+display help
+taskmaster> reboot
+---taskmaster session : 2020-05-13 23:21:36---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 23:30:53---
+taskmaster> l
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 23:32:13---
+taskmaster> l
+display help
+taskmaster> l
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 23:35:14---
+taskmaster> l
+display help
+taskmaster> 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 23:36:47---
+taskmaster> l
+display help
+taskmaster> l
+display help
+---taskmaster session : 2020-05-13 23:40:38---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-13 23:40:48---
+taskmaster> a
+display help
+taskmaster> b
+display help
+taskmaster> exitb
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 00:23:42---
+taskmaster> D
+display help
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2020-05-14 00:24:52---
+taskmaster> 
+taskmaster> L
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 00:26:01---
+taskmaster> 
+taskmaster> l
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 00:27:00---
+taskmaster> l
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 00:28:13---
+taskmaster> d
+display help
+taskmaster> [A[A[C[D[A[D[B[D[C[A[D[C
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 00:29:53---
+taskmaster> [A[A[C[D[B[D[C[A
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 00:30:34---
+taskmaster> [A[A[C[D[B[D
+display help
+taskmaster> [A
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 00:31:16---
+taskmaster> [A
+display help
+taskmaster> l
+display help
+taskmaster> [A
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 00:34:03---
+taskmaster> [A
+display help
+taskmaster> [A[A
+display help
+taskmaster> [A
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 01:25:59---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 01:26:29---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 14:41:34---
+---taskmaster session : 2020-05-14 14:41:48---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 14:44:03---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 14:48:58---
+taskmaster> history
+taskmaster> history
+taskmaster> reboot
+---taskmaster session : 2020-05-14 14:51:01---
+taskmaster> 
+taskmaster> 
+taskmaster> 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 14:59:10---
+taskmaster> history 43
+taskmaster> [Aexit
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 15:08:20---
+taskmaster> init ./config/taskmaster_cong.json
+error : config file <./config/taskmaster_cong.json> don't exist
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> conf
+display help
+taskmaster> config
+display help
+taskmaster> ps
+display help
+taskmaster> echo config
+taskmaster> echo ps
+taskmaster> start 
+---taskmaster session : 2020-05-14 15:17:04---
+taskmaster> start 
+program <> don't exist
+taskmaster> echo config
+taskmaster> echo ps
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> start
+program <> don't exist
+taskmaster> start random101
+---taskmaster session : 2020-05-14 15:22:16---
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> start random101
+action start launched
+taskmaster> status
+---taskmaster session : 2020-05-14 15:23:03---
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 15:30:01---
+taskmaster> history 1
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 15:30:35---
+taskmaster> history 1
+taskmaster> reboot
+---taskmaster session : 2020-05-14 15:31:47---
+taskmaster> history 1
+error : config file <./config/taskmaster_cong.json> don't exist
+taskmaster> history 2
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2020-05-14 15:57:57---
+error : config file <./config/taskmaster_cong.json> don't exist
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 15:58:21---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start already launched
+---taskmaster session : 2020-05-14 16:02:13---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start already launched
+random101 : sh sec_counter.bash       state: sleeping      PID:9336 runtime:0:39:52
+sleep23 : sh sec_counter.bash       state: sleeping      PID:9336 runtime:0:39:52
+taskmaster> stop
+program <> don't exist
+taskmaster> stop all
+program <all> don't exist
+taskmaster> stop sleep23
+action stop launched
+taskmaster> 
+taskmaster> reboot
+---taskmaster session : 2020-05-14 16:03:25---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start already launched
+random101 : sh sec_counter.bash       state: sleeping      PID:9336 runtime:0:41:04
+sleep23 : sh sec_counter.bash       state: sleeping      PID:9336 runtime:0:41:04
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:9336 runtime:0:43:30
+sleep23 : sh sec_counter.bash       state: sleeping      PID:9336 runtime:0:43:31
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> init ./config/taskmaster_conf.json
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> echo config
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 16:13:22---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:16798 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:16798 runtime:0:00:01
+taskmaster> stop random1-1
+program <random1-1> don't exist
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+---taskmaster session : 2020-05-14 16:15:54---
+updated conf file
+---taskmaster session : 2020-05-14 16:16:45---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+---taskmaster session : 2020-05-14 16:17:59---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:17191 runtime:0:01:09
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 16:31:15---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-14 16:32:11---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-14 16:37:56---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:18577 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:18577 runtime:0:00:33
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:18577 runtime:0:00:36
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> 
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:18577 runtime:0:00:38
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:18577 runtime:0:00:38
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:18577 runtime:0:00:39
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: zombie      PID:18577 runtime:0:05:40
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: zombie      PID:18577 runtime:0:05:49
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop already launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: zombie      PID:18577 runtime:0:06:03
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: zombie      PID:18577 runtime:0:06:52
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: zombie      PID:18577 runtime:0:07:10
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: zombie      PID:18577 runtime:0:07:11
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: zombie      PID:18577 runtime:0:07:36
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 16:47:26---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:19399 runtime:0:00:12
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+action stop launched
+taskmaster> status
+---taskmaster session : 2020-05-14 16:52:33---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:19861 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 17:05:51---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-14 17:06:01---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-14 17:06:40---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-14 17:07:45---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:20890 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 17:10:26---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:21720 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+---taskmaster session : 2020-05-14 17:12:29---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:21826 runtime:0:00:10
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+action stop launched
+taskmaster> status
+---taskmaster session : 2020-05-14 17:13:20---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+taskmaster> reboot
+---taskmaster session : 2020-05-14 17:13:59---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:22039 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-05-14 17:39:28---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:24130 runtime:0:00:00
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+24130
+---taskmaster session : 2020-05-14 17:40:38---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:24240 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+24240
+killed pid : 
+24240
+---taskmaster session : 2020-05-14 17:43:50---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:24309 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+24309
+killed pid : 24309
+---taskmaster session : 2020-05-14 17:44:51---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:24366 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+24366
+killed pid : 24366
+---taskmaster session : 2020-05-14 17:45:16---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:24393 runtime:0:00:00
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+24393
+killed pid : 24393
+---taskmaster session : 2020-05-14 17:49:17---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:24606 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+24606
+killed pid : 24606
+---taskmaster session : 2020-05-14 17:49:41---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:24633 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+24633
+killed pid : 24633
+---taskmaster session : 2020-05-14 17:55:50---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:24935 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+24935
+killed pid : 24935
+---taskmaster session : 2020-05-14 17:57:04---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:25033 runtime:0:00:00
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+25033
+killed pid : 25033
+---taskmaster session : 2020-05-14 17:59:17---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:25168 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+25168
+killed pid : 25168
+---taskmaster session : 2020-05-14 18:08:27---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:25387 runtime:0:00:00
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+killing pids created by taskmaster : 
+25387
+killed pid : 25387
+---taskmaster session : 2020-05-14 18:12:19---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:25493 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:25493 runtime:0:00:06
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+25493
+killed pid : 25493
+---taskmaster session : 2020-05-14 18:23:00---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:25978 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+25978
+killed pid : 25978
+---taskmaster session : 2020-05-14 18:23:33---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:26046 runtime:0:00:00
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+26046
+killed pid : 26046
+---taskmaster session : 2020-05-14 18:25:02---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:26130 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+26130
+---taskmaster session : 2020-05-14 18:25:43---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:26232 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+26232
+26232 state > sleeping
+killed pid : 26232
+---taskmaster session : 2020-05-14 18:25:50---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:26251 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+26251
+26251 state > zombie
+killed pid : 26251
+---taskmaster session : 2020-05-14 18:26:50---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:26300 runtime:0:00:00
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+26300
+26300 state > sleeping
+killed pid : 26300
+---taskmaster session : 2020-05-14 18:26:54---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:26316 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> stop random101
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+26316
+26316 state > zombie
+killed pid : 26316
+---taskmaster session : 2020-05-14 19:18:09---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:26812 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+26812
+---taskmaster session : 2020-05-14 19:26:23---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+action start launched
+random101 : sh sec_counter.bash       state: sleeping      PID:27080 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+27080
+27080 state > sleeping
+---taskmaster session : 2020-05-14 19:31:06---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+---taskmaster session : 2020-05-14 19:31:44---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:28436 runtime:0:00:00
+sleep23 : sh sec_counter.bash       state: sleeping      PID:28439 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:28436 runtime:0:00:21
+sleep23 : sh sec_counter.bash       state: sleeping      PID:28439 runtime:0:00:21
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+28439
+28439 state > sleeping
+---taskmaster session : 2020-05-14 19:34:29---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:28676 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:28679 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:28676 runtime:0:00:04
+sleep23 : sh sec_counter.bash       state: sleeping      PID:28679 runtime:0:00:04
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+2867628679
+---taskmaster session : 2020-05-14 19:36:48---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+29303
+pss.txt
+a
+29306
+pss.txt
+a
+random101 : sh sec_counter.bash       state: sleeping      PID:29303 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:29306 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+2867628679
+---taskmaster session : 2020-05-14 19:38:02---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:29637 runtime:0:00:00
+sleep23 : sh sec_counter.bash       state: sleeping      PID:29640 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+286762867929637
+
+
+
+29640
+
+
+
+---taskmaster session : 2020-05-14 19:41:14---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:30507 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:30510 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+286762867929637
+
+
+
+29640
+
+
+
+30507
+
+
+
+30510
+
+
+
+---taskmaster session : 2020-05-14 19:42:57---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:30956 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:30959 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+286762867929637
+
+
+
+29640
+
+
+
+30507
+
+
+
+30510
+
+
+
+30956
+
+
+
+30959
+
+
+
+---taskmaster session : 2020-05-14 19:46:46---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:31193 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31196 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+
+
+31193
+
+
+
+31196
+
+
+
+---taskmaster session : 2020-05-14 19:47:33---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:31414 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31417 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+
+
+31193
+
+
+
+31196
+
+
+
+31414
+
+31417
+
+---taskmaster session : 2020-05-14 19:47:56---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:31579 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31582 runtime:0:00:02
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+
+
+31579
+
+31582
+
+---taskmaster session : 2020-05-14 19:49:16---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:31686 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31689 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+31686
+
+31689
+
+31686 state > sleeping
+31689 state > sleeping
+---taskmaster session : 2020-05-14 19:50:49---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:31742 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31745 runtime:0:00:01
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31745 runtime:0:00:32
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+31742
+
+31745
+
+31742 state > zombie
+31745 state > sleeping
+---taskmaster session : 2020-05-14 19:53:15---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:31967 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31970 runtime:0:00:01
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:31967 runtime:0:00:07
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31970 runtime:0:00:08
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:31967 runtime:0:00:12
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31970 runtime:0:00:12
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:31967 runtime:0:00:15
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31970 runtime:0:00:15
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: sleeping      PID:31970 runtime:0:00:29
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+31967
+
+31970
+
+31967 state > zombie
+31970 state > sleeping
+---taskmaster session : 2020-05-14 19:58:08---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:32186 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32189 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+32186
+
+32189
+
+32186 state > sleeping32189 state > sleeping---taskmaster session : 2020-05-14 19:59:11---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:32274 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32277 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 32274
+32277
+32274 state > sleeping
+32277 state > sleeping
+---taskmaster session : 2020-05-14 19:59:50---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:32381 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32384 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+32381
+32384
+32381 state > sleeping
+32384 state > sleeping
+---taskmaster session : 2020-05-14 20:00:12---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:32421 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32424 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+32421
+32424
+
+32421 state > sleeping
+32424 state > sleeping
+---taskmaster session : 2020-05-14 20:00:43---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:32461 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32464 runtime:0:00:01
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+killing pids created by taskmaster : 
+32461
+32464
+
+32461 state > zombie
+32464 state > sleeping
+---taskmaster session : 2020-05-14 20:01:18---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:32488 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32491 runtime:0:00:01
+taskmaster> start random101
+action start already launched
+taskmaster> start random101
+action start already launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:32488 runtime:0:00:12
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32491 runtime:0:00:12
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32491 runtime:0:00:25
+taskmaster> stop random101
+action stop already launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32491 runtime:0:00:33
+taskmaster> start random101
+action start launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:32626 runtime:0:00:04
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32491 runtime:0:00:42
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:32626 runtime:0:00:07
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32491 runtime:0:00:45
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:32626 runtime:0:00:29
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32491 runtime:0:01:08
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:32626 runtime:0:01:31
+sleep23 : sh sec_counter.bash       state: sleeping      PID:32491 runtime:0:02:09
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+32488
+32491
+32626
+
+---taskmaster session : 2020-05-14 20:05:29---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:887 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:890 runtime:0:00:00
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:887 runtime:0:00:05
+sleep23 : sh sec_counter.bash       state: sleeping      PID:890 runtime:0:00:04
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: None      PID:-1 runtime:None
+sleep23 : sh sec_counter.bash       state: sleeping      PID:890 runtime:0:00:19
+taskmaster> start random101
+action start launched
+taskmaster> start random101
+action start already launched
+taskmaster> start random101
+action start already launched
+taskmaster> start random101
+action start already launched
+taskmaster> status
+random101 : sh sec_counter.bash       state: sleeping      PID:1009 runtime:0:00:05
+sleep23 : sh sec_counter.bash       state: sleeping      PID:890 runtime:0:00:32
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+32488
+32491
+32626
+887
+890
+1009
+
+---taskmaster session : 2020-05-14 20:06:44---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:1260 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:1263 runtime:0:00:01
+taskmaster> stop random101
+action stop launched
+taskmaster> start random101
+action start launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+32488
+32491
+32626
+887
+890
+1009
+1260
+1263
+1342
+
+32488 state > already dead
+32491 state > already dead
+32626 state > already dead
+887 state > already dead
+890 state > sleeping
+1009 state > sleeping
+1260 state > already dead
+1263 state > sleeping
+1342 state > sleeping
+---taskmaster session : 2020-05-14 20:07:13---
+updated conf file
+{'random101': {'autostart': 'yes', 'exitsignal': ['15', '10']}, 'sleep23': {'autostart': 'yes', 'exitsignal': ['15', '10']}}
+random101 : sh sec_counter.bash       state: sleeping      PID:1442 runtime:0:00:01
+sleep23 : sh sec_counter.bash       state: sleeping      PID:1445 runtime:0:00:01
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+1442
+1445
+
+1442 state > sleeping
+1445 state > sleeping
