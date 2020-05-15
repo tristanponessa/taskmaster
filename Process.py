@@ -12,6 +12,7 @@ import psutil
 import os
 import signal
 import traceback
+import subprocess
 
 import Json as jsonFILE
 import Global
@@ -44,19 +45,35 @@ class Process:
         self.ps['run_time'] =     lambda : self.get_ps_info('run_time')
         self.ps['pid'] =          lambda : self.get_ps_info('pid')
         self.ps['status'] =       lambda : self.get_ps_info('status')#function
+        self.ps['exit'] =     lambda : self.get_ps_info('exitcode')#function
         self.ps['stop_call'] = False
+        
+        self.exitcode = None
         
         ####################################################################        
         
         #self.pss = [None] * self.ps['nbps']
         #if self.ps['umask'] != -1:        self.set_umask()
         if self.ps['autostart'] == "yes": 
+            Global.printx(f"{self.ps['name']} : autostart")
             self.start_ps()
         
+        self.success_countdown()
+    
+    def success_countdown(self):
+        def x():
+            s = int(self.ps['timetillsuc'])
+            name = self.ps['name']
+            for i in range(s):
+                time.sleep(1)
+            Global.print_file(f'{name} running for over {s}s, its working properly', Global.tk_res, 'a')
+        p = multiprocessing.Process(target=x)
+        p.start()
+
     def default_vals(self, ps_name, conf):
     
         dft =   {
-                    'cmd':      'sh sec_counter.bash',
+                    'cmd':          'sh sec_counter.bash',
                     'nbps':         '1',
                     'timetillsuc':  '0',
                     'autostart':    'no',
@@ -68,7 +85,7 @@ class Process:
                     'stderr':       f'./{ps_name}.stderr',
                     'nbretries':    '0',#if crashes, restarts
                     'exitsignal':   '15',#SIGTERM
-                    'suc_signal':   '15',#SIGTERM
+                    'exitcode':     '0',
                     'umask':        '022'
                 }
         
@@ -100,6 +117,7 @@ class Process:
     def thread_fun(self, fun):
         p = multiprocessing.Process(target=fun)
         p.start()
+        return p
 
     def stop_ps(self):
         #if self.get_ps_info('cmdline') != "":
@@ -111,6 +129,7 @@ class Process:
                 if self.ps['pid']() > 0:#not necessary if -1 kills session
                     p = self.ps['popen']
                     p.kill()
+                    #print(p.communicate())
                 self.ps['stop_call'] = False
             
             self.thread_fun(x)
@@ -133,22 +152,60 @@ class Process:
                 #if self.ps['umask'] != -1:
                     
                     self.ps['popen'] = psutil.Popen(self.ps['cmdp'], stdout=out, stderr=err)
-                    #Global.save_file([self.ps['popen'].pid], Global.pss_file, 'a')
                     Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
             return True
         return False
     
+    """
+    def wait_for_exitcode(self):
+        #at the second return code changes , save in file
+        def x(self):
+            while True:
+                if self.exitcode is not None:
+                    msg = f"ps {self.ps['name'] ended  exitcode:{self.exitcode} expecting {self.ps['exitcode']}    }"
+                    if str(self.exitcode) == self.ps['exitcode']:
+                        msg += 'success'
+                    else:
+                        msg += 'fail'
+                    
+                    Global.print_file(msg, Global.tk_res, 'a')
+                    break
+                
+            
+        p = multiprocessing.Process(target=fun, args( ,))
+        p.start()
+     """       
+    
     def status_ps(self):
-
+        
+        res = self.ps['exit']() #once done sends once
+        if res is not None:
+            self.exitcode = res
+            
+            msg = f"ps {self.ps['name']} ended  exitcode:{self.exitcode} expecting {self.ps['exitcode']}  "
+            if str(self.exitcode) == self.ps['exitcode']:
+                msg += 'success'
+            else:
+                msg += 'fail'
+            
+            Global.print_file(msg, Global.tk_res, 'a')
+            
+                
         lst = [
                 self.ps['name'],
                 self.ps['cmd'],
                 self.ps['status'](),
                 self.ps['pid'](),
-                self.ps['run_time']()
+                self.ps['run_time'](),
+                self.exitcode #once done sends once
               ]
         
-        status_msg = "{} : {}       state: {}      PID:{} runtime:{}".format(*lst)
+        pad = [30,30,10,7,10,3]
+        for i in range(len(lst)):
+            lst[i] = str(lst[i])
+            lst[i] = lst[i].ljust(pad[i], ' ')
+   
+        status_msg = "name:{} | cmd:{} | state: {} | PID:{} | runtime:{} | exitcode:{} ".format(*lst)
         return status_msg
     
     def get_ps_infos(self):
@@ -173,9 +230,20 @@ class Process:
             if info == 'pid': return -1
             else:             return None
         
-        if  info == 'run_time':    return self.get_runtime()
-        elif info == 'pid':        return int(cur_ps[info])
-        else:                      return cur_ps[info]
+        if  info == 'run_time':    
+            return self.get_runtime()
+        elif info == 'exitcode':
+            exitcode = None
+            if self.ps['popen'] is not None:
+                try:
+                    exitcode = self.ps['popen'].wait(timeout=1)
+                except psutil.TimeoutExpired:
+                    pass
+            return exitcode
+        elif info == 'pid':        
+            return int(cur_ps[info])
+        else:                      
+            return cur_ps[info]
     
     def get_runtime(self):
         

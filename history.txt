@@ -155,3 +155,66 @@ stop random101
 start random101
 exit
 exit
+exit
+EOF
+exit
+exit
+EOF
+result
+result
+reboot
+exit
+reboot
+reboot
+reboot
+reboot
+status
+stop random101
+stop sleep23
+exit
+stop sleep23
+exit
+status
+exit
+exit
+exit
+status
+exit
+exit
+status
+exit
+exit
+status
+exit
+status
+exit
+status
+exit
+status
+exit
+print 
+print pss
+print res
+EOF
+print res
+print res
+print pss
+exit
+exit
+exit
+status
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+status
+status
+status
+print pss
+print res
+exit

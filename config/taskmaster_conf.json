@@ -1,10 +1,16 @@
 {
 	"random101":{
-        "autostart":"yes",
-        "exitsignal":["15","10"]
+        "autostart":"no",
+        "exitsignal":["15","10"],
+        "timetillsuc":"5"
     },
     "sleep23":{
         "autostart":"yes",
         "exitsignal":["15","10"]
+    },
+    "check":{
+        "cmd":"python3 check.py",
+        "autostart":"yes",
+        "exitcode":"1"
     }
 }

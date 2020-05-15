@@ -1,0 +1,4 @@
+warning: Debugger speedups using cython not found. Run '"/usr/bin/python3" "/home/user/.p2/pool/plugins/org.python.pydev.core_7.5.0.202001101138/pysrc/setup_cython.py" build_ext --inplace' to build.
+pydev debugger: starting (pid: 21534)
+warning: Debugger speedups using cython not found. Run '"/usr/bin/python3" "/home/user/.p2/pool/plugins/org.python.pydev.core_7.5.0.202001101138/pysrc/setup_cython.py" build_ext --inplace' to build.
+pydev debugger: starting (pid: 22591)

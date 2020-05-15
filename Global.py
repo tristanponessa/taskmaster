@@ -2,11 +2,20 @@ import os
 import signal 
 import psutil
 
-log_file = 'taskmaster.log'
-history_file = 'history.txt'
-pss_file = 'pss.txt'
+log_file = 'taskmaster.log' #echo terminal
+history_file = 'history.txt' #last cmds
+pss_file = 'pss.txt' #all the pids of this session
+tk_res = 'taskmaster_res.txt' #launch res of ps
 
+reboot = False
 
+def setup_files():
+    #create files if dont exist
+    with open(log_file, 'a+') as f:pass
+    with open(history_file, 'a+') as f:pass
+    with open(pss_file, 'w+') as f:pass
+    with open(tk_res, 'w+') as f:pass
+    
 def printx(*args, end=None):
     """ stdout and file """
     for arg in args:
@@ -48,6 +57,5 @@ def kill_leftover():
             os.kill(int(pid), signal.SIGKILL)
         else:
             printx(f'{pid} state > already dead')
-    with open(pss_file, 'w') as f:
-        pass
+
     

@@ -19,7 +19,7 @@ import readline
 import Process as psFILE
 import Json as jsonFILE
 import Global
-from jinja2.filters import do_default
+
 
 """
 NOTES:
@@ -90,7 +90,7 @@ class Taskmaster_shell(cmd.Cmd):
         Global.printx('---taskmaster session : ' + now_time + '---')
         
         readline.read_history_file(Global.history_file)
-        
+        Global.setup_files()
 
         #load your running process on computer
         
@@ -150,11 +150,18 @@ class Taskmaster_shell(cmd.Cmd):
     
     
 
-    def do_echo(self, user_input):
+    def do_print(self, user_input):
         if user_input == 'config':
             print(jsonFILE.conf)
         if user_input == 'ps':
             print(self.pss)
+        if user_input == 'pss':
+            os.system(f'cat {Global.pss_file}')
+        if user_input == 'res':
+            os.system(f'cat {Global.tk_res}')
+        if user_input == 'log':
+            os.system(f'cat {Global.taskmaster_log}')
+
 
     #def do_run_all(self, user_input):
      #   for program in self.pss:
@@ -199,7 +206,9 @@ class Taskmaster_shell(cmd.Cmd):
             status_msg = self.pss[user_input].status_ps()
             Global.printx(status_msg)
             
-                
+    def do_result(self, user_input):
+        l = Global.load_file(Global.tk_res)
+        Global.printx(*l)
 
 
     def emptyline(self):
@@ -221,7 +230,10 @@ class Taskmaster_shell(cmd.Cmd):
         print('srcew you!')
     
     def do_reboot(self, i):
-        os.execl(sys.executable, sys.executable, *sys.argv)
+        Global.printx("REBOOT")
+        Global.reboot = True
+        self.do_exit()
+        
     
     
         

@@ -5,6 +5,7 @@ if not (v.major == 3 and v.minor == 6):
    print(f'ERROR : wrong python version {v} please launch v3.6')
    sys.exit(0)
 
+import os
 import Taskmaster as tsFILE #psutil in 3.8 causes crash
 import Global
 
@@ -20,11 +21,16 @@ if __name__ == '__main__':
             Global.printx('\n\n  Ctrl + c -> exit Taskmaster\n\n')
         else:
             Global.printx('\n\n  Ctrl + d -> graceful exit Taskmaster\n\n')
+            
+            
     finally:
         pids = Global.load_file(Global.pss_file)
         Global.printx('killing pids created by taskmaster : \n', *pids, '\n',end='')
-        Global.kill_leftover()
+        Global.kill_leftover()#control which
         
+        
+        if Global.reboot:
+            os.execl(sys.executable, sys.executable, *sys.argv)
     """
     except Exception as e:
         print(traceback.print_exc())
