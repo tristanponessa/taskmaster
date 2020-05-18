@@ -218,3 +218,77 @@ status
 print pss
 print res
 exit
+pss
+print pss
+print pss
+exit
+stop 
+stop check
+status
+status
+status
+status
+status
+status
+status
+EOF
+status
+status
+status
+status
+status
+status check
+status sleep23
+start check
+status check
+stop check
+status check
+print pss
+print res
+EOF
+EOF
+exit
+status
+start random101
+status
+status random101
+print pss
+status random101
+print pss_file
+print pssfile
+stop random101
+status random101
+status random101
+print pss_file
+print pssf
+print pssfile
+start random101
+status
+stop check
+stop random101
+status
+status
+stop random101
+status
+exit
+start random101
+status
+stop random101
+status random101
+start random101
+status random101
+status random101
+stop random101
+exit
+start random101
+status random101
+stop random101
+status
+start random101
+status
+stop random101
+status random101
+stop random101
+status random101
+exit
+exit

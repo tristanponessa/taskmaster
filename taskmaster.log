@@ -2634,3 +2634,1081 @@ killing pids created by taskmaster :
 
 22799 state > sleeping
 22803 state > already dead
+---taskmaster session : 2020-05-15 20:12:53---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+---taskmaster session : 2020-05-15 20:13:57---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+---taskmaster session : 2020-05-15 20:14:34---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+---taskmaster session : 2020-05-15 20:15:40---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+---taskmaster session : 2020-05-15 20:57:36---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+---taskmaster session : 2020-05-15 20:58:03---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+---taskmaster session : 2020-05-15 20:58:21---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+---taskmaster session : 2020-05-15 21:01:34---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+---taskmaster session : 2020-05-15 21:01:58---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> pss
+display help
+taskmaster> print pss
+---taskmaster session : 2020-05-15 21:02:31---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+29597
+29599
+29601
+29603
+29605
+29607
+29609
+29611
+29613
+
+29597 state > zombie
+29599 state > zombie
+29601 state > zombie
+29603 state > zombie
+29605 state > zombie
+29607 state > zombie
+29609 state > zombie
+29611 state > zombie
+29613 state > zombie
+---taskmaster session : 2020-05-15 21:17:52---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> stop 
+program <> don't exist
+taskmaster> stop check
+action stop launched
+taskmaster> status
+killing pids created by taskmaster : 
+30011
+30013
+30015
+30017
+30019
+30021
+30023
+30025
+30027
+
+30011 state > zombie
+30013 state > already dead
+30015 state > already dead
+30017 state > already dead
+30019 state > already dead
+30021 state > already dead
+30023 state > already dead
+30025 state > already dead
+30027 state > already dead
+---taskmaster session : 2020-05-15 22:49:26---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+killing pids created by taskmaster : 
+1115
+1117
+1119
+1121
+1123
+1125
+1127
+1129
+1131
+
+1115 state > zombie
+1117 state > zombie
+1119 state > zombie
+1121 state > zombie
+1123 state > zombie
+1125 state > zombie
+1127 state > zombie
+1129 state > zombie
+1131 state > zombie
+---taskmaster session : 2020-05-15 22:55:17---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+---taskmaster session : 2020-05-15 23:05:02---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+killing pids created by taskmaster : 
+1418
+1420
+1422
+1425
+1427
+1429
+1431
+1433
+1435
+
+1418 state > zombie
+1420 state > zombie
+1422 state > zombie
+1425 state > zombie
+1427 state > zombie
+1429 state > zombie
+1431 state > zombie
+1433 state > zombie
+1435 state > zombie
+---taskmaster session : 2020-05-15 23:27:06---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+killing pids created by taskmaster : 
+2397
+2400
+2403
+2405
+2408
+2410
+2412
+2414
+2416
+
+2397 state > zombie
+2400 state > zombie
+2403 state > zombie
+2405 state > zombie
+2408 state > zombie
+2410 state > zombie
+2412 state > zombie
+2414 state > zombie
+2416 state > zombie
+---taskmaster session : 2020-05-15 23:31:59---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+killing pids created by taskmaster : 
+2511
+2513
+2515
+2517
+2519
+2521
+2523
+2525
+2527
+
+2511 state > zombie
+2513 state > zombie
+2515 state > zombie
+2517 state > zombie
+2519 state > zombie
+2521 state > zombie
+2523 state > zombie
+2525 state > zombie
+2527 state > zombie
+---taskmaster session : 2020-05-15 23:33:14---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+killing pids created by taskmaster : 
+2579
+2581
+2583
+2585
+2587
+2589
+2591
+2593
+2595
+
+2579 state > zombie
+2581 state > zombie
+2583 state > zombie
+2585 state > zombie
+2587 state > zombie
+2589 state > zombie
+2591 state > zombie
+2593 state > zombie
+2595 state > zombie
+---taskmaster session : 2020-05-15 23:37:42---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+killing pids created by taskmaster : 
+3867
+3869
+3871
+3873
+3875
+3877
+3879
+3881
+3883
+
+3867 state > zombie
+3869 state > zombie
+3871 state > zombie
+3873 state > zombie
+3875 state > zombie
+3877 state > zombie
+3879 state > zombie
+3881 state > zombie
+3883 state > zombie
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+killing pids created by taskmaster : 
+3867
+3869
+3871
+3873
+3875
+3877
+3879
+3881
+3883
+
+3867 state > already dead
+3869 state > already dead
+3871 state > already dead
+3873 state > already dead
+3875 state > already dead
+3877 state > already dead
+3879 state > already dead
+3881 state > already dead
+3883 state > already dead
+---taskmaster session : 2020-05-15 23:42:02---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+---taskmaster session : 2020-05-16 00:12:53---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+---taskmaster session : 2020-05-16 00:22:01---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+---taskmaster session : 2020-05-16 00:46:00---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+killing pids created by taskmaster : 
+7129
+7131
+7133
+7135
+7137
+7139
+7141
+7143
+7145
+
+7129 state > zombie
+7131 state > zombie
+7133 state > zombie
+7135 state > zombie
+7137 state > zombie
+7139 state > zombie
+7141 state > zombie
+7143 state > zombie
+7145 state > zombie
+---taskmaster session : 2020-05-16 00:48:24---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+---taskmaster session : 2020-05-16 00:48:35---
+updated conf file
+{'random101': {'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> status check
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> status sleep23
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+taskmaster> start check
+action start launched
+taskmaster> status check
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> stop check
+action stop already launched
+taskmaster> status check
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> print pss
+taskmaster> print res
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+killing pids created by taskmaster : 
+7259
+7261
+7263
+7265
+7267
+7269
+7271
+7273
+7275
+7282
+7284
+7286
+7288
+7290
+7292
+7294
+7296
+
+taskmaster> EOF
+
+
+  Ctrl + d -> exit Taskmaster
+
+
+killing pids created by taskmaster : 
+7259
+7261
+7263
+7265
+7267
+7269
+7271
+7273
+7275
+7282
+7284
+7286
+7288
+7290
+7292
+7294
+7296
+
+7259 state > zombie
+7261 state > already dead
+7263 state > already dead
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+7259
+7261
+7263
+7265
+7267
+7269
+7271
+7273
+7275
+7282
+7284
+7286
+7288
+7290
+7292
+7294
+7296
+
+7259 state > zombie
+7261 state > already dead
+7263 state > already dead
+7265 state > already dead
+7267 state > already dead
+7269 state > already dead
+7271 state > already dead
+7273 state > already dead
+7275 state > already dead
+7282 state > already dead
+7284 state > already dead
+7286 state > already dead
+7288 state > already dead
+7290 state > already dead
+7292 state > already dead
+7294 state > already dead
+7296 state > already dead
+---taskmaster session : 2020-05-16 01:01:53---
+updated conf file
+{'random101': {'nbps': '2', 'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> start random101
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:7556    | runtime:0:00:04    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:7559    | runtime:0:00:06    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:7556    | runtime:0:00:25    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:7559    | runtime:0:00:26    | exitcode:None 
+taskmaster> print pss
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:7556    | runtime:0:00:48    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:7559    | runtime:0:00:50    | exitcode:None 
+taskmaster> print pss_file
+taskmaster> print pssfile
+taskmaster> stop random101
+action stop launched
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+taskmaster> print pss_file
+taskmaster> print pssf
+taskmaster> print pssfile
+taskmaster> start random101
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9673    | runtime:0:00:04    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9677    | runtime:0:00:05    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> stop check
+action stop already launched
+taskmaster> stop random101
+action stop already launched
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9673    | runtime:0:00:26    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9677    | runtime:0:00:27    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9673    | runtime:0:00:41    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9677    | runtime:0:00:42    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> stop random101
+action stop already launched
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9673    | runtime:0:00:56    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9677    | runtime:0:00:57    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+7533
+7535
+7537
+7539
+7541
+7543
+7545
+7547
+7550
+7556
+7559
+9673
+9677
+
+7533 state > zombie
+7535 state > already dead
+7537 state > already dead
+7539 state > already dead
+7541 state > already dead
+7543 state > already dead
+7545 state > already dead
+7547 state > already dead
+7550 state > already dead
+7556 state > already dead
+7559 state > already dead
+9673 state > sleeping
+9677 state > sleeping
+---taskmaster session : 2020-05-16 01:20:18---
+updated conf file
+{'random101': {'nbps': '2', 'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> start random101
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:10416   | runtime:0:00:04    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:10420   | runtime:0:00:06    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> stop random101
+action stop launched
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+taskmaster> start random101
+action start launched
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:10495   | runtime:0:00:06    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:10499   | runtime:0:00:07    | exitcode:None 
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:10495   | runtime:0:00:18    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:10499   | runtime:0:00:19    | exitcode:None 
+taskmaster> stop random101
+action stop already launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+10396
+10398
+10400
+10402
+10404
+10406
+10408
+10410
+10412
+10416
+10420
+10495
+10499
+
+10396 state > zombie
+10398 state > already dead
+10400 state > already dead
+10402 state > already dead
+10404 state > already dead
+10406 state > already dead
+10408 state > already dead
+10410 state > already dead
+10412 state > already dead
+10416 state > already dead
+10420 state > already dead
+10495 state > sleeping
+10499 state > sleeping
+---taskmaster session : 2020-05-17 02:10:53---
+updated conf file
+{'random101': {'nbps': '2', 'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> start random101
+action start launched
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:19063   | runtime:0:00:08    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:19067   | runtime:0:00:09    | exitcode:None 
+taskmaster> stop random101
+killing pids created by taskmaster : 
+19044
+19046
+19048
+19050
+19052
+19054
+19056
+19058
+19060
+19063
+19067
+
+19044 state > zombie
+19046 state > zombie
+19048 state > zombie
+19050 state > zombie
+19052 state > zombie
+19054 state > zombie
+19056 state > zombie
+19058 state > zombie
+19060 state > zombie
+19063 state > sleeping
+19067 state > sleeping
+---taskmaster session : 2020-05-17 02:12:08---
+updated conf file
+{'random101': {'nbps': '2', 'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> start random101
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:19210   | runtime:0:00:04    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:19214   | runtime:0:00:05    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> stop random101
+killing pids created by taskmaster : 
+19190
+19192
+19194
+19196
+19198
+19200
+19202
+19204
+19206
+19210
+19214
+
+19190 state > zombie
+19192 state > already dead
+19194 state > already dead
+19196 state > already dead
+19198 state > already dead
+19200 state > already dead
+19202 state > already dead
+19204 state > already dead
+19206 state > already dead
+19210 state > sleeping
+19214 state > sleeping
+---taskmaster session : 2020-05-17 14:35:16---
+updated conf file
+{'random101': {'nbps': '2', 'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+taskmaster> stop random101
+action stop already launched
+taskmaster> status random101
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+30850
+30852
+30854
+30856
+30858
+30860
+30862
+30864
+30866
+
+30850 state > zombie
+30852 state > zombie
+30854 state > zombie
+30856 state > zombie
+30858 state > zombie
+30860 state > zombie
+30862 state > zombie
+30864 state > zombie
+30866 state > zombie
+---taskmaster session : 2020-05-17 14:37:56---
+updated conf file
+{'random101': {'nbps': '2', 'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+action start launched
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:30916   | runtime:0:00:02    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:30920   | runtime:0:00:03    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+---taskmaster session : 2020-05-17 14:39:02---
+updated conf file
+{'random101': {'nbps': '2', 'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '8', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+check : autostart
+action start launched
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:31159   | runtime:0:00:02    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:31163   | runtime:0:00:04    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+action stop launched
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:-9  
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:-9  
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+action start launched
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:31181   | runtime:0:00:02    | exitcode:-9  
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:31185   | runtime:0:00:03    | exitcode:-9  
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+action stop already launched
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:31181   | runtime:0:00:06    | exitcode:-9  
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:31185   | runtime:0:00:07    | exitcode:-9  
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-1      | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+name:check                          | cmd:python3 check.py               | state: None       | PID:-1      | runtime:None       | exitcode:1   
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+31141
+31143
+31145
+31147
+31149
+31151
+31153
+31155
+31157
+31159
+31163
+31181
+31185
+
+31141 state > zombie
+31143 state > already dead
+31145 state > already dead
+31147 state > already dead
+31149 state > already dead
+31151 state > already dead
+31153 state > already dead
+31155 state > already dead
+31157 state > already dead
+31159 state > already dead
+31163 state > already dead
+31181 state > zombie
+31185 state > zombie

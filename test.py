@@ -3,36 +3,57 @@ import sys
 from cmd import Cmd
 import keyword
 
+from multiprocessing import Process, Pipe, Queue
 
-class _Wrapper:
-
-    def __init__(self, fd):
-        self.fd = fd
+class xProcess:
     
-    #is called on enter
-    def readline(self, *args):
-        try:
-            line = self.fd.readline(*args)
-            print("<", line.split(" "), ">")
-            return line
-        except KeyboardInterrupt:#ctrl+C
-            print("\nKeyboardInterrupt : ctrl+C")
-            return ('\n')
-         
+    
+    
+    def __init__(self):
+        self.flag = '?'
+        self.q = Queue()
+    
+    def wait(self):
+        for i in range(2):
+            self.q.put(f'sec {i}')
+            #print(f'sec {i}')
+            time.sleep(1)
+        self.q.put('green flag')
+        
+    
+        
+        
+    #class Process:
+    def x(self):
+        print('x go')
+        _ = Queue()
+        #p = Process(target=self.wait, args=(q,))
+        p = Process(target=self.wait)
+        p.start()
+        #p.join()
+        print('while go')
+        i = 0
+        for i in range(1000):
+            
+            x = ''
+            if not self.q.empty():
+                x = self.q.get()
+            if x != '':
+                print(x, end='')
+            else:
+                print('-', end='')
+            
+            
+        print('end')
+
 
 class MyPrompt(Cmd):
     prompt = '$> '
     intro = "Welcome! Type ? to list commands"
 
     def __init__(self):
-        self.use_rawinput = False
-        super().__init__(stdin=_Wrapper(sys.stdin))
+        super().__init__()
         
-        
-    
-    def preloop(self):
-        print(sys.stdin.readline())
-        Cmd.preloop(self)
 
     def emptyline(self):
         pass
@@ -59,21 +80,11 @@ class MyPrompt(Cmd):
         print("command don't exist")
             
 
- 
-#    do_EOF = do_exit
- #   help_EOF = help_exit
-from curtsies import Input
-
-def main():
-    with Input(keynames='curses') as input_generator:
-        for e in input_generator:
-            print(repr(e))
 
 #if __name__ == '__main__':
 #    main()
 
-
 if __name__ == '__main__':
-    
-    
-    MyPrompt().cmdloop()
+    p = xProcess()
+    p.x()
+    #MyPrompt().cmdloop()

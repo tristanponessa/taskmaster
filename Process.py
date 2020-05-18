@@ -12,7 +12,6 @@ import psutil
 import os
 import signal
 import traceback
-import subprocess
 
 import Json as jsonFILE
 import Global
@@ -50,15 +49,15 @@ class Process:
         
         self.exitcode = None
         
+        
+        
         ####################################################################        
         
         #self.pss = [None] * self.ps['nbps']
         #if self.ps['umask'] != -1:        self.set_umask()
-        if self.ps['autostart'] == "yes": 
-            Global.printx(f"{self.ps['name']} : autostart")
-            self.start_ps()
         
-        self.success_countdown()
+        
+        #self.success_countdown()
     
     def success_countdown(self):
         def x():
@@ -66,7 +65,9 @@ class Process:
             name = self.ps['name']
             for i in range(s):
                 time.sleep(1)
-            Global.print_file(f'{name} running for over {s}s, its working properly', Global.tk_res, 'a')
+            if self.exitcode is None:
+                Global.print_file(f'{name} running for over {s}s, its working properly', Global.tk_res, 'a')
+                
         p = multiprocessing.Process(target=x)
         p.start()
 
@@ -123,18 +124,20 @@ class Process:
         #if self.get_ps_info('cmdline') != "":
         if self.ps_exists() and self.ps['stop_call'] == False:
             self.ps['stop_call'] = True
+            
             def x():
                 stopt = int(self.ps['stoptime'])
                 time.sleep(stopt)
                 if self.ps['pid']() > 0:#not necessary if -1 kills session
                     p = self.ps['popen']
                     p.kill()
-                    #print(p.communicate())
                 self.ps['stop_call'] = False
+                self.ps['popen'] = None
             
-            self.thread_fun(x)
-            
-            self.ps['popen'] = None
+            #self.thread_fun(self.x)
+            p = multiprocessing.Process(target=x)
+            p.start()
+            p.join()
             return True
         return False
     
@@ -144,7 +147,7 @@ class Process:
             cmdline 
         """
         #if self.get_ps_info('cmdline') == "":
-        
+        self.success_countdown()
         
         if not self.ps_exists():
             with open(self.ps['stdout'],'a+') as out, \

@@ -96,10 +96,14 @@ class Taskmaster_shell(cmd.Cmd):
         
         #auto to avoid taping everything everytime
         self.do_init("./config/taskmaster_conf.json")
-        #self.do_start("random101")
+        self.do_start("random101")
         self.do_status("")
-        #self.do_stop("random101")
-        #self.do_status("")
+        self.do_stop("random101")
+        self.do_status("")
+        self.do_start("random101")
+        self.do_status("")
+        self.do_stop("random101")
+        self.do_status("")
         #self.do_stop("random101")
         #self.do_stop("random101")
         #self.do_status("")
@@ -135,8 +139,17 @@ class Taskmaster_shell(cmd.Cmd):
             #only stop those who are active
             
             for ps,props in jsonFILE.conf.items():
-                self.pss[ps] = psFILE.Process(ps, props)
-            
+                self.pss[ps] = []
+                nps = psFILE.Process(ps, props)
+                nbps = int(nps.ps['nbps'])
+                for i in range(nbps):
+                    nps = psFILE.Process(ps, props)
+                    if nps.ps['autostart'] == "yes": 
+                        Global.printx(f"{ps} : autostart")
+                        nps.start_ps()
+                    self.pss[ps].append(nps)
+                
+            print('f')
             
     
     def do_uninit(self, user_input):
@@ -151,11 +164,13 @@ class Taskmaster_shell(cmd.Cmd):
     
 
     def do_print(self, user_input):
+        if user_input == 'pss':
+            print(self.pss)
         if user_input == 'config':
             print(jsonFILE.conf)
         if user_input == 'ps':
             print(self.pss)
-        if user_input == 'pss':
+        if user_input == 'pssfile':
             os.system(f'cat {Global.pss_file}')
         if user_input == 'res':
             os.system(f'cat {Global.tk_res}')
@@ -176,7 +191,7 @@ class Taskmaster_shell(cmd.Cmd):
     def do_stop(self, user_input):
         self.toggle_program(user_input, 'stop')
     
-    def do_reload(self, suer_input):
+    def do_reload(self, user_input):
         self.toggle_program(user_input, 'stop')
         self.toggle_program(user_input, 'start')
     
@@ -184,27 +199,60 @@ class Taskmaster_shell(cmd.Cmd):
         if ps not in self.pss.keys():
             Global.printx("program <" + ps + "> don't exist")
             return
-        if action == 'stop':  
-            res = self.pss[ps].stop_ps()
-        if action == 'start':
-            res = self.pss[ps].start_ps()
         
+        nbps = len(self.pss[ps])
+        inst_lst = self.pss[ps]
+            
+        res = None
+        for i in range(nbps):
+            if action == 'start':
+                res = inst_lst[i].start_ps()
+            if action == 'stop':
+                res = inst_lst[i].stop_ps()
+            if res == False:
+                break
+
         if res == False: 
             Global.printx("action " + action + " already launched")
         else:            
             Global.printx("action " + action + " launched")
     
     def do_status(self, user_input):
+        option : str
         if user_input == '':
-            for program in self.pss.keys():
-                status_msg = self.pss[program].status_ps()
-                Global.printx(status_msg)
+            option = 'all'
         else:
             if not user_input in self.pss:
                 Global.printx("process |" + user_input + "| don't exist")
-                return
-            status_msg = self.pss[user_input].status_ps()
+            else:
+                option = 'one'
+            
+        inst_lst = []
+        if option == 'all':
+            for v in self.pss.values():
+                inst_lst.extend(v)
+        else:
+            inst_lst.extend(self.pss[user_input])
+        
+        for inst_i in inst_lst:
+            status_msg = inst_i.status_ps()
             Global.printx(status_msg)
+        """
+        for program in self.pss.keys():
+            status_msg = self.pss[program].status_ps()
+            Global.printx(status_msg)
+        else:
+        if not user_input in self.pss:
+            Global.printx("process |" + user_input + "| don't exist")
+            return
+        for i in range(len(self.pss[user_input])):
+                status_msg = self.pss[user_input][i].status_ps()
+                Global.printx(status_msg)
+        """
+            
+            
+            
+            
             
     def do_result(self, user_input):
         l = Global.load_file(Global.tk_res)
