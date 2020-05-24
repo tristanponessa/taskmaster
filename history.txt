@@ -292,3 +292,9 @@ stop random101
 status random101
 exit
 exit
+exit
+ext
+exit
+exit
+exit
+exit

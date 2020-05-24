@@ -1,7 +1,6 @@
 import cmd
 import subprocess
 import multiprocessing
-import threading
 import configparser
 import time
 from datetime import datetime, timedelta 
@@ -48,6 +47,7 @@ class Process:
         self.ps['stop_call'] = False
         
         self.exitcode = None
+        self.pipe = multiprocessing.Queue()
         
         
         
@@ -119,6 +119,28 @@ class Process:
         p = multiprocessing.Process(target=fun)
         p.start()
         return p
+    
+    def ft_pipe(self):
+        """
+            displaying an empty q can break std
+        """
+        x = ''
+        if not self.pipe.empty():
+            x = self.pipe.get()
+        return x
+    
+    """
+    def pipe_assign(self):
+       
+            #put to queue and immediatly get
+            #to assign class vars inside process
+            #cant otherwise
+       
+        #x = self.pipe.get()
+        self.ps['stop_call'] = False
+        self.ps['popen'] = None
+    """
+        
 
     def stop_ps(self):
         #if self.get_ps_info('cmdline') != "":
@@ -131,13 +153,26 @@ class Process:
                 if self.ps['pid']() > 0:#not necessary if -1 kills session
                     p = self.ps['popen']
                     p.kill()
+                    p.wait()
+                
+                #self.pipe.put([False, None]) 
                 self.ps['stop_call'] = False
                 self.ps['popen'] = None
+                #self.pipe_assign()
+                #a = False
+                #b = None
             
             #self.thread_fun(self.x)
-            p = multiprocessing.Process(target=x)
+            import threading
+            #p = multiprocessing.Process(target=x, args=(self.ps['stop_call'],self.ps['popen']))
+            p = threading.Thread(target=x)
+            p.deamon = True
             p.start()
             p.join()
+            
+            print('exres', self.ps['stop_call'])
+            print('exres', self.ps['popen'])
+            
             return True
         return False
     
