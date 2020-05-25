@@ -1,7 +1,5 @@
 import cmd
-import subprocess
-import multiprocessing
-import configparser
+import threading
 import time
 from datetime import datetime, timedelta 
 import sys
@@ -47,9 +45,6 @@ class Process:
         self.ps['stop_call'] = False
         
         self.exitcode = None
-        self.pipe = multiprocessing.Queue()
-        
-        
         
         ####################################################################        
         
@@ -60,16 +55,16 @@ class Process:
         #self.success_countdown()
     
     def success_countdown(self):
-        def x():
+        def ft():
             s = int(self.ps['timetillsuc'])
             name = self.ps['name']
-            for i in range(s):
-                time.sleep(1)
+            time.sleep(s)
             if self.exitcode is None:
                 Global.print_file(f'{name} running for over {s}s, its working properly', Global.tk_res, 'a')
-                
-        p = multiprocessing.Process(target=x)
-        p.start()
+
+        t = Global.ft_thread(ft)
+
+            
 
     def default_vals(self, ps_name, conf):
     
@@ -100,78 +95,29 @@ class Process:
             if val.isnumeric():
                 ps[key] = int(ps[key])
     """
-    
-    """
-    def get_popen(self, info):
-        if self.ps['popen'] is None:
-            return -1
-        else:
-            return self.ps['popen'].pid
-    """       
-        
+           
     
     def ps_exists(self):
-        if self.ps['pid']() == -1:
+        if self.ps['pid']() == '-':
             return False
         return True
-        
-    def thread_fun(self, fun):
-        p = multiprocessing.Process(target=fun)
-        p.start()
-        return p
     
-    def ft_pipe(self):
-        """
-            displaying an empty q can break std
-        """
-        x = ''
-        if not self.pipe.empty():
-            x = self.pipe.get()
-        return x
-    
-    """
-    def pipe_assign(self):
-       
-            #put to queue and immediatly get
-            #to assign class vars inside process
-            #cant otherwise
-       
-        #x = self.pipe.get()
-        self.ps['stop_call'] = False
-        self.ps['popen'] = None
-    """
-        
-
     def stop_ps(self):
-        #if self.get_ps_info('cmdline') != "":
         if self.ps_exists() and self.ps['stop_call'] == False:
-            self.ps['stop_call'] = True
+            self.ps['stop_call'] = True 
             
-            def x():
+            def ft():
                 stopt = int(self.ps['stoptime'])
                 time.sleep(stopt)
                 if self.ps['pid']() > 0:#not necessary if -1 kills session
                     p = self.ps['popen']
                     p.kill()
-                    p.wait()
-                
-                #self.pipe.put([False, None]) 
+                    
+                 
                 self.ps['stop_call'] = False
-                self.ps['popen'] = None
-                #self.pipe_assign()
-                #a = False
-                #b = None
-            
-            #self.thread_fun(self.x)
-            import threading
-            #p = multiprocessing.Process(target=x, args=(self.ps['stop_call'],self.ps['popen']))
-            p = threading.Thread(target=x)
-            p.deamon = True
-            p.start()
-            p.join()
-            
-            print('exres', self.ps['stop_call'])
-            print('exres', self.ps['popen'])
+                #self.ps['popen'] = None
+                
+            t = Global.ft_thread(ft)
             
             return True
         return False
@@ -191,6 +137,18 @@ class Process:
                     
                     self.ps['popen'] = psutil.Popen(self.ps['cmdp'], stdout=out, stderr=err)
                     Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
+
+                    d = {
+                            self.ps['popen'].pid:
+                            {
+                                'name':self.ps['name'],
+                                'cmd':self.ps['cmd']
+                            }
+                        }
+                    
+                    
+                    jsonFILE.update_json(d, Global.pss_json)
+                    
             return True
         return False
     
@@ -265,7 +223,7 @@ class Process:
         cur_ps = self.get_ps_infos()
         
         if cur_ps is None:
-            if info == 'pid': return -1
+            if info == 'pid': return '-'
             else:             return None
         
         if  info == 'run_time':    
@@ -315,16 +273,4 @@ class Process:
         
         
 #####################################################################################################################
-
-
-
-    
-    
-
-
-
-    
-    
-    
-
 

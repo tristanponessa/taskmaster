@@ -10,7 +10,7 @@
         "exitsignal":["15","10"]
     },
     "check":{
-        "nbps":"8",
+        "nbps":"1",
         "cmd":"python3 check.py",
         "autostart":"yes",
         "exitcode":"2"

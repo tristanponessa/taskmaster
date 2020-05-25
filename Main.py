@@ -11,8 +11,8 @@ import Global
 
 if __name__ == '__main__':
 
-    ts = tsFILE.Taskmaster_shell()
     try:
+        ts = tsFILE.Taskmaster_shell()
         ts.cmdloop()
     except (KeyboardInterrupt, EOFError) as e:#and ctrl d
         #Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
@@ -24,8 +24,7 @@ if __name__ == '__main__':
             
             
     finally:
-        pids = Global.load_file(Global.pss_file)
-        Global.printx('killing pids created by taskmaster : \n', *pids, '\n',end='')
+        Global.printx('killing pids created by taskmaster : \n')
         Global.kill_leftover()#control which
         
         

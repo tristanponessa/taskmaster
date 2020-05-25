@@ -298,3 +298,72 @@ exit
 exit
 exit
 exit
+status
+stop random101
+status
+exit
+status
+stop random101
+status
+exit
+start random101
+status
+start random101
+exit
+status
+stop random101
+status
+exit
+STATUS
+status
+exit
+start random101
+status
+exit
+exit
+exit
+exit
+status
+exit
+status
+exit
+status
+exit
+exit
+status
+exit
+status
+exit
+exit
+exit
+stop random101
+status
+exit
+status
+status
+stop random101
+status
+start sleep23
+start sleep23
+status
+exit
+status
+exit
+status
+exit
+status
+exit
+status
+start check
+status
+exit
+start sleep23
+exit
+start sleep23
+start random101
+status
+exit
+status
+exit
+status
+exit
