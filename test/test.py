@@ -6,6 +6,29 @@ import psutil
 
 import multiprocessing as mp 
 
+
+class X:
+    
+    p = psutil.Popen(cmd) #cmd
+    
+    #GENERAL INSTANCE OF 
+    runtime = 
+    coutndown = 
+    
+    
+    
+    STOP -> coutndowm + kill popen
+    
+    START ->
+    
+    EXIT -> wait for exitcode
+    
+
+
+
+
+
+
 def ft_sleep(self, q, nb):
                     
     for i in range(nb):

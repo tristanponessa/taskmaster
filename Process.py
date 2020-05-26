@@ -112,6 +112,7 @@ class Process:
                 if self.ps['pid']() > 0:#not necessary if -1 kills session
                     p = self.ps['popen']
                     p.kill()
+                    self.exitcode = p.wait(timeout=1)
                     
                  
                 self.ps['stop_call'] = False
@@ -151,26 +152,7 @@ class Process:
                     
             return True
         return False
-    
-    """
-    def wait_for_exitcode(self):
-        #at the second return code changes , save in file
-        def x(self):
-            while True:
-                if self.exitcode is not None:
-                    msg = f"ps {self.ps['name'] ended  exitcode:{self.exitcode} expecting {self.ps['exitcode']}    }"
-                    if str(self.exitcode) == self.ps['exitcode']:
-                        msg += 'success'
-                    else:
-                        msg += 'fail'
-                    
-                    Global.print_file(msg, Global.tk_res, 'a')
-                    break
-                
-            
-        p = multiprocessing.Process(target=fun, args( ,))
-        p.start()
-     """       
+
     
     def status_ps(self):
         

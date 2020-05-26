@@ -1,41 +1,13 @@
 {
-    "16090": {
+    "9576": {
         "name": "check",
         "cmd": "python3 check.py"
     },
-    "16092": {
-        "name": "check",
-        "cmd": "python3 check.py"
-    },
-    "16094": {
-        "name": "check",
-        "cmd": "python3 check.py"
-    },
-    "16096": {
-        "name": "check",
-        "cmd": "python3 check.py"
-    },
-    "16098": {
-        "name": "check",
-        "cmd": "python3 check.py"
-    },
-    "16100": {
-        "name": "check",
-        "cmd": "python3 check.py"
-    },
-    "16102": {
-        "name": "check",
-        "cmd": "python3 check.py"
-    },
-    "16104": {
-        "name": "check",
-        "cmd": "python3 check.py"
-    },
-    "16106": {
+    "9578": {
         "name": "random101",
         "cmd": "sh sec_counter.bash"
     },
-    "16110": {
+    "9581": {
         "name": "random101",
         "cmd": "sh sec_counter.bash"
     }

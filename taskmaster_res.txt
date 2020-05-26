@@ -1,18 +1,6 @@
 check running for over 0s, its working properly
-check running for over 0s, its working properly
-check running for over 0s, its working properly
-check running for over 0s, its working properly
-check running for over 0s, its working properly
-check running for over 0s, its working properly
-check running for over 0s, its working properly
-check running for over 0s, its working properly
-ps check ended  exitcode:1 expecting 2  fail
-ps check ended  exitcode:1 expecting 2  fail
-ps check ended  exitcode:1 expecting 2  fail
-ps check ended  exitcode:1 expecting 2  fail
-ps check ended  exitcode:1 expecting 2  fail
 random101 running for over 5s, its working properly
 random101 running for over 5s, its working properly
 ps check ended  exitcode:1 expecting 2  fail
-ps check ended  exitcode:1 expecting 2  fail
-ps check ended  exitcode:1 expecting 2  fail
+ps random101 ended  exitcode:-9 expecting 0  fail
+ps random101 ended  exitcode:-9 expecting 0  fail

@@ -5561,3 +5561,27 @@ PID 16102 NAME check CMD python3 check.py state > already dead
 PID 16104 NAME check CMD python3 check.py state > already dead
 PID 16106 NAME random101 CMD sh sec_counter.bash state > sleeping
 PID 16110 NAME random101 CMD sh sec_counter.bash state > sleeping
+---taskmaster session : 2020-05-26 15:18:35---
+updated conf file
+{'random101': {'nbps': '2', 'autostart': 'no', 'exitsignal': ['15', '10'], 'timetillsuc': '5'}, 'sleep23': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'yes', 'exitcode': '2'}}
+check : autostart
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9578    | runtime:0:00:06    | exitcode:None 
+name:random101                      | cmd:sh sec_counter.bash            | state: sleeping   | PID:9581    | runtime:0:00:07    | exitcode:None 
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-       | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-       | runtime:None       | exitcode:1   
+taskmaster> status
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-       | runtime:None       | exitcode:-9  
+name:random101                      | cmd:sh sec_counter.bash            | state: None       | PID:-       | runtime:None       | exitcode:-9  
+name:sleep23                        | cmd:sh sec_counter.bash            | state: None       | PID:-       | runtime:None       | exitcode:None 
+name:check                          | cmd:python3 check.py               | state: None       | PID:-       | runtime:None       | exitcode:1   
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+killing pids created by taskmaster : 
+
+PID 9576 NAME check CMD python3 check.py state > already dead
+PID 9578 NAME random101 CMD sh sec_counter.bash state > already dead
+PID 9581 NAME random101 CMD sh sec_counter.bash state > already dead
