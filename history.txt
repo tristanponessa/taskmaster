@@ -370,3 +370,18 @@ exit
 status
 status
 exit
+status
+stop random101
+status
+start random101
+status
+exit
+status
+stop random101
+status
+start random101
+status
+exit
+exit
+exit
+exit

@@ -85,9 +85,8 @@ class Taskmaster_shell(cmd.Cmd):
         
         self.pss = dict()
 
-        now_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
         #dipslay help
-        Global.printx('---taskmaster session : ' + now_time + '---')
+        Global.printx('---taskmaster session : ' + Global.now_time() + '---')
         
         readline.read_history_file(Global.history_file)
         Global.setup_files()

@@ -1,13 +1,9 @@
 {
-    "9576": {
-        "name": "check",
-        "cmd": "python3 check.py"
-    },
-    "9578": {
+    "9772": {
         "name": "random101",
         "cmd": "sh sec_counter.bash"
     },
-    "9581": {
+    "9776": {
         "name": "random101",
         "cmd": "sh sec_counter.bash"
     }

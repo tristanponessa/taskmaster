@@ -60,7 +60,7 @@ class Process:
             name = self.ps['name']
             time.sleep(s)
             if self.exitcode is None:
-                Global.print_file(f'{name} running for over {s}s, its working properly', Global.tk_res, 'a')
+                Global.print_file(f'{Global.now_time()} : {name} running for over {s}s, its working properly', Global.tk_res, 'a')
 
         t = Global.ft_thread(ft)
 
@@ -149,6 +149,9 @@ class Process:
                     
                     
                     jsonFILE.update_json(d, Global.pss_json)
+                    
+                    if self.exitcode is not None:
+                        self.exitcode = None
                     
             return True
         return False

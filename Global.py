@@ -2,6 +2,7 @@ import os
 import signal 
 import psutil
 import threading
+import time
 
 import Json as jsonFILE
 
@@ -14,6 +15,20 @@ tk_res = 'taskmaster_res.txt' #launch res of ps
 
 
 reboot = False
+
+def now_time():
+    epoch_now = time.time()
+    structtime_now = time.localtime(epoch_now)
+    format_now = time.strftime("%Y-%m-%d %H:%M:%S", structtime_now)
+    return format_now
+
+def print_res_msg(msg, res, expect):
+    if str(res) in expect:
+        msg += 'success'
+    else:
+        msg += 'fail'
+    
+    Global.print_file(msg, Global.tk_res, 'a')
 
 def ft_thread(ft):
     p = threading.Thread(target=ft)
@@ -84,3 +99,8 @@ def kill_leftover():
             os.kill(pid, signal.SIGKILL)    
         printx(f"PID {pid} NAME {info['name']} CMD {info['cmd']} state > {state}")
 
+def check_exit():
+    #get par id tk
+    
+    
+    
