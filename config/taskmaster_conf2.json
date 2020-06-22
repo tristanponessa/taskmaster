@@ -6,7 +6,7 @@
         "timetillsuc":"5"
     },
     "sleep23":{
-        "autostart":"no",
+        "autostart":"yes",
         "exitsignal":["15","10"]
     },
     "check":{

@@ -82,8 +82,7 @@ class Taskmaster_shell(cmd.Cmd):
     def __init__(self):
         
         super().__init__()
-        
-        self.pss = dict()
+
 
         #dipslay help
         Global.printx('---taskmaster session : ' + Global.now_time() + '---')
@@ -135,11 +134,11 @@ class Taskmaster_shell(cmd.Cmd):
             jsonFILE.update_conf(user_input)
             Global.printx(f"{jsonFILE.conf}")
             
-            self.pss.clear()
+            psFILE.pss.clear()
             #only stop those who are active
             
             for ps,props in jsonFILE.conf.items():
-                self.pss[ps] = []
+                psFILE.pss[ps] = []
                 nps = psFILE.Process(ps, props)
                 nbps = int(nps.ps['nbps'])
                 for i in range(nbps):
@@ -147,7 +146,7 @@ class Taskmaster_shell(cmd.Cmd):
                     if nps.ps['autostart'] == "yes": 
                         Global.printx(f"{ps} : autostart")
                         nps.start_ps()
-                    self.pss[ps].append(nps)
+                    psFILE.pss[ps].append(nps)
                 
             print('f')
             
@@ -165,11 +164,11 @@ class Taskmaster_shell(cmd.Cmd):
 
     def do_print(self, user_input):
         if user_input == 'pss':
-            print(self.pss)
+            print(psFILE.pss)
         if user_input == 'config':
             print(jsonFILE.conf)
         if user_input == 'ps':
-            print(self.pss)
+            print(psFILE.pss)
         if user_input == 'pssfile':
             os.system(f'cat {Global.pss_file}')
         if user_input == 'res':
@@ -179,7 +178,7 @@ class Taskmaster_shell(cmd.Cmd):
 
 
     #def do_run_all(self, user_input):
-     #   for program in self.pss:
+     #   for program in psFILE.pss:
       #      program.run()
     
     def do_pwd(self, user_input):
@@ -196,12 +195,12 @@ class Taskmaster_shell(cmd.Cmd):
         self.toggle_program(user_input, 'start')
     
     def toggle_program(self, ps, action):
-        if ps not in self.pss.keys():
+        if ps not in psFILE.pss.keys():
             Global.printx("program <" + ps + "> don't exist")
             return
         
-        nbps = len(self.pss[ps])
-        inst_lst = self.pss[ps]
+        nbps = len(psFILE.pss[ps])
+        inst_lst = psFILE.pss[ps]
             
         res = None
         for i in range(nbps):
@@ -222,31 +221,31 @@ class Taskmaster_shell(cmd.Cmd):
         if user_input == '':
             option = 'all'
         else:
-            if not user_input in self.pss:
+            if not user_input in psFILE.pss:
                 Global.printx("process |" + user_input + "| don't exist")
             else:
                 option = 'one'
             
         inst_lst = []
         if option == 'all':
-            for v in self.pss.values():
+            for v in psFILE.pss.values():
                 inst_lst.extend(v)
         else:
-            inst_lst.extend(self.pss[user_input])
+            inst_lst.extend(psFILE.pss[user_input])
         
         for inst_i in inst_lst:
             status_msg = inst_i.status_ps()
             Global.printx(status_msg)
         """
-        for program in self.pss.keys():
-            status_msg = self.pss[program].status_ps()
+        for program in psFILE.pss.keys():
+            status_msg = psFILE.pss[program].status_ps()
             Global.printx(status_msg)
         else:
-        if not user_input in self.pss:
+        if not user_input in psFILE.pss:
             Global.printx("process |" + user_input + "| don't exist")
             return
-        for i in range(len(self.pss[user_input])):
-                status_msg = self.pss[user_input][i].status_ps()
+        for i in range(len(psFILE.pss[user_input])):
+                status_msg = psFILE.pss[user_input][i].status_ps()
                 Global.printx(status_msg)
         """
             

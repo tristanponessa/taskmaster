@@ -12,6 +12,7 @@ pss_file = 'pss.txt' #all the pids of this session
 #pss_res = #what was cleaned up
 pss_json = 'pss.json'
 tk_res = 'taskmaster_res.txt' #launch res of ps
+conf_file = 'config/taskmaster_conf.json'
 
 
 reboot = False

@@ -27,24 +27,9 @@ class Process:
     
     def __init__(self, name, props):
         
-        
         self.ps = props.copy()
         self.default_vals(name, props)
-        self.ps['name'] = name
-        self.ps['cmdp'] = self.ps['cmd'].split(' ')
-        #self.ps['cmdp'] = self.ps['command'].replace('\n', '').split(' ')
-        #self.ps['cmd'] = self.ps['command'].replace('\n', '')
-        #has to be updatable so lamdba
-        #lamda when you do status before start it will be 0 after a new pid and after a stop a new pid
-        self.ps['popen'] = None 
-        self.ps['create_time'] =  lambda : self.get_ps_info('create_time')#function
-        self.ps['run_time'] =     lambda : self.get_ps_info('run_time')
-        self.ps['pid'] =          lambda : self.get_ps_info('pid')
-        self.ps['status'] =       lambda : self.get_ps_info('status')#function
-        self.ps['exit'] =     lambda : self.get_ps_info('exitcode')#function
-        self.ps['stop_call'] = False
-        
-        self.exitcode = None
+        self.psobj = None
         
         ####################################################################        
         
@@ -97,11 +82,6 @@ class Process:
     """
            
     
-    def ps_exists(self):
-        if self.ps['pid']() == '-':
-            return False
-        return True
-    
     def stop_ps(self):
         if self.ps_exists() and self.ps['stop_call'] == False:
             self.ps['stop_call'] = True 
@@ -123,6 +103,11 @@ class Process:
             return True
         return False
     
+    def is_psobj(self):
+        return (self.psobj is None)
+            
+        
+
     #launch one instance of a process
     def start_ps(self):
         """
@@ -138,20 +123,6 @@ class Process:
                     
                     self.ps['popen'] = psutil.Popen(self.ps['cmdp'], stdout=out, stderr=err)
                     Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
-
-                    d = {
-                            self.ps['popen'].pid:
-                            {
-                                'name':self.ps['name'],
-                                'cmd':self.ps['cmd']
-                            }
-                        }
-                    
-                    
-                    jsonFILE.update_json(d, Global.pss_json)
-                    
-                    if self.exitcode is not None:
-                        self.exitcode = None
                     
             return True
         return False
@@ -159,30 +130,20 @@ class Process:
     
     def status_ps(self):
         
-        res = self.ps['exit']() #once done sends once
-        if res is not None:
-            self.exitcode = res
-
-            
-            
-            msg = f"ps {self.ps['name']} ended  exitcode:{self.exitcode} expecting {self.ps['exitcode']}  "
-            if str(self.exitcode) == self.ps['exitcode']:
-                msg += 'success'
-            else:
-                msg += 'fail'
-            
-            Global.print_file(msg, Global.tk_res, 'a')
-            
-                
-        lst = [
-                self.ps['name'],
-                self.ps['cmd'],
-                self.ps['status'](),
-                self.ps['pid'](),
-                self.ps['run_time'](),
-                self.exitcode #once done sends once
-              ]
+        cmd = self.psobj.args
+        pid = self.psobj.pid
+        run_time = self.ps['run_time'](),
+        returncode = self.psobj.poll()
+        lst = [cmd,pid,run_time,returncode]
         
+        #LOG
+        msg = f"ps {cmd} ended  returncode:{returncode} expecting {self.ps['exitcode']}  "
+        msg += 'fail'
+        if str(returncode) == self.ps['exitcode']:
+            msg += 'success'
+        Global.print_file(msg, Global.tk_res, 'a')
+        
+        #DISPLAY
         pad = [30,30,10,7,10,3]
         for i in range(len(lst)):
             lst[i] = str(lst[i])
@@ -190,44 +151,7 @@ class Process:
    
         status_msg = "name:{} | cmd:{} | state: {} | PID:{} | runtime:{} | exitcode:{} ".format(*lst)
         return status_msg
-    
-    def get_ps_infos(self):
-        """
-            ps_iter contains all the info of a ps given by the os
-        """
-        fields = ["cmdline", "pid", "create_time", "status"]
-        for cur_ps in psutil.process_iter(attrs=fields):
-            cur_ps = cur_ps.as_dict(attrs=fields)
-            if self.ps['popen'] is not None:
-                if cur_ps['pid'] == self.ps['popen'].pid:
-                    return cur_ps
-        return None
-    
-    def get_ps_info(self, info):
-        """
-            ps_iter contains all the info of a ps given by the os
-        """
-        cur_ps = self.get_ps_infos()
-        
-        if cur_ps is None:
-            if info == 'pid': return '-'
-            else:             return None
-        
-        if  info == 'run_time':    
-            return self.get_runtime()
-        elif info == 'exitcode':
-            exitcode = None
-            if self.ps['popen'] is not None:
-                try:
-                    exitcode = self.ps['popen'].wait(timeout=1)
-                except psutil.TimeoutExpired:
-                    pass
-            return exitcode
-        elif info == 'pid':        
-            return int(cur_ps[info])
-        else:                      
-            return cur_ps[info]
-    
+
     def get_runtime(self):
         
         epoch_ct = int(self.ps['create_time']())

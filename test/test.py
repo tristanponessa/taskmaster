@@ -6,7 +6,7 @@ import psutil
 
 import multiprocessing as mp 
 
-
+"""
 class X:
     
     p = psutil.Popen(cmd) #cmd
@@ -101,9 +101,9 @@ class xProcess:
                 self.pipe = {'obj':mp.Queue() , 'msg':mp.Queue()}
                 
             def ft_pipe(self, option):
-                """
+
                     displaying an empty q can break std
-                """
+
                 x = ''
                 if not self.pipe[option].empty():
                     x = self.pipe[option].get()
@@ -120,7 +120,7 @@ class xProcess:
         if action == 'stop':
             ps.stop()
             
-    """
+
     #class Process:
     def example_wait(self):
         for i in range(2):
@@ -150,14 +150,19 @@ class xProcess:
             
             
         print('end')
-    """
+"""
+import subprocess
 
 class MyPrompt(Cmd):
     prompt = '$> '
     intro = "Welcome! Type ? to list commands"
 
+    
+
     def __init__(self):
         super().__init__()
+
+        self.p = None
         
 
     def emptyline(self):
@@ -169,14 +174,22 @@ class MyPrompt(Cmd):
     
     def do_add(self, inp):
         print("adding '{}'".format(inp))
+        self.p = subprocess.Popen(['sleep', '5'], shell=False, stdout=subprocess.PIPE)
+        for i in range(10):
+            print(self.p.stdout)
+        
+        #r = process.wait()
 
     def help_add(self):
+         
         print("Add a new entry to the system.")
+        x = self.p.poll()
+        print(self.p.returncode)
+        print(x)
 
     def help_exit(self):
         print('exit the application. Shorthand: x q Ctrl-D.')
 
-    
     def do_EOF(self, inp):
         print("EOF : ctrl+D")
         return self.do_exit(inp)
@@ -190,6 +203,5 @@ class MyPrompt(Cmd):
 #    main()
 
 if __name__ == '__main__':
-    p = xProcess()
-    p.x()
-    #MyPrompt().cmdloop()
+    
+    MyPrompt().cmdloop()
