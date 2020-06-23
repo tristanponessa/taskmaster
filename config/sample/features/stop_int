@@ -1,0 +1,8 @@
+[program:bash]
+command=/bin/bash
+stopsignal=INT
+
+[server]
+port=4246
+password=123
+

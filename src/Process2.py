@@ -38,7 +38,14 @@ class Process:
         
         
         #self.success_countdown()
-    
+    umask 'umask {umask}'
+    cd 'cd {working_dir}'
+    env = 'export {VARNAME}={}'
+
+    join '&& '.cmds
+
+
+
     def success_countdown(self):
         def ft():
             s = int(self.ps['timetillsuc'])
@@ -132,7 +139,7 @@ class Process:
         
         cmd = self.psobj.args
         pid = self.psobj.pid
-        run_time = self.ps['run_time'](),
+        run_time = self.get_runtime(),
         returncode = self.psobj.poll()
         lst = [cmd,pid,run_time,returncode]
         

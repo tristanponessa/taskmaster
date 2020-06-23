@@ -1,0 +1,8 @@
+[program:ls]
+command=/bin/ls -lR
+stdout=/tmp/out_dir_norights
+directory=/Users/bocal/Downloads/
+
+[server]
+port=4242
+password=123

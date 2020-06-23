@@ -1,0 +1,6 @@
+[program:ls]
+command= 
+
+[server]
+port=4246
+password=123

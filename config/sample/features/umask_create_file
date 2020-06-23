@@ -1,0 +1,8 @@
+[program:touch]
+command=/usr/bin/touch hello_file
+directory=/tmp/
+umask=0777
+
+[server]
+port=4242
+password=123
