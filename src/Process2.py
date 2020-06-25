@@ -9,9 +9,40 @@ import psutil
 import os
 import signal
 import traceback
+import subprocess
 
-import Json as jsonFILE
+import Conf as confFILE
 import Global
+
+
+pss = dict()
+
+def init_pss(protected=None):
+    global pss
+
+    if protected is not None:
+        for ps in pss:
+            if ps.name not in protected:
+                if ps.psInit():
+                    ps.psobj.kill()
+                    del pss[ps.name]
+            else:
+                ###add rest
+    else:
+        pss.clear()
+    #only stop those who are active
+    for psName,psProps in confFILE.conf.items():
+        pss[ps] = []
+        
+        nbps = int(confFILE.get_psProp(psName, 'nbps'))
+        for i in range(nbps):
+            psNew = Process(psName)
+            if confFILE.get_psProp(psName, 'autostart') == "yes": 
+                psNew.start_ps()
+                Global.printx(f"{psName} : autostart")
+                
+            pss[psName].append(psNew)
+
 
 class Process:
     """
@@ -25,25 +56,28 @@ class Process:
     
     """
     
-    def __init__(self, name, props):
-        
-        self.ps = props.copy()
-        self.default_vals(name, props)
+    def __init__(self, name):
+
+        self.name = name
         self.psobj = None
-        
-        ####################################################################        
-        
-        #self.pss = [None] * self.ps['nbps']
-        #if self.ps['umask'] != -1:        self.set_umask()
-        
-        
-        #self.success_countdown()
-    umask 'umask {umask}'
-    cd 'cd {working_dir}'
-    env = 'export {VARNAME}={}'
+        self.start_time = ''
+        self.stop_call = False
+    
+    def setup_cmd(self):
+        #umask 777 && cd .. && export v=1 && export v=2 && cmd'
+        umask = self.get_prop('umask')
+        cd  = f"cd {self.get_prop('work_dir')}"
+        env_vars = [f'export {varname}={varval}' for varname,varval in self.get_prop('env').items()]
 
-    join '&& '.cmds
+        setup_cmd = [umask, cd, *env_vars]
+        setup_cmd = ' && '.join(setup_cmd)
+        return setup_cmd
 
+
+  
+
+    def psInit(self):
+        return (self.psobj is not None)
 
 
     def success_countdown(self):
@@ -56,80 +90,34 @@ class Process:
 
         t = Global.ft_thread(ft)
 
-            
-
-    def default_vals(self, ps_name, conf):
-    
-        dft =   {
-                    'cmd':          'sh sec_counter.bash',
-                    'nbps':         '1',
-                    'timetillsuc':  '0',
-                    'autostart':    'no',
-                    'autorestart':  'no',
-                    'stoptime':     '0',
-                    'dir':          './',
-                    'env':          "",
-                    'stdout':       f'./{ps_name}.stdout',
-                    'stderr':       f'./{ps_name}.stderr',
-                    'nbretries':    '0',#if crashes, restarts
-                    'exitsignal':   '15',#SIGTERM
-                    'exitcode':     '0',
-                    'umask':        '022'
-                }
-        
-        for k,v in dft.items():
-            if k not in self.ps:
-                self.ps[k] = v 
-    
-    """
-    def convert_types(self, ps):
-        for key,val in ps.items():
-            if val.isnumeric():
-                ps[key] = int(ps[key])
-    """
-           
-    
     def stop_ps(self):
-        if self.ps_exists() and self.ps['stop_call'] == False:
-            self.ps['stop_call'] = True 
-            
+        if self.psInit() and self.stop_call == False:
+            self.stop_call = True
+
             def ft():
-                stopt = int(self.ps['stoptime'])
-                time.sleep(stopt)
-                if self.ps['pid']() > 0:#not necessary if -1 kills session
-                    p = self.ps['popen']
-                    p.kill()
-                    self.exitcode = p.wait(timeout=1)
-                    
-                 
-                self.ps['stop_call'] = False
-                #self.ps['popen'] = None
-                
+                stoptime = int(self.get_prop('stoptime'))
+                time.sleep(stoptime)
+                self.psobj.kill()
+                self.stop_call = False
+
             t = Global.ft_thread(ft)
-            
             return True
+
         return False
     
-    def is_psobj(self):
-        return (self.psobj is None)
-            
-        
-
-    #launch one instance of a process
     def start_ps(self):
-        """
-            cmdline 
-        """
-        #if self.get_ps_info('cmdline') == "":
-        self.success_countdown()
         
-        if not self.ps_exists():
-            with open(self.ps['stdout'],'a+') as out, \
-                 open(self.ps['stderr'],'a+') as err:
-                #if self.ps['umask'] != -1:
+        if not self.psInit():
+
+            self.start_time = int(time.time())
+            self.success_countdown()
+            cmd = f"{self.setup_cmd()} && {self.get_prop('cmd')}"
+
+            with open(self.get_prop('stdout'),'a+') as out, \
+                 open(self.get_prop('stderr'),'a+') as err:
                     
-                    self.ps['popen'] = psutil.Popen(self.ps['cmdp'], stdout=out, stderr=err)
-                    Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
+                    self.psobj = subprocess.Popen(self.get_prop('cmd'), shell=True, stdout=out, stderr=err)
+                    #Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
                     
             return True
         return False
@@ -144,12 +132,14 @@ class Process:
         lst = [cmd,pid,run_time,returncode]
         
         #LOG
+        """
         msg = f"ps {cmd} ended  returncode:{returncode} expecting {self.ps['exitcode']}  "
         msg += 'fail'
         if str(returncode) == self.ps['exitcode']:
             msg += 'success'
         Global.print_file(msg, Global.tk_res, 'a')
-        
+        """
+
         #DISPLAY
         pad = [30,30,10,7,10,3]
         for i in range(len(lst)):
@@ -160,8 +150,11 @@ class Process:
         return status_msg
 
     def get_runtime(self):
-        
-        epoch_ct = int(self.ps['create_time']())
+
+        if not self.psInit():
+            return
+
+        epoch_ct = int(self.start_time)
         epoch_now = int(time.time())
         
         datetime_ct = datetime.fromtimestamp(epoch_ct)
@@ -173,11 +166,7 @@ class Process:
     def auto_start(self):
         self.start_ps()
         Global.printx(f"AUTOSTART <{self.ps['name']}>")
-    
-    def set_umask(self):
-        os.umask(self.ps['umask'])
-        Global.printx(f"umask set to :{self.ps['umask']}")
-    
+  
     def __repr__(self):
         
         lst = []
@@ -192,4 +181,3 @@ class Process:
         
 #####################################################################################################################
 
-pss = dict()

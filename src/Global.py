@@ -74,15 +74,7 @@ def save_file(lines, file, mode):
     with open(file, mode) as f:
         f.writelines(lines)
         
-def is_conf_file(conf):
-    err = []
-    
-    msg = f'error : config file <{conf}>'
-    if not os.path.exists(conf):
-        err.append(f"{msg} don't exist")
-    if not conf.endswith('.json'):
-        err.append(f"{msg} don't end with json")
-    return err
+
 
 def kill_leftover():
     """
