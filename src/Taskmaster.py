@@ -68,13 +68,13 @@ class Taskmaster_shell(cmd.Cmd):
         Global.printx('---taskmaster session : ' + Global.now_time() + '---')
         
         readline.read_history_file(Global.history_file)
-        Global.setup_files()
+        #Global.setup_files()
 
         #load your running process on computer
         
         #auto to avoid taping everything everytime
         self.do_init("./config/taskmaster_conf.json")
-        self.do_start("random101")
+        #self.do_start("random101")
         #self.do_status("")
         #self.do_exit("")
         #self.do_stop("random101")
@@ -90,9 +90,10 @@ class Taskmaster_shell(cmd.Cmd):
     
 
     def precmd(self, user_input):
-        
+        #LOG
         Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
         Global.print_file(f'{user_input}',Global.history_file,'a')
+
         return cmd.Cmd.precmd(self, user_input)
 
     def do_history(self, user_input):
@@ -106,22 +107,20 @@ class Taskmaster_shell(cmd.Cmd):
     
     def do_init(self, user_input):
         #init conf file 
-        
         err = confFILE.is_confFile(user_input)
         if err != []:
             Global.printx(*err)
         else:
-            Global.printx("updated conf file")
-            confFILE.confReload_updatePss(user_input)
-            Global.printx(f"{confFILE.conf}")
-            
-            
+            #LOG
+            Global.printx(f"old conf file {confFILE.conf}")
+
+            confFILE.confReload(user_input)
             psFILE.init_pss()
-            
-                
-            print('f')
-            
-    
+
+            #LOG
+            Global.printx(f"updated conf file {confFILE.conf}")
+
+    """
     def do_uninit(self, user_input):
         
         if user_input != '':
@@ -130,30 +129,24 @@ class Taskmaster_shell(cmd.Cmd):
             Global.printx("uninit conf file")
             confFILE.conf = dict()
             Global.printx(f"{confFILE.conf}")
-    
+    """
     
 
     def do_print(self, user_input):
         if user_input == 'pss':
-            print(psFILE.pss)
-        if user_input == 'config':
+            psFILE.display_pss()
+        if user_input == 'conf':
             print(confFILE.conf)
-        if user_input == 'ps':
-            print(psFILE.pss)
-        if user_input == 'pssfile':
+        if user_input == 'pwd':
+            os.system('pwd')
+        """
+        if user_input == 'pss_file':
             os.system(f'cat {Global.pss_file}')
-        if user_input == 'res':
+        if user_input == 'res_file':
             os.system(f'cat {Global.tk_res}')
-        if user_input == 'log':
+        if user_input == 'log_file':
             os.system(f'cat {Global.taskmaster_log}')
-
-
-    #def do_run_all(self, user_input):
-     #   for program in psFILE.pss:
-      #      program.run()
-    
-    def do_pwd(self, user_input):
-        os.system('pwd')
+        """
     
     def do_start(self, user_input):
         self.toggle_program(user_input, 'start')
@@ -168,66 +161,40 @@ class Taskmaster_shell(cmd.Cmd):
     def toggle_program(self, ps, action):
         if ps not in psFILE.pss.keys():
             Global.printx("program <" + ps + "> don't exist")
-            return
-        
-        nbps = len(psFILE.pss[ps])
-        inst_lst = psFILE.pss[ps]
-            
-        res = None
-        for i in range(nbps):
-            if action == 'start':
-                res = inst_lst[i].start_ps()
-            if action == 'stop':
-                res = inst_lst[i].stop_ps()
-            if res == False:
-                break
-
-        if res == False: 
-            Global.printx("action " + action + " already launched")
-        else:            
-            Global.printx("action " + action + " launched")
+        else:
+            inst_lst = psFILE.pss[ps]
+            res = None
+            for i in range(len(inst_lst)):
+                if action == 'start':
+                    res = inst_lst[i].start_ps()
+                if action == 'stop':
+                    res = inst_lst[i].stop_ps()    
+                #LOG
+                if res == False: 
+                    Global.printx("action " + action + " already launched")
+                else:            
+                    Global.printx("action " + action + " launched")
     
     def do_status(self, user_input):
-        option : str
-        if user_input == '':
-            option = 'all'
+
+        keys = psFILE.pss.keys()
+        if (user_input != '') and (user_input in psFILE.pss):
+            keys = [user_input]
         else:
-            if not user_input in psFILE.pss:
-                Global.printx("process |" + user_input + "| don't exist")
-            else:
-                option = 'one'
-            
-        inst_lst = []
-        if option == 'all':
-            for v in psFILE.pss.values():
-                inst_lst.extend(v)
-        else:
-            inst_lst.extend(psFILE.pss[user_input])
-        
-        for inst_i in inst_lst:
-            status_msg = inst_i.status_ps()
-            Global.printx(status_msg)
-        """
-        for program in psFILE.pss.keys():
-            status_msg = psFILE.pss[program].status_ps()
-            Global.printx(status_msg)
-        else:
-        if not user_input in psFILE.pss:
+            #LOG
             Global.printx("process |" + user_input + "| don't exist")
             return
-        for i in range(len(psFILE.pss[user_input])):
-                status_msg = psFILE.pss[user_input][i].status_ps()
+        
+        for k in keys:
+            lst = psFILE.pss[k]
+            for elem in lst:
+                status_msg = elem.status_ps()
+                #LOG
                 Global.printx(status_msg)
-        """
-            
-            
-            
-            
-            
+
     def do_result(self, user_input):
         l = Global.load_file(Global.tk_res)
         Global.printx(*l)
-
 
     def emptyline(self):
         pass
@@ -252,9 +219,3 @@ class Taskmaster_shell(cmd.Cmd):
         Global.reboot = True
         self.do_exit()
         
-    
-    
-        
-        
-        
-

@@ -22,3 +22,32 @@
         if psName not in protected:
             init_ps(psName)
     """
+
+
+
+
+
+
+    """
+    def ft_thread(ft):
+        p = threading.Thread(target=ft)
+        p.deamon = True
+        p.start()
+        return p
+
+    def kill_leftover():
+        
+        #    keep all dead ps as zombies 
+        #    so the os dont give the pid to another
+        #    or youll be killing outside ps
+        
+        d = jsonFILE.load_json(pss_json)
+        for pid,info in d.items():
+            pid = int(pid)
+            state = 'already dead'
+            if psutil.pid_exists(pid):
+                pp = psutil.Process(pid)
+                state = pp.status()
+                os.kill(pid, signal.SIGKILL)    
+            printx(f"PID {pid} NAME {info['name']} CMD {info['cmd']} state > {state}")
+"""

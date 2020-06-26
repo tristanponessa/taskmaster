@@ -385,3 +385,102 @@ exit
 exit
 exit
 exit
+help
+exit
+init 
+init
+init
+init x
+init x.json
+init config
+init config
+init config/taskmaster_conf.json
+init config/taskmaster_conf.json
+exit
+init config/taskmaster_conf.json
+exit
+init config/taskmaster_conf.json
+init config/taskmaster_conf.json
+exit
+init config/taskmaster_conf.json
+init config/taskmaster_conf.json
+init config/taskmaster_conf.json
+print pss
+print ps
+exit
+init config/taskmaster_conf.json
+print pss
+exit
+print pss
+init config/taskmaster_conf.json
+print pss
+exit
+init config/taskmaster_conf.json
+print pss
+exit
+init config/taskmaster_conf.json
+print pss
+exit
+print pss
+reboot
+print pss
+exit
+print pss
+exit
+print pss
+exit
+print pss
+exit
+print pss
+exit
+print pss
+exit
+print pss
+print pss
+exit
+print pss
+exit
+print pss
+print conf
+print config
+exit
+print pwd
+exit
+exit
+exit
+exit
+exit
+exit
+start 
+start random101
+start random101
+start random101
+start random101
+start random101
+start random101
+start random101
+start random101
+start random101
+start random101
+exit
+start random101
+exit
+start random101
+status random101
+start random101
+status random101
+start random101
+status random101
+stop random101
+start random101
+stop random101
+
+exit
+stop random101
+stop random101
+status random101
+stop random101
+status random101
+start random101
+status random101
+exit

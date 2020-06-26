@@ -4,6 +4,7 @@
 
 import json
 import os
+
 import Global
 import Process as psFILE
 
@@ -15,8 +16,8 @@ dft_conf =  {
                 'autostart':    'no',
                 'autorestart':  'no',
                 'stoptime':     '0',
-                'dir':          './',
-                'env':          "",
+                'workdir':      './',
+                'env':          {"TEST":"TEST"},
                 'stdout':       f'./dft_stdout.stdout',
                 'stderr':       f'./dft_stderr.stderr',
                 'nbretries':    '0',#if crashes, restarts
@@ -25,31 +26,45 @@ dft_conf =  {
                 'umask':        '022'
             }
 
-
+#LOG
 def is_confFile(conf):
     err = []
     
     msg = f'error : config file <{conf}>'
     if not os.path.exists(conf):
         err.append(f"{msg} don't exist")
+    elif os.path.getsize(conf) <= 0:
+            err.append(f"{msg} is empty")
     if not conf.endswith('.json'):
         err.append(f"{msg} don't end with json")
-    if os.path.getsize(conf) > 0:
-        err.append(f"{msg} is empty")
+    
     return err
 
 def get_psProp(psName, propName):
     global conf, dft_conf
-    if psName in conf.keys():
+    if psName in conf.keys() and propName in conf[psName]:
         return conf[psName][propName] 
     return dft_conf[propName]
 
 def load_Aconf(json_file):
     conf = dict()
-    if is_confFile(json_file) != []:
+    if is_confFile(json_file) == []:
         with open(json_file, "r") as read_file:
             conf = json.load(read_file)
     return conf
+
+def confReload(json_file):
+    """
+        if conf reloaded , dont kill pss that dont change props
+    """
+    global conf
+    new_conf = load_Aconf(json_file) #json get $ user input file
+    conf = new_conf.copy()
+    #old_conf = conf 
+    #protected = dict_sameItems(old_conf, new_conf)
+    #LOG
+     
+    #return protected
 
 """
 def dict_sameItems(oldD, newD):
@@ -61,17 +76,6 @@ def dict_sameItems(oldD, newD):
     return same
 """
 
-def confReload(json_file):
-    """
-        if conf reloaded , dont kill pss that dont change props
-    """
-    global conf
-    new_conf = load_Aconf(json_file) #json get $ user input file
-    #old_conf = conf 
-    #protected = dict_sameItems(old_conf, new_conf)
-    #LOG
-    conf = new_conf.copy() 
-    #return protected
 
 #never need to save
 """

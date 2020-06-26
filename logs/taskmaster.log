@@ -5693,3 +5693,416 @@ killing pids created by taskmaster :
 
 PID 9772 NAME random101 CMD sh sec_counter.bash state > sleeping
 PID 9776 NAME random101 CMD sh sec_counter.bash state > sleeping
+---taskmaster session : 2020-06-26 15:22:14---
+---taskmaster session : 2020-06-26 15:22:31---
+taskmaster> help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 15:23:05---
+taskmaster> init 
+---taskmaster session : 2020-06-26 15:24:17---
+taskmaster> init
+---taskmaster session : 2020-06-26 15:24:58---
+taskmaster> init
+error : config file <> don't exist
+error : config file <> don't end with json
+taskmaster> init x
+error : config file <x> don't exist
+error : config file <x> don't end with json
+taskmaster> init x.json
+error : config file <x.json> don't exist
+taskmaster> init config
+error : config file <config> is empty
+error : config file <config> don't end with json
+taskmaster> init config
+error : config file <config> is empty
+error : config file <config> don't end with json
+taskmaster> init config/taskmaster_conf.json
+error : config file <config/taskmaster_conf.json> is empty
+taskmaster> init config/taskmaster_conf.json
+error : config file <config/taskmaster_conf.json> is empty
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 15:39:59---
+taskmaster> init config/taskmaster_conf.json
+updated conf file {}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 15:44:38---
+taskmaster> init config/taskmaster_conf.json
+---taskmaster session : 2020-06-26 15:45:49---
+taskmaster> init config/taskmaster_conf.json
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 15:47:00---
+taskmaster> init config/taskmaster_conf.json
+---taskmaster session : 2020-06-26 15:47:25---
+taskmaster> init config/taskmaster_conf.json
+---taskmaster session : 2020-06-26 15:52:08---
+taskmaster> init config/taskmaster_conf.json
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+---taskmaster session : 2020-06-26 15:52:38---
+taskmaster> print ps
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 15:53:30---
+taskmaster> init config/taskmaster_conf.json
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 15:54:57---
+taskmaster> print pss
+taskmaster> init config/taskmaster_conf.json
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 15:56:48---
+taskmaster> init config/taskmaster_conf.json
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 15:58:09---
+taskmaster> init config/taskmaster_conf.json
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:00:19---
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2020-06-26 16:00:51---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> reboot
+REBOOT
+---taskmaster session : 2020-06-26 16:01:20---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:01:56---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:02:28---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:04:22---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:05:10---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+---taskmaster session : 2020-06-26 16:05:18---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:05:20---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:06:15---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:07:02---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:07:48---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> print conf
+taskmaster> print config
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:11:02---
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pwd
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:16:10---
+old conf file {}
+INIT random101
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:17:55---
+old conf file {}
+INIT [<Process.Process object at 0x107fcc2d0>]
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:18:31---
+old conf file {}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:20:42---
+old conf file {}
+cur pss dict_keys([])
+conf dict_keys(['random101'])
+fusion set {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:21:16---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:23:34---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start 
+program <> don't exist
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:24:56---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:25:11---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:25:24---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:26:00---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:27:42---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:28:10---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:29:36---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:30:03---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+---taskmaster session : 2020-06-26 16:30:28---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+action start launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:32:03---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+action start launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:38:15---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status random101
+---taskmaster session : 2020-06-26 16:40:02---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status random101
+---taskmaster session : 2020-06-26 16:42:00---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status random101
+name:random101                      | cmd:umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash | state: ?          | PID:2242    | runtime:('0:00:02',) | returncode:None 
+taskmaster> stop random101
+---taskmaster session : 2020-06-26 16:46:56---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> stop random101
+action stop launched
+taskmaster> 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-26 16:47:41---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> stop random101
+action stop already launched
+taskmaster> stop random101
+action stop already launched
+taskmaster> status random101
+---taskmaster session : 2020-06-26 16:50:20---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> stop random101
+action stop already launched
+taskmaster> status random101
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:(None,)    | returncode:None 
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status random101
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:5944    | runtime:('0:00:02',) | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+

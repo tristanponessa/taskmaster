@@ -1,18 +1,5 @@
 {
 	"random101":{
-        "nbps":"2",
-        "autostart":"no",
-        "exitsignal":["15","10"],
-        "timetillsuc":"5"
-    },
-    "sleep23":{
-        "autostart":"no",
-        "exitsignal":["15","10"]
-    },
-    "check":{
-        "nbps":"2",
-        "cmd":"python3 check.py",
-        "autostart":"no",
-        "exitcode":"2"
+        "cmd":"sh pgrms/sec_counter.bash"
     }
 }

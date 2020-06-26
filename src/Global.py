@@ -4,18 +4,23 @@ import psutil
 import threading
 import time
 
-import Json as jsonFILE
+import Conf as confFILE
 
-log_file = 'taskmaster.log' #echo terminal
-history_file = 'history.txt' #last cmds
-pss_file = 'pss.txt' #all the pids of this session
+####################################################################
+log_dir = './logs'
+config_dir = './config'
+
+log_file = f'{log_dir}/taskmaster.log' #echo terminal
+history_file = f'{log_dir}/history.txt' #last cmds
+pss_file = f'{log_dir}/pss.txt' #all the pids of this session
 #pss_res = #what was cleaned up
-pss_json = 'pss.json'
-tk_res = 'taskmaster_res.txt' #launch res of ps
-conf_file = 'config/taskmaster_conf.json'
+pss_json = f'{log_dir}/pss.json'
+tk_res = f'{log_dir}/taskmaster_res.txt' #launch res of ps
 
+conf_file = f'{config_dir}/taskmaster_conf.json'
+####################################################################
 reboot = False
-
+####################################################################
 def now_time():
     epoch_now = time.time()
     structtime_now = time.localtime(epoch_now)
@@ -28,15 +33,6 @@ def str_padding(lst, pad):
         lst[i] = str(lst[i])
         lst[i] = lst[i].ljust(pad[i], ' ')
     return lst
-"""
-def setup_files():
-    #create files if dont exist
-    with open(log_file, 'a+') as f:pass
-    with open(history_file, 'a+') as f:pass
-    with open(pss_file, 'w+') as f:pass
-    with open(pss_json, 'w+') as f:pass
-    with open(tk_res, 'w+') as f:pass
-"""
     
 def printx(*args, end=None):
     """ stdout and file """
@@ -60,4 +56,12 @@ def save_file(lines, file, mode):
     with open(file, mode) as f:
         f.writelines(lines)
         
-
+"""
+def setup_files():
+    #create files if dont exist
+    with open(log_file, 'a+') as f:pass
+    with open(history_file, 'a+') as f:pass
+    with open(pss_file, 'w+') as f:pass
+    with open(pss_json, 'w+') as f:pass
+    with open(tk_res, 'w+') as f:pass
+"""
