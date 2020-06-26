@@ -17,12 +17,32 @@ import traceback
 import readline
 #files
 import Process as psFILE
-import Conf as confFILE
+import Json as jsonFILE
 import Global
 
 
 """
 NOTES:
+    TASKMASTER WILL LAUNCH pss FROM 1 OR MULTIPLE CONF FILES
+    YOU CAN PRECISE EACH PROGRAM
+    SUPERVISOR SEEMED TO DO THINGS BY CONFIG FILE
+
+    #issues : bin/bash being spawed by popen must kill() them
+    #a program is 1 process like ls or count_time
+
+    bunch of functions use copy code , reduce to uniuversal functions
+    
+    check aname of pss regex no <>...
+    add colors to make it clear for already launched and errors in red 
+    launch everythoin gas multiprocess so umask can ably all the time for a process
+    dont launch program without config file good
+    universal vaklue system umasl not set ? how to check?
+    
+    
+    psutil process contains much more infos than subprocess 
+    i could make a simpler version with popen alone and use p.pid / p.status and two more others
+    psutil offers so much more and to make it flexible i created this complicated system where
+    you have to simply call self.program[info]() 
 """
 
 
@@ -105,19 +125,28 @@ class Taskmaster_shell(cmd.Cmd):
             self.onecmd(l[i])
     
     def do_init(self, user_input):
-        #init conf file 
         
-        err = confFILE.is_confFile(user_input)
+        err = Global.is_conf_file(user_input)
         if err != []:
             Global.printx(*err)
         else:
             Global.printx("updated conf file")
-            confFILE.confReload_updatePss(user_input)
-            Global.printx(f"{confFILE.conf}")
+            jsonFILE.update_conf(user_input)
+            Global.printx(f"{jsonFILE.conf}")
             
+            psFILE.pss.clear()
+            #only stop those who are active
             
-            psFILE.init_pss()
-            
+            for ps,props in jsonFILE.conf.items():
+                psFILE.pss[ps] = []
+                nps = psFILE.Process(ps, props)
+                nbps = int(nps.ps['nbps'])
+                for i in range(nbps):
+                    nps = psFILE.Process(ps, props)
+                    if nps.ps['autostart'] == "yes": 
+                        Global.printx(f"{ps} : autostart")
+                        nps.start_ps()
+                    psFILE.pss[ps].append(nps)
                 
             print('f')
             
@@ -128,8 +157,8 @@ class Taskmaster_shell(cmd.Cmd):
             Global.printx("no args display help for uninit")
         else:
             Global.printx("uninit conf file")
-            confFILE.conf = dict()
-            Global.printx(f"{confFILE.conf}")
+            jsonFILE.conf = dict()
+            Global.printx(f"{jsonFILE.conf}")
     
     
 
@@ -137,7 +166,7 @@ class Taskmaster_shell(cmd.Cmd):
         if user_input == 'pss':
             print(psFILE.pss)
         if user_input == 'config':
-            print(confFILE.conf)
+            print(jsonFILE.conf)
         if user_input == 'ps':
             print(psFILE.pss)
         if user_input == 'pssfile':

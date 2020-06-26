@@ -51,6 +51,7 @@ def load_Aconf(json_file):
             conf = json.load(read_file)
     return conf
 
+"""
 def dict_sameItems(oldD, newD):
     same = set()
     for ok,ov in oldD.items():
@@ -58,6 +59,7 @@ def dict_sameItems(oldD, newD):
             if nk == ok and nv == ov:
                 same.update([ok])
     return same
+"""
 
 def confReload(json_file):
     """
@@ -65,11 +67,11 @@ def confReload(json_file):
     """
     global conf
     new_conf = load_Aconf(json_file) #json get $ user input file
-    old_conf = conf 
-    protected = dict_sameItems(old_conf, new_conf)
+    #old_conf = conf 
+    #protected = dict_sameItems(old_conf, new_conf)
     #LOG
     conf = new_conf.copy() 
-    return protected
+    #return protected
 
 #never need to save
 """

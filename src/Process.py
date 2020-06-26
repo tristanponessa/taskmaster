@@ -9,9 +9,79 @@ import psutil
 import os
 import signal
 import traceback
+import subprocess
 
-import Json as jsonFILE
+import Conf as confFILE
 import Global
+
+
+pss = dict()
+
+def init_ps(psName, psProps):
+    global pss
+    pss[psName] = []
+    
+    nbps = int(confFILE.get_psProp(psName, 'nbps'))
+    for i in range(nbps):
+        psNew = Process(psName, psProps)
+        if confFILE.get_psProp(psName, 'autostart') == "yes": 
+            psNew.start_ps()
+            Global.printx(f"{psName} : autostart")
+            
+        pss[psName].append(psNew)
+
+def destroy_ps(psName):
+    #kills and removes from lst
+    global pss
+    inst_lst = pss[psName]
+    for inst_elem in inst_lst:
+        inst_elem.kill_if_psInit()
+        del pss[psName]
+
+def init_pss():
+    global pss
+
+    pssk = pss.keys()
+    confk = confFILE.conf.keys()
+    keys = set([*pssk, *confk])
+
+    for key in keys:
+
+        if (key in confk):
+            if (key not in pssk):
+                init_ps(key)
+            elif (pss[key][0].props != confFILE.conf[key]):
+                destroy_ps(key)
+                init_ps(key, confFILE.conf[key])
+        if (key not in confk):
+            destroy_ps(key)
+            
+
+"""
+    def ft_thread(ft):
+        p = threading.Thread(target=ft)
+        p.deamon = True
+        p.start()
+        return p
+
+    def kill_leftover():
+        
+        #    keep all dead ps as zombies 
+        #    so the os dont give the pid to another
+        #    or youll be killing outside ps
+        
+        d = jsonFILE.load_json(pss_json)
+        for pid,info in d.items():
+            pid = int(pid)
+            state = 'already dead'
+            if psutil.pid_exists(pid):
+                pp = psutil.Process(pid)
+                state = pp.status()
+                os.kill(pid, signal.SIGKILL)    
+            printx(f"PID {pid} NAME {info['name']} CMD {info['cmd']} state > {state}")
+"""
+
+####################################################################################################################
 
 class Process:
     """
@@ -26,34 +96,30 @@ class Process:
     """
     
     def __init__(self, name, props):
-        
-        
-        self.ps = props.copy()
-        self.default_vals(name, props)
-        self.ps['name'] = name
-        self.ps['cmdp'] = self.ps['cmd'].split(' ')
-        #self.ps['cmdp'] = self.ps['command'].replace('\n', '').split(' ')
-        #self.ps['cmd'] = self.ps['command'].replace('\n', '')
-        #has to be updatable so lamdba
-        #lamda when you do status before start it will be 0 after a new pid and after a stop a new pid
-        self.ps['popen'] = None 
-        self.ps['create_time'] =  lambda : self.get_ps_info('create_time')#function
-        self.ps['run_time'] =     lambda : self.get_ps_info('run_time')
-        self.ps['pid'] =          lambda : self.get_ps_info('pid')
-        self.ps['status'] =       lambda : self.get_ps_info('status')#function
-        self.ps['exit'] =     lambda : self.get_ps_info('exitcode')#function
-        self.ps['stop_call'] = False
-        
-        self.exitcode = None
-        
-        ####################################################################        
-        
-        #self.pss = [None] * self.ps['nbps']
-        #if self.ps['umask'] != -1:        self.set_umask()
-        
-        
-        #self.success_countdown()
+
+        self.name = name
+        self.props = props
+        self.psobj = None
+        self.start_time = ''
+        self.stop_call = False
     
+    def setup_cmd(self):
+        #umask 777 && cd .. && export v=1 && export v=2 && cmd'
+        umask = self.get_prop('umask')
+        cd  = f"cd {self.get_prop('work_dir')}"
+        env_vars = [f'export {varname}={varval}' for varname,varval in self.get_prop('env').items()]
+
+        setup_cmd = [umask, cd, *env_vars]
+        setup_cmd = ' && '.join(setup_cmd)
+        return setup_cmd
+
+    def kill_if_psInit(self):
+        if self.psInit():
+            self.psobj.kill()
+
+    def psInit(self):
+        return (self.psobj is not None)
+
     def success_countdown(self):
         def ft():
             s = int(self.ps['timetillsuc'])
@@ -64,94 +130,34 @@ class Process:
 
         t = Global.ft_thread(ft)
 
-            
-
-    def default_vals(self, ps_name, conf):
-    
-        dft =   {
-                    'cmd':          'sh sec_counter.bash',
-                    'nbps':         '1',
-                    'timetillsuc':  '0',
-                    'autostart':    'no',
-                    'autorestart':  'no',
-                    'stoptime':     '0',
-                    'dir':          './',
-                    'env':          "",
-                    'stdout':       f'./{ps_name}.stdout',
-                    'stderr':       f'./{ps_name}.stderr',
-                    'nbretries':    '0',#if crashes, restarts
-                    'exitsignal':   '15',#SIGTERM
-                    'exitcode':     '0',
-                    'umask':        '022'
-                }
-        
-        for k,v in dft.items():
-            if k not in self.ps:
-                self.ps[k] = v 
-    
-    """
-    def convert_types(self, ps):
-        for key,val in ps.items():
-            if val.isnumeric():
-                ps[key] = int(ps[key])
-    """
-           
-    
-    def ps_exists(self):
-        if self.ps['pid']() == '-':
-            return False
-        return True
-    
     def stop_ps(self):
-        if self.ps_exists() and self.ps['stop_call'] == False:
-            self.ps['stop_call'] = True 
-            
+        if self.psInit() and self.stop_call == False:
+            self.stop_call = True
+
             def ft():
-                stopt = int(self.ps['stoptime'])
-                time.sleep(stopt)
-                if self.ps['pid']() > 0:#not necessary if -1 kills session
-                    p = self.ps['popen']
-                    p.kill()
-                    self.exitcode = p.wait(timeout=1)
-                    
-                 
-                self.ps['stop_call'] = False
-                #self.ps['popen'] = None
-                
+                stoptime = int(self.get_prop('stoptime'))
+                time.sleep(stoptime)
+                self.psobj.kill()
+                self.stop_call = False
+
             t = Global.ft_thread(ft)
-            
             return True
+
         return False
     
-    #launch one instance of a process
     def start_ps(self):
-        """
-            cmdline 
-        """
-        #if self.get_ps_info('cmdline') == "":
-        self.success_countdown()
         
-        if not self.ps_exists():
-            with open(self.ps['stdout'],'a+') as out, \
-                 open(self.ps['stderr'],'a+') as err:
-                #if self.ps['umask'] != -1:
-                    
-                    self.ps['popen'] = psutil.Popen(self.ps['cmdp'], stdout=out, stderr=err)
-                    Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
+        if not self.psInit():
 
-                    d = {
-                            self.ps['popen'].pid:
-                            {
-                                'name':self.ps['name'],
-                                'cmd':self.ps['cmd']
-                            }
-                        }
+            self.start_time = int(time.time())
+            self.success_countdown()
+            cmd = f"{self.setup_cmd()} && {self.get_prop('cmd')}"
+
+            with open(self.get_prop('stdout'),'a+') as out, \
+                 open(self.get_prop('stderr'),'a+') as err:
                     
-                    
-                    jsonFILE.update_json(d, Global.pss_json)
-                    
-                    if self.exitcode is not None:
-                        self.exitcode = None
+                    self.psobj = subprocess.Popen(self.get_prop('cmd'), shell=True, stdout=out, stderr=err)
+                    #Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
                     
             return True
         return False
@@ -159,30 +165,22 @@ class Process:
     
     def status_ps(self):
         
-        res = self.ps['exit']() #once done sends once
-        if res is not None:
-            self.exitcode = res
-
-            
-            
-            msg = f"ps {self.ps['name']} ended  exitcode:{self.exitcode} expecting {self.ps['exitcode']}  "
-            if str(self.exitcode) == self.ps['exitcode']:
-                msg += 'success'
-            else:
-                msg += 'fail'
-            
-            Global.print_file(msg, Global.tk_res, 'a')
-            
-                
-        lst = [
-                self.ps['name'],
-                self.ps['cmd'],
-                self.ps['status'](),
-                self.ps['pid'](),
-                self.ps['run_time'](),
-                self.exitcode #once done sends once
-              ]
+        cmd = self.psobj.args
+        pid = self.psobj.pid
+        run_time = self.get_runtime(),
+        returncode = self.psobj.poll()
+        lst = [cmd,pid,run_time,returncode]
         
+        #LOG
+        """
+        msg = f"ps {cmd} ended  returncode:{returncode} expecting {self.ps['exitcode']}  "
+        msg += 'fail'
+        if str(returncode) == self.ps['exitcode']:
+            msg += 'success'
+        Global.print_file(msg, Global.tk_res, 'a')
+        """
+
+        #DISPLAY
         pad = [30,30,10,7,10,3]
         for i in range(len(lst)):
             lst[i] = str(lst[i])
@@ -190,47 +188,13 @@ class Process:
    
         status_msg = "name:{} | cmd:{} | state: {} | PID:{} | runtime:{} | exitcode:{} ".format(*lst)
         return status_msg
-    
-    def get_ps_infos(self):
-        """
-            ps_iter contains all the info of a ps given by the os
-        """
-        fields = ["cmdline", "pid", "create_time", "status"]
-        for cur_ps in psutil.process_iter(attrs=fields):
-            cur_ps = cur_ps.as_dict(attrs=fields)
-            if self.ps['popen'] is not None:
-                if cur_ps['pid'] == self.ps['popen'].pid:
-                    return cur_ps
-        return None
-    
-    def get_ps_info(self, info):
-        """
-            ps_iter contains all the info of a ps given by the os
-        """
-        cur_ps = self.get_ps_infos()
-        
-        if cur_ps is None:
-            if info == 'pid': return '-'
-            else:             return None
-        
-        if  info == 'run_time':    
-            return self.get_runtime()
-        elif info == 'exitcode':
-            exitcode = None
-            if self.ps['popen'] is not None:
-                try:
-                    exitcode = self.ps['popen'].wait(timeout=1)
-                except psutil.TimeoutExpired:
-                    pass
-            return exitcode
-        elif info == 'pid':        
-            return int(cur_ps[info])
-        else:                      
-            return cur_ps[info]
-    
+
     def get_runtime(self):
-        
-        epoch_ct = int(self.ps['create_time']())
+
+        if not self.psInit():
+            return
+
+        epoch_ct = int(self.start_time)
         epoch_now = int(time.time())
         
         datetime_ct = datetime.fromtimestamp(epoch_ct)
@@ -239,14 +203,12 @@ class Process:
         run_time = str(datetime_now - datetime_ct)
         return run_time
     
+    """
     def auto_start(self):
         self.start_ps()
         Global.printx(f"AUTOSTART <{self.ps['name']}>")
-    
-    def set_umask(self):
-        os.umask(self.ps['umask'])
-        Global.printx(f"umask set to :{self.ps['umask']}")
-    
+    """
+
     def __repr__(self):
         
         lst = []
@@ -261,4 +223,3 @@ class Process:
         
 #####################################################################################################################
 
-pss = dict()

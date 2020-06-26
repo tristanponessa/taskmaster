@@ -32,12 +32,12 @@ if __name__ == '__main__':
             
     finally:
         Global.printx('killing pids created by taskmaster : \n')
-        Global.kill_leftover()#control which
+        #Global.kill_leftover()#control which
         
         #Global.print_file(f'{Global.now_time()} TASKMASTER EXIT : {exitid} expected {Json.conf['']} > ')
         
-        if Global.reboot:
-            os.execl(sys.executable, sys.executable, *sys.argv)
+        #if Global.reboot:
+        #    os.execl(sys.executable, sys.executable, *sys.argv)
     """
     except Exception as e:
         print(traceback.print_exc())
