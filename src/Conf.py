@@ -18,8 +18,8 @@ dft_conf =  {
                 'stoptime':     '0',
                 'workdir':      './',
                 'env':          {"TEST":"TEST"},
-                'stdout':       f'./dft_stdout.stdout',
-                'stderr':       f'./dft_stderr.stderr',
+                'stdout':       f'./logs/dft_stdout.stdout',
+                'stderr':       f'./logs/dft_stderr.stderr',
                 'nbretries':    '0',#if crashes, restarts
                 'exitsignal':   'TERM',#SIGTERM
                 'exitcode':     '0',
@@ -34,7 +34,7 @@ def is_confFile(conf):
     if not os.path.exists(conf):
         err.append(f"{msg} don't exist")
     elif os.path.getsize(conf) <= 0:
-            err.append(f"{msg} is empty")
+        err.append(f"{msg} is empty")
     if not conf.endswith('.json'):
         err.append(f"{msg} don't end with json")
     

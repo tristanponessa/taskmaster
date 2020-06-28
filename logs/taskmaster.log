@@ -6106,3 +6106,505 @@ taskmaster> exit
 <Exiting Taskmaster>
 
 
+---taskmaster session : 2020-06-28 12:31:48---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+process || don't exist
+taskmaster> status
+process || don't exist
+taskmaster> status
+process || don't exist
+taskmaster> reboot
+REBOOT
+---taskmaster session : 2020-06-28 14:01:36---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> status
+---taskmaster session : 2020-06-28 14:03:18---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:(None,)    | returncode:None 
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:00:52',) | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:05',) | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:06',) | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:07',) | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:07',) | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:09',) | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:10',) | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:11',) | returncode:None 
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:30',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:32',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:33',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:33',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:34',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:34',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:35',) | returncode:-9  
+taskmaster> stop random101
+action stop launched
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:54',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:57',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:58',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:02:59',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:03:00',) | returncode:-9  
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:76954   | runtime:('0:03:55',) | returncode:-9  
+taskmaster> print pss
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 14:09:41---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> print pss
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:78017   | runtime:('0:00:10',) | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:78017   | runtime:('0:00:14',) | returncode:None 
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:(None,)    | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 14:24:39---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:79276   | runtime:('0:02:18',) | returncode:None 
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:(None,)    | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 14:40:09---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:80283   | runtime:0:00:04    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:80283   | runtime:0:00:08    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:80283   | runtime:0:00:09    | returncode:None 
+taskmaster> stop random101
+action stop launched
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+---taskmaster session : 2020-06-28 14:41:00---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:80473   | runtime:0:00:02    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:80473   | runtime:0:00:04    | returncode:None 
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+None
+taskmaster> status
+None
+taskmaster> status
+None
+taskmaster> status
+None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 14:50:10---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash'}}
+taskmaster> status
+None
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:81945   | runtime:0:00:02    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:81945   | runtime:0:00:04    | returncode:None 
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+None
+taskmaster> status
+None
+taskmaster> status
+None
+taskmaster> status
+None
+taskmaster> python3
+display help
+taskmaster> stop random101
+action stop already launched
+taskmaster> stop random101
+action stop already launched
+taskmaster> status
+None
+taskmaster> print pss
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> print pss
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:82954   | runtime:0:00:28    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:82954   | runtime:0:00:35    | returncode:None 
+taskmaster> stop random101
+action stop launched
+taskmaster> stop random101
+action stop already launched
+taskmaster> status
+None
+taskmaster> status
+None
+taskmaster> status
+None
+taskmaster> stop random101
+action stop already launched
+taskmaster> start random101
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+action start launched
+taskmaster> start random101
+action start already launched
+taskmaster> start random101
+action start already launched
+taskmaster> stop random101
+action stop launched
+taskmaster> status
+None
+taskmaster> stop random101
+action stop already launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 15:24:06---
+old conf file {}
+---taskmaster session : 2020-06-28 15:24:16---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 prgms/shg/main_shg.py', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 prgms/shg/main_shg.py', 'stoptime': '5'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 prgms/shg/main_shg.py
+action start launched
+taskmaster> stop shg
+action stop launched
+taskmaster> status
+None
+None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 15:28:51---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 prgms/shg/main_shg.py', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 prgms/shg/main_shg.py', 'stoptime': '5'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 prgms/shg/main_shg.py
+action start launched
+taskmaster> status
+None
+name:shg                            | cmd:python3 prgms/shg/main_shg.py  | state: ?          | PID:84691   | runtime:0:00:30    | returncode:None 
+taskmaster> status
+None
+name:shg                            | cmd:python3 prgms/shg/main_shg.py  | state: ?          | PID:84691   | runtime:0:00:34    | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 16:00:46---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 prgms/shg/main_shg.py', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 prgms/shg/main_shg.py', 'stoptime': '5'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 prgms/shg/main_shg.py
+action start launched
+taskmaster> stop shg
+action stop launched
+taskmaster> status
+name:shg                            | cmd:python3 prgms/shg/main_shg.py  | state: ?          | PID:85818   | runtime:0:00:44    | returncode:2   
+None
+taskmaster> status
+None
+None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 16:03:40---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86010   | runtime:0:00:05    | returncode:None 
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86010   | runtime:0:00:08    | returncode:None 
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86010   | runtime:0:00:08    | returncode:None 
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86010   | runtime:0:00:09    | returncode:None 
+None
+taskmaster> stop shg
+action stop launched
+taskmaster> stop shg
+action stop already launched
+taskmaster> status
+None
+None
+taskmaster> status
+None
+None
+taskmaster> status
+None
+None
+taskmaster> EXIT
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 16:13:03---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> stop shg
+action stop launched
+taskmaster> status
+None
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86415   | runtime:0:00:09    | returncode:None 
+taskmaster> status
+None
+None
+taskmaster> status
+None
+None
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 16:16:32---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> stop shg
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 16:20:55---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86744   | runtime:0:00:00    | returncode:None 
+None
+action stop launched
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86744   | runtime:0:00:00    | returncode:None 
+None
+taskmaster> 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 16:21:23---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86796   | runtime:0:00:00    | returncode:None 
+None
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86796   | runtime:0:00:00    | returncode:None 
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86796   | runtime:0:00:26    | returncode:0   
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86796   | runtime:0:00:29    | returncode:0   
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86796   | runtime:0:00:30    | returncode:0   
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86796   | runtime:0:00:34    | returncode:0   
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:86796   | runtime:0:00:35    | returncode:0   
+None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 16:31:10---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:87221   | runtime:0:00:00    | returncode:None 
+None
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:87221   | runtime:0:00:00    | returncode:None 
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:87221   | runtime:0:00:04    | returncode:None 
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:87221   | runtime:0:00:05    | returncode:None 
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:87221   | runtime:0:00:07    | returncode:None 
+None
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:87221   | runtime:0:00:08    | returncode:None 
+None
+taskmaster> stop shg
+action stop launched
+taskmaster> status
+None
+None
+taskmaster> exit
+<Exiting Taskmaster>
+
+

@@ -1,0 +1,13 @@
+/Users/trponess/.brew/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/Resources/Python.app/Contents/MacOS/Python: can't open file 'prgms/shg/main_shg.py': [Errno 2] No such file or directory
+/Users/trponess/.brew/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/Resources/Python.app/Contents/MacOS/Python: can't open file 'prgms/shg/main_shg.py': [Errno 2] No such file or directory
+/Users/trponess/.brew/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/Resources/Python.app/Contents/MacOS/Python: can't open file 'prgms/shg/main_shg.py': [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "pgrms/shg/main_shg.py", line 82, in <module>
+    main()
+  File "pgrms/shg/main_shg.py", line 76, in main
+    mf1.run()
+  File "pgrms/shg/main_shg.py", line 57, in run
+    self.master_frame.mainloop()
+  File "/Users/trponess/.brew/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tkinter/__init__.py", line 1283, in mainloop
+    self.tk.mainloop(n)
+KeyboardInterrupt

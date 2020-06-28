@@ -1,5 +1,10 @@
 {
 	"random101":{
-        "cmd":"sh pgrms/sec_counter.bash"
+        "cmd":"sh pgrms/sec_counter.bash",
+        "stoptime":"5"
+    },
+    "shg":{
+        "cmd":"python3 pgrms/shg/main_shg.py",
+        "stoptime":"5"
     }
 }

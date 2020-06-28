@@ -74,15 +74,15 @@ class Taskmaster_shell(cmd.Cmd):
         
         #auto to avoid taping everything everytime
         self.do_init("./config/taskmaster_conf.json")
-        #self.do_start("random101")
-        #self.do_status("")
+        self.do_start("shg")
+        self.do_status("")
         #self.do_exit("")
         #self.do_stop("random101")
         #self.do_status("")
         #self.do_start("random101")
         #self.do_status("")
-        #self.do_stop("random101")
-        #self.do_status("")
+        #self.do_stop("shg")
+        self.do_status("")
         #self.do_stop("random101")
         #self.do_stop("random101")
         #self.do_status("")
@@ -178,13 +178,14 @@ class Taskmaster_shell(cmd.Cmd):
     def do_status(self, user_input):
 
         keys = psFILE.pss.keys()
-        if (user_input != '') and (user_input in psFILE.pss):
-            keys = [user_input]
-        else:
-            #LOG
-            Global.printx("process |" + user_input + "| don't exist")
-            return
-        
+        if (user_input != ''):
+            if (user_input in psFILE.pss):
+                keys = [user_input]
+                #LOG
+            else:
+                Global.printx("process |" + user_input + "| don't exist")
+                return
+            
         for k in keys:
             lst = psFILE.pss[k]
             for elem in lst:

@@ -484,3 +484,146 @@ status random101
 start random101
 status random101
 exit
+start random101
+stop random101
+status
+status
+status
+reboot
+status
+status
+start random101
+status
+status
+status
+status
+status
+status
+status
+status
+stop random101
+status
+status
+status
+status
+status
+status
+status
+stop random101
+stop random101
+status
+status
+status
+status
+status
+status
+print pss
+exit
+print pss
+start random101
+status
+status
+stop random101
+status
+exit
+start random101
+status
+stop random101
+status
+exit
+start random101
+status
+status
+status
+stop random101
+start random101
+status
+status
+stop random101
+status
+status
+status
+status
+exit
+status
+start random101
+status
+status
+stop random101
+status
+status
+status
+status
+python3
+stop random101
+stop random101
+status
+print pss
+start random101
+print pss
+status
+status
+stop random101
+stop random101
+status
+status
+status
+stop random101
+start random101
+start random101
+start random101
+stop random101
+status
+stop random101
+exit
+start shg
+stop shg
+status
+exit
+start shg
+status
+status
+exit
+start shg
+stop shg
+status
+status
+exit
+start shg
+status
+status
+status
+status
+stop shg
+stop shg
+status
+status
+status
+EXIT
+exit
+start shg
+stop shg
+status
+status
+status
+start shg
+
+exit
+start shg
+stop shg
+exit
+
+exit
+status
+status
+status
+status
+status
+exit
+status
+status
+status
+status
+stop shg
+status
+exit

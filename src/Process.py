@@ -104,6 +104,7 @@ class Process:
         self.psobj = None
         self.start_time = ''
         self.stop_call = False
+        self.last_status = []
     
     def setup_cmd(self):
         #umask 777 && cd .. && export v=1 && export v=2 && cmd'
@@ -139,8 +140,13 @@ class Process:
             def ft():
                 stoptime = int(confFILE.get_psProp(self.name, 'stoptime'))
                 time.sleep(stoptime)
-                self.psobj.kill()
+                #self.psobj.terminate()
+                #self.psobj.send_signal(1)
+                pgrp = os.getpgid(self.psobj.pid)
+                os.killpg(pgrp, signal.SIGINT)
                 self.stop_call = False
+                self.last_status = self.status_ps('last')
+                self.psobj = None
 
             t = ft_thread(ft)
             return True
@@ -149,7 +155,9 @@ class Process:
     
     def start_ps(self):
         
-        if not self.psInit():
+        if self.stop_call:
+            Global.printx("can't start ps, its in a stop process")
+        elif (not self.psInit()):
 
             self.start_time = int(time.time())
             #self.success_countdown()
@@ -160,7 +168,8 @@ class Process:
             with open(confFILE.get_psProp(self.name, 'stdout'),'a+') as out, \
                  open(confFILE.get_psProp(self.name, 'stderr'),'a+') as err:
                     
-                    self.psobj = subprocess.Popen(cmd, shell=True, stdout=out, stderr=err)
+                    self.psobj = subprocess.Popen(cmd, shell=True, stdout=out, stderr=err, start_new_session=True)
+                    
                     #Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
                     
             return True
@@ -168,14 +177,27 @@ class Process:
         
 
     
-    def status_ps(self):
+    def status_ps(self, endps=None):
         
+        if not self.psInit():
+            print (f'LAST {self.last_status}')
+            return
+        
+        #check if prgm DONE OR broke down 
+        returncode = self.psobj.poll()
+
         name = self.name
         cmd = confFILE.get_psProp(self.name, 'cmd')
         state = '?'
         pid = self.psobj.pid if self.psInit() else None
-        run_time = self.get_runtime(),
-        returncode = self.psobj.poll() if self.psInit() else None
+        run_time = self.get_runtime()
+
+        if returncode is not None:
+            print (f'ps DONE or BROKE DOWN ret{returncode}')
+        elif endps == 'last':
+            returncode = self.psobj.wait(timeout=100)
+            #returncode = self.psobj.poll() if self.psInit() else None
+        
         lst = [name,cmd,state,pid,run_time,returncode]
         
         #LOG
@@ -194,13 +216,14 @@ class Process:
             lst[i] = lst[i].ljust(pad[i], ' ')
    
         status_msg = "name:{} | cmd:{} | state: {} | PID:{} | runtime:{} | returncode:{} ".format(*lst)
+
         return status_msg
 
     def get_runtime(self):
 
         if not self.psInit():
             return
-
+        
         epoch_ct = int(self.start_time)
         epoch_now = int(time.time())
         
