@@ -5,6 +5,7 @@
     },
     "shg":{
         "cmd":"python3 pgrms/shg/main_shg.py",
+        "nbps":"3",
         "stoptime":"5"
     }
 }

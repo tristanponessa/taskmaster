@@ -37,11 +37,11 @@ def destroy_ps(psName):
     global pss
     inst_lst = pss[psName]
     for inst_elem in inst_lst:
-        inst_elem.kill_if_psInit()
-        del pss[psName]
+        inst_elem.killJob_if_psInit()
+    del pss[psName]
 
-        #LOG
-        Global.printx(f"DESTROY {psName}")
+    #LOG
+    Global.printx(f"DESTROY all insts {psName}")
 
 
 def init_pss():
@@ -51,9 +51,9 @@ def init_pss():
     confk = confFILE.conf.keys()
     keys = set([*pssk, *confk])
 
-    Global.printx(f"cur pss : {pssk}")
-    Global.printx(f"conf : {confk}")
-    Global.printx(f"fusion set : {keys}")
+    #Global.printx(f"cur pss : {pssk}")
+    #Global.printx(f"conf : {confk}")
+    #Global.printx(f"fusion set : {keys}")
 
     for key in keys:
         if (key in confk):
@@ -66,7 +66,13 @@ def init_pss():
             destroy_ps(key)
         else:
             Global.printx(f"protected {key}")
-    
+
+def tmexit_clean_pss():
+    keys = list(pss.keys())
+    for psName in keys:
+        destroy_ps(psName)
+
+
 def display_pss():
     global pss
     for ps in pss.values():
@@ -75,7 +81,10 @@ def display_pss():
             print(inst)
     print('\n')
 
-  
+def kill_job(pid):
+    pgrp = os.getpgid(pid)
+    os.killpg(pgrp, signal.SIGINT)
+
 def ft_thread(ft):
     p = threading.Thread(target=ft)
     p.deamon = True
@@ -104,7 +113,7 @@ class Process:
         self.psobj = None
         self.start_time = ''
         self.stop_call = False
-        self.last_status = []
+        self.last_status = ''
     
     def setup_cmd(self):
         #umask 777 && cd .. && export v=1 && export v=2 && cmd'
@@ -116,20 +125,19 @@ class Process:
         setup_cmd = ' && '.join(setup_cmd)
         return setup_cmd
 
-    def kill_if_psInit(self):
+    def killJob_if_psInit(self):
         if self.psInit():
-            self.psobj.kill()
+            kill_job(self.psobj.pid)
 
     def psInit(self):
         return (self.psobj is not None)
 
     def success_countdown(self):
         def ft():
-            s = int(self.ps['timetillsuc'])
-            name = self.ps['name']
+            s = int(confFILE.get_psProp(self.name, 'timetillsuc'))
             time.sleep(s)
-            if self.exitcode is None:
-                Global.print_file(f'{Global.now_time()} : {name} running for over {s}s, its working properly', Global.tk_res, 'a')
+            if self.psInit():
+                Global.print_file(f'{Global.now_time()} : {self.name} running for over {s}s, its working properly', Global.tk_res, 'a')
 
         t = ft_thread(ft)
 
@@ -140,13 +148,11 @@ class Process:
             def ft():
                 stoptime = int(confFILE.get_psProp(self.name, 'stoptime'))
                 time.sleep(stoptime)
-                #self.psobj.terminate()
-                #self.psobj.send_signal(1)
-                pgrp = os.getpgid(self.psobj.pid)
-                os.killpg(pgrp, signal.SIGINT)
-                self.stop_call = False
-                self.last_status = self.status_ps('last')
+                #https://stackoverflow.com/questions/32222681/how-to-kill-a-process-group-using-python-subprocess
+                kill_job(self.psobj.pid)
+                self.last_status = self.status_ps('wait')
                 self.psobj = None
+                self.stop_call = False
 
             t = ft_thread(ft)
             return True
@@ -159,8 +165,9 @@ class Process:
             Global.printx("can't start ps, its in a stop process")
         elif (not self.psInit()):
 
+            self.last_status = ''
             self.start_time = int(time.time())
-            #self.success_countdown()
+            self.success_countdown()
             cmd = f"{self.setup_cmd()} && {confFILE.get_psProp(self.name, 'cmd')}"
             #LOG
             Global.printx(cmd)
@@ -177,25 +184,25 @@ class Process:
         
 
     
-    def status_ps(self, endps=None):
+    def status_ps(self, option=''):
         
-        if not self.psInit():
-            print (f'LAST {self.last_status}')
+        if not self.psInit() and self.last_status != '':
+            print (f'LAST {self.last_status}', end=' ')
             return
         
-        #check if prgm DONE OR broke down 
-        returncode = self.psobj.poll()
 
         name = self.name
         cmd = confFILE.get_psProp(self.name, 'cmd')
         state = '?'
         pid = self.psobj.pid if self.psInit() else None
         run_time = self.get_runtime()
+        #check if prgm DONE OR broke down 
+        returncode = self.psobj.poll() if self.psInit() else None
 
         if returncode is not None:
-            print (f'ps DONE or BROKE DOWN ret{returncode}')
-        elif endps == 'last':
-            returncode = self.psobj.wait(timeout=100)
+            print (f'ps DONE ret{returncode}', end='')
+        elif 'wait' in option:
+            returncode = self.psobj.wait(timeout=10)
             #returncode = self.psobj.poll() if self.psInit() else None
         
         lst = [name,cmd,state,pid,run_time,returncode]

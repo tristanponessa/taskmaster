@@ -74,7 +74,7 @@ class Taskmaster_shell(cmd.Cmd):
         
         #auto to avoid taping everything everytime
         self.do_init("./config/taskmaster_conf.json")
-        self.do_start("shg")
+        #self.do_start("shg")
         self.do_status("")
         #self.do_exit("")
         #self.do_stop("random101")
@@ -82,7 +82,7 @@ class Taskmaster_shell(cmd.Cmd):
         #self.do_start("random101")
         #self.do_status("")
         #self.do_stop("shg")
-        self.do_status("")
+        #self.do_status("")
         #self.do_stop("random101")
         #self.do_stop("random101")
         #self.do_status("")

@@ -6608,3 +6608,1318 @@ taskmaster> exit
 <Exiting Taskmaster>
 
 
+---taskmaster session : 2020-06-28 17:04:26---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+None
+None
+None
+None
+None
+None
+None
+None
+taskmaster> status
+None
+None
+None
+None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 17:08:21---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+None
+None
+None
+None
+None
+None
+None
+None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 17:08:48---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+None
+None
+None
+None
+None
+None
+None
+None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 17:17:08---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+---taskmaster session : 2020-06-28 17:20:18---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+---taskmaster session : 2020-06-28 17:21:33---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+---taskmaster session : 2020-06-28 17:26:43---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+---taskmaster session : 2020-06-28 17:28:50---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+---taskmaster session : 2020-06-28 17:30:10---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 17:32:33---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 17:32:48---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start 
+program <> don't exist
+taskmaster> start as
+program <as> don't exist
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 17:38:58---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:05    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:05    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:05    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:06    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:07    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:07    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:07    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:07    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:07    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:07    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:08    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:08    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:08    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:08    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:08    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:08    | returncode:None 
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:34    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:34    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:34    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:37    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:37    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:37    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90408   | runtime:0:00:40    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90409   | runtime:0:00:40    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90411   | runtime:0:00:40    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90444   | runtime:0:00:20    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90445   | runtime:0:00:20    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90447   | runtime:0:00:20    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90444   | runtime:0:00:22    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90445   | runtime:0:00:22    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90447   | runtime:0:00:22    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90444   | runtime:0:00:23    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90445   | runtime:0:00:23    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:90447   | runtime:0:00:23    | returncode:None 
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 18:51:03---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92809   | runtime:0:00:07    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92810   | runtime:0:00:07    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92812   | runtime:0:00:07    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 18:52:33---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92883   | runtime:0:00:02    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92884   | runtime:0:00:02    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92886   | runtime:0:00:02    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92883   | runtime:0:00:04    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92884   | runtime:0:00:04    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92886   | runtime:0:00:04    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92883   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92884   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92886   | runtime:0:00:10    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92883   | runtime:0:00:13    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92884   | runtime:0:00:13    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92886   | runtime:0:00:13    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92883   | runtime:0:00:14    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92884   | runtime:0:00:14    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92886   | runtime:0:00:14    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92918   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92919   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92921   | runtime:0:00:06    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92918   | runtime:0:00:07    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92919   | runtime:0:00:07    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92921   | runtime:0:00:07    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> start shg
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+can't start ps, its in a stop process
+action start already launched
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92925   | runtime:0:00:04    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92926   | runtime:0:00:04    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92928   | runtime:0:00:04    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92925   | runtime:0:00:05    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92926   | runtime:0:00:05    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92928   | runtime:0:00:05    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92925   | runtime:0:00:05    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92926   | runtime:0:00:05    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92928   | runtime:0:00:05    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92925   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92926   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92928   | runtime:0:00:06    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92925   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92926   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92928   | runtime:0:00:06    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92925   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92926   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:92928   | runtime:0:00:10    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> stop shg
+action stop already launched
+action stop already launched
+action stop already launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 19:04:39---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> init conf/taskmaster_conf2.json
+error : config file <conf/taskmaster_conf2.json> don't exist
+taskmaster> init config/taskmaster_conf2.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['random101', 'shg'])
+conf : dict_keys(['shg', 'time_count', 'check'])
+fusion set : {'check', 'random101', 'time_count', 'shg'}
+INIT PS : check | obj : None | props : {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}
+DESTROY random101
+INIT PS : time_count | obj : None | props : {'autostart': 'no', 'exitsignal': ['15', '10']}
+updated conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+taskmaster> print pss
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93532   | runtime:0:03:00    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93533   | runtime:0:03:00    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93535   | runtime:0:03:00    | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93532   | runtime:0:03:41    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93533   | runtime:0:03:41    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93535   | runtime:0:03:41    | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93532   | runtime:0:03:43    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93533   | runtime:0:03:43    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:93535   | runtime:0:03:43    | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> init config/taskmaster_conf3.json
+old conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+cur pss : dict_keys(['shg', 'check', 'time_count'])
+conf : dict_keys(['random101'])
+fusion set : {'random101', 'shg', 'time_count', 'check'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+---taskmaster session : 2020-06-28 19:11:03---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 19:11:26---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autorun': 'yes', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autorun': 'yes', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autorun': 'yes', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autorun': 'yes', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 19:12:39---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x10caaa050> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x10caaa0d0> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x10caaa150> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:00    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:00    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:00    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:05    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:05    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:05    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:06    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:06    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:18    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:18    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:18    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:18    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:18    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:18    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:19    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:19    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:19    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:19    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:19    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:19    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:20    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:20    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:20    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:21    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:21    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:21    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:22    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:22    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:22    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94014   | runtime:0:00:26    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94015   | runtime:0:00:26    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94017   | runtime:0:00:26    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 19:14:31---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'random101', 'shg'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x106aa0dd0> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x106aa0e50> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x106aa0ed0> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:00    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:00    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:00    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:03    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:03    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:03    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:03    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:03    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:03    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:04    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:04    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:04    | returncode:None 
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:10    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:10    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:11    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:11    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:11    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:11    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:11    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:11    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:12    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:12    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:12    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:12    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:12    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:12    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:13    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:13    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:13    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:13    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:13    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:13    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94113   | runtime:0:00:14    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94114   | runtime:0:00:14    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94116   | runtime:0:00:14    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+None
+None
+None
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94148   | runtime:0:00:12    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94149   | runtime:0:00:12    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94151   | runtime:0:00:12    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94148   | runtime:0:00:14    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94149   | runtime:0:00:14    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94151   | runtime:0:00:14    | returncode:None 
+taskmaster> init config/taskmaster_conf3.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['random101', 'shg'])
+conf : dict_keys(['random101'])
+fusion set : {'random101', 'shg'}
+DESTROY shg
+---taskmaster session : 2020-06-28 19:17:35---
+old conf file {}
+cur pss : dict_keys([])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x10997ad10> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x10997ad90> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x10997ae10> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94308   | runtime:0:00:00    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94309   | runtime:0:00:00    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94311   | runtime:0:00:00    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> init config/taskmaster_conf3.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['shg', 'random101'])
+conf : dict_keys(['random101'])
+fusion set : {'shg', 'random101'}
+DESTROY shg
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}}
+taskmaster> start shg
+program <shg> don't exist
+taskmaster> init config/taskmaster_conf3.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}}
+cur pss : dict_keys(['random101'])
+conf : dict_keys(['random101'])
+fusion set : {'random101'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}}
+taskmaster> init config/taskmaster_conf.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}}
+cur pss : dict_keys(['random101'])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x109a03050> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x10997ad90> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+INIT PS : shg | obj : <subprocess.Popen object at 0x109a030d0> | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+taskmaster> init config/taskmaster_conf.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['random101', 'shg'])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94345   | runtime:0:00:12    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94346   | runtime:0:00:12    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94347   | runtime:0:00:12    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94345   | runtime:0:00:13    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94346   | runtime:0:00:13    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94347   | runtime:0:00:13    | returncode:None 
+taskmaster> init config/taskmaster_conf.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['random101', 'shg'])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94345   | runtime:0:00:17    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94346   | runtime:0:00:17    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94347   | runtime:0:00:17    | returncode:None 
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94345   | runtime:0:00:19    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94346   | runtime:0:00:19    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94347   | runtime:0:00:19    | returncode:None 
+taskmaster> init config/taskmaster_conf.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['random101', 'shg'])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'random101'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94345   | runtime:0:00:21    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94346   | runtime:0:00:21    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94347   | runtime:0:00:21    | returncode:None 
+taskmaster> init config/taskmaster_conf2.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'autostart': 'yes', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['random101', 'shg'])
+conf : dict_keys(['shg', 'time_count', 'check'])
+fusion set : {'shg', 'time_count', 'random101', 'check'}
+DESTROY shg
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : time_count | obj : None | props : {'autostart': 'no', 'exitsignal': ['15', '10']}
+DESTROY random101
+INIT PS : check | obj : None | props : {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}
+updated conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> print pss
+taskmaster> init config/taskmaster_conf.json
+old conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+cur pss : dict_keys(['shg', 'time_count', 'check'])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'time_count', 'random101', 'check'}
+DESTROY time_count
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+DESTROY check
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> init config/taskmaster_conf2.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['shg', 'random101'])
+conf : dict_keys(['shg', 'time_count', 'check'])
+fusion set : {'shg', 'time_count', 'random101', 'check'}
+INIT PS : time_count | obj : None | props : {'autostart': 'no', 'exitsignal': ['15', '10']}
+DESTROY random101
+INIT PS : check | obj : None | props : {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}
+updated conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:00:09    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:00:09    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:00:09    | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:00:10    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:00:10    | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:00:11    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:00:11    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:00:11    | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> init config/taskmaster_conf.json
+old conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+cur pss : dict_keys(['shg', 'time_count', 'check'])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'time_count', 'random101', 'check'}
+DESTROY time_count
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+DESTROY check
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:00:18    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:00:18    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:00:18    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:00:21    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:00:21    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:00:21    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:00:25    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:00:25    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:00:25    | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> init config/taskmaster_conf2.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['shg', 'random101'])
+conf : dict_keys(['shg', 'time_count', 'check'])
+fusion set : {'shg', 'time_count', 'random101', 'check'}
+INIT PS : time_count | obj : None | props : {'autostart': 'no', 'exitsignal': ['15', '10']}
+DESTROY random101
+INIT PS : check | obj : None | props : {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}
+updated conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:00:30    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:00:30    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:00:30    | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> stop random101
+program <random101> don't exist
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:01:14    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:01:14    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:01:14    | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> stop time_count
+action stop already launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:01:23    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:01:23    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:01:23    | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:01:25    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:01:25    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:01:25    | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94447   | runtime:0:01:39    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94448   | runtime:0:01:39    | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:94450   | runtime:0:01:39    | returncode:None 
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> init config/taskmaster_conf2.json
+old conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+cur pss : dict_keys(['shg', 'time_count', 'check'])
+conf : dict_keys(['shg', 'time_count', 'check'])
+fusion set : {'shg', 'time_count', 'check'}
+updated conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+taskmaster> init config/taskmaster_conf.json
+old conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+cur pss : dict_keys(['shg', 'time_count', 'check'])
+conf : dict_keys(['random101', 'shg'])
+fusion set : {'shg', 'time_count', 'random101', 'check'}
+DESTROY time_count
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+DESTROY check
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> init config/taskmaster_conf2.json
+old conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+cur pss : dict_keys(['shg', 'random101'])
+conf : dict_keys(['shg', 'time_count', 'check'])
+fusion set : {'shg', 'time_count', 'random101', 'check'}
+INIT PS : time_count | obj : None | props : {'autostart': 'no', 'exitsignal': ['15', '10']}
+DESTROY random101
+INIT PS : check | obj : None | props : {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}
+updated conf file {'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}, 'time_count': {'autostart': 'no', 'exitsignal': ['15', '10']}, 'check': {'nbps': '1', 'cmd': 'python3 check.py', 'autostart': 'no', 'exitcode': '2'}}
+taskmaster> status
+None
+None
+None
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> status
+None
+None
+None
+name:time_count                     | cmd:sh sec_counter.bash            | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:check                          | cmd:python3 check.py               | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 19:29:02---
+old conf file {}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> stop shg
+action stop launched
+action stop launched
+action stop launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-06-28 19:37:52---
+old conf file {}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+DESTROY all insts random101
+---taskmaster session : 2020-06-28 19:38:34---
+old conf file {}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+DESTROY all insts shg
+DESTROY all insts random101
+---taskmaster session : 2020-06-28 19:39:05---
+old conf file {}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : shg | obj : None | props : {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}
+INIT PS : random101 | obj : None | props : {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'nbps': '3', 'stoptime': '5'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: ?          | PID:None    | runtime:None       | returncode:None 
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: ?          | PID:None    | runtime:None       | returncode:None 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+action start launched
+
+
+  Ctrl + c -> exit Taskmaster
+
+
+DESTROY all insts shg
+DESTROY all insts random101

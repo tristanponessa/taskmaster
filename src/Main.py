@@ -9,7 +9,9 @@ if not (v.major == 3 and v.minor == 6):
 
 import os
 import Taskmaster as tsFILE #psutil in 3.8 causes crash
+import Process as psFILE
 import Global
+
 
 if __name__ == '__main__':
     
@@ -33,7 +35,7 @@ if __name__ == '__main__':
             
             
     finally:
-        pass
+        psFILE.tmexit_clean_pss()
         #Global.printx('killing pids created by taskmaster : \n')
         #Global.kill_leftover()#control which
         

@@ -627,3 +627,194 @@ status
 stop shg
 status
 exit
+status
+exit
+exit
+exit
+exit
+exit
+status
+status
+status
+status
+status
+start 
+start as
+start shg
+stop shg
+status
+exit
+start shg
+status
+status
+status
+status
+status
+status
+stop shg
+status
+status
+status
+status
+status
+status
+status
+start shg
+status
+status
+status
+stop shg
+start shg
+stop shg
+stop shg
+stop shg
+
+status
+status
+start shg
+start shg
+status
+stop shg
+stop shg
+start shg
+exit
+start shg
+stop shg
+start shg
+stop shg
+stop shg
+start shg
+stop shg
+start shg
+status
+status
+status
+status
+status
+exit
+start shg
+status
+status
+stop shg
+status
+status
+status
+status
+status
+status
+status
+start shg
+status
+status
+stop shg
+start shg
+start shg
+stop shg
+start shg
+start shg
+status
+status
+status
+status
+status
+stop shg
+status
+stop shg
+stop shg
+exit
+start shg
+init conf/taskmaster_conf2.json
+init config/taskmaster_conf2.json
+print pss
+status
+status
+status
+init config/taskmaster_conf3.json
+exit
+exit
+status
+status
+stop shg
+status
+status
+status
+status
+status
+status
+status
+status
+exit
+status
+status
+status
+stop shg
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+start shg
+status
+status
+init config/taskmaster_conf3.json
+init config/taskmaster_conf3.json
+start shg
+init config/taskmaster_conf3.json
+init config/taskmaster_conf.json
+init config/taskmaster_conf.json
+status
+status
+init config/taskmaster_conf.json
+status
+status
+init config/taskmaster_conf.json
+status
+init config/taskmaster_conf2.json
+status
+print pss
+init config/taskmaster_conf.json
+start shg
+init config/taskmaster_conf2.json
+status
+status
+status
+init config/taskmaster_conf.json
+status
+status
+status
+init config/taskmaster_conf2.json
+status
+stop random101
+status
+stop time_count
+status
+status
+stop shg
+status
+init config/taskmaster_conf2.json
+init config/taskmaster_conf.json
+status
+status
+status
+init config/taskmaster_conf2.json
+status
+status
+exit
+start shg
+stop shg
+exit
+start shg
+exit
+start shg
+exit
+start shg
