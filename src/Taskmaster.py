@@ -79,20 +79,22 @@ class Taskmaster_shell(cmd.Cmd):
         #self.do_exit("")
         #self.do_stop("random101")
         #self.do_status("")
-        #self.do_start("random101")
+        self.do_start("shg")
         #self.do_status("")
-        #self.do_stop("shg")
+        self.do_stop("shg")
         #self.do_status("")
         #self.do_stop("random101")
         #self.do_stop("random101")
         #self.do_status("")
         
-    
 
     def precmd(self, user_input):
         #LOG
         Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
         Global.print_file(f'{user_input}',Global.history_file,'a')
+
+
+        psFILE.pss_reboot_if_wrongExitcode()
 
         return cmd.Cmd.precmd(self, user_input)
 

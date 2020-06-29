@@ -12,6 +12,7 @@ import subprocess
 from datetime import datetime, timedelta
 
 import Conf as confFILE
+import Log as logFILE
 import Global
 
 
@@ -81,9 +82,22 @@ def display_pss():
             print(inst)
     print('\n')
 
-def kill_job(pid):
-    pgrp = os.getpgid(pid)
-    os.killpg(pgrp, signal.SIGINT)
+def kill_job(pid, isignal=signal.SIGINT):
+    #if pid exists
+    try:
+        pgrp = os.getpgid(pid)
+        os.killpg(pgrp, isignal)
+    except OSError:
+        pass
+
+def pss_reboot_if_wrongExitcode():
+    for ps in pss.values():
+        for inst in ps:
+            print(inst)
+            if confFILE.get_psProp(inst.name, 'restart') == 'yes':
+                print('in')
+                inst.reboot_if_wrongExitcode()
+
 
 def ft_thread(ft):
     p = threading.Thread(target=ft)
@@ -114,6 +128,8 @@ class Process:
         self.start_time = ''
         self.stop_call = False
         self.last_status = ''
+        self.returncode = None
+        self.nbrestart = 0
     
     def setup_cmd(self):
         #umask 777 && cd .. && export v=1 && export v=2 && cmd'
@@ -125,9 +141,9 @@ class Process:
         setup_cmd = ' && '.join(setup_cmd)
         return setup_cmd
 
-    def killJob_if_psInit(self):
+    def killJob_if_psInit(self, isignal=signal.SIGINT):
         if self.psInit():
-            kill_job(self.psobj.pid)
+            kill_job(self.psobj.pid, isignal)
 
     def psInit(self):
         return (self.psobj is not None)
@@ -149,7 +165,7 @@ class Process:
                 stoptime = int(confFILE.get_psProp(self.name, 'stoptime'))
                 time.sleep(stoptime)
                 #https://stackoverflow.com/questions/32222681/how-to-kill-a-process-group-using-python-subprocess
-                kill_job(self.psobj.pid)
+                kill_job(self.psobj.pid, signal.SIGKILL)
                 self.last_status = self.status_ps('wait')
                 self.psobj = None
                 self.stop_call = False
@@ -167,7 +183,6 @@ class Process:
 
             self.last_status = ''
             self.start_time = int(time.time())
-            self.success_countdown()
             cmd = f"{self.setup_cmd()} && {confFILE.get_psProp(self.name, 'cmd')}"
             #LOG
             Global.printx(cmd)
@@ -176,12 +191,30 @@ class Process:
                  open(confFILE.get_psProp(self.name, 'stderr'),'a+') as err:
                     
                     self.psobj = subprocess.Popen(cmd, shell=True, stdout=out, stderr=err, start_new_session=True)
-                    
-                    #Global.print_file(f"{self.ps['popen'].pid}", Global.pss_file, 'a')
+            
+            self.success_countdown()
                     
             return True
         return False
         
+    def reboot_if_wrongExitcode(self): 
+        #returncode is an exitcode with - like -15 for sigterm
+        x = self.status_ps()
+        if self.last_status != '' and self.returncode is not None and self.returncode < 0:
+            wanted_exitcode = confFILE.get_psProp(self.name, 'exitcode')
+            if wanted_exitcode != str(self.returncode):
+                nbrestart = confFILE.get_psProp(self.name, 'nbrestart')
+                if self.nbrestart > int(nbrestart):
+                    #print(f'ps {self.name} has rebooted {self.nbrestart} the max {nbrestart} no more rebooting')
+                    pass
+                else:
+                    self.nbrestart += 1
+                    print(f'ps {self.name} has {self.returncode} wrong exitcode should be {wanted_exitcode} REBOOTING')
+                    self.start_ps()
+                
+
+                
+                    
 
     
     def status_ps(self, option=''):
@@ -198,13 +231,29 @@ class Process:
         run_time = self.get_runtime()
         #check if prgm DONE OR broke down 
         returncode = self.psobj.poll() if self.psInit() else None
+        self.returncode = returncode
 
+        done_flag = False
         if returncode is not None:
             print (f'ps DONE ret{returncode}', end='')
+            logFILE.returncode_msg(self.name, confFILE.get_psProp(self.name, 'returncode'), returncode)
+            self.psobj = None
+            done_flag = True
         elif 'wait' in option:
-            returncode = self.psobj.wait(timeout=10)
-            #returncode = self.psobj.poll() if self.psInit() else None
+            try:
+                returncode = self.psobj.wait(timeout=10)
+                self.returncode = returncode
+                logFILE.returncode_msg(self.name, confFILE.get_psProp(self.name, 'returncode'), returncode)
+            except subprocess.TimeoutExpired:
+                Global.print_file("ps SIGINT wait returncode TIMEOUT ERROR", Global.tk_res, 'a')
+            finally:
+                self.psobj = None
+                done_flag = True
+            
         
+        
+        
+
         lst = [name,cmd,state,pid,run_time,returncode]
         
         #LOG
@@ -224,6 +273,8 @@ class Process:
    
         status_msg = "name:{} | cmd:{} | state: {} | PID:{} | runtime:{} | returncode:{} ".format(*lst)
 
+        if done_flag:
+            self.last_status = status_msg
         return status_msg
 
     def get_runtime(self):

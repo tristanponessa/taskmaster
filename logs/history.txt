@@ -48,695 +48,6 @@ status
 status
 status
 status
-stop random101
-status
-status
-stop random101
-status
-status
-status
-status
-status
-exit
-status
-status
-exit
-exit
-status
-status
-reboot
-status
-exit
-exit
-exit
-exit
-stop random101
-status
-exit
-stop random101
-exit
-stop random101
-status
-exit
-stop random101
-exit
-stop random101
-status
-exit
-stop random101
-exit
-stop random101
-exit
-stop random101
-status
-stop random101
-status
-exit
-exit
-stop random101
-exit
-exit
-exit
-stop random101
-exit
-exit
-stop random101
-exit
-exit
-exit
-status
-exit
-status
-exit
-exit
-exit
-exit
-exit
-exit
-exit
-exit
-exit
-stop random101
-status
-exit
-status
-status
-status
-stop random101
-status
-exit
-exit
-exit
-exit
-exit
-start random101
-start random101
-status
-stop random101
-status
-stop random101
-status
-start random101
-status
-status
-status
-status
-exit
-status
-stop random101
-status
-start random101
-start random101
-start random101
-start random101
-status
-exit
-stop random101
-start random101
-exit
-exit
-exit
-EOF
-exit
-exit
-EOF
-result
-result
-reboot
-exit
-reboot
-reboot
-reboot
-reboot
-status
-stop random101
-stop sleep23
-exit
-stop sleep23
-exit
-status
-exit
-exit
-exit
-status
-exit
-exit
-status
-exit
-exit
-status
-exit
-status
-exit
-status
-exit
-status
-exit
-print 
-print pss
-print res
-EOF
-print res
-print res
-print pss
-exit
-exit
-exit
-status
-exit
-exit
-exit
-exit
-exit
-exit
-exit
-exit
-exit
-status
-status
-status
-print pss
-print res
-exit
-pss
-print pss
-print pss
-exit
-stop 
-stop check
-status
-status
-status
-status
-status
-status
-status
-EOF
-status
-status
-status
-status
-status
-status check
-status sleep23
-start check
-status check
-stop check
-status check
-print pss
-print res
-EOF
-EOF
-exit
-status
-start random101
-status
-status random101
-print pss
-status random101
-print pss_file
-print pssfile
-stop random101
-status random101
-status random101
-print pss_file
-print pssf
-print pssfile
-start random101
-status
-stop check
-stop random101
-status
-status
-stop random101
-status
-exit
-start random101
-status
-stop random101
-status random101
-start random101
-status random101
-status random101
-stop random101
-exit
-start random101
-status random101
-stop random101
-status
-start random101
-status
-stop random101
-status random101
-stop random101
-status random101
-exit
-exit
-exit
-ext
-exit
-exit
-exit
-exit
-status
-stop random101
-status
-exit
-status
-stop random101
-status
-exit
-start random101
-status
-start random101
-exit
-status
-stop random101
-status
-exit
-STATUS
-status
-exit
-start random101
-status
-exit
-exit
-exit
-exit
-status
-exit
-status
-exit
-status
-exit
-exit
-status
-exit
-status
-exit
-exit
-exit
-stop random101
-status
-exit
-status
-status
-stop random101
-status
-start sleep23
-start sleep23
-status
-exit
-status
-exit
-status
-exit
-status
-exit
-status
-start check
-status
-exit
-start sleep23
-exit
-start sleep23
-start random101
-status
-exit
-status
-exit
-status
-exit
-status
-status
-exit
-status
-stop random101
-status
-start random101
-status
-exit
-status
-stop random101
-status
-start random101
-status
-exit
-exit
-exit
-exit
-help
-exit
-init 
-init
-init
-init x
-init x.json
-init config
-init config
-init config/taskmaster_conf.json
-init config/taskmaster_conf.json
-exit
-init config/taskmaster_conf.json
-exit
-init config/taskmaster_conf.json
-init config/taskmaster_conf.json
-exit
-init config/taskmaster_conf.json
-init config/taskmaster_conf.json
-init config/taskmaster_conf.json
-print pss
-print ps
-exit
-init config/taskmaster_conf.json
-print pss
-exit
-print pss
-init config/taskmaster_conf.json
-print pss
-exit
-init config/taskmaster_conf.json
-print pss
-exit
-init config/taskmaster_conf.json
-print pss
-exit
-print pss
-reboot
-print pss
-exit
-print pss
-exit
-print pss
-exit
-print pss
-exit
-print pss
-exit
-print pss
-exit
-print pss
-print pss
-exit
-print pss
-exit
-print pss
-print conf
-print config
-exit
-print pwd
-exit
-exit
-exit
-exit
-exit
-exit
-start 
-start random101
-start random101
-start random101
-start random101
-start random101
-start random101
-start random101
-start random101
-start random101
-start random101
-exit
-start random101
-exit
-start random101
-status random101
-start random101
-status random101
-start random101
-status random101
-stop random101
-start random101
-stop random101
-
-exit
-stop random101
-stop random101
-status random101
-stop random101
-status random101
-start random101
-status random101
-exit
-start random101
-stop random101
-status
-status
-status
-reboot
-status
-status
-start random101
-status
-status
-status
-status
-status
-status
-status
-status
-stop random101
-status
-status
-status
-status
-status
-status
-status
-stop random101
-stop random101
-status
-status
-status
-status
-status
-status
-print pss
-exit
-print pss
-start random101
-status
-status
-stop random101
-status
-exit
-start random101
-status
-stop random101
-status
-exit
-start random101
-status
-status
-status
-stop random101
-start random101
-status
-status
-stop random101
-status
-status
-status
-status
-exit
-status
-start random101
-status
-status
-stop random101
-status
-status
-status
-status
-python3
-stop random101
-stop random101
-status
-print pss
-start random101
-print pss
-status
-status
-stop random101
-stop random101
-status
-status
-status
-stop random101
-start random101
-start random101
-start random101
-stop random101
-status
-stop random101
-exit
-start shg
-stop shg
-status
-exit
-start shg
-status
-status
-exit
-start shg
-stop shg
-status
-status
-exit
-start shg
-status
-status
-status
-status
-stop shg
-stop shg
-status
-status
-status
-EXIT
-exit
-start shg
-stop shg
-status
-status
-status
-start shg
-
-exit
-start shg
-stop shg
-exit
-
-exit
-status
-status
-status
-status
-status
-exit
-status
-status
-status
-status
-stop shg
-status
-exit
-status
-exit
-exit
-exit
-exit
-exit
-status
-status
-status
-status
-status
-start 
-start as
-start shg
-stop shg
-status
-exit
-start shg
-status
-status
-status
-status
-status
-status
-stop shg
-status
-status
-status
-status
-status
-status
-status
-start shg
-status
-status
-status
-stop shg
-start shg
-stop shg
-stop shg
-stop shg
-
-status
-status
-start shg
-start shg
-status
-stop shg
-stop shg
-start shg
-exit
-start shg
-stop shg
-start shg
-stop shg
-stop shg
-start shg
-stop shg
-start shg
-status
-status
-status
-status
-status
-exit
-start shg
-status
-status
-stop shg
-status
-status
-status
-status
-status
-status
-status
-start shg
-status
-status
-stop shg
-start shg
-start shg
-stop shg
-start shg
-start shg
-status
-status
-status
-status
-status
-stop shg
-status
-stop shg
-stop shg
-exit
-start shg
-init conf/taskmaster_conf2.json
-init config/taskmaster_conf2.json
-print pss
-status
-status
-status
-init config/taskmaster_conf3.json
-exit
-exit
-status
-status
-stop shg
-status
-status
 status
 status
 status
@@ -818,3 +129,229 @@ exit
 start shg
 exit
 start shg
+start shg
+stop shg
+exit
+exit
+start shg
+print pss
+exit
+start shg
+exit
+start shg
+exit
+start shg
+exit
+start shg
+stop shg
+start shg
+stop shg
+print conf
+exit
+start shg
+stop shg
+exit
+start shg
+stop shg
+status
+exit
+start shg
+status
+status
+status
+status
+status
+status
+status
+status
+start shg
+status
+status
+status
+status
+status
+status
+status
+status
+status
+start shg
+print pss
+exit
+print pss
+start shg
+status
+status
+status
+status
+status
+status
+status
+status
+status
+print pss
+start shg
+status
+status
+status
+status
+status
+status
+status
+status
+status
+exit
+status
+start shg
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+start shg
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+stop shg
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+status
+exit
+status
+start shg
+status
+print pss
+print pss
+stop shg
+status
+status
+status
+status
+status
+status
+status
+exit
+exit
+start shg
+stop shg
+status
+exit
+start shg
+stop shg
+
+
+status
+exit
+start shg
+stop shg
+
+
+
+l
+status
+status
+exit
+
+
+
+status
+exit
+status
+exit
+status
+status
+start shg
+stop shg
+
+start shg
+stop shg
+
+
+
+status
+status
+status
+exit
+status
+status
+
+
+
+start shg
+status
+stop shg
+
+
+
+exit
+start shg
+stop shg
+
+
+exit
+
+exit
+
+exit
+
+exit
+
+
+exit
+
+
+
+
+
+stop shg
+
+stop shg
+
+
+stop shg
+
+stop shg
+
+stop shg
+
+
+start shg
+init config/taskmaster_conf.json
+start shg
+stop shg
+exit
+
+init config/taskmaster_conf.json
+exit

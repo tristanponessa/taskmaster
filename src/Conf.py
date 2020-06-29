@@ -20,9 +20,10 @@ dft_conf =  {
                 'env':          {"TEST":"TEST"},
                 'stdout':       f'./logs/dft_stdout.stdout',
                 'stderr':       f'./logs/dft_stderr.stderr',
-                'nbretries':    '0',#if crashes, restarts
-                'exitsignal':   'TERM',#SIGTERM
-                'exitcode':     '0',
+                'restart':      'no',#if crashes, restarts
+                'nbrestart':   '5',
+                'exitsignal':   '-2',#SIGINT
+                'returncode':   '1',
                 'umask':        '022'
             }
 
