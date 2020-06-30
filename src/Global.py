@@ -3,6 +3,7 @@ import signal
 import psutil
 import threading
 import time
+import signal
 
 import Conf as confFILE
 

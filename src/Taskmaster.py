@@ -13,7 +13,7 @@ import psutil
 import os
 import signal
 import traceback
-
+import signal 
 import readline
 #files
 import Process as psFILE
@@ -90,8 +90,8 @@ class Taskmaster_shell(cmd.Cmd):
 
     def precmd(self, user_input):
         #LOG
-        Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
-        Global.print_file(f'{user_input}',Global.history_file,'a')
+        #Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
+        #Global.print_file(f'{user_input}',Global.history_file,'a')
 
 
         psFILE.pss_reboot_if_wrongExitcode()
@@ -194,6 +194,16 @@ class Taskmaster_shell(cmd.Cmd):
                 status_msg = elem.status_ps()
                 #LOG
                 Global.printx(status_msg)
+    
+    def do_signal(self, user_input):
+        inp = user_input.split(' ')
+        if len(inp) == 2 and \
+            inp[0] in signal.Signals.keys() and \
+            inp[1] in psFILE.pss.keys():
+                psFILE.kill_ps_allinst(inp[1], inp[0])
+        else:
+            Global.printx('ERROR usage: signal SIGTERM ps')
+
 
     def do_result(self, user_input):
         l = Global.load_file(Global.tk_res)

@@ -8,6 +8,6 @@
         "restart":"yes",
         "nbps":"3",
         "stoptime":"0",
-        "exitcode":"-2"
+        "exitcode":"SIGINT"
     }
 }
