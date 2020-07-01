@@ -355,3 +355,139 @@ exit
 
 init config/taskmaster_conf.json
 exit
+exit
+status
+start 
+status
+status
+status
+stop random101
+
+exit
+start shg
+status
+stop shg
+status
+status
+status
+status
+exit
+start shg
+status
+stop shg
+status
+status
+status
+exit
+start shg
+status
+stop shg
+status
+exit
+start shg
+stop shg
+status
+status
+status
+status
+exit
+start shg
+stop shg
+status
+status
+status
+exit
+start shg
+status
+stop shg
+status
+status
+status
+exit
+start shg
+stop shg
+exit
+stop shg
+status
+status
+start shg
+stop shg
+exit
+start shg
+stop shg
+exit
+start shg
+stop shg
+
+status
+exit
+start shg
+stop shg
+status
+stop shg
+status
+exit
+status
+start shg
+stop shg
+
+status
+exit
+start shg
+stop shg
+
+status
+EXIT
+EXIT
+exit
+start shg
+stop shg
+status
+status
+status
+start shg
+status
+status
+stop shg__0
+status
+status
+status
+status shg__0
+status shg__3
+status shg__0
+status shg__1
+status shg__1
+signal SIGKILL shg__2
+start shg
+stop shg
+status
+start shg
+status
+status
+start shg
+start shg__0
+status
+status
+signal SIGKILL shg__0
+signal SIGKILL shg__0
+signal SIGKILL shg__0
+signal SIGKILL shg__0
+
+exit
+signal SIGKILL shg__0
+reboot
+signal SIGKILL shg__0
+exit
+signal SIGKILL shg__0
+exit
+signal SIGKILL shg__0
+reboot
+signal SIGKILL shg__0
+reboot
+signal SIGKILL shg__0
+signal SIGKILL shg__0
+exit
+signal SIGKILL shg__0
+status
+exit
+exit

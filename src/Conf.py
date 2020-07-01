@@ -6,11 +6,11 @@ import json
 import os
 
 import Global
-import Process as psFILE
+import Process as pgFILE
 
 conf = dict()
 dft_conf =  {
-                'cmd':          'sh sec_counter.bash',
+                'cmd':          'ls -l',
                 'nbps':         '1',
                 'timetillsuc':  '0',
                 'autostart':    'no',
@@ -22,7 +22,7 @@ dft_conf =  {
                 'stderr':       f'./logs/dft_stderr.stderr',
                 'restart':      'no',#if crashes, restarts
                 'nbrestart':   '5',
-                'exitsignal':   '-2',#SIGINT
+                'exitcode':   'SIGINT',#SIGINT
                 'returncode':   '1',
                 'umask':        '022'
             }
@@ -41,10 +41,10 @@ def is_confFile(conf):
     
     return err
 
-def get_psProp(psName, propName):
+def get_pgProp(pgName, propName):
     global conf, dft_conf
-    if psName in conf.keys() and propName in conf[psName]:
-        return conf[psName][propName] 
+    if pgName in conf.keys() and propName in conf[pgName]:
+        return conf[pgName][propName] 
     return dft_conf[propName]
 
 def load_Aconf(json_file):
@@ -56,7 +56,7 @@ def load_Aconf(json_file):
 
 def confReload(json_file):
     """
-        if conf reloaded , dont kill pss that dont change props
+        if conf reloaded , dont kill pgs that dont change propg
     """
     global conf
     new_conf = load_Aconf(json_file) #json get $ user input file
@@ -97,24 +97,24 @@ def reload_conf():
                 prg == new_prg:
                     not_touch.append(name)
                         
-    pss_names = psFILE.pss.keys()
-    for pss_n in pss_names:
-        if pss_n not in not_touch:
-            psFILE.pss[pss_n].ps['popen'].kill()
-            del psFILE.pss[pss_n]
+    pgs_names = pgFILE.pgs.keys()
+    for pgs_n in pgs_names:
+        if pgs_n not in not_touch:
+            pgFILE.pgs[pgs_n].pg['popen'].kill()
+            del pgFILE.pgs[pgs_n]
 
     #from ts 
-    for ps,props in new_conf.items():
-        if ps not in not_touch:
-            psFILE.pss[ps] = []
-            nps = psFILE.Process(ps, props)
-            nbps = int(nps.ps['nbps'])
-            for i in range(nbps):
-                nps = psFILE.Process(ps, props)
-                if nps.ps['autostart'] == "yes": 
-                    Global.printx(f"{ps} : autostart")
-                    nps.start_ps()
-                psFILE.pss[ps].append(nps)
+    for pg,propg in new_conf.items():
+        if pg not in not_touch:
+            pgFILE.pgs[pg] = []
+            npg = pgFILE.Process(pg, propg)
+            nbpg = int(npg.pg['nbpg'])
+            for i in range(nbpg):
+                npg = pgFILE.Process(pg, propg)
+                if npg.pg['autostart'] == "yes": 
+                    Global.printx(f"{pg} : autostart")
+                    npg.start_pg()
+                pgFILE.pgs[pg].append(npg)
 """
 
 

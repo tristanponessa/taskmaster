@@ -9,7 +9,6 @@ from datetime import datetime, timedelta
 import sys
 import re
 import itertools
-import psutil
 import os
 import signal
 import traceback
@@ -33,7 +32,7 @@ class Taskmaster_shell(cmd.Cmd):
     """
         Taskmaster class :
             -checks user input
-            -stocks pss in list from file
+            -stocks pgs in list from file
             -stocks actions in log file
             -preform actions from program objects from program list
             -launch one process instance 
@@ -74,14 +73,14 @@ class Taskmaster_shell(cmd.Cmd):
         
         #auto to avoid taping everything everytime
         self.do_init("./config/taskmaster_conf.json")
-        #self.do_start("shg")
-        self.do_status("")
+        self.do_start("shg")
+        #self.do_status("")
         #self.do_exit("")
         #self.do_stop("random101")
         #self.do_status("")
-        self.do_start("shg")
+        #self.do_start("shg")
         #self.do_status("")
-        self.do_stop("shg")
+        #self.do_stop("shg")
         #self.do_status("")
         #self.do_stop("random101")
         #self.do_stop("random101")
@@ -90,11 +89,11 @@ class Taskmaster_shell(cmd.Cmd):
 
     def precmd(self, user_input):
         #LOG
-        #Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
-        #Global.print_file(f'{user_input}',Global.history_file,'a')
+        Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
+        Global.print_file(f'{user_input}',Global.history_file,'a')
 
 
-        psFILE.pss_reboot_if_wrongExitcode()
+        #psFILE.pgs_reboot_if_wrongExitcode()
 
         return cmd.Cmd.precmd(self, user_input)
 
@@ -117,7 +116,7 @@ class Taskmaster_shell(cmd.Cmd):
             Global.printx(f"old conf file {confFILE.conf}")
 
             confFILE.confReload(user_input)
-            psFILE.init_pss()
+            psFILE.init_pgs()
 
             #LOG
             Global.printx(f"updated conf file {confFILE.conf}")
@@ -135,15 +134,15 @@ class Taskmaster_shell(cmd.Cmd):
     
 
     def do_print(self, user_input):
-        if user_input == 'pss':
-            psFILE.display_pss()
+        if user_input == 'pgs':
+            psFILE.display_pgs()
         if user_input == 'conf':
             print(confFILE.conf)
         if user_input == 'pwd':
             os.system('pwd')
         """
-        if user_input == 'pss_file':
-            os.system(f'cat {Global.pss_file}')
+        if user_input == 'pgs_file':
+            os.system(f'cat {Global.pgs_file}')
         if user_input == 'res_file':
             os.system(f'cat {Global.tk_res}')
         if user_input == 'log_file':
@@ -156,53 +155,74 @@ class Taskmaster_shell(cmd.Cmd):
     def do_stop(self, user_input):
         self.toggle_program(user_input, 'stop')
     
+    """
     def do_reload(self, user_input):
         self.toggle_program(user_input, 'stop')
         self.toggle_program(user_input, 'start')
-    
-    def toggle_program(self, ps, action):
-        if ps not in psFILE.pss.keys():
-            Global.printx("program <" + ps + "> don't exist")
+    """
+
+    def get_userInput_arg(self, inp, index):
+        inp_args = inp.split(' ')
+        print(inp_args)
+        if index < len(inp):
+            return inp_args[index]
+
+    def toggle_program(self, inp, action):
+
+        pgLst = psFILE.get_pgs(inp) 
+        if pgLst == []:
+            Global.printx(f"program <{inp}> don't exist") 
         else:
-            inst_lst = psFILE.pss[ps]
-            res = None
-            for i in range(len(inst_lst)):
-                if action == 'start':
-                    res = inst_lst[i].start_ps()
-                if action == 'stop':
-                    res = inst_lst[i].stop_ps()    
-                #LOG
-                if res == False: 
-                    Global.printx("action " + action + " already launched")
-                else:            
-                    Global.printx("action " + action + " launched")
+
+            d = {'start': lambda pgObj : pgObj.start_pg(),
+                 'stop':  lambda pgObj : pgObj.stop_pg()}
+
+            for pgName in pgLst: 
+                pgObj = psFILE.pgs[pgName]
+                res = d[action](pgObj)
+                x = "already" if res == False else ''
+                Global.printx(f"{pgName} : action {action} {x} launched")
+
     
     def do_status(self, user_input):
 
-        keys = psFILE.pss.keys()
+        keys = psFILE.pgs.keys()
         if (user_input != ''):
-            if (user_input in psFILE.pss):
+            if (user_input in keys):
                 keys = [user_input]
                 #LOG
             else:
-                Global.printx("process |" + user_input + "| don't exist")
+                Global.printx("pgr |" + user_input + "| don't exist")
                 return
             
         for k in keys:
-            lst = psFILE.pss[k]
-            for elem in lst:
-                status_msg = elem.status_ps()
-                #LOG
-                Global.printx(status_msg)
+            pgObj = psFILE.pgs[k]
+            status_msg = pgObj.status_pg()
+            #LOG
+            Global.printx(status_msg)
     
-    def do_signal(self, user_input):
-        inp = user_input.split(' ')
-        if len(inp) == 2 and \
-            inp[0] in signal.Signals.keys() and \
-            inp[1] in psFILE.pss.keys():
-                psFILE.kill_ps_allinst(inp[1], inp[0])
-        else:
-            Global.printx('ERROR usage: signal SIGTERM ps')
+    def do_signal(self, inp):
+        sigName = self.get_userInput_arg(inp, 0)
+        pgTag = self.get_userInput_arg(inp, 1)
+
+        pgLst = psFILE.get_pgs(pgTag)
+        err = []
+        values = [item.name for item in signal.Signals]
+        if sigName not in values:
+            err.append(f"signal <{sigName}> don't exist")
+        if pgLst == []:
+            err.append(f"program <{pgTag}> don't exist") 
+        #for ierr in err:
+        #    Global.printx(err)
+        if err != []:
+            for ierr in err:
+                Global.printx(err)
+            #map(lambda x : Global.printx(x), err)
+            return  
+        
+        for psName in pgLst:
+            sigNb = signal.Signals[sigName].value
+            psFILE.pgs[psName].signalJob_if_pgInit(sigNb)
 
 
     def do_result(self, user_input):

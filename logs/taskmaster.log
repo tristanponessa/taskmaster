@@ -1264,3 +1264,971 @@ taskmaster> exit
 
 DESTROY all insts random101
 DESTROY all insts shg
+---taskmaster session : 2020-07-01 16:41:18---
+old conf file {}
+---taskmaster session : 2020-07-01 16:41:31---
+old conf file {}
+---taskmaster session : 2020-07-01 16:41:57---
+old conf file {}
+---taskmaster session : 2020-07-01 16:42:33---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 16:45:23---
+old conf file {}
+---taskmaster session : 2020-07-01 16:45:51---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 16:47:02---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+---taskmaster session : 2020-07-01 16:48:23---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && sh sec_counter.bash
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && sh sec_counter.bash
+2020-07-01 16:48:27 : shg__0 running for over 0s, its working properly
+2020-07-01 16:48:27 : shg__1 running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && sh sec_counter.bash
+2020-07-01 16:48:27 : shg__2 running for over 0s, its working properly
+shg__2 : action start  launched
+shg__0 : action stop  launched
+shg__1 : action stop  launched
+shg__2 : action stop  launched
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 16:51:04---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+2020-07-01 16:51:10 : shg__0 running for over 0s, its working properly
+2020-07-01 16:51:10 : shg__1 running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+shg__2 : action start  launched
+2020-07-01 16:51:10 : shg__2 running for over 0s, its working properly
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 16:55:19---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 16:55:28---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+shg__0 : action start  launched
+2020-07-01 16:55:33 : shg__0 running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+2020-07-01 16:55:33 : shg__1 running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+2020-07-01 16:55:33 : shg__2 running for over 0s, its working properly
+shg__2 : action start  launched
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 16:59:58---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:00:26---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'python3 pgrms/shg/main_shg.py', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+2020-07-01 17:00:29 : shg__0 running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+2020-07-01 17:00:29 : shg__1 running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+2020-07-01 17:00:29 : shg__2 running for over 0s, its working properly
+shg__2 : action start  launched
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:02:51---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__0 : action start  launched
+2020-07-01 17:03:02 : shg__0 running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:03:02 : shg__1 running for over 0s, its working properly
+2020-07-01 17:03:02 : shg__2 running for over 0s, its working properly
+shg__2 : action start  launched
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:04:12---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && ls -l
+2020-07-01 17:04:15 : shg__0 running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && ls -l
+2020-07-01 17:04:15 : shg__1 running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && ls -l
+shg__2 : action start  launched
+2020-07-01 17:04:15 : shg__2 running for over 0s, its working properly
+---taskmaster session : 2020-07-01 17:06:54---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && ls -l
+2020-07-01 17:06:58 : shg__0 running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && ls -l
+2020-07-01 17:06:58 : shg__1 running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && ls -l
+2020-07-01 17:06:58 : shg__2 running for over 0s, its working properly
+shg__2 : action start  launched
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:13:17---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:13:21 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:13:21 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:13:21 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+shg__0 : action stop  launched
+shg__1 : action stop  launched
+shg__2 : action stop  launched
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:14:23---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:14:26 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:14:26 : shg running for over 0s, its working properly
+2020-07-01 17:14:26 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+shg__0 : action stop  launched
+shg__1 : action stop  launched
+shg__2 : action stop  launched
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:18:11---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+---taskmaster session : 2020-07-01 17:19:02---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+---taskmaster session : 2020-07-01 17:19:14---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: RUNNING    | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:None    | runtime:None      
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:20:27---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:None    | runtime:None      
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: RUNNING    | PID:None    | runtime:None      
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:24:31---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: STOPPED    | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:None    | runtime:None      
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:25:25---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:27:22---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: None       | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: None       | PID:None    | runtime:None      
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: None       | PID:None    | runtime:None      
+taskmaster> start 
+umask 022 && cd ./ && export TEST=TEST && sh pgrms/sec_counter.bash
+2020-07-01 17:27:38 : random101 running for over 0s, its working properly
+random101__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:27:38 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:27:38 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:27:38 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: RUNNING    | PID:43977   | runtime:0:00:17   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43978   | runtime:0:00:17   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43980   | runtime:0:00:17   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43983   | runtime:0:00:17   
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: RUNNING    | PID:43977   | runtime:0:00:32   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43978   | runtime:0:00:32   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43980   | runtime:0:00:32   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43983   | runtime:0:00:32   
+taskmaster> status
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: RUNNING    | PID:43977   | runtime:0:01:17   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43978   | runtime:0:01:17   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43980   | runtime:0:01:17   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:43983   | runtime:0:01:17   
+taskmaster> stop random101
+random101__0 : action stop  launched
+taskmaster> 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 17:33:48---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__0 : action start  launched
+2020-07-01 17:33:58 : shg running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 17:33:58 : shg running for over 0s, its working properly
+2020-07-01 17:33:58 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> status
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44593   | runtime:0:00:04   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44595   | runtime:0:00:04   
+name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44596   | runtime:0:00:04   
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None      
+taskmaster> stop shg
+pg returncode waited {} TIMEOUT ERROR its still running
+shg__0 : action stop  launched
+pg returncode waited {} TIMEOUT ERROR its still running
+shg__1 : action stop  launched
+pg returncode waited {} TIMEOUT ERROR its still running
+shg__2 : action stop  launched
+taskmaster> status
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44593   | runtime:0:00:27   
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44595   | runtime:0:00:27   
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44596   | runtime:0:00:27   
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None      
+taskmaster> status
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44593   | runtime:0:00:27   
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44595   | runtime:0:00:27   
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44596   | runtime:0:00:27   
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None      
+taskmaster> status
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44593   | runtime:0:00:27   
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44595   | runtime:0:00:27   
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44596   | runtime:0:00:27   
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None      
+taskmaster> status
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44593   | runtime:0:00:27   
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44595   | runtime:0:00:27   
+LAST name:shg                            | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:44596   | runtime:0:00:27   
+name:random101                      | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None      
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:05:31---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:05:39 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:05:39 : shg running for over 0s, its working properly
+2020-07-01 18:05:39 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> stop shg
+shg__0 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__1 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__2 : action stop  launched
+taskmaster> 
+taskmaster> status
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46312   | runtime:0:00:10    | returncode:-9 
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46313   | runtime:0:00:10    | returncode:None
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46315   | runtime:0:00:10    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:07:17---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:07:20 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:07:20 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:07:20 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> stop shg
+shg__0 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__1 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__2 : action stop  launched
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46389   | runtime:0:00:03    | returncode:None
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46390   | runtime:0:00:03    | returncode:None
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46392   | runtime:0:00:03    | returncode:None
+taskmaster> stop shg
+shg__0 : action stop already launched
+shg__1 : action stop already launched
+shg__2 : action stop already launched
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46389   | runtime:0:00:03    | returncode:None
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46390   | runtime:0:00:03    | returncode:None
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46392   | runtime:0:00:03    | returncode:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:09:41---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: None       | PID:None    | runtime:None       | returncode:None
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: None       | PID:None    | runtime:None       | returncode:None
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:09:47 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:09:47 : shg running for over 0s, its working properly
+2020-07-01 18:09:47 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> stop shg
+shg__0 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__1 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__2 : action stop  launched
+taskmaster> 
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46507   | runtime:0:00:05    | returncode:-9 
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46508   | runtime:0:00:05    | returncode:-9 
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: STOPPED    | PID:46510   | runtime:0:00:05    | returncode:-9 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:11:49---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__0 : action start  launched
+2020-07-01 18:11:52 : shg running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:11:52 : shg running for over 0s, its working properly
+2020-07-01 18:11:52 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> stop shg
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__0 : action stop  launched
+shg__1 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__2 : action stop  launched
+taskmaster> 
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46619   | runtime:0:00:04    | returncode:-9 
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46620   | runtime:0:00:04    | returncode:-9 
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46622   | runtime:0:00:04    | returncode:-9 
+taskmaster> EXIT
+display help
+taskmaster> EXIT
+display help
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:13:18---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:13:30 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+2020-07-01 18:13:30 : shg running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:13:30 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> stop shg
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__0 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__1 : action stop  launched
+shg__2 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+taskmaster> status
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46777   | runtime:0:00:05    | returncode:-9 
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46778   | runtime:0:00:05    | returncode:-9 
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46779   | runtime:0:00:05    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> status
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46777   | runtime:0:00:05    | returncode:-9 
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46778   | runtime:0:00:05    | returncode:-9 
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46779   | runtime:0:00:05    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> status
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46777   | runtime:0:00:05    | returncode:-9 
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46778   | runtime:0:00:05    | returncode:-9 
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46779   | runtime:0:00:05    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:14:20 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:14:20 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__2 : action start  launched
+2020-07-01 18:14:21 : shg running for over 0s, its working properly
+taskmaster> status
+name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46812   | runtime:0:00:03    | returncode:-9 
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46813   | runtime:0:00:03    | returncode:-9 
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46815   | runtime:0:00:03    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> status
+name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46812   | runtime:0:00:39    | returncode:-9 
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46813   | runtime:0:00:39    | returncode:-9 
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46815   | runtime:0:00:39    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> stop shg__0
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__0 : action stop  launched
+taskmaster> status
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46812   | runtime:0:00:46    | returncode:-9 
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46813   | runtime:0:00:49    | returncode:-9 
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46815   | runtime:0:00:49    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> status
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46812   | runtime:0:00:46    | returncode:-9 
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46813   | runtime:0:00:53    | returncode:-9 
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46815   | runtime:0:00:53    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> status
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46812   | runtime:0:00:46    | returncode:-9 
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46813   | runtime:0:00:53    | returncode:-9 
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46815   | runtime:0:00:53    | returncode:-9 
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> status shg__0
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46812   | runtime:0:00:46    | returncode:-9 
+taskmaster> status shg__3
+pgr |shg__3| don't exist
+taskmaster> status shg__0
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46812   | runtime:0:00:46    | returncode:-9 
+taskmaster> status shg__1
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46813   | runtime:0:01:20    | returncode:-9 
+taskmaster> status shg__1
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46813   | runtime:0:01:24    | returncode:-9 
+taskmaster> signal SIGKILL shg__2
+---taskmaster session : 2020-07-01 18:16:35---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:16:46 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:16:46 : shg running for over 0s, its working properly
+2020-07-01 18:16:46 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> stop shg
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__0 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__1 : action stop  launched
+pg returncode waited 0> TIMEOUT ERROR killing pg
+shg__2 : action stop  launched
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+LAST name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46951   | runtime:0:00:09    | returncode:-9 
+LAST name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46952   | runtime:0:00:09    | returncode:-9 
+LAST name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: KILLED     | PID:46954   | runtime:0:00:09    | returncode:-9 
+taskmaster> start shg
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__0 : action start  launched
+2020-07-01 18:17:08 : shg running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:17:08 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:17:08 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46958   | runtime:0:00:02    | returncode:None
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46959   | runtime:0:00:02    | returncode:None
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46961   | runtime:0:00:02    | returncode:None
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46958   | runtime:0:00:42    | returncode:None
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46959   | runtime:0:00:42    | returncode:None
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46961   | runtime:0:00:42    | returncode:None
+taskmaster> start shg
+shg__0 : action start already launched
+shg__1 : action start already launched
+shg__2 : action start already launched
+taskmaster> start shg__0
+shg__0 : action start already launched
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46958   | runtime:0:01:07    | returncode:None
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46959   | runtime:0:01:07    | returncode:None
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46961   | runtime:0:01:07    | returncode:None
+taskmaster> status
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46958   | runtime:0:01:09    | returncode:None
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46959   | runtime:0:01:09    | returncode:None
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:46961   | runtime:0:01:09    | returncode:None
+taskmaster> signal SIGKILL shg__0
+---taskmaster session : 2020-07-01 18:20:15---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:20:15 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:20:15 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:20:15 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+---taskmaster session : 2020-07-01 18:21:56---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:21:56 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:21:56 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:21:56 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+---taskmaster session : 2020-07-01 18:27:26---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:27:26 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+2020-07-01 18:27:26 : shg running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__2 : action start  launched
+2020-07-01 18:27:26 : shg running for over 0s, its working properly
+taskmaster> signal SIGKILL shg__0
+["signal <None> don't exist", "program <None> don't exist"]
+["signal <None> don't exist", "program <None> don't exist"]
+taskmaster> 
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:28:22---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:28:22 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:28:22 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:28:22 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+["signal <None> don't exist", "program <None> don't exist"]
+["signal <None> don't exist", "program <None> don't exist"]
+taskmaster> reboot
+REBOOT
+---taskmaster session : 2020-07-01 18:29:02---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:29:02 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+2020-07-01 18:29:02 : shg running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__2 : action start  launched
+2020-07-01 18:29:02 : shg running for over 0s, its working properly
+taskmaster> signal SIGKILL shg__0
+["signal <None> don't exist", "program <None> don't exist"]
+["signal <None> don't exist", "program <None> don't exist"]
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:29:47---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:29:47 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:29:47 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:29:47 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+["signal <SIGKILL> don't exist"]
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:31:24---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:31:24 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+2020-07-01 18:31:24 : shg running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:31:24 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+["signal <SIGKILL> don't exist"]
+taskmaster> reboot
+REBOOT
+---taskmaster session : 2020-07-01 18:31:55---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:31:55 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:31:55 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:31:55 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+["signal <SIGKILL> don't exist"]
+taskmaster> reboot
+REBOOT
+---taskmaster session : 2020-07-01 18:32:22---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:32:22 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:32:22 : shg running for over 0s, its working properly
+2020-07-01 18:32:22 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+---taskmaster session : 2020-07-01 18:33:22---
+old conf file {}
+added random101__0 to pgs
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__0 : action start  launched
+2020-07-01 18:33:22 : shg running for over 0s, its working properly
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:33:22 : shg running for over 0s, its working properly
+2020-07-01 18:33:22 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+---taskmaster session : 2020-07-01 18:35:44---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:35:44 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:35:44 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:35:44 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:37:53---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:37:53 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:37:53 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:37:53 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> signal SIGKILL shg__0
+taskmaster> status
+name:shg__0                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:48226   | runtime:0:00:07    | returncode:None
+name:shg__1                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:48227   | runtime:0:00:07    | returncode:None
+name:shg__2                         | cmd:python3 pgrms/shg/main_shg.py  | state: RUNNING    | PID:48229   | runtime:0:00:07    | returncode:None
+name:random101__0                   | cmd:sh pgrms/sec_counter.bash      | state: None       | PID:None    | runtime:None       | returncode:None
+taskmaster> exit
+<Exiting Taskmaster>
+
+
+---taskmaster session : 2020-07-01 18:42:01---
+old conf file {}
+added shg__0 to pgs
+added shg__1 to pgs
+added shg__2 to pgs
+added random101__0 to pgs
+updated conf file {'random101': {'cmd': 'sh pgrms/sec_counter.bash', 'stoptime': '5'}, 'shg': {'cmd': 'python3 pgrms/shg/main_shg.py', 'restart': 'yes', 'nbps': '3', 'stoptime': '0', 'exitcode': 'SIGINT'}}
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:42:01 : shg running for over 0s, its working properly
+shg__0 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:42:01 : shg running for over 0s, its working properly
+shg__1 : action start  launched
+umask 022 && cd ./ && export TEST=TEST && python3 pgrms/shg/main_shg.py
+2020-07-01 18:42:01 : shg running for over 0s, its working properly
+shg__2 : action start  launched
+taskmaster> exit
+<Exiting Taskmaster>
+
+
