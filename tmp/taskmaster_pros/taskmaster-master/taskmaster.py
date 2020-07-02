@@ -2,8 +2,6 @@
 # encoding: UTF-8
 
 import sys
-import yaml
-import atexit
 import os
 import readline
 import rlcompleter

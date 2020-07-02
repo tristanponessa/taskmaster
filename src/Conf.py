@@ -8,6 +8,7 @@ import os
 import Global
 import Process as pgFILE
 
+conf_name = '?'
 conf = dict()
 dft_conf =  {
                 'cmd':          'ls -l',
@@ -58,9 +59,10 @@ def confReload(json_file):
     """
         if conf reloaded , dont kill pgs that dont change propg
     """
-    global conf
+    global conf, conf_name
     new_conf = load_Aconf(json_file) #json get $ user input file
     conf = new_conf.copy()
+    conf_name = json_file
     #old_conf = conf 
     #protected = dict_sameItems(old_conf, new_conf)
     #LOG

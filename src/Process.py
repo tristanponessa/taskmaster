@@ -45,15 +45,31 @@ def init_pg(pgName, pgProps):
             pgNew.start_pg()
             Global.printx(f"{inst_name} : autostart")
         pgs[inst_name] = pgNew
-        Global.printx(f"added {inst_name} to pgs")
+        Global.printx(f"added {inst_name} to pgs {inst_name in list(pgs.keys())}")
 
+def pgs_check_state():
+    global pgs
+    for pgName, pgClass in pgs.items():
+        if pgClass.pgobj is not None:
+            r = pgClass.get_returncode()
+            if (r is not None) and r > 0 and pgClass.flag != 'STOPPED':
+                pgClass.flag = 'DONE'
+                #else is signaled
 
 def signal_pg(pgName, isignal=signal.SIGINT, option=None):
     #signals and removes from lst
     global pgs
-    pgs[pgName].signalJob_if_pgInit(isignal)
-    if 'remove' in option:
-        del pgs[pgName]
+    if '__' not in pgName:
+        nbpg = int(confFILE.get_pgProp(pgName, 'nbps'))
+        for i in range(nbpg):
+            inst_name = f'{pgName}__{i}'
+            pgs[inst_name].signalJob_if_pgInit(isignal)
+            if 'remove' in option:
+                del pgs[inst_name]
+    else:
+        pgs[pgName].signalJob_if_pgInit(isignal)
+        if 'remove' in option:
+            del pgs[pgName]
         #Global.printx(f"destroying all insts {pgName}")
 
     #LOG
@@ -65,28 +81,30 @@ def signal_job(pid, isignal=signal.SIGINT):
         pgrp = os.getpgid(pid)
         os.killpg(pgrp, isignal)
     except OSError:
+        print(f'signal_job : PID {pid} not existent')
         pass
 
 def init_pgs():
     global pgs
 
-    pgsk = pgs.keys()
+    pgsk = [pgName.split('__')[0] for pgName in pgs.keys()]
     confk = confFILE.conf.keys()
     keys = set([*pgsk, *confk])
 
     #Global.printx(f"cur pgs : {pgsk}")
     #Global.printx(f"conf : {confk}")
     #Global.printx(f"fusion set : {keys}")
-
+    
     for key in keys:
         if (key in confk):
             if (key not in pgsk):
                 init_pg(key, confFILE.conf[key])
-            elif (pgs[key][0].propg != confFILE.conf[key]):
+            elif (pgs[f'{key}__0'].props != confFILE.conf[key]):
                 signal_pg(key, signal.SIGINT, 'remove')
                 init_pg(key, confFILE.conf[key])
         elif (key not in confk):
             signal_pg(key, signal.SIGINT, 'remove')
+    
         #else:
         #    Global.printx(f"protected {key}")
 
@@ -130,27 +148,22 @@ class Program:
     
     """
     
-    def __init__(self, name, propg):
+    def __init__(self, name, props):
 
         self.name = name
         self.gname = name.split('__')[0]
-        self.propg = propg
+        self.props = props
         self.pgobj = None
         self.start_time = ''
         self.stop_call = False
         self.last_status = ''
         self.returncode = None
         self.nbrestart = 0
-        self.flag = '' #checkif manually stopped not signaled
+        self.flag = 'CREATED' #checkif manually stopped not signaled
     
     def pgInit(self):
-        return (self.pgobj is not None)
-    
-    def signalJob_if_pgInit(self, isignal=signal.SIGINT):
-        if self.pgInit():
-            signal_job(self.pgobj.pid, isignal)
-            self.flag = f'SIGNALED {signal.Signals(isignal)}'
-            self.last_status = self.status_pg()
+        #return (self.pgobj is not None)
+        return (self.flag == 'RUNNING')
 
     def setup_cmd(self):
         #umask 777 && cd .. && export v=1 && export v=2 && cmd'
@@ -173,25 +186,37 @@ class Program:
                 #supervisor reboots 3 times 
         t = ft_thread(ft)
 
+    def signalJob_if_pgInit(self, isignal=signal.SIGINT):
+        if self.pgInit():
+            signal_job(self.pgobj.pid, isignal)
+            self.flag = f'SIGNALED {signal.Signals(isignal).name}'
+            #self.get_returncode()
+            #self.last_status = f'LAST {self.status_pg()}'
+            #self.pgobj = None
+
+            return True
+        return False
+
     def stop_pg(self):
         if self.pgInit() and self.stop_call == False:
             self.stop_call = True
 
             def ft():
-                stoptime = int(confFILE.get_pgProp(self.gname, 'stoptime'))
                 signame = confFILE.get_pgProp(self.gname, 'exitcode')
                 signal_job(self.pgobj.pid, signal.Signals[signame].value)
-                self.flag = 'STOPPED'
-                if self.get_returncode('wait') is None:
+                returncode = self.get_returncode('wait')
+                if returncode is None:
                     self.flag = 'KILLED'
+                    #self.last_status = f'LAST {self.status_pg()}'
                     signal_job(self.pgobj.pid, signal.SIGKILL)
+                else:
                 #print(f'{self.name} before:', self.returncode)
-                self.get_returncode()
-                #print(f'{self.name}after:', self.returncode)
-                self.last_status = f'LAST {self.status_pg()}'
-                self.pgobj = None
-                self.stop_call = False
-                self.nbrestart = 0
+                    #print(f'{self.name}after:', self.returncode)
+                    #self.last_status = f'LAST {self.status_pg()}'
+                    #self.pgobj = None
+                    self.stop_call = False
+                    self.nbrestart = 0
+                    self.flag = 'STOPPED'
 
             t = ft_thread(ft)
             return True
@@ -206,10 +231,10 @@ class Program:
             self.last_status = ''
             self.flag = 'RUNNING'
             self.start_time = int(time.time())
-            self.returncode = None
+            #self.returncode = None
 
-            print('>>', self.gname)
-            print(confFILE.get_pgProp(self.gname, 'cmd'))
+            #print('>>', self.gname)
+            #print(confFILE.get_pgProp(self.gname, 'cmd'))
 
             cmd = f"{self.setup_cmd()} && {confFILE.get_pgProp(self.gname, 'cmd')}"
             if option != 'restart':
@@ -219,17 +244,22 @@ class Program:
 
             with open(confFILE.get_pgProp(self.gname, 'stdout'),'a+') as out, \
                  open(confFILE.get_pgProp(self.gname, 'stderr'),'a+') as err:
-                    
+
+                                #subprocess.Popen(cmd, shell=True, stdout=out, stderr=err, start_new_session=True)
+                                #subprocess.Popen(cmd, shell=True, stdout=out, stderr=err, start_new_session=True)
                     self.pgobj = subprocess.Popen(cmd, shell=True, stdout=out, stderr=err, start_new_session=True)
+                    #is pid of parent which is the shell
+                    
+                    #to get children pgrep -P 97520 
             
             self.success_countdown()
                     
             return True
         return False
-        
+    
     def reboot_if_wrongExitcode(self): 
         #returncode is an exitcode with - like -15 for sigterm
-        self.get_returncode()
+        ret = self.get_returncode()
         if self.flag not in ['STOPPED', 'FATAL', 'KILLED'] and self.returncode:
             wanted_exitcode = confFILE.get_pgProp(self.gname, 'exitcode')
             nbrestart = confFILE.get_pgProp(self.gname, 'nbrestart')
@@ -247,58 +277,54 @@ class Program:
     
     def get_returncode(self, option=None):
 
-        if not self.pgInit():
-            return self.returncode
+        if self.pgobj is None:
+            return None
 
-        returncode = None
+        #returncode = None
         
+        """
         if not option:
             time.sleep(1)
             returncode = self.pgobj.poll()
             print('poll ret', returncode)
-        elif option == 'wait':
+        
+        """
+        stoptime = 0.1
+        if option == 'wait':
             stoptime = int(confFILE.get_pgProp(self.gname, 'stoptime'))
-            try:
-                returncode = self.pgobj.wait(timeout=stoptime)                  
-                print('wait ret', returncode)
-                #logFILE.returncode_msg(self.gname, confFILE.get_pgProp(self.gname, 'returncode'), returncode)
-            except subprocess.TimeoutExpired:
-                Global.printx(f"pg returncode waited {stoptime}> TIMEOUT ERROR killing pg")
+        try:
+            returncode = self.pgobj.wait(timeout=stoptime)                  
+            #print(f'ret : {returncode}')
+            #print('wait ret', returncode)
+            #logFILE.returncode_msg(self.gname, confFILE.get_pgProp(self.gname, 'returncode'), returncode)
+        except subprocess.TimeoutExpired:
+            #print(f'ret : TIME OUT ')
+            returncode = None
+        #        Global.printx(f"pg returncode waited {stoptime}> TIMEOUT ERROR killing pg")
 
-        self.returncode = returncode
+        #self.returncode = returncode
         #if returncode:
         #    self.last_status = f'LAST {self.status_pg()}'
         #    self.pgobj = None
-            
         return returncode
 
     def status_pg(self, option=''):
         
-        if not self.pgInit() and self.last_status != '':
-            return (self.last_status)
+        #if not self.pgInit() and self.last_status != '':
+        #    return (self.last_status)
         
         name = self.name
         cmd = confFILE.get_pgProp(self.gname, 'cmd')
 
-        """
-        state = '?'
-        if not self.pgInit():
-            state = None
-        elif self.flag == 'STOPPED':
-            state = 'STOPPED'
-        elif self.flag == 'KILLED':
-            state = 'KILLED'
-        elif 
-        elif self.pgInit():
-            state = 'RUNNING'
-        """
-
-        pid = self.pgobj.pid if self.pgInit() else None
-        run_time = self.get_runtime()
-        lst = [name,cmd,self.flag,pid,run_time, self.returncode]
+        pid = self.pgobj.pid if self.pgobj else None
+        run_time = self.get_runtime() if self.pgInit() else None
+        returncode = self.get_returncode() #maybe tack if off
+        #returncode = '-'
+        state = self.flag
+        lst = [name,cmd,state,pid,run_time, returncode]
 
         #DISPLAY
-        pad = [30,30,10,7,10,3]
+        pad = [30,30,20,7,10,3]
         for i in range(len(lst)):
             lst[i] = str(lst[i])
             lst[i] = lst[i].ljust(pad[i], ' ')
@@ -321,7 +347,7 @@ class Program:
         return run_time
     
     def __str__(self):
-        x = f'pg : {self.gname} | obj : {self.pgobj} | propg : {self.propg}'
+        x = f'pg : {self.gname} | obj : {self.pgobj} | props : {self.props}'
         return x
     
         

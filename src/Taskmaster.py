@@ -66,14 +66,16 @@ class Taskmaster_shell(cmd.Cmd):
         #dipslay help
         Global.printx('---taskmaster session : ' + Global.now_time() + '---')
         
+        Global.clean_historyFile()
         readline.read_history_file(Global.history_file)
         #Global.setup_files()
 
         #load your running process on computer
         
         #auto to avoid taping everything everytime
-        self.do_init("./config/taskmaster_conf.json")
+        self.do_init("./config/taskmaster_conf2.json")
         self.do_start("shg")
+        #self.do_init("./config/taskmaster_conf2.json")
         #self.do_status("")
         #self.do_exit("")
         #self.do_stop("random101")
@@ -91,8 +93,10 @@ class Taskmaster_shell(cmd.Cmd):
         #LOG
         Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
         Global.print_file(f'{user_input}',Global.history_file,'a')
+        
 
-
+        psFILE.pgs_check_state()
+        
         #psFILE.pgs_reboot_if_wrongExitcode()
 
         return cmd.Cmd.precmd(self, user_input)
@@ -140,6 +144,9 @@ class Taskmaster_shell(cmd.Cmd):
             print(confFILE.conf)
         if user_input == 'pwd':
             os.system('pwd')
+        if user_input == 'conf':
+            print(confFILE.conf_name)
+
         """
         if user_input == 'pgs_file':
             os.system(f'cat {Global.pgs_file}')
@@ -188,10 +195,8 @@ class Taskmaster_shell(cmd.Cmd):
 
         keys = psFILE.pgs.keys()
         if (user_input != ''):
-            if (user_input in keys):
-                keys = [user_input]
-                #LOG
-            else:
+            keys = psFILE.get_pgs(user_input) 
+            if keys == []:
                 Global.printx("pgr |" + user_input + "| don't exist")
                 return
             
@@ -222,7 +227,9 @@ class Taskmaster_shell(cmd.Cmd):
         
         for psName in pgLst:
             sigNb = signal.Signals[sigName].value
-            psFILE.pgs[psName].signalJob_if_pgInit(sigNb)
+            r = psFILE.pgs[psName].signalJob_if_pgInit(sigNb)
+            if r == False:
+                Global.printx(f'{psName} not running') 
 
 
     def do_result(self, user_input):

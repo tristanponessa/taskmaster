@@ -56,6 +56,13 @@ def save_file(lines, file, mode):
     lines = list(map(str, lines))
     with open(file, mode) as f:
         f.writelines(lines)
+
+def clean_historyFile():
+    global history_file
+    l = load_file(history_file)
+    clean = list(set(l))
+    save_file(clean, history_file, 'w') 
+
         
 """
 def setup_files():

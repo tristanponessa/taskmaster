@@ -1,493 +1,77 @@
-exit
-init ./config/taskmaster_cong.json
-init ./config/taskmaster_conf.json
-conf
-config
-ps
-echo config
-echo ps
-start 
-start 
-echo config
-echo ps
-init ./config/taskmaster_conf.json
 start
-start random101
-init ./config/taskmaster_conf.json
-start random101
-status
-exit
+start shg__1
+status shg__
+stop time
+init config/taskmaster.json
+signal SIGINT shg
+ls
+echo ps
 history 1
-exit
-history 1
-reboot
-history 1
-history 2
-exit
-stop
-stop all
-stop sleep23
-
-reboot
-status
-stop random101
-status
-status
-status
-init ./config/taskmaster_conf.json
-echo config
-status
-exit
-stop random1-1
-stop random101
-status
-exit
-status
-status
-
-status
-status
-status
-status
-status
-status
-status
-status
-status
-exit
-status
-status
-status
-stop shg
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-start shg
-status
-status
-init config/taskmaster_conf3.json
-init config/taskmaster_conf3.json
-start shg
-init config/taskmaster_conf3.json
-init config/taskmaster_conf.json
-init config/taskmaster_conf.json
-status
-status
-init config/taskmaster_conf.json
-status
-status
-init config/taskmaster_conf.json
-status
-init config/taskmaster_conf2.json
-status
-print pss
-init config/taskmaster_conf.json
-start shg
-init config/taskmaster_conf2.json
-status
-status
-status
-init config/taskmaster_conf.json
-status
-status
-status
-init config/taskmaster_conf2.json
-status
-stop random101
-status
-stop time_count
-status
-status
-stop shg
-status
-init config/taskmaster_conf2.json
-init config/taskmaster_conf.json
-status
-status
-status
-init config/taskmaster_conf2.json
-status
-status
-exit
-start shg
-stop shg
-exit
-start shg
-exit
-start shg
-exit
-start shg
-start shg
-stop shg
-exit
-exit
-start shg
-print pss
-exit
-start shg
-exit
-start shg
-exit
-start shg
-exit
-start shg
-stop shg
-start shg
-stop shg
-print conf
-exit
-start shg
-stop shg
-exit
-start shg
-stop shg
-status
-exit
-start shg
-status
-status
-status
-status
-status
-status
-status
-status
-start shg
-status
-status
-status
-status
-status
-status
-status
-status
-status
-start shg
-print pss
-exit
-print pss
-start shg
-status
-status
-status
-status
-status
-status
-status
-status
-status
-print pss
-start shg
-status
-status
-status
-status
-status
-status
-status
-status
-status
-exit
-status
-start shg
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-start shg
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-stop shg
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-status
-exit
-status
-start shg
-status
-print pss
-print pss
-stop shg
-status
-status
-status
-status
-status
-status
-status
-exit
-exit
-start shg
-stop shg
-status
-exit
-start shg
-stop shg
-
-
-status
-exit
-start shg
-stop shg
-
-
-
-l
-status
-status
-exit
-
-
-
-status
-exit
-status
-exit
-status
-status
-start shg
-stop shg
-
-start shg
-stop shg
-
-
-
-status
-status
-status
-exit
-status
-status
-
-
-
-start shg
-status
-stop shg
-
-
-
-exit
-start shg
-stop shg
-
-
-exit
-
-exit
-
-exit
-
-exit
-
-
-exit
-
-
-
-
-
-stop shg
-
-stop shg
-
-
-stop shg
-
-stop shg
-
-stop shg
-
-
-start shg
-init config/taskmaster_conf.json
-start shg
-stop shg
-exit
-
-init config/taskmaster_conf.json
-exit
-exit
-status
+status shg _
 start 
-status
-status
-status
-stop random101
-
+history
+signal SIGINT shg__1
+init config/taskmaster
+print history
 exit
-start shg
-status
-stop shg
-status
-status
-status
-status
-exit
-start shg
-status
-stop shg
-status
-status
-status
-exit
-start shg
-status
-stop shg
-status
-exit
-start shg
-stop shg
-status
-status
-status
-status
-exit
-start shg
-stop shg
-status
-status
-status
-exit
-start shg
-status
-stop shg
-status
-status
-status
-exit
-start shg
-stop shg
-exit
-stop shg
-status
-status
-start shg
-stop shg
-exit
-start shg
-stop shg
-exit
-start shg
-stop shg
-
-status
-exit
-start shg
-stop shg
-status
-stop shg
-status
-exit
-status
-start shg
-stop shg
-
-status
-exit
-start shg
-stop shg
-
-status
-EXIT
-EXIT
-exit
-start shg
-stop shg
-status
-status
-status
-start shg
-status
-status
-stop shg__0
-status
-status
-status
-status shg__0
+print conf
+status shg___
+ps
+stop all
 status shg__3
-status shg__0
+start random101
+print pgs
 status shg__1
-status shg__1
-signal SIGKILL shg__2
-start shg
+status check
+signal SIGKILL shg__1
+status random101
+start time
+config
+stop random1-1
+init ./config/taskmaster_conf.json
+init ./config/taskmaster_cong.json
+conf
+init config/taskmaster_conf3.json
+history 674
+l
+signal SIGILL shg
 stop shg
-status
-start shg
-status
-status
-start shg
-start shg__0
-status
-status
-signal SIGKILL shg__0
-signal SIGKILL shg__0
-signal SIGKILL shg__0
-signal SIGKILL shg__0
+print pss
+signal SIGINT shg__0
 
-exit
-signal SIGKILL shg__0
+init config/taskmaster_conf.json
+history 2
+status shg*
+echo config
 reboot
-signal SIGKILL shg__0
-exit
-signal SIGKILL shg__0
-exit
-signal SIGKILL shg__0
-reboot
-signal SIGKILL shg__0
-reboot
-signal SIGKILL shg__0
-signal SIGKILL shg__0
-exit
-signal SIGKILL shg__0
+status shg__0
+signal SIGKILL shg__2
 status
-exit
+stop shg__1
+start time_count
+stop shg__0
+stop sleep23
+stop
+status time_
+start shg__0
+status shg_
+stop random101
+status shg__2
+status check__0
+init config/taskmaster_conf2.json
+status shg
+signal SIGKILL shg__0
+stop time_count
+start shg__2
+ld
+start time_counter
+stop shg__
+signal SIGKILL shg
+start shg
+EXIT
+status
+status
+status
+status
+status
 exit
