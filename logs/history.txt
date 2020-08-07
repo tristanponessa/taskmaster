@@ -1,77 +1,74 @@
-start
-start shg__1
-status shg__
-stop time
-init config/taskmaster.json
-signal SIGINT shg
-ls
-echo ps
-history 1
-status shg _
-start 
-history
-signal SIGINT shg__1
-init config/taskmaster
-print history
-exit
-print conf
-status shg___
-ps
-stop all
-status shg__3
-start random101
-print pgs
-status shg__1
-status check
-signal SIGKILL shg__1
-status random101
-start time
-config
-stop random1-1
-init ./config/taskmaster_conf.json
-init ./config/taskmaster_cong.json
-conf
-init config/taskmaster_conf3.json
-history 674
-l
-signal SIGILL shg
-stop shg
-print pss
-signal SIGINT shg__0
-
-init config/taskmaster_conf.json
-history 2
-status shg*
-echo config
-reboot
-status shg__0
-signal SIGKILL shg__2
-status
-stop shg__1
-start time_count
-stop shg__0
-stop sleep23
-stop
-status time_
-start shg__0
-status shg_
-stop random101
 status shg__2
-status check__0
-init config/taskmaster_conf2.json
-status shg
-signal SIGKILL shg__0
-stop time_count
-start shg__2
-ld
-start time_counter
-stop shg__
+signal SIGINT shg__0
+stop random101
+status time_
+print conf
+signal SIGINT shg__1
+status shg___
 signal SIGKILL shg
-start shg
+start
+reboot
+stop shg
+ps
+stop sleep23
+history 1
+stop shg__
+status shg*
+stop time_count
+status shg
+status
+echo config
+l
+status shg__0
+status shg__3
+init config/taskmaster_conf.json
+stop all
+history 674
+status shg_
 EXIT
+init config/taskmaster
+signal SIGKILL shg__0
+status random101
+init config/taskmaster.json
+init ./config/taskmaster_cong.json
+init ./config/taskmaster_conf.json
+start shg
+config
+start time_counter
+start shg__2
+signal SIGINT shg
+start time
+stop shg__0
+status check__0
+print pgs
+start random101
+start time_count
+status check
+print pss
+start 
+init config/taskmaster_conf3.json
+stop random1-1
+signal SIGKILL shg__2
+
+exit
+conf
+signal SIGILL shg
+print history
+status shg _
+stop shg__1
+status shg__
+history 2
+signal SIGKILL shg__1
+start shg__0
+stop
+echo ps
+ld
+status shg__1
+init config/taskmaster_conf2.json
+history
+start shg__1
+ls
+stop time
 status
-status
-status
-status
-status
+start shg
 exit

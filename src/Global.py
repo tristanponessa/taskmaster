@@ -1,6 +1,5 @@
 import os
 import signal 
-import psutil
 import threading
 import time
 import signal
@@ -40,7 +39,13 @@ def printx(*args, end=None):
     for arg in args:
         print(arg, end=end)
         with open(log_file, 'a+') as f:
-            print(arg, file=f, end=end)
+            print(f'{now_time()} : {arg}', file=f, end=end)
+
+def print_log(*args, end=None):
+    with open(log_file, 'a+') as f:
+        for arg in args:
+            print(f'{now_time()}: {arg}', file=f, end=end)
+        print('' ,file=f)
 
 def print_file(s, ifile, mode):
     with open(ifile, mode) as f:

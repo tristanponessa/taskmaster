@@ -64,7 +64,7 @@ class Taskmaster_shell(cmd.Cmd):
 
 
         #dipslay help
-        Global.printx('---taskmaster session : ' + Global.now_time() + '---')
+        Global.print_log('---taskmaster session : ' + Global.now_time() + '---')
         
         Global.clean_historyFile()
         readline.read_history_file(Global.history_file)
@@ -73,8 +73,8 @@ class Taskmaster_shell(cmd.Cmd):
         #load your running process on computer
         
         #auto to avoid taping everything everytime
-        self.do_init("./config/taskmaster_conf2.json")
-        self.do_start("shg")
+        self.do_init("./config/taskmaster_conf.json")
+        #self.do_start("shg")
         #self.do_init("./config/taskmaster_conf2.json")
         #self.do_status("")
         #self.do_exit("")
@@ -94,7 +94,6 @@ class Taskmaster_shell(cmd.Cmd):
         Global.print_file(Taskmaster_shell.prompt + user_input, Global.log_file, 'a+')
         Global.print_file(f'{user_input}',Global.history_file,'a')
         
-
         psFILE.pgs_check_state()
         
         #psFILE.pgs_reboot_if_wrongExitcode()
@@ -114,26 +113,26 @@ class Taskmaster_shell(cmd.Cmd):
         #init conf file 
         err = confFILE.is_confFile(user_input)
         if err != []:
-            Global.printx(*err)
+            Global.print_log(*err)
         else:
             #LOG
-            Global.printx(f"old conf file {confFILE.conf}")
+            Global.print_log(f"old conf file {confFILE.conf}")
 
             confFILE.confReload(user_input)
             psFILE.init_pgs()
 
             #LOG
-            Global.printx(f"updated conf file {confFILE.conf}")
+            Global.print_log(f"updated conf file {confFILE.conf}")
 
     """
     def do_uninit(self, user_input):
         
         if user_input != '':
-            Global.printx("no args display help for uninit")
+            Global.print_log("no args display help for uninit")
         else:
-            Global.printx("uninit conf file")
+            Global.print_log("uninit conf file")
             confFILE.conf = dict()
-            Global.printx(f"{confFILE.conf}")
+            Global.print_log(f"{confFILE.conf}")
     """
     
 
@@ -178,7 +177,7 @@ class Taskmaster_shell(cmd.Cmd):
 
         pgLst = psFILE.get_pgs(inp) 
         if pgLst == []:
-            Global.printx(f"program <{inp}> don't exist") 
+            Global.print_log(f"program <{inp}> don't exist") 
         else:
 
             d = {'start': lambda pgObj : pgObj.start_pg(),
@@ -188,7 +187,7 @@ class Taskmaster_shell(cmd.Cmd):
                 pgObj = psFILE.pgs[pgName]
                 res = d[action](pgObj)
                 x = "already" if res == False else ''
-                Global.printx(f"{pgName} : action {action} {x} launched")
+                Global.print_log(f"{pgName} : action {action} {x} launched")
 
     
     def do_status(self, user_input):
@@ -197,14 +196,14 @@ class Taskmaster_shell(cmd.Cmd):
         if (user_input != ''):
             keys = psFILE.get_pgs(user_input) 
             if keys == []:
-                Global.printx("pgr |" + user_input + "| don't exist")
+                Global.print_log("pgr |" + user_input + "| don't exist")
                 return
             
         for k in keys:
             pgObj = psFILE.pgs[k]
             status_msg = pgObj.status_pg()
             #LOG
-            Global.printx(status_msg)
+            Global.print_log(status_msg)
     
     def do_signal(self, inp):
         sigName = self.get_userInput_arg(inp, 0)
@@ -218,44 +217,44 @@ class Taskmaster_shell(cmd.Cmd):
         if pgLst == []:
             err.append(f"program <{pgTag}> don't exist") 
         #for ierr in err:
-        #    Global.printx(err)
+        #    Global.print_log(err)
         if err != []:
             for ierr in err:
-                Global.printx(err)
-            #map(lambda x : Global.printx(x), err)
+                Global.print_log(err)
+            #map(lambda x : Global.print_log(x), err)
             return  
         
         for psName in pgLst:
             sigNb = signal.Signals[sigName].value
             r = psFILE.pgs[psName].signalJob_if_pgInit(sigNb)
             if r == False:
-                Global.printx(f'{psName} not running') 
+                Global.print_log(f'{psName} not running') 
 
 
     def do_result(self, user_input):
         l = Global.load_file(Global.tk_res)
-        Global.printx(*l)
+        Global.print_log(*l)
 
     def emptyline(self):
         pass
     
     def default(self, inp):
-        Global.printx("display help")
+        Global.print_log("display help")
         self.do_help()
       
     def do_exit(self, inp):
-        Global.printx("<Exiting Taskmaster>\n\n")
+        Global.print_log("<Exiting Taskmaster>\n\n")
         return True
     
     def do_EOF(self, line):
-        Global.printx('\n\n  Ctrl + d -> exit Taskmaster\n\n')
+        Global.print_log('\n\n  Ctrl + d -> exit Taskmaster\n\n')
         return True
 
     def do_help(self, user_input=''):
         print('srcew you!')
     
     def do_reboot(self, i):
-        Global.printx("REBOOT")
+        Global.print_log("REBOOT")
         Global.reboot = True
         self.do_exit()
         

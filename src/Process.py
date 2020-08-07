@@ -43,9 +43,9 @@ def init_pg(pgName, pgProps):
         pgNew = Program(inst_name, pgProps)
         if confFILE.get_pgProp(pgName, 'autostart') == "yes": 
             pgNew.start_pg()
-            Global.printx(f"{inst_name} : autostart")
+            Global.print_log(f"{inst_name} : autostart")
         pgs[inst_name] = pgNew
-        Global.printx(f"added {inst_name} to pgs {inst_name in list(pgs.keys())}")
+        Global.print_log(f"added {inst_name} to pgs {inst_name in list(pgs.keys())}")
 
 def pgs_check_state():
     global pgs
@@ -70,10 +70,10 @@ def signal_pg(pgName, isignal=signal.SIGINT, option=None):
         pgs[pgName].signalJob_if_pgInit(isignal)
         if 'remove' in option:
             del pgs[pgName]
-        #Global.printx(f"destroying all insts {pgName}")
+        #Global.print_log(f"destroying all insts {pgName}")
 
     #LOG
-    #Global.printx(f"DESTROY all insts {pgName}")
+    #Global.print_log(f"DESTROY all insts {pgName}")
 
 def signal_job(pid, isignal=signal.SIGINT):
     #if pid exists, sig its chidren and it
@@ -91,9 +91,9 @@ def init_pgs():
     confk = confFILE.conf.keys()
     keys = set([*pgsk, *confk])
 
-    #Global.printx(f"cur pgs : {pgsk}")
-    #Global.printx(f"conf : {confk}")
-    #Global.printx(f"fusion set : {keys}")
+    #Global.print_log(f"cur pgs : {pgsk}")
+    #Global.print_log(f"conf : {confk}")
+    #Global.print_log(f"fusion set : {keys}")
     
     for key in keys:
         if (key in confk):
@@ -106,7 +106,7 @@ def init_pgs():
             signal_pg(key, signal.SIGINT, 'remove')
     
         #else:
-        #    Global.printx(f"protected {key}")
+        #    Global.print_log(f"protected {key}")
 
 def tmExit_clean_pgs():
     for pgName in list(pgs.keys()):
@@ -225,7 +225,7 @@ class Program:
     def start_pg(self, option=None):
         
         if self.stop_call:
-            Global.printx("can't start pg, its stopping")
+            Global.print_log("can't start pg, its stopping")
         elif (not self.pgInit()):
 
             self.last_status = ''
@@ -240,7 +240,7 @@ class Program:
             if option != 'restart':
                 self.nbrestart = 0
             #LOG
-            Global.printx(cmd)
+            Global.print_log(cmd)
 
             with open(confFILE.get_pgProp(self.gname, 'stdout'),'a+') as out, \
                  open(confFILE.get_pgProp(self.gname, 'stderr'),'a+') as err:
@@ -300,7 +300,7 @@ class Program:
         except subprocess.TimeoutExpired:
             #print(f'ret : TIME OUT ')
             returncode = None
-        #        Global.printx(f"pg returncode waited {stoptime}> TIMEOUT ERROR killing pg")
+        #        Global.print_log(f"pg returncode waited {stoptime}> TIMEOUT ERROR killing pg")
 
         #self.returncode = returncode
         #if returncode:

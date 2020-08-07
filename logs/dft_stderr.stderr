@@ -1677,3 +1677,37 @@ Traceback (most recent call last):
   File "pgrms/forever.py", line 5, in <module>
     time.sleep(1)
 KeyboardInterrupt
+Traceback (most recent call last):
+  File "pgrms/forever.py", line 5, in <module>
+    time.sleep(1)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "pgrms/shg/main_shg.py", line 82, in <module>
+    main()
+  File "pgrms/shg/main_shg.py", line 76, in main
+    mf1.run()
+  File "pgrms/shg/main_shg.py", line 57, in run
+    self.master_frame.mainloop()
+  File "/Users/trponess/.brew/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tkinter/__init__.py", line 1283, in mainloop
+    self.tk.mainloop(n)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "pgrms/shg/main_shg.py", line 82, in <module>
+    main()
+  File "pgrms/shg/main_shg.py", line 76, in main
+    mf1.run()
+  File "pgrms/shg/main_shg.py", line 57, in run
+    self.master_frame.mainloop()
+  File "/Users/trponess/.brew/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tkinter/__init__.py", line 1283, in mainloop
+    self.tk.mainloop(n)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "pgrms/shg/main_shg.py", line 82, in <module>
+    main()
+  File "pgrms/shg/main_shg.py", line 76, in main
+    mf1.run()
+  File "pgrms/shg/main_shg.py", line 57, in run
+    self.master_frame.mainloop()
+  File "/Users/trponess/.brew/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tkinter/__init__.py", line 1283, in mainloop
+    self.tk.mainloop(n)
+KeyboardInterrupt
