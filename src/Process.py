@@ -45,7 +45,7 @@ def init_pg(pgName, pgProps):
             pgNew.start_pg()
             Global.print_log(f"{inst_name} : autostart")
         pgs[inst_name] = pgNew
-        Global.print_log(f"added {inst_name} to pgs {inst_name in list(pgs.keys())}")
+        print(f"added {inst_name} to pgs {inst_name in list(pgs.keys())}")
 
 def pgs_check_state():
     global pgs
@@ -118,8 +118,6 @@ def display_pgs():
     for pg in pgs.values():
         print(pg)
     print('\n')
-
-
 
 def pgs_reboot_if_wrongExitcode():
     for pgObj in pgs.values():
@@ -240,7 +238,7 @@ class Program:
             if option != 'restart':
                 self.nbrestart = 0
             #LOG
-            Global.print_log(cmd)
+            print(cmd)
 
             with open(confFILE.get_pgProp(self.gname, 'stdout'),'a+') as out, \
                  open(confFILE.get_pgProp(self.gname, 'stderr'),'a+') as err:

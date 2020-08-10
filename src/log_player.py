@@ -16,7 +16,7 @@ while True:
     #with open('../logs/taskmaster.log', 'r') as f:
     l = f.readlines()
     if cur != l:
-        print('diff')
+        #print('diff')
         cur = l.copy()
         print(*l, end='\n')
     

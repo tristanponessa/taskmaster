@@ -32,10 +32,10 @@ if __name__ == '__main__':
         #Taskmaster_shell.print_stdout_log(ts, '\n\n  Ctrl + c -> exit Taskmaster\n\n')
         #STOP ALL PS
         if e.__class__.__name__ == 'KeyboardInterrupt':
-            Global.printx('\n\n  Ctrl + c -> more graceful exit Taskmaster\n\n')
+            print('\n\n  Ctrl + c -> more graceful exit Taskmaster\n\n')
             #exitid = signal.SIGINT.value
         else:#suppose to be SIGHUP
-            Global.printx('\n\n  Ctrl + d -> graceful exit Taskmaster\n\n')
+            print('\n\n  Ctrl + d -> graceful exit Taskmaster\n\n')
 
             #if ctrl + c send this signal to all pss with  ps.kill_if_psInit(signal.SIGINT)
             # if c d 

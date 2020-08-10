@@ -1,74 +1,78 @@
-status shg__2
-signal SIGINT shg__0
-stop random101
-status time_
-print conf
 signal SIGINT shg__1
-status shg___
-signal SIGKILL shg
-start
-reboot
-stop shg
-ps
-stop sleep23
-history 1
-stop shg__
-status shg*
-stop time_count
-status shg
-status
-echo config
-l
-status shg__0
-status shg__3
-init config/taskmaster_conf.json
-stop all
-history 674
-status shg_
-EXIT
-init config/taskmaster
 signal SIGKILL shg__0
-status random101
-init config/taskmaster.json
-init ./config/taskmaster_cong.json
-init ./config/taskmaster_conf.json
-start shg
-config
-start time_counter
-start shg__2
-signal SIGINT shg
-start time
-stop shg__0
-status check__0
-print pgs
-start random101
-start time_count
+reboot
 status check
-print pss
-start 
-init config/taskmaster_conf3.json
-stop random1-1
-signal SIGKILL shg__2
-
-exit
-conf
-signal SIGILL shg
-print history
-status shg _
-stop shg__1
-status shg__
-history 2
-signal SIGKILL shg__1
-start shg__0
-stop
-echo ps
-ld
-status shg__1
 init config/taskmaster_conf2.json
+start shg
+init config/taskmaster.json
+history 1
+status check__0
+init config/taskmaster_conf.json
+start shg__0
+status shg*
+status shg__0
+history 2
+
+conf
+start shg__2
+exit
+status shg _
+start 
+echo ps
+stop
 history
-start shg__1
-ls
+config
+ps
+stop shg__1
+status random101
+status shg__
+init config/taskmaster
+stop all
 stop time
+signal SIGKILL shgstatus
+status shg
+ls
+signal SIGILL shg
+start
+stop shg__
+start shg__1
+init config/taskmaster_conf3.json
+EOF
+status shg__1
+signal SIGINT shg__0
+echo config
+print conf
+EXIT
+print pss
+start time
+stop random1-1
+status shg_
+signal SIGKILL shg__1
+signal SIGINT shg
+stop random101
+ld
+l
+stop sleep23
+status shg__2
+stop shg__2
+stop time_count
+signal SIGKILL shg__2
+print pgs
+start time_count
+init ./config/taskmaster_conf.json
+print history
+status shg___
+status time_
+start time_counter
+init ./config/taskmaster_cong.json
 status
+stop shg
+status shg__3
+stop shg__0
+start random101
+history 674
+ls
+status
+start ps
 start shg
 exit
